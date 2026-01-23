@@ -16,7 +16,8 @@ const valores = ["Ética e seriedade na aplicação do Direito", "Soluções jur
 const diferenciais = [{
   icon: Scale,
   title: "Especialização",
-  description: "O escritório conta com profissionais da advocacia altamente especializados nas diferentes áreas do direito, mantendo-se sempre atualizados e buscando atualizações nos ramos em que atuam, para que possam oferecer um serviço de qualidade e eficiência ao cliente."
+  description:"Somos referência nacional em Recuperação Judicial, reconhecidos como o melhor do Brasil. Com excelência e transparência, transformamos crises em crescimento, garantindo continuidade por anos e fortalecendo empresas com segurança jurídica.
+
 }, {
   icon: Users,
   title: "Atendimento Personalizado",
