@@ -12,18 +12,47 @@ import detailPen from "@/assets/detail-pen.jpg";
 import meetingConsultation from "@/assets/meeting-consultation.jpg";
 import institutionalVideo from "@/assets/institutional-video.mp4";
 const WHATSAPP_LINK = "https://wa.me/5511974083838?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20advogado.";
-const valores = ["Ética e seriedade na aplicação do Direito", "Soluções jurídicas personalizadas e eficientes", "Confiabilidade e bom relacionamento com nossos clientes", "Conhecimento, competência e aperfeiçoamento técnico", "Foco nas necessidades do cliente", "Comprometimento com os princípios legais", "Transparência sobre os riscos de ações ou projetos", "Empreendedorismo"];
-const diferenciais = [{
-  icon: Scale,
-  title: "Especialização",
-  description: "O escritório conta com profissionais da advocacia altamente especializados nas diferentes áreas do direito, mantendo-se sempre atualizados e buscando atualizações nos ramos em que atuam, para que possam oferecer um serviço de qualidade e eficiência ao cliente."
-}, {
-  icon: Users,
-  title: "Atendimento Personalizado",
-  description: "O atendimento ao cliente oferecido pelo nosso escritório será sempre por um profissional da área do direito que o cliente estiver necessitando, sempre que possível atendimento pessoal para saneamento e esclarecimento de dúvidas."
-}];
-const clientesInternacionais = ["Proview Electronics Co Ltd – Taipei / Taiwan", "RED International Group – Taipei / Taiwan", "Proview LED Lighting Co. Ltd – Taipei / Taiwan", "New Era Investment Inc. – Panama / Panama", "Reit Investment Corp. – Panama / Panama", "North Capital Holding – Copenhagen / Denmark", "Dti Korea Co. Ltd – Coreia do Sul"];
-const clientesNacionais = ["Empresas Concessionárias de Transporte Público Urbano e Rodoviário nos estados de São Paulo, Paraná, Goiás, Amazonas, Acre, Rondônia e Bahia", "Empresas de mineração de ferro e manganês nos estados de Pará, Amapá e Ceará", "Empresas de Mineração de granito e pedras preciosas na Bahia, Minas Gerais e Goiás", "Indústria de Alimentos (Charque) no estado de Goiás e restaurantes em São Paulo", "Projetos de PPP – Parceria Público Privada na área de Iluminação nos estados de São Paulo e Santa Catarina", "Empresas concessionárias, estados Rio de Janeiro e Santa Catarina"];
+const valores = [
+  "Ética e seriedade na aplicação do Direito",
+  "Soluções jurídicas personalizadas e eficientes",
+  "Confiabilidade e bom relacionamento com nossos clientes",
+  "Conhecimento, competência e aperfeiçoamento técnico",
+  "Foco nas necessidades do cliente",
+  "Comprometimento com os princípios legais",
+  "Transparência sobre os riscos de ações ou projetos",
+  "Empreendedorismo",
+];
+const diferenciais = [
+  {
+    icon: Scale,
+    title: "Especialização",
+    description:
+      "O escritório conta com profissionais da advocacia altamente especializados nas diferentes áreas do direito, mantendo-se sempre atualizados e buscando atualizações nos ramos em que atuam, para que possam oferecer um serviço de qualidade e eficiência ao cliente.",
+  },
+  {
+    icon: Users,
+    title: "Atendimento Personalizado",
+    description:
+      " ao cliente oferecido pelo nosso escritório será sempre por um profissional da área do direito que o cliente estiver necessitando, sempre que possível atendimento pessoal para saneamento e esclarecimento de dúvidas.",
+  },
+];
+const clientesInternacionais = [
+  "Proview Electronics Co Ltd – Taipei / Taiwan",
+  "RED International Group – Taipei / Taiwan",
+  "Proview LED Lighting Co. Ltd – Taipei / Taiwan",
+  "New Era Investment Inc. – Panama / Panama",
+  "Reit Investment Corp. – Panama / Panama",
+  "North Capital Holding – Copenhagen / Denmark",
+  "Dti Korea Co. Ltd – Coreia do Sul",
+];
+const clientesNacionais = [
+  "Empresas Concessionárias de Transporte Público Urbano e Rodoviário nos estados de São Paulo, Paraná, Goiás, Amazonas, Acre, Rondônia e Bahia",
+  "Empresas de mineração de ferro e manganês nos estados de Pará, Amapá e Ceará",
+  "Empresas de Mineração de granito e pedras preciosas na Bahia, Minas Gerais e Goiás",
+  "Indústria de Alimentos (Charque) no estado de Goiás e restaurantes em São Paulo",
+  "Projetos de PPP – Parceria Público Privada na área de Iluminação nos estados de São Paulo e Santa Catarina",
+  "Empresas concessionárias, estados Rio de Janeiro e Santa Catarina",
+];
 export default function Index() {
   const videoRef = useRef<HTMLVideoElement>(null);
   useEffect(() => {
@@ -33,7 +62,8 @@ export default function Index() {
     // Normal playback speed for smooth FPS
     video.playbackRate = 1.0;
   }, []);
-  return <Layout>
+  return (
+    <Layout>
       {/* Hero Section with Video Background */}
       <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-center overflow-hidden">
         {/* Video Background */}
@@ -52,9 +82,12 @@ export default function Index() {
             <p className="mt-6 text-xl text-white/90 leading-relaxed animate-slide-up font-normal text-left md:text-2xl">
               Assessoria jurídica e consultoria empresarial com atuação prática, eficiente e transparente.
             </p>
-            <div className="mt-10 flex flex-wrap gap-4 animate-slide-up" style={{
-            animationDelay: "0.1s"
-          }}>
+            <div
+              className="mt-10 flex flex-wrap gap-4 animate-slide-up"
+              style={{
+                animationDelay: "0.1s",
+              }}
+            >
               <Button asChild size="lg" className="group">
                 <Link to="/contato" className="flex items-center gap-2">
                   <MessageCircle className="h-5 w-5" />
@@ -62,7 +95,12 @@ export default function Index() {
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20">
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="bg-white/10 border-white/30 text-white hover:bg-white/20"
+              >
                 <Link to="/atuacao#areas-grid">Áreas de Atuação</Link>
               </Button>
             </div>
@@ -101,7 +139,11 @@ export default function Index() {
 
               {/* Detail Image */}
               <div className="mt-8 rounded-lg overflow-hidden">
-                <img src={detailPen} alt="Detalhe de caneta e documentos jurídicos" className="w-full h-48 object-cover image-enhance" />
+                <img
+                  src={detailPen}
+                  alt="Detalhe de caneta e documentos jurídicos"
+                  className="w-full h-48 object-cover image-enhance"
+                />
               </div>
 
               <Button asChild variant="outline" className="mt-8">
@@ -116,10 +158,12 @@ export default function Index() {
             <div className="bg-card rounded-lg p-8 border border-border">
               <h3 className="font-serif text-2xl mb-6">Filosofia e Valores</h3>
               <ul className="space-y-3">
-                {valores.map((valor, index) => <li key={index} className="flex items-start gap-3 text-muted-foreground">
+                {valores.map((valor, index) => (
+                  <li key={index} className="flex items-start gap-3 text-muted-foreground">
                     <CheckCircle className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                     <span>{valor}</span>
-                  </li>)}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -129,18 +173,28 @@ export default function Index() {
       {/* Diferenciais */}
       <section className="section-padding bg-secondary">
         <div className="container-site">
-          <SectionHeading title="Nossos Diferenciais" subtitle="O que nos torna únicos na prestação de serviços jurídicos" centered />
+          <SectionHeading
+            title="Nossos Diferenciais"
+            subtitle="O que nos torna únicos na prestação de serviços jurídicos"
+            centered
+          />
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {diferenciais.map((item, index) => <div key={index} className="bg-background rounded-lg p-8 border border-border card-hover">
+            {diferenciais.map((item, index) => (
+              <div key={index} className="bg-background rounded-lg p-8 border border-border card-hover">
                 <item.icon className="h-10 w-10 text-accent mb-6" />
                 <h3 className="font-serif text-xl mb-4">{item.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{item.description}</p>
-              </div>)}
+              </div>
+            ))}
           </div>
 
           {/* Meeting Image */}
           <div className="mt-12 max-w-3xl mx-auto rounded-lg overflow-hidden shadow-lg">
-            <img alt="Ambiente de consultoria jurídica profissional" className="w-full h-64 object-cover image-enhance" src="/lovable-uploads/14557c61-3649-4d86-8bbe-16a74379c3a7.png" />
+            <img
+              alt="Ambiente de consultoria jurídica profissional"
+              className="w-full h-64 object-cover image-enhance"
+              src="/lovable-uploads/14557c61-3649-4d86-8bbe-16a74379c3a7.png"
+            />
           </div>
         </div>
       </section>
@@ -148,7 +202,10 @@ export default function Index() {
       {/* Clientes */}
       <section className="section-padding">
         <div className="container-site">
-          <SectionHeading title="Clientes Atendidos" subtitle="Experiência comprovada com empresas nacionais e internacionais" />
+          <SectionHeading
+            title="Clientes Atendidos"
+            subtitle="Experiência comprovada com empresas nacionais e internacionais"
+          />
 
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Empresas */}
@@ -158,28 +215,13 @@ export default function Index() {
                 <h4 className="font-serif text-lg">Empresas</h4>
               </div>
               <ul className="space-y-2 text-muted-foreground text-sm">
-                <li>- Empresas de transporte público e         rodoviário
+                <li>- Empresas de transporte público e         rodoviário</li>
+                <li>- Setor de mineração de ferro e                 manganês</li>
 
-              </li>
-                <li>- Setor de mineração de ferro e                 manganês
+                <li>- Corporativas do agronegócio em           recuperação judicial</li>
+                <li>-  Indústria alimentícia</li>
 
-              </li>
-                
-                <li>- Corporativas do agronegócio em           recuperação judicial
-
-              </li>
-                <li>-  Indústria alimentícia
-
-              </li>
-                
-                <li>- PPP em iluminação pública
-
-
-
-- Empresa de Eletrônicos
-
-- Companhia de Investimentos</li>
-                
+                <li>- PPP em iluminação pública - Empresa de Eletrônicos - Companhia de Investimentos</li>
               </ul>
             </div>
 
@@ -190,7 +232,9 @@ export default function Index() {
                 <h4 className="font-serif text-lg">Companhias Internacionais</h4>
               </div>
               <ul className="space-y-2 text-muted-foreground text-sm">
-                {clientesInternacionais.map((cliente, index) => <li key={index}>{cliente}</li>)}
+                {clientesInternacionais.map((cliente, index) => (
+                  <li key={index}>{cliente}</li>
+                ))}
               </ul>
             </div>
 
@@ -201,7 +245,9 @@ export default function Index() {
                 <h4 className="font-serif text-lg">Companhias Nacionais</h4>
               </div>
               <ul className="space-y-2 text-muted-foreground text-sm">
-                {clientesNacionais.map((cliente, index) => <li key={index}>{cliente}</li>)}
+                {clientesNacionais.map((cliente, index) => (
+                  <li key={index}>{cliente}</li>
+                ))}
               </ul>
             </div>
           </div>
@@ -209,9 +255,13 @@ export default function Index() {
       </section>
 
       {/* Quote */}
-      <QuoteBand quote="A injustiça em qualquer lugar é uma ameaça à justiça por toda parte." author="Martin Luther King Jr." />
+      <QuoteBand
+        quote="A injustiça em qualquer lugar é uma ameaça à justiça por toda parte."
+        author="Martin Luther King Jr."
+      />
 
       {/* CTA */}
       <CTASection />
-    </Layout>;
+    </Layout>
+  );
 }
