@@ -16,7 +16,7 @@ const valores = ["Ética e seriedade na aplicação do Direito", "Soluções jur
 const diferenciais = [{
   icon: Scale,
   title: "Especialização",
-  description:"Somos referência nacional em Recuperação Judicial, reconhecidos como o melhor do Brasil. Com excelência e transparência, transformamos crises em crescimento, garantindo continuidade por anos e fortalecendo empresas com segurança jurídica.
+  description:"Somos referência nacional em" Recuperação Judicial, reconhecidos como o melhor do Brasil. Com excelência e transparência, transformamos crises em crescimento, garantindo continuidade por anos e fortalecendo empresas com segurança jurídica."
 
 }, {
   icon: Users,
