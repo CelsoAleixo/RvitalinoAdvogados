@@ -26,9 +26,9 @@ const diferenciais = [
   {
     icon: Scale,
     title: "Especialização",
-    description:"Somos referência nacional em Recuperação Judicial, reconhecidos como o melhor do Brasil. Com excelência e transparência, transformamos crises em crescimento, garantindo continuidade por anos e fortalecendo empresas com segurança jurídica".,
-
-      " 
+    description:
+      "O escritório conta com profissionais da advocacia altamente especializados nas diferentes áreas do direito, mantendo-se sempre atualizados e buscando atualizações nos ramos em que atuam, para que possam oferecer um serviço de qualidade e eficiência ao cliente.",
+  },
   {
     icon: Users,
     title: "Atendimento Personalizado",
