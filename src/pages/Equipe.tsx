@@ -44,57 +44,42 @@ const advogados = [
 export default function Equipe() {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative py-20 md:py-28 bg-secondary overflow-hidden">
-        <div className="container-site relative z-10">
-          {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 text-sm mb-8 animate-fade-in">
-            <Link to="/" className="text-muted-foreground hover:text-accent transition-colors">
-              Início
-            </Link>
-            <span className="text-muted-foreground">/</span>
-            <span className="text-accent font-medium">Equipe</span>
-          </nav>
-
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/30 mb-6 animate-fade-in">
-            <Users className="w-4 h-4 text-accent" />
-            <span className="text-accent text-sm font-medium">Nossa Equipe</span>
+      {/* Team Section - Direct Start */}
+      <section className="section-padding bg-secondary">
+        <div className="container-site">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/30 mb-6">
+              <Users className="w-4 h-4 text-accent" />
+              <span className="text-accent text-sm font-medium uppercase tracking-wider">Nossa Equipe</span>
+            </div>
+            <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
+              Advogados Especializados
+            </h1>
           </div>
 
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 animate-fade-in">
-            Advogados Especializados
-          </h1>
-        </div>
-
-        {/* Decorative Elements */}
-        <div className="absolute top-0 right-0 w-32 h-32 border-r-2 border-t-2 border-accent/20" />
-        <div className="absolute bottom-0 left-0 w-32 h-32 border-l-2 border-b-2 border-accent/20" />
-      </section>
-
-      {/* Team Grid */}
-      <section className="section-padding">
-        <div className="container-site">
+          {/* Team Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {advogados.map((advogado, index) => (
               <div
                 key={index}
-                className="bg-card rounded-2xl p-6 border border-border hover:border-accent/30 transition-all duration-300 text-center group"
+                className="bg-background rounded-2xl p-6 border border-border hover:border-accent/30 hover:shadow-lg transition-all duration-300 text-center group"
               >
-                <div className="w-32 h-32 mx-auto rounded-full overflow-hidden mb-4 ring-4 ring-accent/20 group-hover:ring-accent/40 transition-all duration-300 shadow-lg">
+                <div className="w-36 h-36 mx-auto rounded-full overflow-hidden mb-5 ring-4 ring-border group-hover:ring-accent/40 transition-all duration-300 shadow-lg">
                   <img
                     alt={`${advogado.nome} - ${advogado.cargo}`}
                     className="w-full h-full object-cover"
                     src={advogado.foto}
                   />
                 </div>
-                <h3 className="font-serif font-bold text-lg text-foreground mb-1">
+                <h3 className="font-serif font-bold text-lg text-foreground mb-2">
                   {advogado.nome}
                 </h3>
-                <p className="text-accent font-medium text-sm mb-1">{advogado.cargo}</p>
+                <p className="text-accent font-semibold text-xs uppercase tracking-wider mb-1">{advogado.cargo}</p>
                 {advogado.especialidade && (
-                  <p className="text-muted-foreground text-xs mb-3">{advogado.especialidade}</p>
+                  <p className="text-muted-foreground text-xs mb-4">{advogado.especialidade}</p>
                 )}
+                {!advogado.especialidade && <div className="mb-4" />}
                 <a
                   href={`mailto:${advogado.email}`}
                   className="text-muted-foreground hover:text-accent transition-colors text-xs truncate block"
