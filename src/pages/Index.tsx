@@ -166,47 +166,42 @@ export default function Index() {
       </section>
 
       {/* Clientes */}
-      <section className="section-padding">
+      <section className="section-padding bg-secondary/30">
         <div className="container-site">
           <SectionHeading title="Clientes Atendidos" subtitle="Experiência comprovada com empresas nacionais e internacionais" />
 
-          <div className="grid lg:grid-cols-3 gap-8">
-            {/* Empresas */}
-            <div className="bg-card rounded-lg p-6 border border-border">
-              <div className="flex items-center gap-3 mb-4">
-                <Building2 className="h-6 w-6 text-accent" />
-                <h4 className="font-serif text-lg">Empresas</h4>
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Nacional */}
+            <div className="bg-card rounded-lg p-8 border border-border shadow-sm">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
+                  <Building2 className="h-6 w-6 text-accent" />
+                </div>
+                <h4 className="font-serif text-xl">Companhias Nacionais</h4>
               </div>
-              <ul className="space-y-2 text-muted-foreground text-sm">
-                <li>- Empresas de transporte público e         rodoviário</li>
-                <li>- Setor de mineração de ferro e                 manganês</li>
-
-                <li>- Corporativas do agronegócio em           recuperação judicial</li>
-                <li>-  Indústria alimentícia</li>
-
-                <li>- PPP em iluminação pública - Empresa de Eletrônicos - Companhia de Investimentos</li>
+              <ul className="space-y-4 text-muted-foreground">
+                {clientesNacionais.map((cliente, index) => (
+                  <li key={index} className="border-l-2 border-accent pl-4">
+                    {cliente}
+                  </li>
+                ))}
               </ul>
             </div>
 
             {/* Internacional */}
-            <div className="bg-card rounded-lg p-6 border border-border">
-              <div className="flex items-center gap-3 mb-4">
-                <Globe className="h-6 w-6 text-accent" />
-                <h4 className="font-serif text-lg">Companhias Internacionais</h4>
+            <div className="bg-card rounded-lg p-8 border border-border shadow-sm">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
+                  <Globe className="h-6 w-6 text-accent" />
+                </div>
+                <h4 className="font-serif text-xl">Companhias Internacionais</h4>
               </div>
-              <ul className="space-y-2 text-muted-foreground text-sm">
-                {clientesInternacionais.map((cliente, index) => <li key={index}>{cliente}</li>)}
-              </ul>
-            </div>
-
-            {/* Nacional */}
-            <div className="bg-card rounded-lg p-6 border border-border">
-              <div className="flex items-center gap-3 mb-4">
-                <Building2 className="h-6 w-6 text-accent" />
-                <h4 className="font-serif text-lg">Companhias Nacionais</h4>
-              </div>
-              <ul className="space-y-2 text-muted-foreground text-sm">
-                {clientesNacionais.map((cliente, index) => <li key={index}>{cliente}</li>)}
+              <ul className="space-y-4 text-muted-foreground">
+                {clientesInternacionais.map((cliente, index) => (
+                  <li key={index} className="border-l-2 border-accent pl-4">
+                    {cliente}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
