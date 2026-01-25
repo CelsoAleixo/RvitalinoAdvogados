@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 import Escritorio from "./pages/Escritorio";
+import Equipe from "./pages/Equipe";
 import Atuacao from "./pages/Atuacao";
 import Publicacoes from "./pages/Publicacoes";
 import PublicacaoDetalhe from "./pages/PublicacaoDetalhe";
@@ -35,6 +36,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/escritorio" element={<Escritorio />} />
+          <Route path="/equipe" element={<Equipe />} />
           <Route path="/atuacao" element={<Atuacao />} />
           <Route path="/atuacao/direito-empresarial" element={<DireitoEmpresarial />} />
           <Route path="/atuacao/negociacao-juridica" element={<NegociacaoJuridica />} />
