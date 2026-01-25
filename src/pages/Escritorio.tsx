@@ -129,20 +129,9 @@ export default function Escritorio() {
                 <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">Nossa História</h2>
               </div>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p className="text-lg">
-                  Fundado no ano de 2008 pelo sócio fundador Rodrigo Vitalino, o escritório 
-                  Rodrigo Vitalino Advogados desenvolve uma assessoria jurídica e consultoria 
-                  empresarial de forma prática e eficiente ao cliente.
-                </p>
-                <p>
-                  Contamos com uma equipe de profissionais em diversas áreas auxiliando as 
-                  empresas na gestão de forma preventiva e no contencioso buscando melhores 
-                  resultados com transparência e segurança Jurídica.
-                </p>
-                <p>
-                  Atuamos também em Portugal, onde o Advogado Rodrigo Vitalino possui 
-                  inscrição na Ordem dos Advogados de Portugal.
-                </p>
+                <p className="text-base">Desde 2008, o Rodrigo Vitalino Advogados vem construindo uma atuação sólida no cenário jurídico e empresarial. Idealizado por seu fundador, Rodrigo Vitalino, o escritório nasceu com a missão de oferecer soluções jurídicas estratégicas e consultoria empresarial voltada para resultados práticos e sustentáveis.</p>
+                <p>Ao longo dos anos, reunimos uma equipe multidisciplinar de profissionais que trabalham lado a lado com empresas de diferentes setores, tanto na prevenção de riscos quanto na defesa em litígios, sempre com foco em transparência, eficiência e segurança jurídica</p>
+                <p>Expandimos nossa presença além das fronteiras brasileiras: o advogado Rodrigo Vitalino também possui inscrição na Ordem dos Advogados de Portugal, o que nos permite atender clientes em âmbito internacional e oferecer suporte jurídico em operações que envolvem Brasil e Europa.</p>
               </div>
               
               <Link to="/portugal" className="inline-flex items-center gap-2 mt-6 text-accent hover:text-accent/80 font-medium transition-colors group">
