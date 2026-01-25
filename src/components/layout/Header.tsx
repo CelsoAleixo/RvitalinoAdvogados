@@ -36,6 +36,9 @@ const navigation = [{
   name: "O Escritório",
   href: "/escritorio"
 }, {
+  name: "Equipe",
+  href: "/equipe"
+}, {
   name: "Publicações",
   href: "/publicacoes"
 }, {
