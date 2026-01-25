@@ -121,7 +121,7 @@ confiáveis e eficazes</span>
 
               {/* Detail Image */}
               <div className="mt-8 rounded-lg overflow-hidden">
-                <img src={detailPen} alt="Detalhe de caneta e documentos jurídicos" className="w-full h-48 object-cover image-enhance" />
+                
               </div>
 
               <Button asChild variant="outline" className="mt-8">
