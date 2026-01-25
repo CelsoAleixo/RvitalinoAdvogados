@@ -18,7 +18,7 @@ const diferenciais = [{
   description: "Nosso escritório atua fortemente em Direito Empresarial e Corporativo, unindo segurança técnica e visão estratégica. Compreendemos as necessidades de cada cliente e transformamos desafios em soluções práticas e sustentáveis."
 }, {
   icon: Users,
-  title: "Recuperação Judicial",
+  title: "Excelência",
   description: "Somos referência em soluções jurídicas, conduzindo processos com excelência, elaborando estratégias consistentes e negociando com segurança para garantir que nossos clientes superem desafios com tranquilidade."
 }];
 const clientesInternacionais = ["Proview Electronics Co Ltd – Taipei / Taiwan", "RED International Group – Taipei / Taiwan", "Proview LED Lighting Co. Ltd – Taipei / Taiwan", "New Era Investment Inc. – Panama / Panama", "Reit Investment Corp. – Panama / Panama", "North Capital Holding – Copenhagen / Denmark", "Dti Korea Co. Ltd – Coreia do Sul"];
