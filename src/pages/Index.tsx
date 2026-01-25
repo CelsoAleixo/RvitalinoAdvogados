@@ -44,9 +44,9 @@ export default function Index() {
         {/* Hero Content */}
         <div className="container-site relative z-20 py-16 md:py-24">
           <div className="max-w-2xl">
-            <h1 className="text-balance animate-fade-in text-white text-5xl md:text-6xl">
-              Rodrigo Vitalino
-              <span className="block text-accent">Advogados</span>
+            <h1 className="text-balance animate-fade-in text-white text-5xl md:text-6xl">Soluções legais
+Advogados<span className="block text-accent">Soluções legais
+confiáveis e eficazes</span>
             </h1>
             <p className="mt-6 text-xl text-white/90 leading-relaxed animate-slide-up font-normal text-left md:text-2xl">
               Assessoria jurídica empresarial com excelência e segurança.
@@ -180,11 +180,9 @@ export default function Index() {
                 <h4 className="font-serif text-xl">Companhias Nacionais</h4>
               </div>
               <ul className="space-y-4 text-muted-foreground">
-                {clientesNacionais.map((cliente, index) => (
-                  <li key={index} className="border-l-2 border-accent pl-4">
+                {clientesNacionais.map((cliente, index) => <li key={index} className="border-l-2 border-accent pl-4">
                     {cliente}
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </div>
 
@@ -197,11 +195,9 @@ export default function Index() {
                 <h4 className="font-serif text-xl">Companhias Internacionais</h4>
               </div>
               <ul className="space-y-4 text-muted-foreground">
-                {clientesInternacionais.map((cliente, index) => (
-                  <li key={index} className="border-l-2 border-accent pl-4">
+                {clientesInternacionais.map((cliente, index) => <li key={index} className="border-l-2 border-accent pl-4">
                     {cliente}
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </div>
           </div>
