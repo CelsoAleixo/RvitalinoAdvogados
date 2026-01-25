@@ -13,7 +13,7 @@ export function CTASection({
   return <section className="bg-[#0f1c2e] text-white py-12 md:py-14">
       <div className="container-site text-center">
         <h2 className="text-3xl md:text-4xl font-serif mb-3">{title}</h2>
-        <p className="text-lg text-white/70 max-w-2xl mx-auto mb-6">
+        <p className="text-lg text-white/70 max-w-2xl mx-auto mb-6 text-center">
           {description}
         </p>
         
