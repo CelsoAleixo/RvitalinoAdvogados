@@ -10,46 +10,18 @@ import { ArrowRight, Scale, Users, Building2, Globe, CheckCircle, MessageCircle 
 import detailPen from "@/assets/detail-pen.jpg";
 import institutionalVideo from "@/assets/institutional-video.mp4";
 const WHATSAPP_LINK = "https://wa.me/5511974083838?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20advogado.";
-const valores = [
-  "Ética e seriedade na aplicação do Direito",
-  "Soluções jurídicas personalizadas e eficientes",
-  "Confiabilidade e bom relacionamento com nossos clientes",
-  "Conhecimento, competência e aperfeiçoamento técnico",
-  "Foco nas necessidades do cliente",
-  "Comprometimento com os princípios legais",
-  "Transparência sobre os riscos de ações ou projetos",
-  "Empreendedorismo",
-];
-const diferenciais = [
-  {
-    icon: Scale,
-    title: "Especialização",
-    description:
-      "Nosso escritório atua fortemente em Direito Empresarial e Corporativo, unindo segurança técnica e visão estratégica. Compreendemos as necessidades de cada cliente e transformamos desafios em soluções práticas e sustentáveis.",
-  },
-  {
-    icon: Users,
-    title: "Recuperação Judicial",
-    description:
-      "Somos referência em recuperação judicial, conduzindo processos com maestria, elaborando planos consistentes e negociando com credores para garantir que empresas superem dificuldades financeiras com segurança jurídica.",
-  },
-];
-const clientesInternacionais = [
-  "Proview Electronics Co Ltd – Taipei / Taiwan",
-  "RED International Group – Taipei / Taiwan",
-  "Proview LED Lighting Co. Ltd – Taipei / Taiwan",
-  "New Era Investment Inc. – Panama / Panama",
-  "Reit Investment Corp. – Panama / Panama",
-  "North Capital Holding – Copenhagen / Denmark",
-  "Dti Korea Co. Ltd – Coreia do Sul",
-];
-const clientesNacionais = [
-  "Transporte Público Urbano e Rodoviário: suporte jurídico a concessionárias em SP, PR, GO, AM, AC, RO, BA, RJ e SC.",
-  "Mineração de Ferro e Manganês: assessoria a mineradoras no PA, AP e CE.",
-  "Mineração de Granito e Pedras Preciosas: atuação junto a empresas na BA, MG e GO.",
-  "Indústria de Alimentos e Restaurantes: apoio jurídico à produção de charque em GO e ao setor de alimentação em SP.",
-  "Parcerias Público-Privadas (PPP): consultoria em projetos de iluminação pública em SP e SC.",
-];
+const valores = ["Ética e seriedade na aplicação do Direito", "Soluções jurídicas personalizadas e eficientes", "Confiabilidade e bom relacionamento com nossos clientes", "Conhecimento, competência e aperfeiçoamento técnico", "Foco nas necessidades do cliente", "Comprometimento com os princípios legais", "Transparência sobre os riscos de ações ou projetos", "Empreendedorismo"];
+const diferenciais = [{
+  icon: Scale,
+  title: "Especialização",
+  description: "Nosso escritório atua fortemente em Direito Empresarial e Corporativo, unindo segurança técnica e visão estratégica. Compreendemos as necessidades de cada cliente e transformamos desafios em soluções práticas e sustentáveis."
+}, {
+  icon: Users,
+  title: "Recuperação Judicial",
+  description: "Somos referência em recuperação judicial, conduzindo processos com maestria, elaborando planos consistentes e negociando com credores para garantir que empresas superem dificuldades financeiras com segurança jurídica."
+}];
+const clientesInternacionais = ["Proview Electronics Co Ltd – Taipei / Taiwan", "RED International Group – Taipei / Taiwan", "Proview LED Lighting Co. Ltd – Taipei / Taiwan", "New Era Investment Inc. – Panama / Panama", "Reit Investment Corp. – Panama / Panama", "North Capital Holding – Copenhagen / Denmark", "Dti Korea Co. Ltd – Coreia do Sul"];
+const clientesNacionais = ["Transporte Público Urbano e Rodoviário: suporte jurídico a concessionárias em SP, PR, GO, AM, AC, RO, BA, RJ e SC.", "Mineração de Ferro e Manganês: assessoria a mineradoras no PA, AP e CE.", "Mineração de Granito e Pedras Preciosas: atuação junto a empresas na BA, MG e GO.", "Indústria de Alimentos e Restaurantes: apoio jurídico à produção de charque em GO e ao setor de alimentação em SP.", "Parcerias Público-Privadas (PPP): consultoria em projetos de iluminação pública em SP e SC."];
 export default function Index() {
   const videoRef = useRef<HTMLVideoElement>(null);
   useEffect(() => {
@@ -57,8 +29,7 @@ export default function Index() {
     if (!video) return;
     video.playbackRate = 1.0;
   }, []);
-  return (
-    <Layout>
+  return <Layout>
       {/* Hero Section with Video Background */}
       <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-center overflow-hidden">
         {/* Video Background */}
@@ -79,12 +50,9 @@ export default function Index() {
             <p className="mt-6 text-xl text-white/90 leading-relaxed animate-slide-up font-normal text-left md:text-2xl">
               Assessoria jurídica empresarial com excelência e segurança.
             </p>
-            <div
-              className="mt-10 flex flex-wrap gap-4 animate-slide-up"
-              style={{
-                animationDelay: "0.1s",
-              }}
-            >
+            <div className="mt-10 flex flex-wrap gap-4 animate-slide-up" style={{
+            animationDelay: "0.1s"
+          }}>
               <Button asChild size="lg" className="group">
                 <Link to="/contato" className="flex items-center gap-2">
                   <MessageCircle className="h-5 w-5" />
@@ -92,12 +60,7 @@ export default function Index() {
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="bg-white/10 border-white/30 text-white hover:bg-white/20"
-              >
+              <Button asChild size="lg" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20">
                 <Link to="/atuacao#areas-grid">Áreas de Atuação</Link>
               </Button>
             </div>
@@ -122,7 +85,7 @@ export default function Index() {
                 <div className="text-white/80 text-sm mt-1">Clientes Atendidos</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-serif font-bold text-accent">27</div>
+                <div className="text-3xl md:text-4xl font-serif font-bold text-accent">17</div>
                 <div className="text-white/80 text-sm mt-1">Países de Atuação</div>
               </div>
               <div className="text-center">
@@ -170,12 +133,10 @@ export default function Index() {
             <div className="bg-card rounded-lg p-8 border border-border">
               <h3 className="font-serif text-2xl mb-6">Filosofia e Valores</h3>
               <ul className="space-y-3">
-                {valores.map((valor, index) => (
-                  <li key={index} className="flex items-start gap-3 text-muted-foreground">
+                {valores.map((valor, index) => <li key={index} className="flex items-start gap-3 text-muted-foreground">
                     <CheckCircle className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                     <span>{valor}</span>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </div>
           </div>
@@ -185,19 +146,13 @@ export default function Index() {
       {/* Diferenciais */}
       <section className="section-padding bg-secondary">
         <div className="container-site">
-          <SectionHeading
-            title="Nossos Diferenciais"
-            subtitle="O que nos torna únicos na prestação de serviços jurídicos"
-            centered
-          />
+          <SectionHeading title="Nossos Diferenciais" subtitle="O que nos torna únicos na prestação de serviços jurídicos" centered />
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {diferenciais.map((item, index) => (
-              <div key={index} className="bg-background rounded-lg p-8 border border-border card-hover">
+            {diferenciais.map((item, index) => <div key={index} className="bg-background rounded-lg p-8 border border-border card-hover">
                 <item.icon className="h-10 w-10 text-accent mb-6" />
                 <h3 className="font-serif text-xl mb-4">{item.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{item.description}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
 
           {/* Meeting Image */}
@@ -208,10 +163,7 @@ export default function Index() {
       {/* Clientes */}
       <section className="section-padding bg-secondary/30">
         <div className="container-site">
-          <SectionHeading
-            title="Clientes Atendidos"
-            subtitle="Experiência comprovada com empresas nacionais e internacionais"
-          />
+          <SectionHeading title="Clientes Atendidos" subtitle="Experiência comprovada com empresas nacionais e internacionais" />
 
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Nacional */}
@@ -223,11 +175,9 @@ export default function Index() {
                 <h4 className="font-serif text-xl">Companhias Nacionais</h4>
               </div>
               <ul className="space-y-4 text-muted-foreground">
-                {clientesNacionais.map((cliente, index) => (
-                  <li key={index} className="border-l-2 border-accent pl-4">
+                {clientesNacionais.map((cliente, index) => <li key={index} className="border-l-2 border-accent pl-4">
                     {cliente}
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </div>
 
@@ -240,11 +190,9 @@ export default function Index() {
                 <h4 className="font-serif text-xl">Companhias Internacionais</h4>
               </div>
               <ul className="space-y-4 text-muted-foreground">
-                {clientesInternacionais.map((cliente, index) => (
-                  <li key={index} className="border-l-2 border-accent pl-4">
+                {clientesInternacionais.map((cliente, index) => <li key={index} className="border-l-2 border-accent pl-4">
                     {cliente}
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </div>
           </div>
@@ -252,13 +200,9 @@ export default function Index() {
       </section>
 
       {/* Quote */}
-      <QuoteBand
-        quote="A injustiça em qualquer lugar é uma ameaça à justiça por toda parte."
-        author="Martin Luther King Jr."
-      />
+      <QuoteBand quote="A injustiça em qualquer lugar é uma ameaça à justiça por toda parte." author="Martin Luther King Jr." />
 
       {/* CTA */}
       <CTASection />
-    </Layout>
-  );
+    </Layout>;
 }
