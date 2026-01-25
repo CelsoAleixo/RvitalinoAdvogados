@@ -48,7 +48,7 @@ export default function Index() {
             <h1 className="text-balance animate-fade-in text-white text-5xl md:text-6xl">
               <span className="block text-accent">Soluções legais confiáveis e eficazes</span>
             </h1>
-            <p className="mt-6 text-xl text-white/90 leading-relaxed animate-slide-up font-normal text-left md:text-2xl">
+            <p className="mt-6 text-xl text-white/90 leading-relaxed animate-slide-up font-normal md:text-2xl text-left">
               Assessoria jurídica empresarial com excelência e segurança.
             </p>
             <div className="mt-10 flex flex-wrap gap-4 animate-slide-up" style={{
