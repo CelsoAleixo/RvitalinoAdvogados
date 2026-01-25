@@ -14,7 +14,7 @@ export function CTASection({
   description = "Agende uma consulta com nossos especialistas e descubra como podemos ajudar sua empresa."
 }: CTASectionProps) {
   return (
-    <section className="bg-[#0f1c2e] text-white py-16 md:py-20">
+    <section className="bg-primary text-primary-foreground py-16 md:py-20">
       <div className="container-site text-center">
         <h2 className="text-3xl md:text-4xl font-serif mb-4">{title}</h2>
         <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
