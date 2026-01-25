@@ -11,7 +11,7 @@ export function QuoteBand({
         <div className="rounded-lg px-6 py-4 md:px-8 md:py-5 max-w-3xl mx-auto bg-secondary">
           <blockquote className="flex items-center justify-center gap-3">
             <span className="w-2.5 h-2.5 rounded-full bg-accent flex-shrink-0" />
-            <p className="font-serif text-lg italic text-accent leading-relaxed text-center md:text-4xl">
+            <p className="font-serif text-lg italic leading-relaxed text-center md:text-4xl text-secondary-foreground">
               "{quote}"
             </p>
           </blockquote>
