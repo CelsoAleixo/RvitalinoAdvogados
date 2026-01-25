@@ -139,8 +139,24 @@
     @apply text-xl md:text-2xl;
   }
 
-  p {
+  /* Global text justification with optimized performance */
+  p, li, span.justify-text, .prose-content {
     @apply leading-relaxed;
+    text-align: justify;
+    text-justify: inter-character;
+    hyphens: none;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    word-spacing: 0;
+    letter-spacing: normal;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  /* Prevent orphans and widows for better typography */
+  p {
+    orphans: 3;
+    widows: 3;
   }
 
   a {
