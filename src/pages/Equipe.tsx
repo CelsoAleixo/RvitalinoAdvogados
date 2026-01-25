@@ -46,9 +46,9 @@ export default function Equipe() {
     <Layout>
       {/* Team Section - Direct Start */}
       <section className="section-padding bg-secondary">
-        <div className="container-site">
+        <div className="container-site px-4 md:px-6 lg:px-8">
           {/* Header */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/30 mb-6">
               <Users className="w-4 h-4 text-accent" />
               <span className="text-accent text-sm font-medium uppercase tracking-wider">Nossa Equipe</span>
@@ -58,31 +58,32 @@ export default function Equipe() {
             </h1>
           </div>
 
-          {/* Team Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+          {/* Team Grid - Responsive and Aligned */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-5">
             {advogados.map((advogado, index) => (
               <div
                 key={index}
-                className="bg-background rounded-2xl p-6 border border-border hover:border-accent/30 hover:shadow-lg transition-all duration-300 text-center group"
+                className="bg-background rounded-xl p-5 border border-border hover:border-accent/30 hover:shadow-lg transition-all duration-300 text-center group flex flex-col items-center"
               >
-                <div className="w-36 h-36 mx-auto rounded-full overflow-hidden mb-5 ring-4 ring-border group-hover:ring-accent/40 transition-all duration-300 shadow-lg">
+                <div className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden mb-4 ring-3 ring-border group-hover:ring-accent/40 transition-all duration-300 shadow-md">
                   <img
                     alt={`${advogado.nome} - ${advogado.cargo}`}
                     className="w-full h-full object-cover"
                     src={advogado.foto}
                   />
                 </div>
-                <h3 className="font-serif font-bold text-lg text-foreground mb-2">
+                <h3 className="font-serif font-bold text-base md:text-lg text-foreground mb-1.5 line-clamp-1">
                   {advogado.nome}
                 </h3>
-                <p className="text-accent font-semibold text-xs uppercase tracking-wider mb-1">{advogado.cargo}</p>
-                {advogado.especialidade && (
-                  <p className="text-muted-foreground text-xs mb-4">{advogado.especialidade}</p>
-                )}
-                {!advogado.especialidade && <div className="mb-4" />}
+                <p className="text-accent font-semibold text-[10px] md:text-xs uppercase tracking-wider mb-1">{advogado.cargo}</p>
+                <div className="h-5">
+                  {advogado.especialidade && (
+                    <p className="text-muted-foreground text-[10px] md:text-xs">{advogado.especialidade}</p>
+                  )}
+                </div>
                 <a
                   href={`mailto:${advogado.email}`}
-                  className="text-muted-foreground hover:text-accent transition-colors text-xs truncate block"
+                  className="text-muted-foreground hover:text-accent transition-colors text-[10px] md:text-xs truncate block w-full mt-2"
                 >
                   {advogado.email}
                 </a>
