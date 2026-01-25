@@ -14,17 +14,17 @@ export function FloatingWhatsApp() {
       setIsVisible(true);
     }, 3000);
 
-    // Show tooltip after 8 seconds
+    // Show tooltip after 4 seconds
     const tooltipTimer = setTimeout(() => {
       if (!dismissed) {
         setShowTooltip(true);
       }
-    }, 8000);
+    }, 4000);
 
-    // Hide tooltip after 15 seconds
+    // Hide tooltip after 8 seconds
     const hideTooltipTimer = setTimeout(() => {
       setShowTooltip(false);
-    }, 15000);
+    }, 8000);
 
     return () => {
       clearTimeout(timer);
