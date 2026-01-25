@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { useEffect, useRef } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/shared/SectionHeading";
@@ -9,8 +8,6 @@ import { ManifestoModal } from "@/components/shared/ManifestoModal";
 import { ArrowRight, Scale, Users, Building2, Globe, CheckCircle, MessageCircle } from "lucide-react";
 import heroOffice from "@/assets/hero-office.jpg";
 import detailPen from "@/assets/detail-pen.jpg";
-import meetingConsultation from "@/assets/meeting-consultation.jpg";
-import institutionalVideo from "@/assets/institutional-video.mp4";
 const WHATSAPP_LINK = "https://wa.me/5511974083838?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20advogado.";
 const valores = [
   "Ética e seriedade na aplicação do Direito",
@@ -27,13 +24,13 @@ const diferenciais = [
     icon: Scale,
     title: "Especialização",
     description:
-      "O escritório conta com profissionais da advocacia altamente especializados nas diferentes áreas do direito, mantendo-se sempre atualizados e buscando atualizações nos ramos em que atuam, para que possam oferecer um serviço de qualidade e eficiência ao cliente.",
+      "Nosso escritório atua fortemente em Direito Empresarial e Corporativo, unindo segurança técnica e visão estratégica. Compreendemos as necessidades de cada cliente e transformamos desafios em soluções práticas e sustentáveis.",
   },
   {
     icon: Users,
-    title: "Atendimento Personalizado",
+    title: "Recuperação Judicial",
     description:
-      " ao cliente oferecido pelo nosso escritório será sempre por um profissional da área do direito que o cliente estiver necessitando, sempre que possível atendimento pessoal para saneamento e esclarecimento de dúvidas.",
+      "Somos referência em recuperação judicial, conduzindo processos com maestria, elaborando planos consistentes e negociando com credores para garantir que empresas superem dificuldades financeiras com segurança jurídica.",
   },
 ];
 const clientesInternacionais = [
@@ -46,41 +43,37 @@ const clientesInternacionais = [
   "Dti Korea Co. Ltd – Coreia do Sul",
 ];
 const clientesNacionais = [
-  "Empresas Concessionárias de Transporte Público Urbano e Rodoviário nos estados de São Paulo, Paraná, Goiás, Amazonas, Acre, Rondônia e Bahia",
-  "Empresas de mineração de ferro e manganês nos estados de Pará, Amapá e Ceará",
-  "Empresas de Mineração de granito e pedras preciosas na Bahia, Minas Gerais e Goiás",
-  "Indústria de Alimentos (Charque) no estado de Goiás e restaurantes em São Paulo",
-  "Projetos de PPP – Parceria Público Privada na área de Iluminação nos estados de São Paulo e Santa Catarina",
-  "Empresas concessionárias, estados Rio de Janeiro e Santa Catarina",
+  "Transporte Público Urbano e Rodoviário: suporte jurídico a concessionárias em SP, PR, GO, AM, AC, RO, BA, RJ e SC.",
+  "Mineração de Ferro e Manganês: assessoria a mineradoras no PA, AP e CE.",
+  "Mineração de Granito e Pedras Preciosas: atuação junto a empresas na BA, MG e GO.",
+  "Indústria de Alimentos e Restaurantes: apoio jurídico à produção de charque em GO e ao setor de alimentação em SP.",
+  "Parcerias Público-Privadas (PPP): consultoria em projetos de iluminação pública em SP e SC.",
 ];
 export default function Index() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    // Normal playback speed for smooth FPS
-    video.playbackRate = 1.0;
-  }, []);
   return (
     <Layout>
-      {/* Hero Section with Video Background */}
+      {/* Hero Section with Image Background */}
       <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-center overflow-hidden">
-        {/* Video Background */}
+        {/* Image Background */}
         <div className="absolute inset-0 z-0">
-          <video ref={videoRef} autoPlay loop muted playsInline className="w-full h-full object-cover video-enhance">
-            <source src={institutionalVideo} type="video/mp4" />
-          </video>
+          <img 
+            src={heroOffice} 
+            alt="Escritório Rodrigo Vitalino" 
+            className="w-full h-full object-cover image-enhance"
+          />
           {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-[#1a2e1a]/70" />
+          <div className="absolute inset-0 bg-[#1a2e1a]/60" />
         </div>
 
         {/* Hero Content */}
         <div className="container-site relative z-20 py-16 md:py-24">
           <div className="max-w-2xl">
-            <h1 className="text-balance animate-fade-in text-accent text-5xl">Soluções legais confiáveis e eficazes</h1>
+            <h1 className="text-balance animate-fade-in text-white text-5xl md:text-6xl">
+              Rodrigo Vitalino
+              <span className="block text-accent">Advogados</span>
+            </h1>
             <p className="mt-6 text-xl text-white/90 leading-relaxed animate-slide-up font-normal text-left md:text-2xl">
-              Assessoria jurídica e consultoria empresarial com atuação prática, eficiente e transparente.
+              Assessoria jurídica empresarial com excelência e segurança.
             </p>
             <div
               className="mt-10 flex flex-wrap gap-4 animate-slide-up"
@@ -112,8 +105,29 @@ export default function Index() {
           </div>
         </div>
 
-        {/* Bottom gradient fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
+        {/* Stats Row */}
+        <div className="absolute bottom-0 left-0 right-0 z-20 bg-gradient-to-t from-background via-background/80 to-transparent pt-16 pb-8">
+          <div className="container-site">
+            <div className="flex flex-wrap justify-center gap-8 md:gap-16">
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-serif font-bold text-accent">17+</div>
+                <div className="text-white/80 text-sm mt-1">Anos de Experiência</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-serif font-bold text-accent">500+</div>
+                <div className="text-white/80 text-sm mt-1">Clientes Atendidos</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-serif font-bold text-accent">27</div>
+                <div className="text-white/80 text-sm mt-1">Países de Atuação</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-serif font-bold text-accent">100%</div>
+                <div className="text-white/80 text-sm mt-1">Comprometimento</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Quem Somos */}

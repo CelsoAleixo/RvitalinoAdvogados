@@ -77,7 +77,7 @@ export default function Escritorio() {
                 <div className="text-white/80 text-sm mt-1 drop-shadow-md">Clientes<br />Atendidos</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl md:text-5xl font-serif font-bold text-accent drop-shadow-lg">17</div>
+                <div className="text-4xl md:text-5xl font-serif font-bold text-accent drop-shadow-lg">27</div>
                 <div className="text-white/80 text-sm mt-1 drop-shadow-md">Países de<br />Atuação</div>
               </div>
             </div>
@@ -252,9 +252,9 @@ export default function Escritorio() {
             {/* Deidre */}
             <div className="bg-background rounded-2xl p-8 border border-border hover:border-accent/30 transition-all duration-300 text-center group">
               <div className="w-44 h-44 mx-auto rounded-full overflow-hidden mb-6 ring-4 ring-accent/20 group-hover:ring-accent/40 transition-all duration-300 shadow-xl">
-                <img alt="Deidre - Diretora Jurídica" className="w-full h-full object-cover" src="/lovable-uploads/75cff977-e954-47b6-b258-a223666cd269.png" />
+                <img alt="Deidre Scaranello - Diretora Jurídica" className="w-full h-full object-cover" src="/lovable-uploads/deidre-scaranello-fixed.png" />
               </div>
-              <h3 className="font-serif font-bold text-xl text-foreground mb-1">Deidre</h3>
+              <h3 className="font-serif font-bold text-xl text-foreground mb-1">Deidre Scaranello</h3>
               <p className="text-accent font-medium mb-4">Diretora Jurídica</p>
               <div className="space-y-2 text-sm">
                 <a href="mailto:deidre@rvitalinoadvogados.com.br" className="block text-muted-foreground hover:text-accent transition-colors">
