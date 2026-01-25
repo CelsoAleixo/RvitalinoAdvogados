@@ -153,11 +153,18 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* Justify only main content paragraphs, not addresses/footer */
+  /* Justify only main content paragraphs on larger screens, not mobile */
   .prose-content p,
   section > .container-site p {
-    text-align: justify;
-    text-justify: inter-word;
+    text-align: left;
+  }
+
+  @media (min-width: 768px) {
+    .prose-content p,
+    section > .container-site p {
+      text-align: justify;
+      text-justify: inter-word;
+    }
   }
 
   /* Prevent orphans and widows for better typography */
