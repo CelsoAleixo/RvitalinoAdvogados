@@ -67,14 +67,9 @@ export function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-4 group" aria-label="Rodrigo Vitalino Advogados - Página Inicial">
             <div className="relative">
-              <img 
-                alt="Rodrigo Vitalino Advogados" 
-                className="h-20 md:h-24 w-auto transition-transform duration-300 group-hover:scale-105 drop-shadow-md" 
-                onError={e => {
-                  e.currentTarget.style.display = 'none';
-                }} 
-                src="/lovable-uploads/66e22016-72f8-4442-bd49-b9712e33eff6.png" 
-              />
+              <img alt="Rodrigo Vitalino Advogados" className="h-20 md:h-24 w-auto transition-transform duration-300 group-hover:scale-105 drop-shadow-md border-0 rounded-3xl" onError={e => {
+              e.currentTarget.style.display = 'none';
+            }} src="/lovable-uploads/66e22016-72f8-4442-bd49-b9712e33eff6.png" />
             </div>
             <div className="flex flex-col">
               <span className="font-serif font-semibold tracking-tight text-accent transition-colors duration-300 group-hover:text-accent/80 text-xl">
