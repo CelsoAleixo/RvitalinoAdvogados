@@ -1,10 +1,16 @@
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/shared/CTASection";
-import { CheckCircle, History, Heart, Scale, Award, Users, MapPin, ArrowRight } from "lucide-react";
+import { TrustIndicators } from "@/components/shared/TrustIndicators";
+import { CheckCircle, History, Heart, Scale, Award, Users, MapPin, ArrowRight, Phone, Shield, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import escritorioHero from "@/assets/escritorio-hero.png";
 import escritorioSala from "@/assets/escritorio-sala.png";
+
+const WHATSAPP_LINK = "https://wa.me/5511974083838?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20advogado.";
+
 const valores = ["Ética e seriedade na aplicação do Direito", "Soluções jurídicas personalizadas e eficientes", "Confiabilidade e bom relacionamento com nossos clientes", "Conhecimento, competência e aperfeiçoamento técnico", "Foco nas necessidades do cliente", "Comprometimento com os princípios legais", "Transparência sobre os riscos de ações ou projetos", "Empreendedorismo"];
+
 const diferenciais = [{
   icon: Award,
   title: "Excelência Jurídica",

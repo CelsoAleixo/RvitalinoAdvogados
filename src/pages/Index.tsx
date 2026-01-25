@@ -6,9 +6,11 @@ import { SectionHeading } from "@/components/shared/SectionHeading";
 import { QuoteBand } from "@/components/shared/QuoteBand";
 import { CTASection } from "@/components/shared/CTASection";
 import { ManifestoModal } from "@/components/shared/ManifestoModal";
-import { ArrowRight, Scale, Users, Building2, Globe, CheckCircle, MessageCircle } from "lucide-react";
+import { TrustIndicators } from "@/components/shared/TrustIndicators";
+import { ArrowRight, Scale, Users, Building2, Globe, CheckCircle, MessageCircle, Phone, Shield } from "lucide-react";
 import detailPen from "@/assets/detail-pen.jpg";
 import institutionalVideo from "@/assets/institutional-video.mp4";
+
 const WHATSAPP_LINK = "https://wa.me/5511974083838?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20advogado.";
 const valores = ["Ética e seriedade na aplicação do Direito", "Soluções jurídicas personalizadas e eficientes", "Confiabilidade e bom relacionamento com nossos clientes", "Conhecimento, competência e aperfeiçoamento técnico", "Foco nas necessidades do cliente", "Comprometimento com os princípios legais", "Transparência sobre os riscos de ações ou projetos", "Empreendedorismo"];
 const diferenciais = [{
@@ -22,6 +24,7 @@ const diferenciais = [{
 }];
 const clientesInternacionais = ["Proview Electronics Co Ltd – Taipei / Taiwan", "RED International Group – Taipei / Taiwan", "Proview LED Lighting Co. Ltd – Taipei / Taiwan", "New Era Investment Inc. – Panama / Panama", "Reit Investment Corp. – Panama / Panama", "North Capital Holding – Copenhagen / Denmark", "Dti Korea Co. Ltd – Coreia do Sul"];
 const clientesNacionais = ["Transporte Público Urbano e Rodoviário: suporte jurídico a concessionárias em SP, PR, GO, AM, AC, RO, BA, RJ e SC.", "Mineração de Ferro e Manganês: assessoria a mineradoras no PA, AP e CE.", "Mineração de Granito e Pedras Preciosas: atuação junto a empresas na BA, MG e GO.", "Indústria de Alimentos e Restaurantes: apoio jurídico à produção de charque em GO e ao setor de alimentação em SP.", "Parcerias Público-Privadas (PPP): consultoria em projetos de iluminação pública em SP e SC."];
+
 export default function Index() {
   const videoRef = useRef<HTMLVideoElement>(null);
   useEffect(() => {
@@ -53,20 +56,37 @@ export default function Index() {
             <div className="mt-10 flex flex-wrap gap-4 animate-slide-up" style={{
             animationDelay: "0.1s"
           }}>
-              <Button asChild size="lg" className="group">
-                <Link to="/contato" className="flex items-center gap-2">
-                  <MessageCircle className="h-5 w-5" />
-                  Contato
+              <Button asChild size="lg" className="group bg-accent hover:bg-accent/90 text-accent-foreground">
+                <a 
+                  href={WHATSAPP_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <Phone className="h-5 w-5" />
+                  Falar com Advogado
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
+                </a>
               </Button>
               <Button asChild size="lg" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20">
                 <Link to="/atuacao#areas-grid">Áreas de Atuação</Link>
               </Button>
             </div>
 
+            {/* Trust Badges */}
+            <div className="mt-8 flex flex-wrap items-center gap-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
+                <Shield className="w-4 h-4 text-accent" />
+                <span className="text-white/90 text-sm">OAB Regular</span>
+              </div>
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
+                <CheckCircle className="w-4 h-4 text-accent" />
+                <span className="text-white/90 text-sm">Resposta em 24h</span>
+              </div>
+            </div>
+
             {/* Manifesto Tag */}
-            <div className="mt-8">
+            <div className="mt-6">
               <ManifestoModal />
             </div>
           </div>
@@ -96,6 +116,9 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* Trust Indicators Bar */}
+      <TrustIndicators variant="light" />
 
       {/* Quem Somos */}
       <section className="section-padding">

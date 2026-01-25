@@ -3,14 +3,41 @@ import { PageHero } from "@/components/shared/PageHero";
 import { QuoteBand } from "@/components/shared/QuoteBand";
 import { CTASection } from "@/components/shared/CTASection";
 import { SectionHeading } from "@/components/shared/SectionHeading";
-import { CheckCircle, Euro, FileText, Building2 } from "lucide-react";
+import { CheckCircle, Euro, FileText, Building2, Phone, ArrowRight, Clock, Shield, Globe } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import portugalBusiness from "@/assets/portugal-business.jpg";
 import portugalHero from "@/assets/portugal-hero.jpg";
+
+const WHATSAPP_PORTUGAL = "https://wa.me/351910385021?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20sobre%20servi%C3%A7os%20jur%C3%ADdicos%20em%20Portugal.";
+
 export default function Portugal() {
   return <Layout>
       <PageHero title="Portugal" description="Atuação internacional com inscrição na Ordem dos Advogados de Portugal." breadcrumb={[{
       label: "Portugal"
     }]} backgroundImage={portugalHero} />
+
+      {/* Quick Contact Banner */}
+      <section className="bg-accent/10 border-b border-accent/20 py-4">
+        <div className="container-site">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-4">
+              <Globe className="w-5 h-5 text-accent" />
+              <span className="text-sm font-medium">Atendimento em Portugal e União Europeia</span>
+              <div className="hidden md:flex items-center gap-2 text-xs text-muted-foreground">
+                <Shield className="w-3 h-3" />
+                <span>Inscrito na Ordem dos Advogados de Portugal</span>
+              </div>
+            </div>
+            <Button asChild size="sm" className="group">
+              <a href={WHATSAPP_PORTUGAL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                <Phone className="w-4 h-4" />
+                Falar com Representante
+                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
 
       {/* Intro with Image */}
       <section className="section-padding">

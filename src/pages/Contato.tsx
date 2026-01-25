@@ -5,8 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, CheckCircle } from "lucide-react";
+import { Mail, Phone, MapPin, CheckCircle, Clock, Shield, MessageCircle, ArrowRight } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+
+const WHATSAPP_LINK = "https://wa.me/5511974083838?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20advogado.";
+
 export default function Contato() {
   const {
     toast
@@ -54,6 +57,32 @@ export default function Contato() {
       label: "Contato"
     }]} />
 
+      {/* Quick Contact Banner */}
+      <section className="bg-accent/10 border-b border-accent/20 py-4">
+        <div className="container-site">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-4">
+              <div className="relative flex items-center justify-center">
+                <span className="absolute w-2.5 h-2.5 bg-accent rounded-full animate-ping opacity-75" />
+                <span className="relative w-2.5 h-2.5 bg-accent rounded-full" />
+              </div>
+              <span className="text-sm font-medium">Atendimento disponível agora</span>
+              <div className="hidden md:flex items-center gap-2 text-xs text-muted-foreground">
+                <Clock className="w-3 h-3" />
+                <span>Resposta em minutos via WhatsApp</span>
+              </div>
+            </div>
+            <Button asChild size="sm" className="group">
+              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                <MessageCircle className="w-4 h-4" />
+                Resposta Imediata
+                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       <section className="section-padding">
         <div className="container-site">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
@@ -82,9 +111,27 @@ export default function Contato() {
                   <Textarea id="message" name="message" required placeholder="Descreva brevemente sua necessidade jurídica..." rows={6} />
                 </div>
 
-                <Button type="submit" size="lg" disabled={isLoading}>
-                  {isLoading ? "Enviando..." : "Enviar Mensagem"}
-                </Button>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Button type="submit" size="lg" disabled={isLoading} className="flex-1">
+                    {isLoading ? "Enviando..." : "Enviar Mensagem"}
+                  </Button>
+                </div>
+                
+                {/* Trust indicators below form */}
+                <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-border">
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <Shield className="w-4 h-4 text-accent" />
+                    <span>Sigilo garantido</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <Clock className="w-4 h-4 text-accent" />
+                    <span>Resposta em 24h</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <CheckCircle className="w-4 h-4 text-accent" />
+                    <span>OAB Regular</span>
+                  </div>
+                </div>
               </form>
             </div>
 

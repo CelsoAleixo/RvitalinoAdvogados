@@ -2,8 +2,10 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/shared/CTASection";
+import { TrustIndicators } from "@/components/shared/TrustIndicators";
 import { Link } from "react-router-dom";
-import { Building2, Handshake, TrendingUp, Calculator, Briefcase, Heart, Scale, Leaf, ArrowRight, Award, Shield, Users } from "lucide-react";
+import { Building2, Handshake, TrendingUp, Calculator, Briefcase, Heart, Scale, Leaf, ArrowRight, Award, Shield, Users, Phone, CheckCircle, Clock } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 // Import area images
 import direitoEmpresarialImg from "@/assets/areas/direito-empresarial-hero.jpg";
@@ -15,6 +17,8 @@ import familiaSucessoesImg from "@/assets/areas/familia-sucessoes-hero.jpg";
 import direitoCivilImg from "@/assets/areas/direito-civil-hero.jpg";
 import creditoCarbonoImg from "@/assets/areas/credito-carbono-hero.jpg";
 import logoHero from "@/assets/logo-hero-atuacao.png";
+
+const WHATSAPP_LINK = "https://wa.me/5511974083838?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20advogado.";
 const areas = [{
   icon: Building2,
   title: "Direito Empresarial",
@@ -109,6 +113,28 @@ export default function Atuacao() {
 
       {/* Introduction Section */}
       
+
+      {/* Quick Contact Banner */}
+      <section className="bg-accent/10 border-b border-accent/20 py-4">
+        <div className="container-site">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-4">
+              <div className="relative flex items-center justify-center">
+                <span className="absolute w-2.5 h-2.5 bg-accent rounded-full animate-ping opacity-75" />
+                <span className="relative w-2.5 h-2.5 bg-accent rounded-full" />
+              </div>
+              <span className="text-sm font-medium">Precisa de orientação em alguma dessas áreas?</span>
+            </div>
+            <Button asChild size="sm" className="group">
+              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                <Phone className="w-4 h-4" />
+                Falar com Especialista
+                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
 
       {/* Areas Grid with Images */}
       <section id="areas-grid" className="py-24 bg-background scroll-mt-[-20px]">
