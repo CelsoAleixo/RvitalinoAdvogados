@@ -39,7 +39,7 @@ export function FloatingWhatsApp() {
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4">
       {/* Tooltip */}
       {showTooltip && !dismissed && (
-        <div className="relative animate-fade-in">
+        <div className="relative animate-tooltip-entrance">
           <div className="bg-card rounded-lg shadow-2xl p-5 max-w-[300px] border-2 border-accent/30 backdrop-blur-sm">
             <button 
               onClick={() => {
@@ -52,7 +52,7 @@ export function FloatingWhatsApp() {
               <X className="w-4 h-4" />
             </button>
             <div className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 animate-pulse">
                 <Phone className="w-5 h-5 text-accent" />
               </div>
               <div>
@@ -66,7 +66,7 @@ export function FloatingWhatsApp() {
             </div>
           </div>
           {/* Triangle pointer */}
-          <div className="absolute -bottom-2 right-8 w-4 h-4 bg-card border-r-2 border-b-2 border-accent/30 rotate-45" />
+          <div className="absolute -bottom-2 right-8 w-4 h-4 bg-card border-r-2 border-b-2 border-accent/30 rotate-45 animate-tooltip-entrance" style={{ animationDelay: '0.1s' }} />
         </div>
       )}
 
