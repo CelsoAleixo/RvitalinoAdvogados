@@ -58,32 +58,32 @@ export default function Equipe() {
             </h1>
           </div>
 
-          {/* Team Grid - Responsive and Aligned */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-5">
+          {/* Team Grid - Professional 5-column Layout */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 lg:gap-6">
             {advogados.map((advogado, index) => (
               <div
                 key={index}
-                className="bg-background rounded-xl p-5 border border-border hover:border-accent/30 hover:shadow-lg transition-all duration-300 text-center group flex flex-col items-center"
+                className="bg-background rounded-xl p-5 lg:p-6 border border-border hover:border-accent/30 hover:shadow-xl transition-all duration-300 text-center group flex flex-col items-center h-full"
               >
-                <div className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden mb-4 ring-3 ring-border group-hover:ring-accent/40 transition-all duration-300 shadow-md">
+                <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden mb-4 ring-2 ring-border group-hover:ring-accent/40 transition-all duration-300 shadow-md flex-shrink-0">
                   <img
                     alt={`${advogado.nome} - ${advogado.cargo}`}
                     className="w-full h-full object-cover"
                     src={advogado.foto}
                   />
                 </div>
-                <h3 className="font-serif font-bold text-base md:text-lg text-foreground mb-1.5 line-clamp-1">
+                <h3 className="font-serif font-bold text-sm lg:text-base text-foreground mb-1 leading-tight">
                   {advogado.nome}
                 </h3>
-                <p className="text-accent font-semibold text-[10px] md:text-xs uppercase tracking-wider mb-1">{advogado.cargo}</p>
-                <div className="h-5">
+                <p className="text-accent font-semibold text-[9px] lg:text-[10px] uppercase tracking-wider mb-1">{advogado.cargo}</p>
+                <div className="min-h-[32px] flex items-start justify-center">
                   {advogado.especialidade && (
-                    <p className="text-muted-foreground text-[10px] md:text-xs">{advogado.especialidade}</p>
+                    <p className="text-muted-foreground text-[9px] lg:text-[10px] leading-tight">{advogado.especialidade}</p>
                   )}
                 </div>
                 <a
                   href={`mailto:${advogado.email}`}
-                  className="text-muted-foreground hover:text-accent transition-colors text-[10px] md:text-xs truncate block w-full mt-2"
+                  className="text-muted-foreground hover:text-accent transition-colors text-[8px] lg:text-[9px] truncate block w-full mt-auto pt-2"
                 >
                   {advogado.email}
                 </a>
