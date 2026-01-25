@@ -55,11 +55,11 @@ export default function Index() {
             animationDelay: "0.1s"
           }}>
               <Button asChild size="lg" className="group bg-accent hover:bg-accent/90 text-accent-foreground">
-                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                <Link to="/contato" className="flex items-center gap-2">
                   <Phone className="h-5 w-5" />
-                  Falar com Advogado
+                  Contato
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </a>
+                </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20">
                 <Link to="/atuacao#areas-grid">Áreas de Atuação</Link>
