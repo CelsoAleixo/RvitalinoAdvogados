@@ -44,8 +44,9 @@ export default function Index() {
         {/* Hero Content */}
         <div className="container-site relative z-20 py-16 md:py-24">
           <div className="max-w-2xl">
-            <h1 className="text-balance animate-fade-in text-white text-5xl md:text-6xl">Soluções legais
-Advogados<span className="block text-accent">Soluções legais
+            <h1 className="text-balance animate-fade-in text-white text-5xl md:text-6xl">
+
+Soluções legais confiáveis e eficazes<span className="block text-accent">Soluções legais
 confiáveis e eficazes</span>
             </h1>
             <p className="mt-6 text-xl text-white/90 leading-relaxed animate-slide-up font-normal text-left md:text-2xl">
