@@ -93,7 +93,7 @@ export default function Index() {
             <div className="flex flex-wrap justify-center gap-8 md:gap-16">
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-serif font-bold text-accent">17+</div>
-                <div className="text-white/80 text-sm mt-1"> anos de excelência</div>
+                <div className="text-white/80 text-sm mt-1"> Anos de excelência</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-serif font-bold text-accent">500+</div>
