@@ -139,18 +139,26 @@
     @apply text-xl md:text-2xl;
   }
 
-  /* Global text justification with optimized performance */
-  p, li, span.justify-text, .prose-content {
+  /* Global text justification - no extra word spacing, no hyphens */
+  p, li, span.justify-text, .prose-content, .text-muted-foreground {
     @apply leading-relaxed;
     text-align: justify;
-    text-justify: inter-character;
-    hyphens: none;
-    -webkit-hyphens: none;
-    -ms-hyphens: none;
-    word-spacing: 0;
-    letter-spacing: normal;
+    text-justify: inter-word;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+    -moz-hyphens: none !important;
+    -ms-hyphens: none !important;
+    word-spacing: 0 !important;
+    letter-spacing: 0 !important;
     overflow-wrap: break-word;
-    word-break: normal;
+    word-break: keep-all;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Force no word spacing on all text elements */
+  * {
+    word-spacing: normal !important;
   }
 
   /* Prevent orphans and widows for better typography */
