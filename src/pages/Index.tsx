@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useEffect, useRef } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/shared/SectionHeading";
@@ -6,8 +7,8 @@ import { QuoteBand } from "@/components/shared/QuoteBand";
 import { CTASection } from "@/components/shared/CTASection";
 import { ManifestoModal } from "@/components/shared/ManifestoModal";
 import { ArrowRight, Scale, Users, Building2, Globe, CheckCircle, MessageCircle } from "lucide-react";
-import heroOffice from "@/assets/hero-office.jpg";
 import detailPen from "@/assets/detail-pen.jpg";
+import institutionalVideo from "@/assets/institutional-video.mp4";
 const WHATSAPP_LINK = "https://wa.me/5511974083838?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20advogado.";
 const valores = [
   "Ética e seriedade na aplicação do Direito",
@@ -50,19 +51,24 @@ const clientesNacionais = [
   "Parcerias Público-Privadas (PPP): consultoria em projetos de iluminação pública em SP e SC.",
 ];
 export default function Index() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.playbackRate = 1.0;
+  }, []);
+
   return (
     <Layout>
-      {/* Hero Section with Image Background */}
+      {/* Hero Section with Video Background */}
       <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-center overflow-hidden">
-        {/* Image Background */}
+        {/* Video Background */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src={heroOffice} 
-            alt="Escritório Rodrigo Vitalino" 
-            className="w-full h-full object-cover image-enhance"
-          />
+          <video ref={videoRef} autoPlay loop muted playsInline className="w-full h-full object-cover video-enhance">
+            <source src={institutionalVideo} type="video/mp4" />
+          </video>
           {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-[#1a2e1a]/60" />
+          <div className="absolute inset-0 bg-[#1a2e1a]/70" />
         </div>
 
         {/* Hero Content */}
