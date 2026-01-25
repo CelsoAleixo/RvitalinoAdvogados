@@ -19,7 +19,7 @@ const diferenciais = [{
 }, {
   icon: Users,
   title: "Recuperação Judicial",
-  description: "Somos referência em recuperação judicial, conduzindo processos com maestria, elaborando planos consistentes e negociando com credores para garantir que empresas superem dificuldades financeiras com segurança jurídica."
+  description: "Somos referência em soluções jurídicas, conduzindo processos com excelência, elaborando estratégias consistentes e negociando com segurança para garantir que nossos clientes superem desafios com tranquilidade."
 }];
 const clientesInternacionais = ["Proview Electronics Co Ltd – Taipei / Taiwan", "RED International Group – Taipei / Taiwan", "Proview LED Lighting Co. Ltd – Taipei / Taiwan", "New Era Investment Inc. – Panama / Panama", "Reit Investment Corp. – Panama / Panama", "North Capital Holding – Copenhagen / Denmark", "Dti Korea Co. Ltd – Coreia do Sul"];
 const clientesNacionais = ["Transporte Público Urbano e Rodoviário: suporte jurídico a concessionárias em SP, PR, GO, AM, AC, RO, BA, RJ e SC.", "Mineração de Ferro e Manganês: assessoria a mineradoras no PA, AP e CE.", "Mineração de Granito e Pedras Preciosas: atuação junto a empresas na BA, MG e GO.", "Indústria de Alimentos e Restaurantes: apoio jurídico à produção de charque em GO e ao setor de alimentação em SP.", "Parcerias Público-Privadas (PPP): consultoria em projetos de iluminação pública em SP e SC."];
