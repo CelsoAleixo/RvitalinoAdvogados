@@ -77,7 +77,7 @@ export default function Escritorio() {
                 <div className="text-white/80 text-sm mt-1 drop-shadow-md">Clientes<br />Atendidos</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl md:text-5xl font-serif font-bold text-accent drop-shadow-lg">27</div>
+                <div className="text-4xl md:text-5xl font-serif font-bold text-accent drop-shadow-lg">17</div>
                 <div className="text-white/80 text-sm mt-1 drop-shadow-md">Países de<br />Atuação</div>
               </div>
             </div>
