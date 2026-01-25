@@ -69,7 +69,7 @@ export function Header() {
             <div className="relative">
               <img 
                 alt="Rodrigo Vitalino Advogados" 
-                className="h-16 md:h-18 w-auto transition-transform duration-300 group-hover:scale-105 drop-shadow-md" 
+                className="h-20 md:h-24 w-auto transition-transform duration-300 group-hover:scale-105 drop-shadow-md" 
                 onError={e => {
                   e.currentTarget.style.display = 'none';
                 }} 
