@@ -127,35 +127,35 @@ export default function Atuacao() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {areas.map((area, index) => <Link key={index} to={area.href} className="group relative rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
-                {/* Background Image */}
+            {areas.map((area, index) => <Link key={index} to={area.href} className="group relative rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl bg-card">
+                {/* Background Image - more visible */}
                 <div className="absolute inset-0">
-                  <img src={area.image} alt={area.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 image-enhance" />
-                  {/* Gradient overlay */}
-                  <div className={`absolute inset-0 transition-opacity duration-500 ${area.highlight ? 'bg-gradient-to-t from-[#1a2e1a]/95 via-[#1a2e1a]/80 to-[#1a2e1a]/60' : 'bg-gradient-to-t from-[#1a2e1a]/95 via-[#1a2e1a]/75 to-[#1a2e1a]/50 group-hover:from-[#1a2e1a]/98 group-hover:via-[#1a2e1a]/85'}`} />
+                  <img src={area.image} alt={area.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-105 contrast-105" />
+                  {/* Lighter gradient overlay - only bottom half for text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                 </div>
 
                 {/* Highlight badge */}
-                {area.highlight && <div className="absolute top-4 left-4 z-10 bg-accent text-[#1a2e1a] text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+                {area.highlight && <div className="absolute top-4 right-4 z-10 bg-accent text-[#1a2e1a] text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
                     Destaque
                   </div>}
 
                 {/* Content */}
-                <div className="relative z-10 p-8 min-h-[320px] flex flex-col justify-end">
-                  {/* Icon */}
-                  <div className="mb-4">
-                    <div className={`inline-flex items-center justify-center w-14 h-14 rounded-xl transition-all duration-300 ${area.highlight ? 'bg-accent/30 group-hover:bg-accent/40' : 'bg-accent/20 group-hover:bg-accent/30'}`}>
-                      <area.icon className="h-7 w-7 text-accent" />
+                <div className="relative z-10 p-6 min-h-[320px] flex flex-col justify-end">
+                  {/* Icon - positioned at top-left */}
+                  <div className="absolute top-4 left-4">
+                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-accent/90 backdrop-blur-sm shadow-lg">
+                      <area.icon className="h-6 w-6 text-[#1a2e1a]" />
                     </div>
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-serif text-xl md:text-2xl text-white mb-3 transition-colors duration-300 group-hover:text-accent">
+                  <h3 className="font-serif text-xl md:text-2xl text-white mb-2 transition-colors duration-300 group-hover:text-accent drop-shadow-lg">
                     {area.title}
                   </h3>
                   
                   {/* Description */}
-                  <p className="text-white/70 text-sm leading-relaxed mb-5 line-clamp-3">
+                  <p className="text-white/90 text-sm leading-relaxed mb-4 line-clamp-2 drop-shadow-md">
                     {area.description}
                   </p>
 
@@ -164,9 +164,6 @@ export default function Atuacao() {
                     <span>Saiba mais</span>
                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-2" />
                   </div>
-
-                  {/* Bottom accent line */}
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-accent/0 via-accent to-accent/0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
                 </div>
               </Link>)}
           </div>
