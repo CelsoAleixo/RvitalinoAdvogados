@@ -2,27 +2,25 @@ interface QuoteBandProps {
   quote: string;
   author?: string;
 }
-
-export function QuoteBand({ quote, author }: QuoteBandProps) {
-  return (
-    <section className="py-10 md:py-12">
+export function QuoteBand({
+  quote,
+  author
+}: QuoteBandProps) {
+  return <section className="py-10 md:py-12">
       <div className="container-site">
-        <div className="bg-[#0f1c2e] rounded-lg px-6 py-4 md:px-8 md:py-5 max-w-3xl mx-auto">
+        <div className="rounded-lg px-6 py-4 md:px-8 md:py-5 max-w-3xl mx-auto bg-secondary">
           <blockquote className="flex items-center justify-center gap-3">
             <span className="w-2.5 h-2.5 rounded-full bg-accent flex-shrink-0" />
             <p className="font-serif text-lg md:text-xl italic text-accent leading-relaxed">
               "{quote}"
             </p>
           </blockquote>
-          {author && (
-            <footer className="mt-3 text-center">
+          {author && <footer className="mt-3 text-center">
               <cite className="not-italic text-white/60 text-sm font-medium">
                 — {author}
               </cite>
-            </footer>
-          )}
+            </footer>}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }
