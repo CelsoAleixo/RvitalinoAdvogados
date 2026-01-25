@@ -63,19 +63,24 @@ export function Header() {
   };
   return <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <nav className="container-site">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-20 md:h-24 items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-4 group" aria-label="Rodrigo Vitalino Advogados - Página Inicial">
-            <div className="relative">
-              <img alt="Rodrigo Vitalino Advogados" className="h-20 md:h-24 w-auto transition-transform duration-300 group-hover:scale-105 drop-shadow-md border-0 rounded-3xl" onError={e => {
-              e.currentTarget.style.display = 'none';
-            }} src="/lovable-uploads/66e22016-72f8-4442-bd49-b9712e33eff6.png" />
+          <Link to="/" className="flex items-center gap-3 md:gap-4 group -ml-1" aria-label="Rodrigo Vitalino Advogados - Página Inicial">
+            <div className="relative flex-shrink-0">
+              <img 
+                alt="Rodrigo Vitalino Advogados" 
+                className="h-14 md:h-16 lg:h-[4.5rem] w-auto object-contain transition-all duration-300 group-hover:scale-[1.03] drop-shadow-sm" 
+                onError={e => {
+                  e.currentTarget.style.display = 'none';
+                }} 
+                src="/lovable-uploads/66e22016-72f8-4442-bd49-b9712e33eff6.png" 
+              />
             </div>
-            <div className="flex flex-col">
-              <span className="font-serif font-semibold tracking-tight text-accent transition-colors duration-300 group-hover:text-accent/80 text-xl">
+            <div className="flex flex-col justify-center">
+              <span className="font-serif font-semibold tracking-tight text-accent transition-colors duration-300 group-hover:text-accent/90 text-lg md:text-xl lg:text-[1.35rem] leading-tight">
                 Rodrigo Vitalino
               </span>
-              <span className="text-[11px] font-medium text-accent/70 tracking-[0.3em] uppercase">
+              <span className="text-[10px] md:text-[11px] font-medium text-accent/70 tracking-[0.25em] md:tracking-[0.3em] uppercase mt-0.5">
                 Advogados
               </span>
             </div>
