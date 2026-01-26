@@ -27,17 +27,9 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-flex items-center gap-3" aria-label="Rodrigo Vitalino Advogados">
-              <img 
-                alt="Rodrigo Vitalino Advogados" 
-                className="h-12 w-auto" 
-                width="59" 
-                height="48"
-                loading="lazy"
-                onError={e => {
-                  e.currentTarget.style.display = "none";
-                }} 
-                src={logoFooter} 
-              />
+              <img alt="Rodrigo Vitalino Advogados" className="h-12 w-auto" width="59" height="48" loading="lazy" onError={e => {
+              e.currentTarget.style.display = "none";
+            }} src="/lovable-uploads/35eb8c44-48cd-40be-8b03-6c4a456e8a43.png" />
               <span className="font-serif text-xl font-semibold tracking-tight text-primary">
                 Rodrigo Vitalino
                 <span className="block text-sm font-sans font-normal text-muted-foreground tracking-widest uppercase">
