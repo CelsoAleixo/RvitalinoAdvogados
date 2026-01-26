@@ -8,7 +8,7 @@ export function ManifestoModal() {
       <button type="button" onClick={() => setOpen(true)} aria-label="Abrir manifesto: Não existe por acaso, nem coincidência" style={{
       WebkitTapHighlightColor: 'rgba(0,0,0,0.1)',
       touchAction: 'manipulation'
-    }} className="inline-flex items-center gap-2 min-h-[56px] bg-accent/10 border-accent/30 rounded-full text-accent hover:bg-accent/20 active:bg-accent/30 active:scale-95 transition-all cursor-pointer select-none py-px px-4 text-sm font-semibold border-4">
+    }} className="inline-flex items-center gap-2 min-h-[56px] bg-accent/10 rounded-full text-accent hover:bg-accent/20 active:bg-accent/30 active:scale-95 transition-all cursor-pointer select-none py-px px-4 text-sm font-semibold border-4 border-solid border-muted-foreground">
         <span className="w-2 h-2 bg-accent rounded-full animate-pulse flex-shrink-0" aria-hidden="true" />
         <span>"Não existe por acaso, nem coincidência"</span>
       </button>
