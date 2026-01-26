@@ -84,24 +84,7 @@ export default function Index() {
         {/* Stats Row */}
         <div className="absolute bottom-0 left-0 right-0 z-20 bg-gradient-to-t from-background via-background/80 to-transparent pt-16 pb-8">
           <div className="container-site">
-            <div className="flex flex-wrap justify-center gap-8 md:gap-16">
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-serif font-bold text-accent">17+</div>
-                <div className="text-white/80 text-sm mt-1"> Anos de excelência</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-serif font-bold text-accent">500+</div>
-                <div className="text-white/80 text-sm mt-1">Clientes Atendidos</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-serif font-bold text-accent">17</div>
-                <div className="text-white/80 text-sm mt-1">Países de Atuação</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-serif font-bold text-accent">100%</div>
-                <div className="text-white/80 text-sm mt-1">Comprometimento</div>
-              </div>
-            </div>
+            
           </div>
         </div>
       </section>
