@@ -70,14 +70,8 @@ export default function Index() {
             <div className="mt-8 flex flex-wrap items-center gap-4 animate-fade-in" style={{
             animationDelay: "0.2s"
           }}>
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
-                <Shield className="w-4 h-4 text-accent" />
-                <span className="text-white/90 text-sm">OAB Regular</span>
-              </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
-                <CheckCircle className="w-4 h-4 text-accent" />
-                <span className="text-white/90 text-sm">Retorno imediato</span>
-              </div>
+              
+              
             </div>
 
             {/* Manifesto Tag */}
