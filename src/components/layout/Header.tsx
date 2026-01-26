@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
+import logoHeader from "@/assets/logo-header.webp";
 const WHATSAPP_LINK = "https://wa.me/5511974083838?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20especialista.";
 const areasDeAtuacao = [{
   name: "Direito Empresarial",
@@ -76,7 +77,7 @@ export function Header() {
                 onError={e => {
                   e.currentTarget.style.display = 'none';
                 }} 
-                src="/lovable-uploads/3c2a2065-697e-4647-b72f-b5b713512bde.png" 
+                src={logoHeader} 
               />
             </div>
             <div className="flex flex-col justify-center">

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
-import logoGold from "@/assets/logo-gold.png";
+import logoFooter from "@/assets/logo-footer.webp";
 const quickLinks = [{
   name: "Início",
   href: "/"
@@ -36,7 +36,7 @@ export function Footer() {
                 onError={e => {
                   e.currentTarget.style.display = "none";
                 }} 
-                src="/lovable-uploads/de96a66d-2fef-49a5-93e1-36301aac1fe0.png" 
+                src={logoFooter} 
               />
               <span className="font-serif text-xl font-semibold tracking-tight text-primary">
                 Rodrigo Vitalino
