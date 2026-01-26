@@ -16,12 +16,12 @@ export default function RecuperacaoJudicial() {
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="flex-1 text-center lg:text-left">
               <nav className="mb-6 animate-fade-in" aria-label="Breadcrumb">
-                <ol className="flex flex-wrap items-center justify-center lg:justify-start gap-x-2 gap-y-1 text-sm">
+                <ol className="flex items-center justify-center lg:justify-start gap-2 text-xs sm:text-sm whitespace-nowrap">
                   <li><a href="/" className="text-white/80 hover:text-accent transition-colors drop-shadow-md">Início</a></li>
                   <li className="text-white/60">/</li>
-                  <li><a href="/atuacao" className="text-white/80 hover:text-accent transition-colors drop-shadow-md whitespace-nowrap">Áreas de Atuação</a></li>
+                  <li><a href="/atuacao" className="text-white/80 hover:text-accent transition-colors drop-shadow-md">Áreas de Atuação</a></li>
                   <li className="text-white/60">/</li>
-                  <li className="text-accent font-medium drop-shadow-md whitespace-nowrap">Recuperação Judicial</li>
+                  <li className="text-accent font-medium drop-shadow-md">Recuperação Judicial</li>
                 </ol>
               </nav>
               
