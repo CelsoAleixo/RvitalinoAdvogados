@@ -42,26 +42,26 @@ export default function Index() {
           <div className="absolute inset-0 bg-[#1a2e1a]/60 sm:bg-[#1a2e1a]/70" />
         </div>
 
-        {/* Hero Content - optimized for mobile */}
+        {/* Hero Content - optimized for mobile with WCAG contrast */}
         <div className="container-site relative z-20 py-12 sm:py-16 md:py-24">
           <div className="max-w-2xl">
-            <h1 className="text-balance animate-fade-in text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-              <span className="block text-accent">Soluções legais confiáveis e eficazes</span>
+            <h1 className="text-balance animate-fade-in text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-overlay-strong">
+              <span className="block text-accent drop-shadow-lg">Soluções legais confiáveis e eficazes</span>
             </h1>
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed animate-slide-up font-normal text-left sm:text-justify">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl lg:text-2xl text-white animate-slide-up font-normal text-mobile-justified text-overlay-accessible">
               Assessoria jurídica empresarial com excelência e segurança.
             </p>
             <div className="mt-6 sm:mt-8 md:mt-10 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 animate-slide-up" style={{
             animationDelay: "0.1s"
           }}>
-              <Button asChild size="lg" className="group bg-accent hover:bg-accent/90 text-accent-foreground w-full sm:w-auto">
+              <Button asChild size="lg" className="group bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full sm:w-auto shadow-lg">
                 <Link to="/contato" className="flex items-center justify-center gap-2">
                   <Phone className="h-5 w-5" />
                   Contato
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20 w-full sm:w-auto">
+              <Button asChild size="lg" variant="outline" className="bg-white/15 border-white/40 text-white hover:bg-white/25 font-medium w-full sm:w-auto shadow-lg">
                 <Link to="/atuacao#areas-grid">Áreas de Atuação</Link>
               </Button>
             </div>
