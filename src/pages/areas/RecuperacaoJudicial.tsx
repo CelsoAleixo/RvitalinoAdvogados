@@ -1,7 +1,15 @@
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/shared/CTASection";
-import { Building2, Scale, Briefcase, Truck, Leaf, Shield, FileText } from "lucide-react";
+import { Building2, Scale, Truck, Leaf, Shield, FileText } from "lucide-react";
 import heroImage from "@/assets/areas/recuperacao-judicial-hero.jpg";
+
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+};
+
 export default function RecuperacaoJudicial() {
   return <Layout>
       {/* Hero Section */}
@@ -9,7 +17,6 @@ export default function RecuperacaoJudicial() {
         <div className="absolute inset-0 bg-cover bg-center image-enhance-strong" style={{
         backgroundImage: `url(${heroImage})`
       }} />
-        {/* Reduced opacity for more image visibility */}
         <div className="absolute inset-0 bg-[#1a2e1a]/65" />
         
         <div className="container-site relative z-10 py-20">
@@ -28,9 +35,27 @@ export default function RecuperacaoJudicial() {
               <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white mb-6 animate-fade-in" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.5)' }}>
                 Recuperação Judicial
               </h1>
-              <p className="text-lg text-white/90 max-w-2xl animate-slide-up" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.4)' }}>
+              <p className="text-lg text-white/90 max-w-2xl animate-slide-up mb-8" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.4)' }}>
                 Experiência consolidada na condução de processos de recuperação judicial em diversos setores da economia, com atuação estratégica para preservação de empresas e proteção de credores.
               </p>
+              
+              {/* Quick Navigation Tags */}
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 animate-fade-in">
+                <button
+                  onClick={() => scrollToSection('transporte-publico')}
+                  className="group flex items-center gap-2 px-4 py-2.5 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 hover:border-accent/50 rounded-full text-white text-sm font-medium transition-all duration-300 hover:scale-105"
+                >
+                  <Truck className="h-4 w-4 text-accent group-hover:scale-110 transition-transform" />
+                  <span>Transporte Público</span>
+                </button>
+                <button
+                  onClick={() => scrollToSection('agronegocio')}
+                  className="group flex items-center gap-2 px-4 py-2.5 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 hover:border-accent/50 rounded-full text-white text-sm font-medium transition-all duration-300 hover:scale-105"
+                >
+                  <Leaf className="h-4 w-4 text-accent group-hover:scale-110 transition-transform" />
+                  <span>Agronegócio</span>
+                </button>
+              </div>
             </div>
             
             <div className="flex-shrink-0">
@@ -57,7 +82,7 @@ export default function RecuperacaoJudicial() {
             </div>
 
             {/* Transporte Público */}
-            <div className="mb-16">
+            <div id="transporte-publico" className="mb-16 scroll-mt-24">
               <div className="flex items-center gap-3 mb-6">
                 <Truck className="h-8 w-8 text-accent" />
                 <h2 className="font-serif text-2xl">Empresas Concessionárias de Transporte Público</h2>
@@ -101,7 +126,7 @@ export default function RecuperacaoJudicial() {
             </div>
 
             {/* Agronegócio */}
-            <div className="mb-16">
+            <div id="agronegocio" className="mb-16 scroll-mt-24">
               <div className="flex items-center gap-3 mb-6">
                 <Leaf className="h-8 w-8 text-accent" />
                 <h2 className="font-serif text-2xl">Recuperação Judicial no Agronegócio</h2>
