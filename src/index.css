@@ -139,31 +139,92 @@
     @apply text-xl md:text-2xl;
   }
 
-  /* Global text justification - no extra word spacing, no hyphens */
+  /* Global text justification with compact word spacing */
   p, li, span.justify-text, .prose-content, .text-muted-foreground {
     @apply leading-relaxed;
     hyphens: none !important;
     -webkit-hyphens: none !important;
     -moz-hyphens: none !important;
     -ms-hyphens: none !important;
-    word-spacing: normal;
-    letter-spacing: normal;
     overflow-wrap: break-word;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
 
-  /* Justify only main content paragraphs on larger screens, not mobile */
+  /* Justify content paragraphs with compact word spacing */
   .prose-content p,
-  section > .container-site p {
+  section > .container-site p,
+  .texto-compacto,
+  .text-compact-justify {
     text-align: left;
+    word-spacing: normal;
+    letter-spacing: normal;
   }
 
-  @media (min-width: 768px) {
+  /* Desktop: Apply justify with negative word-spacing for tighter text */
+  @media (min-width: 900px) {
     .prose-content p,
-    section > .container-site p {
+    section > .container-site p,
+    .texto-compacto,
+    .text-compact-justify {
       text-align: justify;
       text-justify: inter-word;
+      word-spacing: -0.05em;
+      letter-spacing: -0.01em;
+    }
+
+    /* Fallback for browsers without text-justify support */
+    @supports not (text-justify: inter-word) {
+      .prose-content p,
+      section > .container-site p,
+      .texto-compacto,
+      .text-compact-justify {
+        text-align: justify;
+        word-spacing: -0.06em;
+      }
+    }
+  }
+
+  /* Tablet breakpoint (600px - 900px) */
+  @media (min-width: 600px) and (max-width: 899px) {
+    .prose-content p,
+    section > .container-site p,
+    .texto-compacto,
+    .text-compact-justify {
+      text-align: justify;
+      text-justify: inter-word;
+      word-spacing: -0.03em;
+      letter-spacing: normal;
+    }
+  }
+
+  /* Mobile: Left-aligned for readability */
+  @media (max-width: 599px) {
+    .prose-content p,
+    section > .container-site p,
+    .texto-compacto,
+    .text-compact-justify {
+      text-align: left;
+      word-spacing: normal;
+      letter-spacing: normal;
+    }
+  }
+
+  /* Ultra-compact text utility - stronger negative spacing */
+  .text-no-wrap-words,
+  .texto-ultra-compacto {
+    text-align: justify;
+    text-justify: inter-word;
+    word-spacing: -0.08em;
+    letter-spacing: -0.02em;
+  }
+
+  @media (max-width: 599px) {
+    .text-no-wrap-words,
+    .texto-ultra-compacto {
+      text-align: left;
+      word-spacing: -0.02em;
+      letter-spacing: normal;
     }
   }
 
@@ -182,6 +243,7 @@
   .no-justify {
     text-align: left !important;
     word-spacing: normal !important;
+    letter-spacing: normal !important;
   }
 
   a {
