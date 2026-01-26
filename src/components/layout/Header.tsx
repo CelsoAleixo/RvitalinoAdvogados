@@ -2,12 +2,9 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoHeaderWebp from "@/assets/logo-header.webp";
+import logoHeaderTransparent from "@/assets/logo-header-transparent.png";
 
 const WHATSAPP_LINK = "https://wa.me/5511974083838?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20especialista.";
-
-// PNG fallback for older iOS versions (pre-iOS 14)
-const LOGO_FALLBACK = "/lovable-uploads/d60328cc-1840-4254-a63f-0753afd035b2.png";
 const areasDeAtuacao = [{
   name: "Direito Empresarial",
   href: "/atuacao/direito-empresarial"
@@ -71,23 +68,15 @@ export function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 md:gap-4 group -ml-1" aria-label="Rodrigo Vitalino Advogados - Página Inicial">
             <div className="relative flex-shrink-0">
-              <picture>
-                {/* WebP for modern browsers (iOS 14+, all modern desktop) */}
-                <source srcSet={logoHeaderWebp} type="image/webp" />
-                {/* PNG fallback for older browsers/iOS */}
-                <img 
-                  alt="Rodrigo Vitalino Advogados" 
-                  className="h-14 md:h-16 lg:h-[4.5rem] w-auto object-contain transition-all duration-300 group-hover:scale-[1.03] drop-shadow-sm" 
-                  width="88" 
-                  height="72" 
-                  fetchPriority="high"
-                  decoding="async"
-                  src={LOGO_FALLBACK}
-                  onError={e => {
-                    e.currentTarget.style.display = 'none';
-                  }} 
-                />
-              </picture>
+              <img 
+                alt="Rodrigo Vitalino Advogados" 
+                className="h-14 md:h-16 lg:h-[4.5rem] w-auto object-contain transition-all duration-300 group-hover:scale-[1.03] drop-shadow-sm" 
+                width="88" 
+                height="72" 
+                fetchPriority="high"
+                decoding="async"
+                src={logoHeaderTransparent}
+              />
             </div>
             <div className="flex flex-col justify-center">
               <span className="font-serif font-semibold tracking-tight text-accent transition-colors duration-300 group-hover:text-accent/90 text-lg md:text-xl lg:text-[1.35rem] leading-tight">
