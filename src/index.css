@@ -232,24 +232,35 @@
     }
   }
 
-  /* Mobile justified text - no hyphenation, no extra line spacing */
+  /* Mobile justified text - no hyphenation, tight word spacing to avoid gaps */
   .text-mobile-justified {
     text-align: justify !important;
     text-justify: inter-word;
-    word-spacing: -0.03em;
-    letter-spacing: -0.01em;
+    word-spacing: -0.05em;
+    letter-spacing: -0.015em;
     line-height: 1.5 !important;
     hyphens: none !important;
     -webkit-hyphens: none !important;
     -moz-hyphens: none !important;
     -ms-hyphens: none !important;
+    text-align-last: left;
   }
 
   @media (max-width: 599px) {
     .text-mobile-justified {
       text-align: justify !important;
-      line-height: 1.4 !important;
-      word-spacing: -0.02em;
+      line-height: 1.45 !important;
+      word-spacing: -0.08em;
+      letter-spacing: -0.02em;
+      text-align-last: left;
+    }
+  }
+
+  /* For very narrow containers, use even tighter spacing */
+  @media (max-width: 400px) {
+    .text-mobile-justified {
+      word-spacing: -0.1em;
+      letter-spacing: -0.025em;
     }
   }
 
