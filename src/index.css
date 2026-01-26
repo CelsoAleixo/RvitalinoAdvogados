@@ -232,7 +232,7 @@
     }
   }
 
-  /* Mobile justified text - no hyphenation, tight word spacing to avoid gaps */
+  /* Mobile justified text - justify on desktop/tablet, left-align on mobile for readability */
   .text-mobile-justified {
     text-align: justify !important;
     text-justify: inter-word;
@@ -246,21 +246,14 @@
     text-align-last: left;
   }
 
+  /* Mobile: Left-aligned for clean readability without gaps */
   @media (max-width: 599px) {
     .text-mobile-justified {
-      text-align: justify !important;
+      text-align: left !important;
       line-height: 1.45 !important;
-      word-spacing: -0.08em;
-      letter-spacing: -0.02em;
-      text-align-last: left;
-    }
-  }
-
-  /* For very narrow containers, use even tighter spacing */
-  @media (max-width: 400px) {
-    .text-mobile-justified {
-      word-spacing: -0.1em;
-      letter-spacing: -0.025em;
+      word-spacing: normal;
+      letter-spacing: normal;
+      text-align-last: auto;
     }
   }
 
