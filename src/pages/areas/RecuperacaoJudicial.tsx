@@ -73,10 +73,10 @@ export default function RecuperacaoJudicial() {
             {/* Introdução */}
             <div className="mb-16">
               <h2 className="font-serif text-3xl mb-6">Experiência em Recuperação Judicial</h2>
-              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+              <p className="text-muted-foreground text-lg leading-relaxed mb-6 text-mobile-justified">
                 O escritório Rodrigo Vitalino Advogados possui ampla experiência na condução de processos de recuperação judicial, atuando em todas as fases do procedimento — desde a análise de viabilidade e elaboração do plano de recuperação até a negociação com credores e acompanhamento da execução judicial.
               </p>
-              <p className="text-muted-foreground text-lg leading-relaxed">
+              <p className="text-muted-foreground text-lg leading-relaxed text-mobile-justified">
                 Nossa atuação abrange empresas de diversos portes e segmentos, sempre com foco na preservação da atividade empresarial, manutenção dos empregos e cumprimento das obrigações junto aos credores de forma sustentável.
               </p>
             </div>
@@ -89,16 +89,16 @@ export default function RecuperacaoJudicial() {
               </div>
               
               <div className="border-l-4 border-accent pl-6 mb-6">
-                <p className="text-muted-foreground italic text-lg">
+                <p className="text-muted-foreground italic text-lg text-mobile-justified">
                   "A recuperação judicial de empresas de transporte público exige conhecimento técnico especializado, dada a natureza essencial do serviço prestado à população e as peculiaridades regulatórias do setor."
                 </p>
               </div>
               
-              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+              <p className="text-muted-foreground text-lg leading-relaxed mb-6 text-mobile-justified">
                 Destacamos nossa atuação especializada junto a <strong>empresas concessionárias de transporte público urbano e rodoviário</strong>, um setor que demanda atenção particular devido à sua relevância social e às complexidades inerentes ao regime de concessão pública.
               </p>
               
-              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+              <p className="text-muted-foreground text-lg leading-relaxed mb-6 text-mobile-justified">
                 Nossa experiência inclui a condução de processos que conciliam as exigências do poder concedente, os direitos dos credores e a necessidade de continuidade do serviço público, garantindo soluções juridicamente seguras e economicamente viáveis.
               </p>
 
@@ -132,12 +132,12 @@ export default function RecuperacaoJudicial() {
                 <h2 className="font-serif text-2xl">Recuperação Judicial no Agronegócio</h2>
               </div>
               
-              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+              <p className="text-muted-foreground text-lg leading-relaxed mb-6 text-mobile-justified">
                 A <strong>Lei 14.112/2020</strong> representou um marco importante ao ampliar significativamente o acesso dos produtores rurais ao instituto da recuperação judicial, reconhecendo as especificidades da atividade agrícola e a necessidade de instrumentos adequados para a reestruturação de dívidas no campo.
               </p>
               
               <div className="border-l-4 border-accent pl-6 mb-6">
-                <p className="text-muted-foreground italic text-lg">
+                <p className="text-muted-foreground italic text-lg text-mobile-justified">
                   "O produtor rural pessoa física agora pode acessar a recuperação judicial, possibilitando a preservação da atividade produtiva e a manutenção do emprego e renda no campo."
                 </p>
               </div>
@@ -150,7 +150,7 @@ export default function RecuperacaoJudicial() {
                     <Scale className="h-6 w-6 text-accent" />
                     <h4 className="font-semibold">Suspensão de Execuções</h4>
                   </div>
-                  <p className="text-muted-foreground text-sm">
+                  <p className="text-muted-foreground text-sm text-mobile-justified">
                     Com o deferimento do processamento da recuperação judicial, as execuções e ações contra o produtor são suspensas, proporcionando fôlego para reorganização financeira.
                   </p>
                 </div>
@@ -160,7 +160,7 @@ export default function RecuperacaoJudicial() {
                     <Shield className="h-6 w-6 text-accent" />
                     <h4 className="font-semibold">Preservação de Bens Essenciais</h4>
                   </div>
-                  <p className="text-muted-foreground text-sm">
+                  <p className="text-muted-foreground text-sm text-mobile-justified">
                     Os bens indispensáveis à atividade rural são protegidos, garantindo a continuidade da produção e evitando a deterioração do patrimônio produtivo.
                   </p>
                 </div>
@@ -170,7 +170,7 @@ export default function RecuperacaoJudicial() {
                     <Leaf className="h-6 w-6 text-accent" />
                     <h4 className="font-semibold">Manutenção da Produção</h4>
                   </div>
-                  <p className="text-muted-foreground text-sm">
+                  <p className="text-muted-foreground text-sm text-mobile-justified">
                     A recuperação judicial permite que o produtor continue suas atividades, mantendo a geração de renda e o ciclo produtivo essencial para quitação das obrigações.
                   </p>
                 </div>
@@ -180,7 +180,7 @@ export default function RecuperacaoJudicial() {
                     <FileText className="h-6 w-6 text-accent" />
                     <h4 className="font-semibold">Reestruturação de Dívidas</h4>
                   </div>
-                  <p className="text-muted-foreground text-sm">
+                  <p className="text-muted-foreground text-sm text-mobile-justified">
                     Possibilidade de negociar prazos, carências e condições de pagamento adequadas à realidade da atividade rural e seus ciclos produtivos.
                   </p>
                 </div>
@@ -188,7 +188,7 @@ export default function RecuperacaoJudicial() {
 
               <div className="bg-accent/10 rounded-lg p-6">
                 <h4 className="font-semibold mb-3">A importância da orientação jurídica especializada</h4>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed text-mobile-justified">
                   O sucesso de um processo de recuperação judicial no agronegócio depende fundamentalmente de uma assessoria jurídica experiente, capaz de elaborar um plano de recuperação viável, conduzir as negociações com credores e acompanhar todas as exigências legais. O escritório Rodrigo Vitalino Advogados oferece o suporte técnico necessário para que o produtor rural atravesse esse momento com segurança jurídica e perspectiva de superação.
                 </p>
               </div>
@@ -197,7 +197,7 @@ export default function RecuperacaoJudicial() {
             {/* Outras Áreas */}
             <div className="mb-12">
               <h2 className="font-serif text-2xl mb-6">Atuação em Diversos Setores</h2>
-              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+              <p className="text-muted-foreground text-lg leading-relaxed mb-6 text-mobile-justified">
                 Além do transporte público e do agronegócio, o escritório possui experiência em recuperação judicial de empresas dos mais variados segmentos, incluindo:
               </p>
               <ul className="grid md:grid-cols-2 gap-4 text-muted-foreground">
