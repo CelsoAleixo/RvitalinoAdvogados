@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { PageHero } from "@/components/shared/PageHero";
 import { CTASection } from "@/components/shared/CTASection";
@@ -6,92 +6,27 @@ import { Input } from "@/components/ui/input";
 import { Search, Calendar, Tag, ArrowRight, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 import publicationsHero from "@/assets/publications-hero.jpg";
-const categories = [
-  "Todas",
-  "Direito Empresarial",
-  "Direito Trabalhista",
-  "Direito Tributário",
-  "Direito Internacional",
-  "Direito Rural",
-];
-
-const posts = [
-  {
-    id: 8,
-    title: "Recuperação Judicial do Produtor Rural – Lei 14.112/20",
-    subtitle: "Proteção patrimonial e reestruturação de dívidas no agronegócio",
-    excerpt: "A Lei 14.112/20 ampliou o acesso à recuperação judicial para produtores rurais, permitindo a preservação de negócios viáveis e a reorganização de obrigações financeiras.",
-    date: "2026-01-20",
-    category: "Direito Rural",
-  },
-  {
-    id: 7,
-    title: "Semana Internacional de Direito em Portugal 2026: Oportunidade para Internacionalizar Sua Carreira",
-    subtitle: "Evento presencial no Porto com imersão acadêmica e networking global",
-    excerpt: "Evento presencial no Porto reúne advogados, estudantes e gestores para imersão acadêmica, networking global e certificação internacional em abril de 2026.",
-    date: "2026-01-19",
-    category: "Direito Internacional",
-  },
-  {
-    id: 6,
-    title: "Obrigações Empresariais em 2026: Guia Completo para Gestores",
-    subtitle: "Adequação fiscal, tecnológica e contábil no novo cenário regulatório",
-    excerpt: "O novo cenário regulatório exige adequação fiscal, tecnológica e contábil das empresas. Conheça as principais exigências da Reforma Tributária e como se preparar.",
-    date: "2026-01-19",
-    category: "Direito Empresarial",
-  },
-  {
-    id: 5,
-    title: "Mudanças Trabalhistas a partir de 2026: O Que Sua Empresa Precisa Saber",
-    subtitle: "Portaria MTE nº 1/2025 moderniza fiscalização e consolida eSocial",
-    excerpt: "A Portaria Consolidada MTE nº 1/2025 moderniza as relações de trabalho com fiscalização 100% digital, novos prazos de admissão e consolidação do eSocial.",
-    date: "2026-01-18",
-    category: "Direito Trabalhista",
-  },
-  {
-    id: 1,
-    title: "Reforma Tributária Avança: LC 227/2026 Define Novas Regras para IBS, ITCMD e ITBI",
-    subtitle: "Segunda fase da Reforma estabelece Comitê Gestor e altera transmissão de bens",
-    excerpt: "A regulamentação da segunda fase da Reforma Tributária estabelece o Comitê Gestor do IBS e traz mudanças significativas para impostos sobre transmissão de bens.",
-    date: "2026-01-15",
-    category: "Direito Tributário",
-  },
-  {
-    id: 2,
-    title: "Notas Fiscais em 2026: Receita Federal e CG-IBS Definem Regras de Transição",
-    subtitle: "Documentos fiscais na transição IBS/CBS com período sem multas",
-    excerpt: "Ato Conjunto esclarece como funcionarão os documentos fiscais durante o primeiro ano de implementação do IBS e CBS, com período de adaptação sem multas.",
-    date: "2026-01-12",
-    category: "Direito Tributário",
-  },
-  {
-    id: 3,
-    title: "CIB: Entenda o 'CPF dos Imóveis' e Seus Reflexos na Tributação",
-    subtitle: "Cadastro unificado de propriedades pode impactar IPTU, ITBI e ITCMD",
-    excerpt: "Novo cadastro unificado de propriedades promete maior transparência, mas especialistas alertam para possível aumento na carga tributária de IPTU, ITBI e ITCMD.",
-    date: "2026-01-08",
-    category: "Direito Tributário",
-  },
-  {
-    id: 4,
-    title: "IBS e CBS em 2026: Prazo Estendido para Cumprimento de Obrigações",
-    subtitle: "Receita Federal concede 4 meses sem exigência dos novos tributos",
-    excerpt: "Receita Federal e Comitê Gestor concedem até 4 meses sem exigência de destaque ou recolhimento dos novos tributos nos documentos fiscais.",
-    date: "2025-12-23",
-    category: "Direito Tributário",
-  },
-];
+import { 
+  publications, 
+  categories, 
+  getPublicationUrl,
+  getPublicationsSortedByDate 
+} from "@/data/publications";
 
 export default function Publicacoes() {
   const [searchTerm, setSearchTerm] = useState("");
   const [activeCategory, setActiveCategory] = useState("Todas");
 
-  const filteredPosts = posts.filter((post) => {
-    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = activeCategory === "Todas" || post.category === activeCategory;
-    return matchesSearch && matchesCategory;
-  });
+  const sortedPosts = useMemo(() => getPublicationsSortedByDate(), []);
+
+  const filteredPosts = useMemo(() => {
+    return sortedPosts.filter((post) => {
+      const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                           post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesCategory = activeCategory === "Todas" || post.category === activeCategory;
+      return matchesSearch && matchesCategory;
+    });
+  }, [sortedPosts, searchTerm, activeCategory]);
 
   const featuredPost = filteredPosts[0];
   const remainingPosts = filteredPosts.slice(1);
@@ -162,7 +97,7 @@ export default function Publicacoes() {
                     </div>
 
                     {/* Title */}
-                    <Link to={`/publicacoes/${featuredPost.id}`}>
+                    <Link to={getPublicationUrl(featuredPost)}>
                       <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl mb-4 text-foreground group-hover:text-accent transition-colors leading-tight cursor-pointer">
                         {featuredPost.title}
                       </h2>
@@ -192,7 +127,7 @@ export default function Publicacoes() {
                       </span>
                       
                       <Link
-                        to={`/publicacoes/${featuredPost.id}`}
+                        to={getPublicationUrl(featuredPost)}
                         className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-accent-foreground rounded font-medium hover:bg-accent/90 transition-colors"
                       >
                         Ler artigo completo
@@ -234,7 +169,7 @@ export default function Publicacoes() {
                       </div>
 
                       {/* Title */}
-                      <Link to={`/publicacoes/${post.id}`}>
+                      <Link to={getPublicationUrl(post)}>
                         <h3 className="font-serif text-lg md:text-xl mb-3 text-foreground group-hover:text-accent transition-colors leading-snug cursor-pointer line-clamp-2">
                           {post.title}
                         </h3>
@@ -247,7 +182,7 @@ export default function Publicacoes() {
 
                       {/* Read more */}
                       <Link
-                        to={`/publicacoes/${post.id}`}
+                        to={getPublicationUrl(post)}
                         className="inline-flex items-center gap-2 text-accent text-sm font-medium hover:gap-3 transition-all"
                       >
                         Ler mais
