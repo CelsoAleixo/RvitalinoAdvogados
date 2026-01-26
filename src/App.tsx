@@ -3,8 +3,9 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { legacyIdToSlug } from "@/data/publications";
 
 // Lazy load all pages for code splitting
 const Index = lazy(() => import("./pages/Index"));
@@ -29,6 +30,21 @@ const RecuperacaoJudicial = lazy(() => import("./pages/areas/RecuperacaoJudicial
 
 const queryClient = new QueryClient();
 
+/**
+ * LegacyRedirect component for handling old numeric publication URLs
+ * Provides 301-style redirects to new SEO-friendly slug URLs
+ */
+function LegacyPublicationRedirect({ id }: { id: string }) {
+  const numericId = parseInt(id, 10);
+  
+  if (!isNaN(numericId) && legacyIdToSlug[numericId]) {
+    return <Navigate to={`/publicacoes/${legacyIdToSlug[numericId]}`} replace />;
+  }
+  
+  // If not a valid legacy ID, go to publications list
+  return <Navigate to="/publicacoes" replace />;
+}
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -51,7 +67,8 @@ const App = () => (
             <Route path="/atuacao/credito-de-carbono" element={<CreditoCarbono />} />
             <Route path="/atuacao/recuperacao-judicial" element={<RecuperacaoJudicial />} />
             <Route path="/publicacoes" element={<Publicacoes />} />
-            <Route path="/publicacoes/:id" element={<PublicacaoDetalhe />} />
+            {/* New SEO-friendly slug-based publication URLs */}
+            <Route path="/publicacoes/:slug" element={<PublicacaoDetalhe />} />
             <Route path="/portugal" element={<Portugal />} />
             <Route path="/contato" element={<Contato />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
