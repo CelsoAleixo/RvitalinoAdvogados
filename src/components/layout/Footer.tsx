@@ -66,14 +66,12 @@ export function Footer() {
             <h4 className="font-serif text-lg font-medium mb-4 text-primary">Brasil</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-3">
-                <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0 text-accent" />
-                <span>
-                  Rua Manoel de Oliveira, 269, Sala 412, Torre 1,
-                  <br />
-                  Patteo Mogilar-Sky Mall,
-                  <br />
-                  Mogi das Cruzes-SP, CEP: 08773-130
-                </span>
+                <MapPin className="h-4 w-4 mt-1 flex-shrink-0 text-accent" />
+                <div className="flex flex-col">
+                  <span>Rua Manoel de Oliveira, 269, Sala 412, Torre 1,</span>
+                  <span>Patteo Mogilar-Sky Mall,</span>
+                  <span>Mogi das Cruzes-SP, CEP: 08773-130</span>
+                </div>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="h-4 w-4 mt-0.5 flex-shrink-0 text-accent" />
@@ -83,7 +81,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="h-4 w-4 mt-0.5 flex-shrink-0 text-accent" />
-                <a href="mailto:contato@rvitalinoadvogados.com.br" className="hover:text-primary transition-colors">
+                <a href="mailto:contato@rvitalinoadvogados.com.br" className="hover:text-primary transition-colors break-all sm:break-normal">
                   contato@rvitalinoadvogados.com.br
                 </a>
               </li>
@@ -95,14 +93,12 @@ export function Footer() {
             <h4 className="font-serif text-lg font-medium mb-4 text-primary">Portugal</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-3">
-                <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0 text-accent" />
-                <span>
-                  Av da Liberdade, 706 - 1º Esq,
-                  <br />
-                  Código postal 4710-249 Braga/Portugal
-                  <br />
-                  (Inscrito na Ordem dos Advogados de Portugal)
-                </span>
+                <MapPin className="h-4 w-4 mt-1 flex-shrink-0 text-accent" />
+                <div className="flex flex-col">
+                  <span>Av da Liberdade, 706 - 1º Esq,</span>
+                  <span>Código postal 4710-249 Braga/Portugal</span>
+                  <span>(Inscrito na Ordem dos Advogados de Portugal)</span>
+                </div>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="h-4 w-4 mt-0.5 flex-shrink-0 text-accent" />
@@ -112,7 +108,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="h-4 w-4 mt-0.5 flex-shrink-0 text-accent" />
-                <a href="mailto:arthur@rvitalinoadvogados.com.br" className="hover:text-primary transition-colors">
+                <a href="mailto:arthur@rvitalinoadvogados.com.br" className="hover:text-primary transition-colors break-all sm:break-normal">
                   arthur@rvitalinoadvogados.com.br
                 </a>
               </li>
