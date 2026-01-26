@@ -16,7 +16,7 @@ export function QuoteBand({
             </p>
           </blockquote>
           {author && <footer className="mt-3 text-center">
-              <cite className="not-italic text-white/60 text-sm font-medium">
+              <cite className="not-italic text-muted-foreground text-sm font-medium">
                 — {author}
               </cite>
             </footer>}
