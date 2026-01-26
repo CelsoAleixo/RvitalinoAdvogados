@@ -64,7 +64,7 @@ export function FloatingWhatsApp() {
                   Tire suas dúvidas agora
                 </p>
                 <p className="text-xs text-muted-foreground leading-snug">
-                  Resposta em minutos
+                  Fale com especialista
                 </p>
               </div>
             </div>
