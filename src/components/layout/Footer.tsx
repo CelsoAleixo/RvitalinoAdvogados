@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
-import logoFooterTransparent from "@/assets/logo-footer-transparent.png";
+import logoRV from "@/assets/logo-rv-transparent.png";
 
 const quickLinks = [{
   name: "Início",
@@ -31,11 +31,11 @@ export function Footer() {
               <img 
                 alt="Rodrigo Vitalino Advogados" 
                 className="h-12 w-auto" 
-                width="59" 
+                width="48" 
                 height="48" 
                 loading="lazy"
                 decoding="async"
-                src={logoFooterTransparent}
+                src={logoRV}
               />
               <span className="font-serif text-xl font-semibold tracking-tight text-primary">
                 Rodrigo Vitalino

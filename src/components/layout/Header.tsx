@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoHeaderTransparent from "@/assets/logo-header-transparent.png";
+import logoRV from "@/assets/logo-rv-transparent.png";
 
 const WHATSAPP_LINK = "https://wa.me/5511974083838?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20especialista.";
 const areasDeAtuacao = [{
@@ -70,12 +70,12 @@ export function Header() {
             <div className="relative flex-shrink-0">
               <img 
                 alt="Rodrigo Vitalino Advogados" 
-                className="h-14 md:h-16 lg:h-[4.5rem] w-auto object-contain transition-all duration-300 group-hover:scale-[1.03] drop-shadow-sm" 
-                width="88" 
+                className="h-14 md:h-16 lg:h-[4.5rem] w-auto object-contain transition-all duration-300 group-hover:scale-[1.03]" 
+                width="72" 
                 height="72" 
                 fetchPriority="high"
                 decoding="async"
-                src={logoHeaderTransparent}
+                src={logoRV}
               />
             </div>
             <div className="flex flex-col justify-center">
