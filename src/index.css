@@ -228,6 +228,27 @@
     }
   }
 
+  /* Mobile justified text - no hyphenation, no extra line spacing */
+  .text-mobile-justified {
+    text-align: justify !important;
+    text-justify: inter-word;
+    word-spacing: -0.03em;
+    letter-spacing: -0.01em;
+    line-height: 1.5 !important;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+    -moz-hyphens: none !important;
+    -ms-hyphens: none !important;
+  }
+
+  @media (max-width: 599px) {
+    .text-mobile-justified {
+      text-align: justify !important;
+      line-height: 1.4 !important;
+      word-spacing: -0.02em;
+    }
+  }
+
   /* Prevent orphans and widows for better typography */
   p {
     orphans: 3;
