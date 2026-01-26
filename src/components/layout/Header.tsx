@@ -69,7 +69,7 @@ export function Header() {
             <div className="relative flex-shrink-0">
               <img alt="Rodrigo Vitalino Advogados" className="h-14 md:h-16 lg:h-[4.5rem] w-auto object-contain transition-all duration-300 group-hover:scale-[1.03] drop-shadow-sm" onError={e => {
               e.currentTarget.style.display = 'none';
-            }} src="/lovable-uploads/8bcea023-de97-46b2-8ea5-f04b5f356dc1.png" />
+            }} src="/lovable-uploads/3c2a2065-697e-4647-b72f-b5b713512bde.png" />
             </div>
             <div className="flex flex-col justify-center">
               <span className="font-serif font-semibold tracking-tight text-accent transition-colors duration-300 group-hover:text-accent/90 text-lg md:text-xl lg:text-[1.35rem] leading-tight">
