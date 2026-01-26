@@ -33,6 +33,7 @@ export default function Index() {
           posterImage="/lovable-uploads/3c2a2065-697e-4647-b72f-b5b713512bde.png"
           overlayClassName="bg-[#1a2e1a]/60 sm:bg-[#1a2e1a]/70"
           playbackRate={1.0}
+          priority
         />
 
         {/* Hero Content - optimized for mobile with WCAG contrast */}

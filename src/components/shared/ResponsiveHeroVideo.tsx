@@ -7,6 +7,8 @@ interface ResponsiveHeroVideoProps {
   className?: string;
   overlayClassName?: string;
   playbackRate?: number;
+  /** If true, loads video immediately without waiting for intersection */
+  priority?: boolean;
 }
 
 /**
@@ -15,7 +17,8 @@ interface ResponsiveHeroVideoProps {
  * - Falls back to MP4 for iOS Safari compatibility
  * - Poster image for instant visual feedback
  * - Reduced motion support for accessibility
- * - Lazy video loading on scroll
+ * - Priority loading for above-the-fold videos
+ * - Preload metadata for faster playback start
  */
 export function ResponsiveHeroVideo({
   mp4Src,
@@ -24,11 +27,13 @@ export function ResponsiveHeroVideo({
   className = "",
   overlayClassName = "",
   playbackRate = 1.0,
+  priority = false,
 }: ResponsiveHeroVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState(false);
+  const [isReady, setIsReady] = useState(priority);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   // Check for reduced motion preference
   useEffect(() => {
@@ -40,30 +45,51 @@ export function ResponsiveHeroVideo({
     return () => mediaQuery.removeEventListener("change", handler);
   }, []);
 
-  // Lazy load video when in viewport
+  // Lazy load video when in viewport (only if not priority)
   useEffect(() => {
-    if (!containerRef.current) return;
+    if (priority || !containerRef.current) {
+      setIsReady(true);
+      return;
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsInView(true);
+          setIsReady(true);
           observer.disconnect();
         }
       },
-      { rootMargin: "100px" }
+      { rootMargin: "200px" }
     );
 
     observer.observe(containerRef.current);
     return () => observer.disconnect();
-  }, []);
+  }, [priority]);
 
-  // Set playback rate
+  // Set playback rate and handle video ready state
   useEffect(() => {
-    if (videoRef.current && isInView) {
-      videoRef.current.playbackRate = playbackRate;
+    const video = videoRef.current;
+    if (!video || !isReady) return;
+
+    video.playbackRate = playbackRate;
+
+    // Handle canplaythrough for smoother playback
+    const handleCanPlay = () => {
+      setIsVideoLoaded(true);
+      video.play().catch(() => {
+        // Autoplay was prevented, user interaction needed
+      });
+    };
+
+    video.addEventListener("canplaythrough", handleCanPlay);
+    
+    // If already ready (cached), trigger immediately
+    if (video.readyState >= 3) {
+      handleCanPlay();
     }
-  }, [isInView, playbackRate]);
+
+    return () => video.removeEventListener("canplaythrough", handleCanPlay);
+  }, [isReady, playbackRate]);
 
   // Show static poster for reduced motion preference
   if (prefersReducedMotion && posterImage) {
@@ -74,6 +100,8 @@ export function ResponsiveHeroVideo({
           alt=""
           className="w-full h-full object-cover"
           aria-hidden="true"
+          loading="eager"
+          fetchPriority="high"
         />
         {overlayClassName && <div className={`absolute inset-0 ${overlayClassName}`} />}
       </div>
@@ -82,15 +110,32 @@ export function ResponsiveHeroVideo({
 
   return (
     <div ref={containerRef} className={`absolute inset-0 z-0 ${className}`}>
-      {isInView ? (
+      {/* Always show poster as background for instant visual */}
+      {posterImage && (
+        <img
+          src={posterImage}
+          alt=""
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+            isVideoLoaded ? "opacity-0" : "opacity-100"
+          }`}
+          aria-hidden="true"
+          loading="eager"
+          fetchPriority={priority ? "high" : "auto"}
+        />
+      )}
+      
+      {isReady && (
         <video
           ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
+          preload="auto"
           poster={posterImage}
-          className="w-full h-full object-cover video-enhance"
+          className={`absolute inset-0 w-full h-full object-cover video-enhance transition-opacity duration-500 ${
+            isVideoLoaded ? "opacity-100" : "opacity-0"
+          }`}
           aria-hidden="true"
         >
           {/* WebM first for browsers that support it (Chrome, Firefox, Edge) */}
@@ -98,16 +143,8 @@ export function ResponsiveHeroVideo({
           {/* MP4 fallback for Safari/iOS */}
           <source src={mp4Src} type="video/mp4" />
         </video>
-      ) : (
-        posterImage && (
-          <img
-            src={posterImage}
-            alt=""
-            className="w-full h-full object-cover"
-            aria-hidden="true"
-          />
-        )
       )}
+      
       {overlayClassName && <div className={`absolute inset-0 ${overlayClassName}`} />}
     </div>
   );
