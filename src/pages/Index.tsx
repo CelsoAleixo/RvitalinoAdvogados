@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { useEffect, useRef } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/shared/SectionHeading";
@@ -7,9 +6,10 @@ import { QuoteBand } from "@/components/shared/QuoteBand";
 import { CTASection } from "@/components/shared/CTASection";
 import { ManifestoModal } from "@/components/shared/ManifestoModal";
 import { TrustIndicators } from "@/components/shared/TrustIndicators";
-import { ArrowRight, Scale, Users, Building2, Globe, CheckCircle, MessageCircle, Phone, Shield } from "lucide-react";
-import detailPen from "@/assets/detail-pen.jpg";
+import { ResponsiveHeroVideo } from "@/components/shared/ResponsiveHeroVideo";
+import { ArrowRight, Scale, Users, Building2, Globe, CheckCircle, Phone } from "lucide-react";
 import institutionalVideo from "@/assets/institutional-video.mp4";
+
 const WHATSAPP_LINK = "https://wa.me/5511974083838?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20advogado.";
 const valores = ["Ética e seriedade na aplicação do Direito", "Soluções jurídicas personalizadas e eficientes", "Confiabilidade e bom relacionamento com nossos clientes", "Conhecimento, competência e aperfeiçoamento técnico", "Foco nas necessidades do cliente", "Comprometimento com os princípios legais", "Transparência sobre os riscos de ações ou projetos", "Empreendedorismo"];
 const diferenciais = [{
@@ -24,23 +24,16 @@ const diferenciais = [{
 const clientesInternacionais = ["Proview Electronics Co Ltd – Taipei / Taiwan", "RED International Group – Taipei / Taiwan", "Proview LED Lighting Co. Ltd – Taipei / Taiwan", "New Era Investment Inc. – Panama / Panama", "Reit Investment Corp. – Panama / Panama", "North Capital Holding – Copenhagen / Denmark", "Dti Korea Co. Ltd – Coreia do Sul"];
 const clientesNacionais = ["Transporte Público Urbano e Rodoviário: suporte jurídico a concessionárias em SP, PR, GO, AM, AC, RO, BA, RJ e SC.", "Mineração de Ferro e Manganês: assessoria a mineradoras no PA, AP e CE.", "Mineração de Granito e Pedras Preciosas: atuação junto a empresas na BA, MG e GO.", "Indústria de Alimentos e Restaurantes: apoio jurídico à produção de charque em GO e ao setor de alimentação em SP.", "Parcerias Público-Privadas (PPP): consultoria em projetos de iluminação pública em SP e SC."];
 export default function Index() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    video.playbackRate = 1.0;
-  }, []);
   return <Layout>
       {/* Hero Section with Video Background */}
       <section className="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-[90vh] flex items-center overflow-hidden">
-        {/* Video Background */}
-        <div className="absolute inset-0 z-0">
-          <video ref={videoRef} autoPlay loop muted playsInline className="w-full h-full object-cover video-enhance">
-            <source src={institutionalVideo} type="video/mp4" />
-          </video>
-          {/* Dark Overlay - lighter on mobile to show more video */}
-          <div className="absolute inset-0 bg-[#1a2e1a]/60 sm:bg-[#1a2e1a]/70" />
-        </div>
+        {/* Optimized Video Background with lazy loading and reduced motion support */}
+        <ResponsiveHeroVideo
+          mp4Src={institutionalVideo}
+          posterImage="/lovable-uploads/3c2a2065-697e-4647-b72f-b5b713512bde.png"
+          overlayClassName="bg-[#1a2e1a]/60 sm:bg-[#1a2e1a]/70"
+          playbackRate={1.0}
+        />
 
         {/* Hero Content - optimized for mobile with WCAG contrast */}
         <div className="container-site relative z-20 py-12 sm:py-16 md:py-24">

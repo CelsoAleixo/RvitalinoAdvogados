@@ -1,11 +1,10 @@
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/shared/CTASection";
-import { TrustIndicators } from "@/components/shared/TrustIndicators";
-import { CheckCircle, History, Heart, Scale, Award, Users, MapPin, ArrowRight, Phone, Shield, Clock } from "lucide-react";
+import { OptimizedImage } from "@/components/shared/OptimizedImage";
+import { CheckCircle, History, Heart, Scale, Award, Users, MapPin, ArrowRight, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import escritorioHero from "@/assets/escritorio-hero.png";
-import escritorioSala from "@/assets/escritorio-sala.png";
 
 const WHATSAPP_LINK = "https://wa.me/5511974083838?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20advogado.";
 
@@ -28,9 +27,15 @@ export default function Escritorio() {
   return <Layout>
       {/* Premium Hero Section */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden">
-        {/* Background Image - full width, high quality */}
+        {/* Background Image - optimized with lazy loading and modern formats */}
         <div className="absolute inset-0 bg-[#0d1a0d] overflow-hidden">
-          <img src={escritorioHero} alt="Escritório Rodrigo Vitalino Advogados" className="w-full h-full object-cover object-center image-enhance-strong" />
+          <OptimizedImage
+            src={escritorioHero}
+            alt="Escritório Rodrigo Vitalino Advogados"
+            className="w-full h-full object-cover object-center image-enhance-strong"
+            priority={true}
+            sizes="100vw"
+          />
           {/* Lighter overlays for more image visibility */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#0d1a0d]/50 via-transparent to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0d1a0d]/15 via-transparent to-transparent" />
@@ -148,7 +153,13 @@ export default function Escritorio() {
 
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl">
-                <img alt="Sala de reuniões do escritório Rodrigo Vitalino Advogados" className="w-full h-auto object-cover" src="/lovable-uploads/d8c139b1-7ccc-4be4-8400-a2fc92806d89.png" />
+                <OptimizedImage
+                  src="/lovable-uploads/d8c139b1-7ccc-4be4-8400-a2fc92806d89.png"
+                  alt="Sala de reuniões do escritório Rodrigo Vitalino Advogados"
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
               </div>
               {/* Decorative badge */}
               <div className="absolute -bottom-4 -left-4 bg-accent text-white px-6 py-3 rounded-lg shadow-lg">
