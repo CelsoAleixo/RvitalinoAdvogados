@@ -51,18 +51,11 @@ export function FloatingWhatsApp() {
             >
               <X className="w-4 h-4" />
             </button>
-            <div className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 animate-pulse">
-                <Phone className="w-5 h-5 text-accent" />
-              </div>
-              <div>
-                <p className="text-base text-foreground font-serif font-semibold mb-1.5 leading-tight">
-                  Precisa de orientação jurídica?
-                </p>
-                <p className="text-sm text-foreground/80 leading-relaxed">
-                  Nossa equipe está disponível para esclarecer suas dúvidas.
-                </p>
-              </div>
+            <div className="flex items-center gap-2">
+              <Phone className="w-4 h-4 text-accent flex-shrink-0" />
+              <p className="text-sm text-foreground font-medium">
+                Fale com um advogado
+              </p>
             </div>
           </div>
           {/* Triangle pointer */}
