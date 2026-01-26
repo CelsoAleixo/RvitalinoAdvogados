@@ -108,8 +108,7 @@ export default function Index() {
                   preventiva e no contencioso buscando melhores resultados com transparência e segurança Jurídica.
                 </p>
                 <p className="text-mobile-justified">
-                  Atuamos também em Portugal, onde o Advogado Rodrigo Vitalino possui inscrição na Ordem dos Advogados
-                  de Portugal.
+                  Atuamos também em Portugal, onde o Advogado Rodrigo Vitalino possui inscrição na Ordem dos Advogados.  
                 </p>
               </div>
 
