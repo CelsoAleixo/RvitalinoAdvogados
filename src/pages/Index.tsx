@@ -32,42 +32,42 @@ export default function Index() {
   }, []);
   return <Layout>
       {/* Hero Section with Video Background */}
-      <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-[90vh] flex items-center overflow-hidden">
         {/* Video Background */}
         <div className="absolute inset-0 z-0">
           <video ref={videoRef} autoPlay loop muted playsInline className="w-full h-full object-cover video-enhance">
             <source src={institutionalVideo} type="video/mp4" />
           </video>
-          {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-[#1a2e1a]/70" />
+          {/* Dark Overlay - lighter on mobile to show more video */}
+          <div className="absolute inset-0 bg-[#1a2e1a]/60 sm:bg-[#1a2e1a]/70" />
         </div>
 
-        {/* Hero Content */}
-        <div className="container-site relative z-20 py-16 md:py-24">
+        {/* Hero Content - optimized for mobile */}
+        <div className="container-site relative z-20 py-12 sm:py-16 md:py-24">
           <div className="max-w-2xl">
-            <h1 className="text-balance animate-fade-in text-white text-5xl md:text-6xl">
+            <h1 className="text-balance animate-fade-in text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
               <span className="block text-accent">Soluções legais confiáveis e eficazes</span>
             </h1>
-            <p className="mt-6 text-xl text-white/90 leading-relaxed animate-slide-up font-normal md:text-2xl text-justify">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed animate-slide-up font-normal text-left sm:text-justify">
               Assessoria jurídica empresarial com excelência e segurança.
             </p>
-            <div className="mt-10 flex flex-wrap gap-4 animate-slide-up" style={{
+            <div className="mt-6 sm:mt-8 md:mt-10 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 animate-slide-up" style={{
             animationDelay: "0.1s"
           }}>
-              <Button asChild size="lg" className="group bg-accent hover:bg-accent/90 text-accent-foreground">
-                <Link to="/contato" className="flex items-center gap-2">
+              <Button asChild size="lg" className="group bg-accent hover:bg-accent/90 text-accent-foreground w-full sm:w-auto">
+                <Link to="/contato" className="flex items-center justify-center gap-2">
                   <Phone className="h-5 w-5" />
                   Contato
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20">
+              <Button asChild size="lg" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20 w-full sm:w-auto">
                 <Link to="/atuacao#areas-grid">Áreas de Atuação</Link>
               </Button>
             </div>
 
-            {/* Trust Badges */}
-            <div className="mt-8 flex flex-wrap items-center gap-4 animate-fade-in" style={{
+            {/* Trust Badges - hidden on small mobile */}
+            <div className="mt-6 sm:mt-8 flex flex-wrap items-center gap-4 animate-fade-in hidden sm:flex" style={{
             animationDelay: "0.2s"
           }}>
               
@@ -75,14 +75,14 @@ export default function Index() {
             </div>
 
             {/* Manifesto Tag */}
-            <div className="mt-6">
+            <div className="mt-4 sm:mt-6">
               <ManifestoModal />
             </div>
           </div>
         </div>
 
-        {/* Stats Row */}
-        <div className="absolute bottom-0 left-0 right-0 z-20 bg-gradient-to-t from-background via-background/80 to-transparent pt-16 pb-8">
+        {/* Stats Row - simplified on mobile */}
+        <div className="absolute bottom-0 left-0 right-0 z-20 bg-gradient-to-t from-background via-background/80 to-transparent pt-8 sm:pt-16 pb-4 sm:pb-8">
           <div className="container-site">
             
           </div>
