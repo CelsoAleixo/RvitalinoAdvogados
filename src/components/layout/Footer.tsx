@@ -29,7 +29,7 @@ export function Footer() {
             <Link to="/" className="inline-flex items-center gap-3" aria-label="Rodrigo Vitalino Advogados">
               <img alt="Rodrigo Vitalino Advogados" className="h-12 w-auto" width="59" height="48" loading="lazy" onError={e => {
               e.currentTarget.style.display = "none";
-            }} src={logoFooter} />
+            }} src="/lovable-uploads/70e1f4ff-fcb1-4b62-b7f0-a780ad7e29f8.png" />
               <span className="font-serif text-xl font-semibold tracking-tight text-primary">
                 Rodrigo Vitalino
                 <span className="block text-sm font-sans font-normal text-muted-foreground tracking-widest uppercase">
