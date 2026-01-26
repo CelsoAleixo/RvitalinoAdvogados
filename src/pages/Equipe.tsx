@@ -1,9 +1,10 @@
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/shared/CTASection";
-import { TrustIndicators } from "@/components/shared/TrustIndicators";
-import { Scale, Users, Globe, FileText, ArrowRight, Phone, Shield, CheckCircle } from "lucide-react";
+import { OptimizedImage } from "@/components/shared/OptimizedImage";
+import { Scale, Users, Globe, FileText, ArrowRight, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+
 const WHATSAPP_LINK = "https://wa.me/5511974083838?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20advogado.";
 const advogados = [{
   nome: "Rodrigo Vitalino",
@@ -78,7 +79,13 @@ export default function Equipe() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 lg:gap-6">
             {advogados.map((advogado, index) => <div key={index} className="bg-background rounded-xl p-5 lg:p-6 border border-border hover:border-accent/30 hover:shadow-xl transition-all duration-300 text-center group flex flex-col items-center h-full">
                 <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-full overflow-hidden mb-5 ring-2 ring-border group-hover:ring-accent/40 transition-all duration-300 shadow-lg flex-shrink-0">
-                  <img alt={`${advogado.nome} - ${advogado.cargo}`} className="w-full h-full object-cover" src={advogado.foto} />
+                  <OptimizedImage
+                    src={advogado.foto}
+                    alt={`${advogado.nome} - ${advogado.cargo}`}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    sizes="(max-width: 640px) 112px, (max-width: 1024px) 128px, 144px"
+                  />
                 </div>
                 <h3 className="font-serif font-bold text-sm lg:text-base text-foreground mb-1 leading-tight">
                   {advogado.nome}

@@ -407,4 +407,59 @@
   .animate-ping {
     will-change: transform, opacity;
   }
+
+  /* Image optimization utilities */
+  .img-responsive {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Lazy loading fade-in effect */
+  .img-lazy {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .img-lazy.loaded {
+    opacity: 1;
+  }
+
+  /* Aspect ratio containers for preventing layout shift */
+  .aspect-hero {
+    aspect-ratio: 16 / 9;
+  }
+
+  .aspect-portrait {
+    aspect-ratio: 3 / 4;
+  }
+
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
+
+  /* Object-fit utilities for images */
+  .img-cover {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .img-contain {
+    object-fit: contain;
+    object-position: center;
+  }
+
+  /* Performance optimizations for images */
+  .img-optimize {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  /* Content-visibility for off-screen images */
+  .img-offscreen {
+    content-visibility: auto;
+    contain-intrinsic-size: 300px 200px;
+  }
 }
