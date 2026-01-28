@@ -1,8 +1,8 @@
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/shared/CTASection";
 import { OptimizedImage } from "@/components/shared/OptimizedImage";
-import { Users, Globe, FileText, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Users, Scale } from "lucide-react";
+
 const advogados = [{
   nome: "Rodrigo Vitalino",
   cargo: "Sócio Fundador",
@@ -99,64 +99,51 @@ export default function Equipe() {
         </div>
       </section>
 
-      {/* Áreas de Destaque */}
-      <section className="section-padding bg-[#1a2e1a]">
+      {/* Why Choose Us */}
+      <section className="py-24 bg-background">
         <div className="container-site">
-          <div className="text-center mb-12">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-4">Áreas de Destaque</h2>
-            <p className="text-white/70">Experiência consolidada</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* Reestruturação Empresarial */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-accent/30 transition-all duration-300">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="p-3 rounded-lg bg-accent/10">
-                  <FileText className="w-6 h-6 text-accent" />
-                </div>
-                <div className="px-3 py-1 rounded-full bg-accent/10 border border-accent/30">
-                  <span className="text-accent text-xs font-medium">Experiência Consolidada</span>
-                </div>
-              </div>
-              <h3 className="font-serif text-2xl font-bold text-white mb-4">Reestruturação Empresarial</h3>
-              <p className="text-white/70 leading-relaxed mb-6">
-                Somos referência nacional em "Recuperação Judicial", conduzindo processos com excelência e
-                transparência. Estruturamos planos viáveis, negociamos com credores e asseguramos a preservação da
-                atividade empresarial.
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <span className="text-accent text-sm font-medium uppercase tracking-[0.2em] mb-6 block">
+                Por que nos escolher
+              </span>
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-8 leading-tight">
+                Excelência e Comprometimento em Cada Caso
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-10 text-lg">
+                Acreditamos que cada cliente é único e merece uma abordagem personalizada. 
+                Nossa equipe combina expertise técnica com uma visão estratégica, garantindo 
+                soluções eficazes e resultados consistentes.
               </p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                <span className="px-3 py-1 bg-white/10 rounded-full text-white/80 text-sm">Planos viáveis</span>
-                <span className="px-3 py-1 bg-white/10 rounded-full text-white/80 text-sm">Negociação</span>
+              
+              <div className="space-y-5">
+                {["Atendimento personalizado e dedicado", "Equipe multidisciplinar e experiente", "Estratégias jurídicas inovadoras", "Transparência em todas as etapas", "Resultados comprovados ao longo de 17 anos"].map((item, index) => <div key={index} className="flex items-center gap-4 group">
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center flex-shrink-0 group-hover:from-accent/30 group-hover:to-accent/20 transition-all duration-300">
+                      <div className="w-2 h-2 rounded-full bg-accent" />
+                    </div>
+                    <span className="text-foreground text-lg">{item}</span>
+                  </div>)}
               </div>
-              <Link to="/atuacao/recuperacao-judicial" className="inline-flex items-center gap-2 text-accent hover:text-accent/80 font-medium transition-colors group">
-                Recuperação Judicial
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
             </div>
 
-            {/* Presença em Portugal */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-accent/30 transition-all duration-300">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="p-3 rounded-lg bg-accent/10">
-                  <Globe className="w-6 h-6 text-accent" />
-                </div>
-                <div className="px-3 py-1 rounded-full bg-accent/10 border border-accent/30">
-                  <span className="text-accent text-xs font-medium">Atuação Internacional</span>
+            <div className="relative">
+              <div className="aspect-square bg-gradient-to-br from-[#1a2e1a] via-[#243824] to-[#1a2e1a] rounded-3xl p-10 flex items-center justify-center shadow-2xl">
+                <div className="text-center">
+                  <div className="relative mb-8">
+                    <Scale className="h-28 w-28 text-accent mx-auto opacity-30" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-16 h-16 rounded-full bg-accent/10 animate-pulse" />
+                    </div>
+                  </div>
+                  <div className="font-serif text-6xl lg:text-7xl bg-gradient-to-r from-accent via-[#d4b65c] to-accent bg-clip-text text-transparent font-semibold mb-3">
+                    2008
+                  </div>
+                  <div className="text-white/60 text-lg">Fundação do Escritório</div>
                 </div>
               </div>
-              <h3 className="font-serif text-2xl font-bold text-white mb-4">Presença em Portugal</h3>
-              <p className="text-white/70 leading-relaxed mb-6">
-                Atuamos também em Portugal, onde o Advogado Rodrigo Vitalino possui inscrição na Ordem dos Advogados,
-                garantindo legitimidade e excelência na prática jurídica internacional.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                <span className="px-3 py-1 bg-white/10 rounded-full text-white/80 text-sm">OAB Portugal</span>
-                <span className="px-3 py-1 bg-white/10 rounded-full text-white/80 text-sm">União Europeia</span>
-              </div>
-              <Link to="/portugal" className="inline-flex items-center gap-2 text-accent hover:text-accent/80 font-medium transition-colors group">
-                Atuação em Portugal
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              {/* Decorative elements */}
+              <div className="absolute -top-6 -right-6 w-28 h-28 border-2 border-accent/20 rounded-3xl" />
+              <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-accent/5 rounded-full blur-3xl" />
             </div>
           </div>
         </div>
