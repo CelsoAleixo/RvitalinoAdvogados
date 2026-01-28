@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/shared/SectionHeading";
-import { QuoteBand } from "@/components/shared/QuoteBand";
+
 import { CTASection } from "@/components/shared/CTASection";
 import { ManifestoModal } from "@/components/shared/ManifestoModal";
 import { TrustIndicators } from "@/components/shared/TrustIndicators";
@@ -169,9 +169,6 @@ export default function Index() {
           </div>
         </div>
       </section>
-
-      {/* Quote */}
-      <QuoteBand quote="A injustiça em qualquer lugar é uma ameaça à justiça por toda parte." author="Martin Luther King Jr." />
 
       {/* CTA */}
       <CTASection />
