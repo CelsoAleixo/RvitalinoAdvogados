@@ -60,37 +60,37 @@ export default function Equipe() {
           </div>
 
           {/* Team Grid - Professional 5-column Layout */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 lg:gap-6">
+          <div className="flex flex-wrap justify-center gap-5 lg:gap-6">
             {advogados.map((advogado, index) => (
               <div
                 key={index}
-                className="bg-background rounded-xl p-5 lg:p-6 border border-border hover:border-accent/30 hover:shadow-xl transition-all duration-300 text-center group flex flex-col items-center h-full"
+                className="bg-background rounded-xl p-5 lg:p-6 border border-border hover:border-accent/30 hover:shadow-xl transition-all duration-300 text-center group flex flex-col items-center flex-shrink-0 w-full sm:w-auto sm:min-w-[180px] sm:max-w-[220px]"
               >
-                <div className="w-36 h-36 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-full overflow-hidden mb-5 ring-2 ring-border group-hover:ring-accent/40 transition-all duration-300 shadow-lg flex-shrink-0">
+                <div className="w-36 h-36 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full overflow-hidden mb-4 ring-2 ring-border group-hover:ring-accent/40 transition-all duration-300 shadow-lg flex-shrink-0">
                   <OptimizedImage
                     src={advogado.foto}
                     alt={`${advogado.nome} - ${advogado.cargo}`}
                     className={`w-full h-full object-cover ${advogado.nome === "Deidre Scaranello" ? "object-[center_25%]" : ""}`}
                     loading="lazy"
-                    sizes="(max-width: 640px) 112px, (max-width: 1024px) 128px, 144px"
+                    sizes="(max-width: 640px) 112px, (max-width: 1024px) 112px, 128px"
                   />
                 </div>
-                <h3 className="font-serif font-bold text-sm lg:text-base text-foreground mb-1 leading-tight">
+                <h3 className="font-serif font-bold text-sm lg:text-base text-foreground mb-1 leading-tight whitespace-nowrap">
                   {advogado.nome}
                 </h3>
-                <p className="text-accent font-semibold text-[9px] lg:text-[10px] uppercase tracking-wider mb-1 text-justify">
+                <p className="text-accent font-semibold text-[9px] lg:text-[10px] uppercase tracking-wider mb-2 whitespace-nowrap">
                   {advogado.cargo}
                 </p>
-                <div className="min-h-[40px] flex items-center justify-center">
+                <div className="flex items-center justify-center">
                   {advogado.especialidade && (
-                    <p className="text-accent font-medium text-[10px] lg:text-[11px] leading-snug text-center px-2 py-1.5 bg-accent/10 rounded-md border border-accent/20">
+                    <p className="text-accent font-medium text-[9px] lg:text-[10px] leading-snug text-center px-2 py-1.5 bg-accent/10 rounded-md border border-accent/20 whitespace-nowrap">
                       {advogado.especialidade}
                     </p>
                   )}
                 </div>
                 <a
                   href={`mailto:${advogado.email}`}
-                  className="text-muted-foreground hover:text-accent transition-colors text-[8px] lg:text-[9px] truncate block w-full mt-auto pt-2"
+                  className="text-muted-foreground hover:text-accent transition-colors text-[8px] lg:text-[9px] whitespace-nowrap mt-auto pt-2"
                 >
                   {advogado.email}
                 </a>
