@@ -145,6 +145,11 @@ Com uma abordagem técnica e estratégica, busco soluções jurídicas eficazes 
     date: "2026-01-19",
     category: "Direito Internacional",
     categorySlug: "direito-internacional",
+    authorSection: {
+      name: "CJ Arthur Vitalino",
+      description: "Especialista em Direito Internacional",
+      photo: "/lovable-uploads/arthur-vitalino.png"
+    },
     content: `## Internacionalização Jurídica: Por Que Atuar Além das Fronteiras?
 
 A advocacia contemporânea exige competências que ultrapassam os limites territoriais. O mercado jurídico globalizado demanda profissionais capacitados a compreender tratados, convenções internacionais e as dinâmicas de cooperação entre jurisdições. Nesse contexto, eventos de imersão acadêmica e networking internacional ganham relevância estratégica.
