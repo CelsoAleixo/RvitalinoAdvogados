@@ -239,7 +239,7 @@ Durante o período de transição (2026-2032), as empresas operam com dois siste
     title: "Mudanças Trabalhistas a partir de 2026: O Que Sua Empresa Precisa Saber",
     subtitle: "Portaria MTE nº 1/2025 moderniza fiscalização e consolida eSocial",
     excerpt: "A Portaria Consolidada MTE nº 1/2025 moderniza as relações de trabalho com fiscalização 100% digital, novos prazos de admissão e consolidação do eSocial.",
-    date: "2026-01-21",
+    date: "2026-01-18",
     category: "Direito Trabalhista",
     categorySlug: "direito-trabalhista",
     content: `## Nova Era das Relações Trabalhistas: Portaria Consolidada MTE nº 1/2025
@@ -260,11 +260,6 @@ O Domicílio Eletrônico Trabalhista (DET) assume protagonismo como canal exclus
 ---
 
 *Publicado por Rodrigo Vitalino Advogados*`,
-    authorSection: {
-      name: "Dra. Ana Caroline Ianuck",
-      description: "Advogada especialista em Direito Trabalhista",
-      photo: "/lovable-uploads/ana-caroline.png"
-    }
   },
   {
     id: 1,
