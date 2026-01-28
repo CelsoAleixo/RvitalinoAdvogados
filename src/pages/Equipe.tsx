@@ -10,7 +10,7 @@ const advogados = [
   {
     nome: "Rodrigo Vitalino",
     cargo: "Sócio Fundador",
-    especialidade: null,
+    especialidade: "(Reestruturação de Empresas)",
     email: "rodrigo@rvitalinoadvogados.com.br",
     foto: "/lovable-uploads/d699caab-0157-4f29-ab67-c28d2b8cdcd7.png",
   },
