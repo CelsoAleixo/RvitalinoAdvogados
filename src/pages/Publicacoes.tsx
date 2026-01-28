@@ -2,14 +2,12 @@ import { useState, useMemo } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { PageHero } from "@/components/shared/PageHero";
 import { CTASection } from "@/components/shared/CTASection";
+import { PublicationCard } from "@/components/shared/PublicationCard";
 import { Input } from "@/components/ui/input";
-import { Search, Calendar, Tag, ArrowRight, BookOpen } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Search, BookOpen } from "lucide-react";
 import publicationsHero from "@/assets/publications-hero.jpg";
 import { 
-  publications, 
   categories, 
-  getPublicationUrl,
   getPublicationsSortedByDate 
 } from "@/data/publications";
 
@@ -30,6 +28,11 @@ export default function Publicacoes() {
 
   const featuredPost = filteredPosts[0];
   const remainingPosts = filteredPosts.slice(1);
+
+  const handleCategoryClick = (category: string) => {
+    setActiveCategory(category);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <Layout>
@@ -86,109 +89,25 @@ export default function Publicacoes() {
             <>
               {/* Featured Post */}
               {featuredPost && (
-                <article className="group mb-12 bg-card rounded-lg border border-border overflow-hidden hover:border-accent/40 transition-all duration-300">
-                  <div className="p-8 md:p-10">
-                    {/* Category Badge */}
-                    <div className="mb-4">
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-accent/10 text-accent text-xs font-semibold rounded uppercase tracking-wider">
-                        <Tag className="h-3 w-3" />
-                        {featuredPost.category}
-                      </span>
-                    </div>
-
-                    {/* Title */}
-                    <Link to={getPublicationUrl(featuredPost)}>
-                      <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl mb-4 text-foreground group-hover:text-accent transition-colors leading-tight cursor-pointer">
-                        {featuredPost.title}
-                      </h2>
-                    </Link>
-
-                    {/* Subtitle */}
-                    {featuredPost.subtitle && (
-                      <p className="text-lg text-accent/80 font-medium mb-4">
-                        {featuredPost.subtitle}
-                      </p>
-                    )}
-
-                    {/* Excerpt */}
-                    <p className="text-muted-foreground leading-relaxed text-lg mb-6 max-w-3xl">
-                      {featuredPost.excerpt}
-                    </p>
-
-                    {/* Footer */}
-                    <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-border">
-                      <span className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <Calendar className="h-4 w-4" />
-                        {new Date(featuredPost.date).toLocaleDateString("pt-BR", {
-                          day: "numeric",
-                          month: "long",
-                          year: "numeric",
-                        })}
-                      </span>
-                      
-                      <Link
-                        to={getPublicationUrl(featuredPost)}
-                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-accent-foreground rounded font-medium hover:bg-accent/90 transition-colors"
-                      >
-                        Ler artigo completo
-                        <ArrowRight className="h-4 w-4" />
-                      </Link>
-                    </div>
-                  </div>
-                </article>
+                <div className="mb-12">
+                  <PublicationCard 
+                    publication={featuredPost} 
+                    variant="featured"
+                    onCategoryClick={handleCategoryClick}
+                  />
+                </div>
               )}
 
               {/* Remaining Posts Grid */}
               {remainingPosts.length > 0 && (
                 <div className="grid md:grid-cols-2 gap-6">
                   {remainingPosts.map((post) => (
-                    <article
+                    <PublicationCard
                       key={post.id}
-                      className="group bg-card rounded-lg border border-border p-6 hover:border-accent/30 hover:shadow-lg transition-all duration-300"
-                    >
-                      {/* Category & Date */}
-                      <div className="flex items-center justify-between gap-3 text-sm text-muted-foreground mb-4">
-                        <button
-                          onClick={() => {
-                            setActiveCategory(post.category);
-                            window.scrollTo({ top: 0, behavior: "smooth" });
-                          }}
-                          className="flex items-center gap-1.5 px-2 py-0.5 bg-secondary rounded text-xs font-medium hover:text-accent transition-colors"
-                        >
-                          <Tag className="h-3 w-3" />
-                          {post.category}
-                        </button>
-                        <span className="flex items-center gap-1.5">
-                          <Calendar className="h-3.5 w-3.5" />
-                          {new Date(post.date).toLocaleDateString("pt-BR", {
-                            day: "numeric",
-                            month: "short",
-                            year: "numeric",
-                          })}
-                        </span>
-                      </div>
-
-                      {/* Title */}
-                      <Link to={getPublicationUrl(post)}>
-                        <h3 className="font-serif text-lg md:text-xl mb-3 text-foreground group-hover:text-accent transition-colors leading-snug cursor-pointer line-clamp-2">
-                          {post.title}
-                        </h3>
-                      </Link>
-
-                      {/* Excerpt */}
-                      <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-3">
-                        {post.excerpt}
-                      </p>
-
-                      {/* Read more */}
-                      <Link
-                        to={getPublicationUrl(post)}
-                        className="inline-flex items-center gap-2 text-accent text-sm font-medium hover:gap-3 transition-all"
-                      >
-                        Ler mais
-                        <ArrowRight className="h-3.5 w-3.5" />
-                      </Link>
-                    </article>
+                      publication={post}
+                      variant="default"
+                      onCategoryClick={handleCategoryClick}
+                    />
                   ))}
                 </div>
               )}
