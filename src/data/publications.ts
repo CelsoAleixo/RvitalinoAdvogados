@@ -227,6 +227,11 @@ Durante o período de transição (2026-2032), as empresas operam com dois siste
 ---
 
 *Publicado por Rodrigo Vitalino Advogados*`,
+    authorSection: {
+      name: "Dr. Deidre Scaranello",
+      description: "Advogada especialista em Direito Empresarial",
+      photo: "/lovable-uploads/deidre-scaranello-fixed.png"
+    }
   },
   {
     id: 5,
