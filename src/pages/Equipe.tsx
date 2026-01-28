@@ -3,47 +3,39 @@ import { CTASection } from "@/components/shared/CTASection";
 import { OptimizedImage } from "@/components/shared/OptimizedImage";
 import { Users, Globe, FileText, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-
-const advogados = [
-  {
-    nome: "Rodrigo Vitalino",
-    cargo: "Sócio Fundador",
-    especialidade: "Reestruturação de Empresas",
-    email: "rodrigo@rvitalinoadvogados.com.br",
-    foto: "/lovable-uploads/d699caab-0157-4f29-ab67-c28d2b8cdcd7.png",
-  },
-  {
-    nome: "Deidre Scaranello",
-    cargo: "Diretora Jurídica",
-    especialidade: "Operações Estratégicas na área da insolvência",
-    email: "deidre@rvitalinoadvogados.com.br",
-    foto: "/lovable-uploads/deidre-scaranello-new.avif",
-  },
-  {
-    nome: "Ana Caroline Ianuck",
-    cargo: "Advogada Empresarial",
-    especialidade: "Especialista em Recuperação Judicial",
-    email: "ana.caroline@rvitalinoadvogados.com.br",
-    foto: "/lovable-uploads/ana-caroline.png",
-  },
-  {
-    nome: "Arthur Vitalino",
-    cargo: "Correspondente Jurídico",
-    especialidade: "Atuação na União Europeia",
-    email: "arthur@rvitalinoadvogados.com.br",
-    foto: "/lovable-uploads/arthur-vitalino.png",
-  },
-  {
-    nome: "Elisandra Sousa Barbosa",
-    cargo: "Advogada Empresarial",
-    especialidade: "Especialista em Recuperação Judicial",
-    email: "elisandra.sousa@rvitalinoadvogados.com.br",
-    foto: "/lovable-uploads/elisandra-sousa.png",
-  },
-];
+const advogados = [{
+  nome: "Rodrigo Vitalino",
+  cargo: "Sócio Fundador",
+  especialidade: "Reestruturação de Empresas",
+  email: "rodrigo@rvitalinoadvogados.com.br",
+  foto: "/lovable-uploads/d699caab-0157-4f29-ab67-c28d2b8cdcd7.png"
+}, {
+  nome: "Deidre Scaranello",
+  cargo: "Diretora Jurídica",
+  especialidade: "Operações Estratégicas na área da insolvência",
+  email: "deidre@rvitalinoadvogados.com.br",
+  foto: "/lovable-uploads/deidre-scaranello-new.avif"
+}, {
+  nome: "Ana Caroline Ianuck",
+  cargo: "Advogada Empresarial",
+  especialidade: "Especialista em Recuperação Judicial",
+  email: "ana.caroline@rvitalinoadvogados.com.br",
+  foto: "/lovable-uploads/ana-caroline.png"
+}, {
+  nome: "Arthur Vitalino",
+  cargo: "Correspondente Jurídico",
+  especialidade: "Atuação na União Europeia",
+  email: "arthur@rvitalinoadvogados.com.br",
+  foto: "/lovable-uploads/arthur-vitalino.png"
+}, {
+  nome: "Elisandra Sousa Barbosa",
+  cargo: "Advogada Empresarial",
+  especialidade: "Especialista em Recuperação Judicial",
+  email: "elisandra.sousa@rvitalinoadvogados.com.br",
+  foto: "/lovable-uploads/elisandra-sousa.png"
+}];
 export default function Equipe() {
-  return (
-    <Layout>
+  return <Layout>
 
       {/* Team Section - Direct Start */}
       <section className="section-padding bg-secondary">
@@ -61,19 +53,9 @@ export default function Equipe() {
 
           {/* First Row - 3 members */}
           <div className="flex flex-wrap justify-center gap-4 lg:gap-5 mb-4 lg:mb-5">
-            {advogados.slice(0, 3).map((advogado, index) => (
-              <div
-                key={index}
-                className="bg-background rounded-xl p-5 lg:p-6 border border-border hover:border-accent/30 hover:shadow-xl transition-all duration-300 text-center group flex flex-col items-center flex-shrink-0 w-full sm:w-auto sm:min-w-[240px] lg:min-w-[260px]"
-              >
+            {advogados.slice(0, 3).map((advogado, index) => <div key={index} className="bg-background rounded-xl p-5 lg:p-6 border border-border hover:border-accent/30 hover:shadow-xl transition-all duration-300 text-center group flex flex-col items-center flex-shrink-0 w-full sm:w-auto sm:min-w-[240px] lg:min-w-[260px]">
                 <div className="w-36 h-36 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full overflow-hidden mb-4 ring-2 ring-border group-hover:ring-accent/40 transition-all duration-300 shadow-lg flex-shrink-0">
-                  <OptimizedImage
-                    src={advogado.foto}
-                    alt={`${advogado.nome} - ${advogado.cargo}`}
-                    className={`w-full h-full object-cover ${advogado.nome === "Deidre Scaranello" ? "object-[center_25%]" : ""}`}
-                    loading="lazy"
-                    sizes="(max-width: 640px) 112px, (max-width: 1024px) 112px, 128px"
-                  />
+                  <OptimizedImage src={advogado.foto} alt={`${advogado.nome} - ${advogado.cargo}`} className={`w-full h-full object-cover ${advogado.nome === "Deidre Scaranello" ? "object-[center_25%]" : ""}`} loading="lazy" sizes="(max-width: 640px) 112px, (max-width: 1024px) 112px, 128px" />
                 </div>
                 <h3 className="font-serif font-bold text-sm lg:text-base text-foreground mb-1 leading-tight whitespace-nowrap">
                   {advogado.nome}
@@ -82,37 +64,21 @@ export default function Equipe() {
                   {advogado.cargo}
                 </p>
                 <div className="flex items-center justify-center">
-                  {advogado.especialidade && (
-                    <p className="text-accent font-semibold text-[11px] lg:text-xs leading-snug text-center px-3 py-1.5 bg-accent/10 rounded-md border border-accent/20 whitespace-nowrap">
+                  {advogado.especialidade && <p className="font-semibold text-[11px] lg:text-xs leading-snug text-center px-3 py-1.5 bg-accent/10 rounded-md border border-accent/20 whitespace-nowrap text-secondary-foreground">
                       {advogado.especialidade}
-                    </p>
-                  )}
+                    </p>}
                 </div>
-                <a
-                  href={`mailto:${advogado.email}`}
-                  className="text-muted-foreground hover:text-accent transition-colors text-[8px] lg:text-[9px] whitespace-nowrap mt-auto pt-2"
-                >
+                <a href={`mailto:${advogado.email}`} className="text-muted-foreground hover:text-accent transition-colors text-[8px] lg:text-[9px] whitespace-nowrap mt-auto pt-2">
                   {advogado.email}
                 </a>
-              </div>
-            ))}
+              </div>)}
           </div>
 
           {/* Second Row - 2 members */}
           <div className="flex flex-wrap justify-center gap-4 lg:gap-5">
-            {advogados.slice(3, 5).map((advogado, index) => (
-              <div
-                key={index + 3}
-                className="bg-background rounded-xl p-5 lg:p-6 border border-border hover:border-accent/30 hover:shadow-xl transition-all duration-300 text-center group flex flex-col items-center flex-shrink-0 w-full sm:w-auto sm:min-w-[240px] lg:min-w-[260px]"
-              >
+            {advogados.slice(3, 5).map((advogado, index) => <div key={index + 3} className="bg-background rounded-xl p-5 lg:p-6 border border-border hover:border-accent/30 hover:shadow-xl transition-all duration-300 text-center group flex flex-col items-center flex-shrink-0 w-full sm:w-auto sm:min-w-[240px] lg:min-w-[260px]">
                 <div className="w-36 h-36 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full overflow-hidden mb-4 ring-2 ring-border group-hover:ring-accent/40 transition-all duration-300 shadow-lg flex-shrink-0">
-                  <OptimizedImage
-                    src={advogado.foto}
-                    alt={`${advogado.nome} - ${advogado.cargo}`}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                    sizes="(max-width: 640px) 112px, (max-width: 1024px) 112px, 128px"
-                  />
+                  <OptimizedImage src={advogado.foto} alt={`${advogado.nome} - ${advogado.cargo}`} className="w-full h-full object-cover" loading="lazy" sizes="(max-width: 640px) 112px, (max-width: 1024px) 112px, 128px" />
                 </div>
                 <h3 className="font-serif font-bold text-sm lg:text-base text-foreground mb-1 leading-tight whitespace-nowrap">
                   {advogado.nome}
@@ -121,20 +87,14 @@ export default function Equipe() {
                   {advogado.cargo}
                 </p>
                 <div className="flex items-center justify-center">
-                  {advogado.especialidade && (
-                    <p className="text-accent font-semibold text-[11px] lg:text-xs leading-snug text-center px-3 py-1.5 bg-accent/10 rounded-md border border-accent/20 whitespace-nowrap">
+                  {advogado.especialidade && <p className="font-semibold text-[11px] lg:text-xs leading-snug text-center px-3 py-1.5 bg-accent/10 rounded-md border border-accent/20 whitespace-nowrap text-secondary-foreground">
                       {advogado.especialidade}
-                    </p>
-                  )}
+                    </p>}
                 </div>
-                <a
-                  href={`mailto:${advogado.email}`}
-                  className="text-muted-foreground hover:text-accent transition-colors text-[8px] lg:text-[9px] whitespace-nowrap mt-auto pt-2"
-                >
+                <a href={`mailto:${advogado.email}`} className="text-muted-foreground hover:text-accent transition-colors text-[8px] lg:text-[9px] whitespace-nowrap mt-auto pt-2">
                   {advogado.email}
                 </a>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -168,10 +128,7 @@ export default function Equipe() {
                 <span className="px-3 py-1 bg-white/10 rounded-full text-white/80 text-sm">Planos viáveis</span>
                 <span className="px-3 py-1 bg-white/10 rounded-full text-white/80 text-sm">Negociação</span>
               </div>
-              <Link
-                to="/atuacao/recuperacao-judicial"
-                className="inline-flex items-center gap-2 text-accent hover:text-accent/80 font-medium transition-colors group"
-              >
+              <Link to="/atuacao/recuperacao-judicial" className="inline-flex items-center gap-2 text-accent hover:text-accent/80 font-medium transition-colors group">
                 Recuperação Judicial
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -196,10 +153,7 @@ export default function Equipe() {
                 <span className="px-3 py-1 bg-white/10 rounded-full text-white/80 text-sm">OAB Portugal</span>
                 <span className="px-3 py-1 bg-white/10 rounded-full text-white/80 text-sm">União Europeia</span>
               </div>
-              <Link
-                to="/portugal"
-                className="inline-flex items-center gap-2 text-accent hover:text-accent/80 font-medium transition-colors group"
-              >
+              <Link to="/portugal" className="inline-flex items-center gap-2 text-accent hover:text-accent/80 font-medium transition-colors group">
                 Atuação em Portugal
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -209,6 +163,5 @@ export default function Equipe() {
       </section>
 
       <CTASection />
-    </Layout>
-  );
+    </Layout>;
 }
