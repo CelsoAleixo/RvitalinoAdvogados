@@ -47,7 +47,7 @@ export default function Equipe() {
 
       {/* Team Section - Direct Start */}
       <section className="section-padding bg-secondary">
-        <div className="container-site px-4 md:px-6 lg:px-8">
+        <div className="max-w-[1600px] mx-auto px-3 md:px-4 lg:px-6">
           {/* Header */}
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/30 mb-6">
@@ -60,13 +60,13 @@ export default function Equipe() {
           </div>
 
           {/* Team Grid - Professional 5-column Layout */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 lg:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-5">
             {advogados.map((advogado, index) => (
               <div
                 key={index}
-                className="bg-background rounded-xl p-5 lg:p-6 border border-border hover:border-accent/30 hover:shadow-xl transition-all duration-300 text-center group flex flex-col items-center h-full"
+                className="bg-background rounded-xl p-6 lg:p-7 border border-border hover:border-accent/30 hover:shadow-xl transition-all duration-300 text-center group flex flex-col items-center h-full"
               >
-                <div className="w-36 h-36 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-full overflow-hidden mb-5 ring-2 ring-border group-hover:ring-accent/40 transition-all duration-300 shadow-lg flex-shrink-0">
+                <div className="w-40 h-40 sm:w-36 sm:h-36 lg:w-44 lg:h-44 rounded-full overflow-hidden mb-5 ring-2 ring-border group-hover:ring-accent/40 transition-all duration-300 shadow-lg flex-shrink-0">
                   <OptimizedImage
                     src={advogado.foto}
                     alt={`${advogado.nome} - ${advogado.cargo}`}
@@ -83,7 +83,7 @@ export default function Equipe() {
                 </p>
                 <div className="min-h-[32px] flex items-start justify-center">
                   {advogado.especialidade && (
-                    <p className="text-muted-foreground text-[9px] lg:text-[10px] leading-tight text-center">
+                    <p className="text-muted-foreground text-[10px] lg:text-xs leading-tight text-center">
                       {advogado.especialidade}
                     </p>
                   )}
