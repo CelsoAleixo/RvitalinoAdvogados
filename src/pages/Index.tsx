@@ -7,6 +7,7 @@ import { CTASection } from "@/components/shared/CTASection";
 import { ManifestoModal } from "@/components/shared/ManifestoModal";
 import { TrustIndicators } from "@/components/shared/TrustIndicators";
 import { ResponsiveHeroVideo } from "@/components/shared/ResponsiveHeroVideo";
+import { PublicationCard } from "@/components/shared/PublicationCard";
 import { ArrowRight, Scale, Building2, Phone, BookOpen, Briefcase } from "lucide-react";
 import institutionalVideo from "@/assets/institutional-video.mp4";
 import { getPublicationsSortedByDate } from "@/data/publications";
@@ -88,21 +89,11 @@ export default function Index() {
           
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             {recentPublications.map((pub) => (
-              <Link 
+              <PublicationCard 
                 key={pub.id} 
-                to={`/publicacoes/${pub.slug}`}
-                className="group bg-card rounded-xl p-6 border border-border hover:border-accent/30 transition-all duration-300 hover:shadow-lg"
-              >
-                <span className="text-xs font-medium text-accent uppercase tracking-wider">{pub.category}</span>
-                <h3 className="font-serif text-lg mt-2 mb-3 group-hover:text-accent transition-colors line-clamp-2">
-                  {pub.title}
-                </h3>
-                <p className="text-muted-foreground text-sm line-clamp-2">{pub.excerpt}</p>
-                <div className="flex items-center gap-2 mt-4 text-accent text-sm font-medium">
-                  <span>Ler mais</span>
-                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </Link>
+                publication={pub} 
+                variant="compact"
+              />
             ))}
           </div>
 
