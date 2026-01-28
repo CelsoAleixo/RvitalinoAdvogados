@@ -221,55 +221,6 @@ export default function Atuacao() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-24 bg-background">
-        <div className="container-site">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <span className="text-accent text-sm font-medium uppercase tracking-[0.2em] mb-6 block">
-                Por que nos escolher
-              </span>
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-8 leading-tight">
-                Excelência e Comprometimento em Cada Caso
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-10 text-lg">
-                Acreditamos que cada cliente é único e merece uma abordagem personalizada. 
-                Nossa equipe combina expertise técnica com uma visão estratégica, garantindo 
-                soluções eficazes e resultados consistentes.
-              </p>
-              
-              <div className="space-y-5">
-                {["Atendimento personalizado e dedicado", "Equipe multidisciplinar e experiente", "Estratégias jurídicas inovadoras", "Transparência em todas as etapas", "Resultados comprovados ao longo de 17 anos"].map((item, index) => <div key={index} className="flex items-center gap-4 group">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center flex-shrink-0 group-hover:from-accent/30 group-hover:to-accent/20 transition-all duration-300">
-                      <div className="w-2 h-2 rounded-full bg-accent" />
-                    </div>
-                    <span className="text-foreground text-lg">{item}</span>
-                  </div>)}
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-[#1a2e1a] via-[#243824] to-[#1a2e1a] rounded-3xl p-10 flex items-center justify-center shadow-2xl">
-                <div className="text-center">
-                  <div className="relative mb-8">
-                    <Scale className="h-28 w-28 text-accent mx-auto opacity-30" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-16 h-16 rounded-full bg-accent/10 animate-pulse" />
-                    </div>
-                  </div>
-                  <div className="font-serif text-6xl lg:text-7xl bg-gradient-to-r from-accent via-[#d4b65c] to-accent bg-clip-text text-transparent font-semibold mb-3">
-                    2008
-                  </div>
-                  <div className="text-white/60 text-lg">Fundação do Escritório</div>
-                </div>
-              </div>
-              {/* Decorative elements */}
-              <div className="absolute -top-6 -right-6 w-28 h-28 border-2 border-accent/20 rounded-3xl" />
-              <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-accent/5 rounded-full blur-3xl" />
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <CTASection title="Precisa de assessoria jurídica especializada?" description="Entre em contato e conheça soluções jurídicas personalizadas para suas necessidades. Nossa equipe está pronta para ajudá-lo." />
