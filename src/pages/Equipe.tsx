@@ -89,7 +89,7 @@ export default function Equipe() {
                 key={index}
                 className="bg-background rounded-xl p-5 lg:p-6 border border-border hover:border-accent/30 hover:shadow-xl transition-all duration-300 text-center group flex flex-col items-center h-full"
               >
-                <div className="w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-full overflow-hidden mb-5 ring-2 ring-border group-hover:ring-accent/40 transition-all duration-300 shadow-lg flex-shrink-0">
+                <div className="w-36 h-36 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-full overflow-hidden mb-5 ring-2 ring-border group-hover:ring-accent/40 transition-all duration-300 shadow-lg flex-shrink-0">
                   <OptimizedImage
                     src={advogado.foto}
                     alt={`${advogado.nome} - ${advogado.cargo}`}
