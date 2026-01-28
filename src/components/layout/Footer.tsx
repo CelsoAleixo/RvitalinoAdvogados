@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
 import logoRV from "@/assets/logo-rv-transparent.png";
-
 const quickLinks = [{
   name: "Início",
   href: "/"
@@ -28,15 +27,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-flex items-center gap-3" aria-label="Rodrigo Vitalino Advogados">
-              <img 
-                alt="Rodrigo Vitalino Advogados" 
-                className="h-12 w-auto" 
-                width="48" 
-                height="48" 
-                loading="lazy"
-                decoding="async"
-                src={logoRV}
-              />
+              <img alt="Rodrigo Vitalino Advogados" className="h-12 w-auto" width="48" height="48" loading="lazy" decoding="async" src="/lovable-uploads/f4d5c306-1174-4338-8a66-2c93f062cb97.png" />
               <span className="font-serif text-xl font-semibold tracking-tight text-primary">
                 Rodrigo Vitalino
                 <span className="block text-sm font-sans font-normal text-muted-foreground tracking-widest uppercase">
