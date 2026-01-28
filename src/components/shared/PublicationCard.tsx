@@ -82,13 +82,19 @@ export function PublicationCard({ publication, variant = "default", onCategoryCl
         to={getPublicationUrl(publication)}
         className="group bg-card rounded-xl p-6 border border-border hover:border-accent/30 transition-all duration-300 hover:shadow-lg flex flex-col h-full"
       >
-        <span className="text-xs font-medium text-accent uppercase tracking-wider">{publication.category}</span>
-        <h3 className="font-serif text-lg mt-2 mb-3 group-hover:text-accent transition-colors line-clamp-2 flex-grow">
+        <div className="flex items-center justify-between gap-2 mb-2">
+          <span className="text-xs font-medium text-accent uppercase tracking-wider">{publication.category}</span>
+          <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
+            <Calendar className="h-3 w-3" />
+            {formattedDate}
+          </span>
+        </div>
+        <h3 className="font-serif text-lg mb-3 group-hover:text-accent transition-colors line-clamp-2 flex-grow">
           {publication.title}
         </h3>
         <p className="text-muted-foreground text-sm line-clamp-2 mb-4">{publication.excerpt}</p>
 
-        {/* Author & Date Row */}
+        {/* Author & Read more Row */}
         <div className="flex items-center justify-between gap-2 pt-4 border-t border-border mt-auto">
           <div className="flex items-center gap-2 text-xs text-muted-foreground">
             <User className="h-3.5 w-3.5 text-accent" />
