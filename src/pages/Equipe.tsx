@@ -19,7 +19,7 @@ const advogados = [
     cargo: "Diretora Jurídica",
     especialidade: "(Operações Estratégicas (M&A)",
     email: "deidre@rvitalinoadvogados.com.br",
-    foto: "/lovable-uploads/deidre-scaranello-fixed.png",
+    foto: "/lovable-uploads/deidre-scaranello-new.avif",
   },
   {
     nome: "Ana Caroline Ianuck",
