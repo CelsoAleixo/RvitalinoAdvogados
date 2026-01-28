@@ -29,7 +29,7 @@ const advogados = [
   {
     nome: "Arthur Vitalino",
     cargo: "Correspondente Jurídico",
-    especialidade: "(União Europeia)",
+    especialidade: "(Na União Europeia)",
     email: "arthur@rvitalinoadvogados.com.br",
     foto: "/lovable-uploads/arthur-vitalino.png",
   },
