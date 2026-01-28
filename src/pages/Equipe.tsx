@@ -60,11 +60,11 @@ export default function Equipe() {
           </div>
 
           {/* Team Grid - Professional 5-column Layout */}
-          <div className="flex flex-wrap justify-center gap-5 lg:gap-6">
+          <div className="flex flex-wrap justify-center gap-4 lg:gap-5">
             {advogados.map((advogado, index) => (
               <div
                 key={index}
-                className="bg-background rounded-xl p-5 lg:p-6 border border-border hover:border-accent/30 hover:shadow-xl transition-all duration-300 text-center group flex flex-col items-center flex-shrink-0 w-full sm:w-auto sm:min-w-[180px] sm:max-w-[220px]"
+                className="bg-background rounded-xl p-5 lg:p-6 border border-border hover:border-accent/30 hover:shadow-xl transition-all duration-300 text-center group flex flex-col items-center flex-shrink-0 w-full sm:w-auto sm:min-w-[240px] lg:min-w-[260px]"
               >
                 <div className="w-36 h-36 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full overflow-hidden mb-4 ring-2 ring-border group-hover:ring-accent/40 transition-all duration-300 shadow-lg flex-shrink-0">
                   <OptimizedImage
@@ -83,7 +83,7 @@ export default function Equipe() {
                 </p>
                 <div className="flex items-center justify-center">
                   {advogado.especialidade && (
-                    <p className="text-accent font-medium text-[9px] lg:text-[10px] leading-snug text-center px-2 py-1.5 bg-accent/10 rounded-md border border-accent/20 whitespace-nowrap">
+                    <p className="text-accent font-semibold text-[11px] lg:text-xs leading-snug text-center px-3 py-1.5 bg-accent/10 rounded-md border border-accent/20 whitespace-nowrap">
                       {advogado.especialidade}
                     </p>
                   )}
