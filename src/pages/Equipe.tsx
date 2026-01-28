@@ -22,7 +22,7 @@ const advogados = [
   {
     nome: "Ana Caroline Ianuck",
     cargo: "Advogada Empresarial",
-    especialidade: "(especialista em recuperação judicial)",
+    especialidade: "(Especialista em recuperação judicial)",
     email: "ana.caroline@rvitalinoadvogados.com.br",
     foto: "/lovable-uploads/ana-caroline.png",
   },
@@ -36,7 +36,7 @@ const advogados = [
   {
     nome: "Elisandra Sousa Barbosa",
     cargo: "Advogada Empresarial",
-    especialidade: "(especialista em recuperação judicial)",
+    especialidade: "(Especialista em recuperação judicial)",
     email: "elisandra.sousa@rvitalinoadvogados.com.br",
     foto: "/lovable-uploads/elisandra-sousa.png",
   },
