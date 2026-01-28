@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, Clock, CheckCircle } from "lucide-react";
-const WHATSAPP_LINK = "https://wa.me/5511974083838?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20especialista.";
-const PHONE_NUMBER = "(11) 97408-3838";
+const WHATSAPP_LINK = "https://wa.me/5511940449696?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20especialista.";
+const PHONE_NUMBER = "(11) 94044-9696";
 interface CTASectionProps {
   title?: string;
   description?: string;

@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, CheckCircle, Clock, Shield, MessageCircle, ArrowRight } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
-const WHATSAPP_LINK = "https://wa.me/5511974083838?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20advogado.";
+const WHATSAPP_LINK = "https://wa.me/5511940449696?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20advogado.";
 
 export default function Contato() {
   const {
