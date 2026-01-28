@@ -8,35 +8,35 @@ const advogados = [
   {
     nome: "Rodrigo Vitalino",
     cargo: "Sócio Fundador",
-    especialidade: "(Reestruturação de Empresas)",
+    especialidade: "Reestruturação de Empresas",
     email: "rodrigo@rvitalinoadvogados.com.br",
     foto: "/lovable-uploads/d699caab-0157-4f29-ab67-c28d2b8cdcd7.png",
   },
   {
     nome: "Deidre Scaranello",
     cargo: "Diretora Jurídica",
-    especialidade: "(Operações Estratégicas (M&A)",
+    especialidade: "Operações Estratégicas na área da insolvência",
     email: "deidre@rvitalinoadvogados.com.br",
     foto: "/lovable-uploads/deidre-scaranello-new.avif",
   },
   {
     nome: "Ana Caroline Ianuck",
     cargo: "Advogada Empresarial",
-    especialidade: "(especialista em recuperação judicial)",
+    especialidade: "Especialista em Recuperação Judicial",
     email: "ana.caroline@rvitalinoadvogados.com.br",
     foto: "/lovable-uploads/ana-caroline.png",
   },
   {
     nome: "Arthur Vitalino",
     cargo: "Correspondente Jurídico",
-    especialidade: "(União Europeia)",
+    especialidade: "Atuação na União Europeia",
     email: "arthur@rvitalinoadvogados.com.br",
     foto: "/lovable-uploads/arthur-vitalino.png",
   },
   {
     nome: "Elisandra Sousa Barbosa",
     cargo: "Advogada Empresarial",
-    especialidade: "(especialista em recuperação judicial)",
+    especialidade: "Especialista em Recuperação Judicial",
     email: "elisandra.sousa@rvitalinoadvogados.com.br",
     foto: "/lovable-uploads/elisandra-sousa.png",
   },
@@ -81,9 +81,9 @@ export default function Equipe() {
                 <p className="text-accent font-semibold text-[9px] lg:text-[10px] uppercase tracking-wider mb-1 text-justify">
                   {advogado.cargo}
                 </p>
-                <div className="min-h-[32px] flex items-start justify-center">
+                <div className="min-h-[36px] flex items-start justify-center">
                   {advogado.especialidade && (
-                    <p className="text-muted-foreground text-[9px] lg:text-[10px] leading-tight text-center">
+                    <p className="text-accent font-medium text-[10px] lg:text-[11px] leading-tight text-center px-2 py-1 bg-accent/10 rounded-md border border-accent/20">
                       {advogado.especialidade}
                     </p>
                   )}
