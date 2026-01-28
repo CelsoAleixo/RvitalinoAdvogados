@@ -45,7 +45,7 @@ const areas = [{
   image: direitoTributarioImg
 }];
 export default function Index() {
-  const recentPublications = getPublicationsSortedByDate().slice(0, 3);
+  const recentPublications = getPublicationsSortedByDate().slice(0, 6);
   return <Layout>
       {/* Hero Section with Video Background */}
       <section className="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-[90vh] flex items-center overflow-hidden">

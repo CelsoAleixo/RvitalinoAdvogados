@@ -270,6 +270,11 @@ O Domicílio Eletrônico Trabalhista (DET) assume protagonismo como canal exclus
     date: "2026-01-15",
     category: "Direito Tributário",
     categorySlug: "direito-tributario",
+    authorSection: {
+      name: "Dra. Elisandra Sousa Barbosa",
+      description: "Advogada especialista em Direito Tributário",
+      photo: "/lovable-uploads/elisandra-sousa.png"
+    },
     content: `## A Nova Etapa da Reforma Tributária Entra em Vigor
 
 O Governo Federal oficializou mais um capítulo importante da Reforma Tributária brasileira. Com a sanção presidencial do Projeto de Lei Complementar nº 108/2024, nasceu a Lei Complementar nº 227/2026.
@@ -341,6 +346,11 @@ O novo Cadastro Imobiliário Brasileiro (CIB) funcionará como um "CPF dos imóv
     date: "2025-12-23",
     category: "Direito Tributário",
     categorySlug: "direito-tributario",
+    authorSection: {
+      name: "Dra. Elisandra Sousa Barbosa",
+      description: "Advogada especialista em Direito Tributário",
+      photo: "/lovable-uploads/elisandra-sousa.png"
+    },
     content: `## Prazo Estendido para Adaptação ao Novo Sistema
 
 A Receita Federal e o Comitê Gestor do IBS concederam prazo adicional de 4 meses para que empresas se adaptem às novas obrigações fiscais relacionadas ao IBS e CBS.
