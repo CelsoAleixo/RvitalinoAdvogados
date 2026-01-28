@@ -4,8 +4,8 @@ import { Publication, getPublicationUrl } from "@/data/publications";
 
 // Default author when publication doesn't have a specific authorSection
 const DEFAULT_AUTHOR = {
-  name: "Arthur Vitalino",
-  shortName: "Arthur Vitalino",
+  name: "Dra. Ana Caroline Ianuck",
+  shortName: "Ana Caroline Ianuck",
 };
 
 interface PublicationCardProps {
@@ -41,16 +41,10 @@ export function PublicationCard({ publication, variant = "default", onCategoryCl
           </Link>
 
           {/* Subtitle */}
-          {publication.subtitle && (
-            <p className="text-lg text-accent/80 font-medium mb-4">
-              {publication.subtitle}
-            </p>
-          )}
+          {publication.subtitle && <p className="text-lg text-accent/80 font-medium mb-4">{publication.subtitle}</p>}
 
           {/* Excerpt */}
-          <p className="text-muted-foreground leading-relaxed text-lg mb-6 max-w-3xl">
-            {publication.excerpt}
-          </p>
+          <p className="text-muted-foreground leading-relaxed text-lg mb-6 max-w-3xl">{publication.excerpt}</p>
 
           {/* Footer with Author */}
           <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-border">
@@ -68,7 +62,7 @@ export function PublicationCard({ publication, variant = "default", onCategoryCl
                 {formattedDate}
               </span>
             </div>
-            
+
             <Link
               to={getPublicationUrl(publication)}
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-accent-foreground rounded font-medium hover:bg-accent/90 transition-colors"
@@ -84,7 +78,7 @@ export function PublicationCard({ publication, variant = "default", onCategoryCl
 
   if (variant === "compact") {
     return (
-      <Link 
+      <Link
         to={getPublicationUrl(publication)}
         className="group bg-card rounded-xl p-6 border border-border hover:border-accent/30 transition-all duration-300 hover:shadow-lg flex flex-col h-full"
       >
@@ -93,7 +87,7 @@ export function PublicationCard({ publication, variant = "default", onCategoryCl
           {publication.title}
         </h3>
         <p className="text-muted-foreground text-sm line-clamp-2 mb-4">{publication.excerpt}</p>
-        
+
         {/* Author & Date Row */}
         <div className="flex items-center justify-between gap-2 pt-4 border-t border-border mt-auto">
           <div className="flex items-center gap-2 text-xs text-muted-foreground">
@@ -143,9 +137,7 @@ export function PublicationCard({ publication, variant = "default", onCategoryCl
       </Link>
 
       {/* Excerpt */}
-      <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-3 flex-grow">
-        {publication.excerpt}
-      </p>
+      <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-3 flex-grow">{publication.excerpt}</p>
 
       {/* Author & Read more */}
       <div className="flex items-center justify-between gap-2 pt-4 border-t border-border mt-auto">
