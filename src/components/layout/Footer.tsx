@@ -58,11 +58,11 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 mt-1 flex-shrink-0 text-accent" />
-                <div className="flex flex-col">
-                  <span>Rua Manoel de Oliveira, 269, Sala 412, Torre 1,</span>
-                  <span>Patteo Mogilar-Sky Mall,</span>
-                  <span>Mogi das Cruzes-SP, CEP: 08773-130</span>
-                </div>
+                <address className="not-italic">
+                  Rua Manoel de Oliveira, 269,<br />
+                  Sala 412, Torre 1, Patteo Mogilar-Sky Mall,<br />
+                  Mogi das Cruzes-SP, CEP: 08773-130
+                </address>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="h-4 w-4 mt-0.5 flex-shrink-0 text-accent" />
@@ -85,11 +85,11 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 mt-1 flex-shrink-0 text-accent" />
-                <div className="flex flex-col">
-                  <span>Av da Liberdade, 706 - 1º Esq,</span>
-                  <span>Código postal 4710-249 Braga/Portugal</span>
-                  <span>(Inscrito na Ordem dos Advogados de Portugal)</span>
-                </div>
+                <address className="not-italic">
+                  Av. da Liberdade, 706 - 1º Esq,<br />
+                  Código postal 4710-249, Braga/Portugal<br />
+                  (Inscrito na Ordem dos Advogados de Portugal)
+                </address>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="h-4 w-4 mt-0.5 flex-shrink-0 text-accent" />
