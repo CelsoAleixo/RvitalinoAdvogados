@@ -12,7 +12,7 @@ const advogados = [{
 }, {
   nome: "Deidre Scaranello",
   cargo: "Diretora Jurídica",
-  especialidade: "Operações Estratégicas na área da insolvência",
+  especialidade: "Operações Estratégicas em Insolvência",
   email: "deidre@rvitalinoadvogados.com.br",
   foto: "/lovable-uploads/deidre-scaranello-new.avif"
 }, {
