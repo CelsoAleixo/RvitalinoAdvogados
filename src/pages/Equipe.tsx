@@ -104,24 +104,22 @@ export default function Equipe() {
         <div className="container-site">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-accent text-sm font-medium uppercase tracking-[0.2em] mb-6 block">
+              <span className="text-accent text-sm font-medium uppercase tracking-[0.2em] mb-6 block whitespace-nowrap">
                 Por que nos escolher
               </span>
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-8 leading-tight">
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-8 leading-tight whitespace-nowrap">
                 Excelência e Comprometimento em Cada Caso
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-10 text-lg">
-                Acreditamos que cada cliente é único e merece uma abordagem personalizada. 
-                Nossa equipe combina expertise técnica com uma visão estratégica, garantindo 
-                soluções eficazes e resultados consistentes.
+              <p className="text-muted-foreground leading-relaxed mb-10 text-lg whitespace-nowrap">
+                Acreditamos que cada cliente é único e merece uma abordagem personalizada. Nossa equipe combina expertise técnica com uma visão estratégica, garantindo soluções eficazes e resultados consistentes.
               </p>
               
               <div className="space-y-5">
-                {["Atendimento personalizado e dedicado", "Equipe multidisciplinar e experiente", "Estratégias jurídicas inovadoras", "Transparência em todas as etapas", "Resultados comprovados ao longo de 17 anos"].map((item, index) => <div key={index} className="flex items-center gap-4 group">
+                {["Atendimento personalizado e dedicado", "Equipe multidisciplinar e experiente", "Estratégias jurídicas inovadoras", "Transparência em todas as etapas", "Resultados comprovados ao longo de 17 anos"].map((item, index) => <div key={index} className="flex items-center gap-4 group whitespace-nowrap">
                     <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center flex-shrink-0 group-hover:from-accent/30 group-hover:to-accent/20 transition-all duration-300">
                       <div className="w-2 h-2 rounded-full bg-accent" />
                     </div>
-                    <span className="text-foreground text-lg">{item}</span>
+                    <span className="text-foreground text-lg whitespace-nowrap">{item}</span>
                   </div>)}
               </div>
             </div>
