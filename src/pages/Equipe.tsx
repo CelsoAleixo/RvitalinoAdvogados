@@ -93,7 +93,7 @@ export default function Equipe() {
                   <OptimizedImage
                     src={advogado.foto}
                     alt={`${advogado.nome} - ${advogado.cargo}`}
-                    className="w-full h-full object-cover"
+                    className={`w-full h-full object-cover ${advogado.nome === "Deidre Scaranello" ? "object-[center_25%]" : ""}`}
                     loading="lazy"
                     sizes="(max-width: 640px) 112px, (max-width: 1024px) 128px, 144px"
                   />
