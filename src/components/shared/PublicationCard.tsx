@@ -4,8 +4,8 @@ import { Publication, getPublicationUrl } from "@/data/publications";
 
 // Default author when publication doesn't have a specific authorSection
 const DEFAULT_AUTHOR = {
-  name: "Rodrigo Vitalino Advogados",
-  shortName: "Rodrigo Vitalino Advogados",
+  name: "Arthur Vitalino",
+  shortName: "Arthur Vitalino",
 };
 
 interface PublicationCardProps {
