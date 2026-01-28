@@ -1,41 +1,49 @@
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/shared/CTASection";
 import { OptimizedImage } from "@/components/shared/OptimizedImage";
-import { Users, Scale } from "lucide-react";
+import { Users, Globe, FileText, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const advogados = [{
-  nome: "Rodrigo Vitalino",
-  cargo: "Sócio Fundador",
-  especialidade: "Reestruturação de Empresas",
-  email: "rodrigo@rvitalinoadvogados.com.br",
-  foto: "/lovable-uploads/d699caab-0157-4f29-ab67-c28d2b8cdcd7.png"
-}, {
-  nome: "Deidre Scaranello",
-  cargo: "Diretora Jurídica",
-  especialidade: "Operações Estratégicas em Insolvência",
-  email: "deidre@rvitalinoadvogados.com.br",
-  foto: "/lovable-uploads/deidre-scaranello-new.avif"
-}, {
-  nome: "Ana Caroline Ianuck",
-  cargo: "Advogada Empresarial",
-  especialidade: "Especialista em Recuperação Judicial",
-  email: "ana.caroline@rvitalinoadvogados.com.br",
-  foto: "/lovable-uploads/ana-caroline.png"
-}, {
-  nome: "Arthur Vitalino",
-  cargo: "Correspondente Jurídico",
-  especialidade: "Atuação na União Europeia",
-  email: "arthur@rvitalinoadvogados.com.br",
-  foto: "/lovable-uploads/arthur-vitalino.png"
-}, {
-  nome: "Elisandra Sousa Barbosa",
-  cargo: "Advogada Empresarial",
-  especialidade: "Especialista em Recuperação Judicial",
-  email: "elisandra.sousa@rvitalinoadvogados.com.br",
-  foto: "/lovable-uploads/elisandra-sousa.png"
-}];
+const advogados = [
+  {
+    nome: "Rodrigo Vitalino",
+    cargo: "Sócio Fundador",
+    especialidade: "(Reestruturação de Empresas)",
+    email: "rodrigo@rvitalinoadvogados.com.br",
+    foto: "/lovable-uploads/d699caab-0157-4f29-ab67-c28d2b8cdcd7.png",
+  },
+  {
+    nome: "Deidre Scaranello",
+    cargo: "Diretora Jurídica",
+    especialidade: "(Operações Estratégicas (M&A)",
+    email: "deidre@rvitalinoadvogados.com.br",
+    foto: "/lovable-uploads/deidre-scaranello-new.avif",
+  },
+  {
+    nome: "Ana Caroline Ianuck",
+    cargo: "Advogada Empresarial",
+    especialidade: "(especialista em recuperação judicial)",
+    email: "ana.caroline@rvitalinoadvogados.com.br",
+    foto: "/lovable-uploads/ana-caroline.png",
+  },
+  {
+    nome: "Arthur Vitalino",
+    cargo: "Correspondente Jurídico",
+    especialidade: "(União Europeia)",
+    email: "arthur@rvitalinoadvogados.com.br",
+    foto: "/lovable-uploads/arthur-vitalino.png",
+  },
+  {
+    nome: "Elisandra Sousa Barbosa",
+    cargo: "Advogada Empresarial",
+    especialidade: "(especialista em recuperação judicial)",
+    email: "elisandra.sousa@rvitalinoadvogados.com.br",
+    foto: "/lovable-uploads/elisandra-sousa.png",
+  },
+];
 export default function Equipe() {
-  return <Layout>
+  return (
+    <Layout>
 
       {/* Team Section - Direct Start */}
       <section className="section-padding bg-secondary">
@@ -51,79 +59,117 @@ export default function Equipe() {
             </h1>
           </div>
 
-          {/* All members in one row */}
-          <div className="flex justify-center gap-4 lg:gap-5 overflow-x-auto pb-4">
-            {advogados.map((advogado, index) => <div key={index} className="bg-background rounded-xl p-5 lg:p-6 border border-border hover:border-accent/30 hover:shadow-xl transition-all duration-300 text-center group flex flex-col items-center flex-shrink-0 min-w-[200px] lg:min-w-[220px]">
-                <div className="w-28 h-28 lg:w-32 lg:h-32 rounded-full overflow-hidden mb-4 ring-2 ring-border group-hover:ring-accent/40 transition-all duration-300 shadow-lg flex-shrink-0">
-                  <OptimizedImage src={advogado.foto} alt={`${advogado.nome} - ${advogado.cargo}`} className={`w-full h-full object-cover ${advogado.nome === "Deidre Scaranello" ? "object-[center_25%]" : ""}`} loading="lazy" sizes="128px" />
+          {/* Team Grid - Professional 5-column Layout */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 lg:gap-6">
+            {advogados.map((advogado, index) => (
+              <div
+                key={index}
+                className="bg-background rounded-xl p-5 lg:p-6 border border-border hover:border-accent/30 hover:shadow-xl transition-all duration-300 text-center group flex flex-col items-center h-full"
+              >
+                <div className="w-36 h-36 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-full overflow-hidden mb-5 ring-2 ring-border group-hover:ring-accent/40 transition-all duration-300 shadow-lg flex-shrink-0">
+                  <OptimizedImage
+                    src={advogado.foto}
+                    alt={`${advogado.nome} - ${advogado.cargo}`}
+                    className={`w-full h-full object-cover ${advogado.nome === "Deidre Scaranello" ? "object-[center_25%]" : ""}`}
+                    loading="lazy"
+                    sizes="(max-width: 640px) 112px, (max-width: 1024px) 128px, 144px"
+                  />
                 </div>
-                <h3 className="font-serif font-bold text-sm lg:text-base text-foreground mb-1 leading-tight whitespace-nowrap">
+                <h3 className="font-serif font-bold text-sm lg:text-base text-foreground mb-1 leading-tight">
                   {advogado.nome}
                 </h3>
-                <p className="text-accent font-semibold text-[9px] lg:text-[10px] uppercase tracking-wider mb-2 whitespace-nowrap">
+                <p className="text-accent font-semibold text-[9px] lg:text-[10px] uppercase tracking-wider mb-1 text-justify">
                   {advogado.cargo}
                 </p>
-                <div className="flex items-center justify-center">
-                  {advogado.especialidade && <p className="font-semibold text-[11px] lg:text-xs leading-snug text-center px-3 py-1.5 bg-accent/10 rounded-md border border-accent/20 whitespace-nowrap text-secondary-foreground">
+                <div className="min-h-[32px] flex items-start justify-center">
+                  {advogado.especialidade && (
+                    <p className="text-muted-foreground text-[9px] lg:text-[10px] leading-tight text-center">
                       {advogado.especialidade}
-                    </p>}
+                    </p>
+                  )}
                 </div>
-                <a href={`mailto:${advogado.email}`} className="text-muted-foreground hover:text-accent transition-colors text-[8px] lg:text-[9px] whitespace-nowrap mt-auto pt-2">
+                <a
+                  href={`mailto:${advogado.email}`}
+                  className="text-muted-foreground hover:text-accent transition-colors text-[8px] lg:text-[9px] truncate block w-full mt-auto pt-2"
+                >
                   {advogado.email}
                 </a>
-              </div>)}
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-24 bg-background">
+      {/* Áreas de Destaque */}
+      <section className="section-padding bg-[#1a2e1a]">
         <div className="container-site">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <span className="text-accent text-sm font-medium uppercase tracking-[0.2em] mb-6 block whitespace-nowrap">
-                Por que nos escolher
-              </span>
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-8 leading-tight whitespace-nowrap">
-                Excelência e Comprometimento em Cada Caso
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-10 text-lg whitespace-nowrap">
-                Acreditamos que cada cliente é único e merece uma abordagem personalizada. Nossa equipe combina expertise técnica com uma visão estratégica, garantindo soluções eficazes e resultados consistentes.
-              </p>
-              
-              <div className="space-y-5">
-                {["Atendimento personalizado e dedicado", "Equipe multidisciplinar e experiente", "Estratégias jurídicas inovadoras", "Transparência em todas as etapas", "Resultados comprovados ao longo de 17 anos"].map((item, index) => <div key={index} className="flex items-center gap-4 group whitespace-nowrap">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center flex-shrink-0 group-hover:from-accent/30 group-hover:to-accent/20 transition-all duration-300">
-                      <div className="w-2 h-2 rounded-full bg-accent" />
-                    </div>
-                    <span className="text-foreground text-lg whitespace-nowrap">{item}</span>
-                  </div>)}
-              </div>
-            </div>
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-4">Áreas de Destaque</h2>
+            <p className="text-white/70">Experiência consolidada</p>
+          </div>
 
-            <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-[#1a2e1a] via-[#243824] to-[#1a2e1a] rounded-3xl p-10 flex items-center justify-center shadow-2xl">
-                <div className="text-center">
-                  <div className="relative mb-8">
-                    <Scale className="h-28 w-28 text-accent mx-auto opacity-30" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-16 h-16 rounded-full bg-accent/10 animate-pulse" />
-                    </div>
-                  </div>
-                  <div className="font-serif text-6xl lg:text-7xl bg-gradient-to-r from-accent via-[#d4b65c] to-accent bg-clip-text text-transparent font-semibold mb-3">
-                    2008
-                  </div>
-                  <div className="text-white/60 text-lg">Fundação do Escritório</div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Reestruturação Empresarial */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-accent/30 transition-all duration-300">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="p-3 rounded-lg bg-accent/10">
+                  <FileText className="w-6 h-6 text-accent" />
+                </div>
+                <div className="px-3 py-1 rounded-full bg-accent/10 border border-accent/30">
+                  <span className="text-accent text-xs font-medium">Experiência Consolidada</span>
                 </div>
               </div>
-              {/* Decorative elements */}
-              <div className="absolute -top-6 -right-6 w-28 h-28 border-2 border-accent/20 rounded-3xl" />
-              <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-accent/5 rounded-full blur-3xl" />
+              <h3 className="font-serif text-2xl font-bold text-white mb-4">Reestruturação Empresarial</h3>
+              <p className="text-white/70 leading-relaxed mb-6">
+                Somos referência nacional em "Recuperação Judicial", conduzindo processos com excelência e
+                transparência. Estruturamos planos viáveis, negociamos com credores e asseguramos a preservação da
+                atividade empresarial.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-6">
+                <span className="px-3 py-1 bg-white/10 rounded-full text-white/80 text-sm">Planos viáveis</span>
+                <span className="px-3 py-1 bg-white/10 rounded-full text-white/80 text-sm">Negociação</span>
+              </div>
+              <Link
+                to="/atuacao/recuperacao-judicial"
+                className="inline-flex items-center gap-2 text-accent hover:text-accent/80 font-medium transition-colors group"
+              >
+                Recuperação Judicial
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+
+            {/* Presença em Portugal */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-accent/30 transition-all duration-300">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="p-3 rounded-lg bg-accent/10">
+                  <Globe className="w-6 h-6 text-accent" />
+                </div>
+                <div className="px-3 py-1 rounded-full bg-accent/10 border border-accent/30">
+                  <span className="text-accent text-xs font-medium">Atuação Internacional</span>
+                </div>
+              </div>
+              <h3 className="font-serif text-2xl font-bold text-white mb-4">Presença em Portugal</h3>
+              <p className="text-white/70 leading-relaxed mb-6">
+                Atuamos também em Portugal, onde o Advogado Rodrigo Vitalino possui inscrição na Ordem dos Advogados,
+                garantindo legitimidade e excelência na prática jurídica internacional.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-6">
+                <span className="px-3 py-1 bg-white/10 rounded-full text-white/80 text-sm">OAB Portugal</span>
+                <span className="px-3 py-1 bg-white/10 rounded-full text-white/80 text-sm">União Europeia</span>
+              </div>
+              <Link
+                to="/portugal"
+                className="inline-flex items-center gap-2 text-accent hover:text-accent/80 font-medium transition-colors group"
+              >
+                Atuação em Portugal
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
       <CTASection />
-    </Layout>;
+    </Layout>
+  );
 }
