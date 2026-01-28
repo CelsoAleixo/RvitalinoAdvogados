@@ -81,9 +81,9 @@ export default function Equipe() {
                 <p className="text-accent font-semibold text-[9px] lg:text-[10px] uppercase tracking-wider mb-1 text-justify">
                   {advogado.cargo}
                 </p>
-                <div className="flex items-center justify-center mt-1">
+                <div className="min-h-[40px] flex items-center justify-center">
                   {advogado.especialidade && (
-                    <p className="text-accent font-medium text-[9px] lg:text-[10px] leading-tight text-center px-2 py-1 bg-accent/10 rounded-md border border-accent/20 whitespace-nowrap">
+                    <p className="text-accent font-medium text-[10px] lg:text-[11px] leading-snug text-center px-2 py-1.5 bg-accent/10 rounded-md border border-accent/20">
                       {advogado.especialidade}
                     </p>
                   )}
