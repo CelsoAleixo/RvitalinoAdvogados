@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
@@ -8,8 +7,7 @@ import { CTASection } from "@/components/shared/CTASection";
 import { ManifestoModal } from "@/components/shared/ManifestoModal";
 import { TrustIndicators } from "@/components/shared/TrustIndicators";
 import { ResponsiveHeroVideo } from "@/components/shared/ResponsiveHeroVideo";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { ArrowRight, Scale, Users, Building2, Globe, CheckCircle, Phone, BookOpen, Briefcase, ChevronDown, MapPin, History } from "lucide-react";
+import { ArrowRight, Scale, Building2, Phone, BookOpen, Briefcase } from "lucide-react";
 import institutionalVideo from "@/assets/institutional-video.mp4";
 import { getPublicationsSortedByDate } from "@/data/publications";
 
@@ -18,10 +16,6 @@ import direitoEmpresarialImg from "@/assets/areas/direito-empresarial-hero.jpg";
 import negociacaoJuridicaImg from "@/assets/areas/negociacao-juridica-hero.jpg";
 import recuperacaoJudicialImg from "@/assets/areas/recuperacao-judicial-hero.jpg";
 import direitoTributarioImg from "@/assets/areas/direito-tributario-hero.jpg";
-import direitoTrabalhistaImg from "@/assets/areas/direito-trabalhista-hero.jpg";
-import familiaSucessoesImg from "@/assets/areas/familia-sucessoes-hero.jpg";
-import direitoCivilImg from "@/assets/areas/direito-civil-hero.jpg";
-import creditoCarbonoImg from "@/assets/areas/credito-carbono-hero.jpg";
 
 const WHATSAPP_LINK = "https://wa.me/5511974083838?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20advogado.";
 
@@ -32,23 +26,11 @@ const areas = [
   { icon: Scale, title: "Direito Tributário", description: "Planejamento e defesa em questões fiscais e tributárias.", href: "/atuacao/direito-tributario", image: direitoTributarioImg },
 ];
 
-const diferenciais = [{
-  icon: Scale,
-  title: "Especialização",
-  description: "Nosso escritório atua fortemente em Direito Empresarial e Corporativo, unindo segurança técnica e visão estratégica. Compreendemos as necessidades de cada cliente e transformamos desafios em soluções práticas e sustentáveis."
-}, {
-  icon: Users,
-  title: "Excelência",
-  description: "Somos referência em soluções jurídicas, conduzindo processos com excelência, elaborando estratégias consistentes e negociando com segurança para garantir que nossos clientes superem desafios com tranquilidade."
-}];
-
-const clientesInternacionais = ["Proview Electronics Co Ltd – Taipei / Taiwan", "RED International Group – Taipei / Taiwan", "Proview LED Lighting Co. Ltd – Taipei / Taiwan", "New Era Investment Inc. – Panama / Panama", "Reit Investment Corp. – Panama / Panama", "North Capital Holding – Copenhagen / Denmark", "Dti Korea Co. Ltd – Coreia do Sul"];
-const clientesNacionais = ["Transporte Público Urbano e Rodoviário: suporte jurídico a concessionárias em SP, PR, GO, AM, AC, RO, BA, RJ e SC.", "Mineração de Ferro e Manganês: assessoria a mineradoras no PA, AP e CE.", "Mineração de Granito e Pedras Preciosas: atuação junto a empresas na BA, MG e GO.", "Indústria de Alimentos e Restaurantes: apoio jurídico à produção de charque em GO e ao setor de alimentação em SP.", "Parcerias Público-Privadas (PPP): consultoria em projetos de iluminação pública em SP e SC."];
 export default function Index() {
-  const [isOfficeOpen, setIsOfficeOpen] = useState(false);
   const recentPublications = getPublicationsSortedByDate().slice(0, 3);
 
-  return <Layout>
+  return (
+    <Layout>
       {/* Hero Section with Video Background */}
       <section className="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-[90vh] flex items-center overflow-hidden">
         <ResponsiveHeroVideo
@@ -200,162 +182,11 @@ export default function Index() {
         </div>
       </section>
 
-      {/* About the Firm Section with Expandable Office */}
-      <section className="section-padding bg-secondary">
-        <div className="container-site">
-          <SectionHeading title="Sobre Nós" subtitle="Conheça nossa história e valores" />
-          
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-            <div>
-              <div className="space-y-4 text-muted-foreground">
-                <p className="text-mobile-only-justified">
-                  Fundado no ano de 2008 pelo sócio fundador Rodrigo Vitalino, o escritório Rodrigo Vitalino Advogados
-                  desenvolve uma assessoria jurídica e consultoria empresarial de forma prática e eficiente ao cliente.
-                </p>
-                <p className="text-mobile-only-justified">
-                  Contamos com uma equipe de profissionais em diversas áreas auxiliando as empresas na gestão de forma
-                  preventiva e no contencioso buscando melhores resultados com transparência e segurança Jurídica.
-                </p>
-                <p className="text-mobile-only-justified">
-                  Atuamos também em Portugal, onde o Advogado Rodrigo Vitalino possui inscrição na Ordem dos Advogados.  
-                </p>
-              </div>
-
-              {/* Expandable Office Section */}
-              <Collapsible open={isOfficeOpen} onOpenChange={setIsOfficeOpen} className="mt-8">
-                <CollapsibleTrigger asChild>
-                  <Button 
-                    variant="outline" 
-                    className="w-full justify-between group border-accent/30 hover:border-accent hover:bg-accent/5"
-                  >
-                    <div className="flex items-center gap-3">
-                      <MapPin className="h-5 w-5 text-accent" />
-                      <span className="font-medium">Nosso Escritório</span>
-                    </div>
-                    <ChevronDown className={`h-5 w-5 text-accent transition-transform duration-300 ${isOfficeOpen ? 'rotate-180' : ''}`} />
-                  </Button>
-                </CollapsibleTrigger>
-                <CollapsibleContent className="mt-4">
-                  <div className="bg-card rounded-xl p-6 border border-border space-y-4">
-                    <div className="flex items-start gap-4">
-                      <div className="p-2 rounded-lg bg-accent/10">
-                        <History className="h-5 w-5 text-accent" />
-                      </div>
-                      <div>
-                        <h4 className="font-serif text-lg font-semibold mb-2">Nossa História</h4>
-                        <p className="text-muted-foreground text-sm leading-relaxed">
-                          Rodrigo Vitalino Advogados vem construindo uma atuação sólida no cenário jurídico e empresarial. 
-                          O escritório nasceu com a missão de oferecer soluções jurídicas estratégicas e consultoria empresarial 
-                          voltada para resultados práticos e sustentáveis.
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <div className="rounded-lg overflow-hidden">
-                      <img 
-                        src="/lovable-uploads/d8c139b1-7ccc-4be4-8400-a2fc92806d89.png" 
-                        alt="Sala de reuniões do escritório"
-                        className="w-full h-48 object-cover"
-                      />
-                    </div>
-
-                    <Button asChild variant="outline" size="sm" className="w-full">
-                      <Link to="/escritorio" className="flex items-center justify-center gap-2">
-                        Conheça o Escritório Completo
-                        <ArrowRight className="h-4 w-4" />
-                      </Link>
-                    </Button>
-                  </div>
-                </CollapsibleContent>
-              </Collapsible>
-
-              <Button asChild variant="outline" className="mt-6">
-                <Link to="/equipe">
-                  Conheça a Equipe
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-
-            {/* Valores */}
-            <div className="bg-card rounded-lg p-8 border border-border">
-              <h3 className="font-serif text-2xl mb-6">Filosofia e Valores</h3>
-              <ul className="space-y-3">
-                {["Ética e seriedade na aplicação do Direito", "Soluções jurídicas personalizadas e eficientes", "Confiabilidade e bom relacionamento com nossos clientes", "Conhecimento, competência e aperfeiçoamento técnico", "Foco nas necessidades do cliente", "Comprometimento com os princípios legais", "Transparência sobre os riscos de ações ou projetos", "Empreendedorismo"].map((valor, index) => (
-                  <li key={index} className="flex items-start gap-3 text-muted-foreground">
-                    <CheckCircle className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                    <span>{valor}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Diferenciais */}
-      <section className="section-padding">
-        <div className="container-site">
-          <SectionHeading title="Nossos Diferenciais" subtitle="O que nos torna únicos na prestação de serviços jurídicos" centered />
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {diferenciais.map((item, index) => (
-              <div key={index} className="bg-card rounded-lg p-8 border border-border card-hover">
-                <item.icon className="h-10 w-10 text-accent mb-6" />
-                <h3 className="font-serif text-xl mb-4">{item.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Clientes */}
-      <section className="section-padding bg-secondary/30">
-        <div className="container-site">
-          <SectionHeading title="Clientes Atendidos" subtitle="Experiência comprovada com empresas nacionais e internacionais" />
-
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Nacional */}
-            <div className="bg-card rounded-lg p-8 border border-border shadow-sm">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
-                  <Building2 className="h-6 w-6 text-accent" />
-                </div>
-                <h4 className="font-serif text-xl">Companhias Nacionais</h4>
-              </div>
-              <ul className="space-y-4 text-muted-foreground">
-                {clientesNacionais.map((cliente, index) => (
-                  <li key={index} className="border-l-2 border-accent pl-4">
-                    {cliente}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Internacional */}
-            <div className="bg-card rounded-lg p-8 border border-border shadow-sm">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
-                  <Globe className="h-6 w-6 text-accent" />
-                </div>
-                <h4 className="font-serif text-xl">Companhias Internacionais</h4>
-              </div>
-              <ul className="space-y-4 text-muted-foreground">
-                {clientesInternacionais.map((cliente, index) => (
-                  <li key={index} className="border-l-2 border-accent pl-4">
-                    {cliente}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Quote */}
       <QuoteBand quote="A injustiça em qualquer lugar é uma ameaça à justiça por toda parte." author="Martin Luther King Jr." />
 
       {/* CTA */}
       <CTASection />
-    </Layout>;
+    </Layout>
+  );
 }
