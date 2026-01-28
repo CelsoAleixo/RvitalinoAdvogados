@@ -93,15 +93,15 @@ export default function Index() {
             <div>
               <SectionHeading title="Sobre Nós" />
               <div className="space-y-3 text-muted-foreground">
-                <p className="text-mobile-justified">
+                <p className="text-mobile-only-justified">
                   Fundado no ano de 2008 pelo sócio fundador Rodrigo Vitalino, o escritório Rodrigo Vitalino Advogados
                   desenvolve uma assessoria jurídica e consultoria empresarial de forma prática e eficiente ao cliente.
                 </p>
-                <p className="text-mobile-justified">
+                <p className="text-mobile-only-justified">
                   Contamos com uma equipe de profissionais em diversas áreas auxiliando as empresas na gestão de forma
                   preventiva e no contencioso buscando melhores resultados com transparência e segurança Jurídica.
                 </p>
-                <p className="text-mobile-justified">
+                <p className="text-mobile-only-justified">
                   Atuamos também em Portugal, onde o Advogado Rodrigo Vitalino possui inscrição na Ordem dos Advogados.  
                 </p>
               </div>
