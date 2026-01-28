@@ -1,11 +1,4 @@
 import recuperacaoRuralHero from "@/assets/publications/recuperacao-rural-hero.jpg";
-import direitoInternacionalHero from "@/assets/publications/direito-internacional-hero.jpg";
-import direitoEmpresarialHero from "@/assets/publications/direito-empresarial-hero.jpg";
-import direitoTrabalhistaHero from "@/assets/publications/direito-trabalhista-hero.jpg";
-import reformaTributariaHero from "@/assets/publications/reforma-tributaria-hero.jpg";
-import notasFiscaisHero from "@/assets/publications/notas-fiscais-hero.jpg";
-import cibImoveisHero from "@/assets/publications/cib-imoveis-hero.jpg";
-import ibsCbsHero from "@/assets/publications/ibs-cbs-hero.jpg";
 import rodrigoVitalinoAutor from "@/assets/rodrigo-vitalino-autor.png";
 
 export interface Publication {
@@ -152,7 +145,6 @@ Com uma abordagem técnica e estratégica, busco soluções jurídicas eficazes 
     date: "2026-01-19",
     category: "Direito Internacional",
     categorySlug: "direito-internacional",
-    heroImage: direitoInternacionalHero,
     authorSection: {
       name: "CJ Arthur Vitalino",
       description: "Especialista em Direito Internacional",
@@ -211,7 +203,6 @@ A participação em eventos de imersão internacional representa investimento es
     date: "2026-01-19",
     category: "Direito Empresarial",
     categorySlug: "direito-empresarial",
-    heroImage: direitoEmpresarialHero,
     content: `## Novo Marco Regulatório Empresarial: Prepare Sua Empresa para 2026
 
 O ano de 2026 inaugura uma nova fase na gestão empresarial brasileira. Com o início da transição da Reforma Tributária e mudanças expressivas nos campos fiscal, contábil e tecnológico, as organizações enfrentam um cenário que demanda não apenas conformidade documental, mas verdadeira reorganização de processos internos.
@@ -256,7 +247,6 @@ Durante o período de transição (2026-2032), as empresas operam com dois siste
     date: "2026-01-18",
     category: "Direito Trabalhista",
     categorySlug: "direito-trabalhista",
-    heroImage: direitoTrabalhistaHero,
     content: `## Nova Era das Relações Trabalhistas: Portaria Consolidada MTE nº 1/2025
 
 O cenário das obrigações trabalhistas no Brasil passou por uma transformação significativa. Com a entrada em vigor da Portaria Consolidada MTE nº 1/2025, em 02 de janeiro de 2026, o Ministério do Trabalho e Emprego consolidou regras que impactam diretamente o Departamento Pessoal e o RH das empresas.
@@ -285,7 +275,6 @@ O Domicílio Eletrônico Trabalhista (DET) assume protagonismo como canal exclus
     date: "2026-01-15",
     category: "Direito Tributário",
     categorySlug: "direito-tributario",
-    heroImage: reformaTributariaHero,
     authorSection: {
       name: "Dra. Elisandra Sousa Barbosa",
       description: "Advogada especialista em Direito Tributário",
@@ -318,7 +307,6 @@ A principal inovação é a criação do Comitê Gestor do Imposto sobre Bens e 
     date: "2026-01-12",
     category: "Direito Tributário",
     categorySlug: "direito-tributario",
-    heroImage: notasFiscaisHero,
     content: `## Transição Tributária: Novas Regras para Documentos Fiscais
 
 A Receita Federal e o Comitê Gestor do IBS publicaram orientações sobre a emissão de documentos fiscais durante o período de transição para o novo sistema tributário.
@@ -340,7 +328,6 @@ Durante os primeiros meses de 2026, as empresas terão um período sem multas pa
     date: "2026-01-08",
     category: "Direito Tributário",
     categorySlug: "direito-tributario",
-    heroImage: cibImoveisHero,
     content: `## O Cadastro Imobiliário Brasileiro (CIB)
 
 O novo Cadastro Imobiliário Brasileiro (CIB) funcionará como um "CPF dos imóveis", unificando informações cadastrais de propriedades em todo o território nacional.
@@ -364,7 +351,6 @@ O novo Cadastro Imobiliário Brasileiro (CIB) funcionará como um "CPF dos imóv
     date: "2025-12-23",
     category: "Direito Tributário",
     categorySlug: "direito-tributario",
-    heroImage: ibsCbsHero,
     authorSection: {
       name: "Dra. Elisandra Sousa Barbosa",
       description: "Advogada especialista em Direito Tributário",
