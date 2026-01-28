@@ -146,7 +146,7 @@ export default function Index() {
                     {area.title}
                   </h3>
                   
-                  <p className="text-foreground/90 text-sm leading-relaxed mb-4 line-clamp-2 drop-shadow-md text-left">
+                  <p className="text-foreground/90 text-sm leading-relaxed mb-4 line-clamp-2 drop-shadow-md no-justify">
                     {area.description}
                   </p>
 
