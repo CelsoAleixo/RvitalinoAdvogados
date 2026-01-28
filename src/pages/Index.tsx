@@ -17,30 +17,39 @@ import direitoEmpresarialImg from "@/assets/areas/direito-empresarial-hero.jpg";
 import negociacaoJuridicaImg from "@/assets/areas/negociacao-juridica-hero.jpg";
 import recuperacaoJudicialImg from "@/assets/areas/recuperacao-judicial-hero.jpg";
 import direitoTributarioImg from "@/assets/areas/direito-tributario-hero.jpg";
-
 const WHATSAPP_LINK = "https://wa.me/5511974083838?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20advogado.";
-
-const areas = [
-  { icon: Building2, title: "Direito Empresarial", description: "Assessoria completa para empresas em questões societárias, contratuais e estratégicas.", href: "/atuacao/direito-empresarial", image: direitoEmpresarialImg },
-  { icon: Scale, title: "Negociação Jurídica", description: "Soluções eficazes em mediação e negociação de conflitos empresariais.", href: "/atuacao/negociacao-juridica", image: negociacaoJuridicaImg },
-  { icon: Briefcase, title: "Recuperação Judicial", description: "Atuação ampla com destaque para transporte público e agronegócio.", href: "/atuacao/recuperacao-judicial", highlight: true, image: recuperacaoJudicialImg },
-  { icon: Scale, title: "Direito Tributário", description: "Planejamento e defesa em questões fiscais e tributárias.", href: "/atuacao/direito-tributario", image: direitoTributarioImg },
-];
-
+const areas = [{
+  icon: Building2,
+  title: "Direito Empresarial",
+  description: "Assessoria completa para empresas em questões societárias, contratuais e estratégicas.",
+  href: "/atuacao/direito-empresarial",
+  image: direitoEmpresarialImg
+}, {
+  icon: Scale,
+  title: "Negociação Jurídica",
+  description: "Soluções eficazes em mediação e negociação de conflitos empresariais.",
+  href: "/atuacao/negociacao-juridica",
+  image: negociacaoJuridicaImg
+}, {
+  icon: Briefcase,
+  title: "Recuperação Judicial",
+  description: "Atuação ampla com destaque para transporte público e agronegócio.",
+  href: "/atuacao/recuperacao-judicial",
+  highlight: true,
+  image: recuperacaoJudicialImg
+}, {
+  icon: Scale,
+  title: "Direito Tributário",
+  description: "Planejamento e defesa em questões fiscais e tributárias.",
+  href: "/atuacao/direito-tributario",
+  image: direitoTributarioImg
+}];
 export default function Index() {
   const recentPublications = getPublicationsSortedByDate().slice(0, 3);
-
-  return (
-    <Layout>
+  return <Layout>
       {/* Hero Section with Video Background */}
       <section className="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-[90vh] flex items-center overflow-hidden">
-        <ResponsiveHeroVideo
-          mp4Src={institutionalVideo}
-          posterImage="/lovable-uploads/3c2a2065-697e-4647-b72f-b5b713512bde.png"
-          overlayClassName="bg-[#1a2e1a]/60 sm:bg-[#1a2e1a]/70"
-          playbackRate={1.0}
-          priority
-        />
+        <ResponsiveHeroVideo mp4Src={institutionalVideo} posterImage="/lovable-uploads/3c2a2065-697e-4647-b72f-b5b713512bde.png" overlayClassName="bg-[#1a2e1a]/60 sm:bg-[#1a2e1a]/70" playbackRate={1.0} priority />
 
         <div className="container-site relative z-20 py-12 sm:py-16 md:py-24">
           <div className="max-w-2xl">
@@ -50,7 +59,9 @@ export default function Index() {
             <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl lg:text-2xl text-foreground animate-slide-up font-normal text-mobile-justified text-overlay-accessible">
               Assessoria jurídica empresarial com excelência e segurança.
             </p>
-            <div className="mt-6 sm:mt-8 md:mt-10 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 animate-slide-up" style={{ animationDelay: "0.1s" }}>
+            <div className="mt-6 sm:mt-8 md:mt-10 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 animate-slide-up" style={{
+            animationDelay: "0.1s"
+          }}>
               <Button asChild size="lg" className="group bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full sm:w-auto shadow-lg">
                 <Link to="/contato" className="flex items-center justify-center gap-2">
                   <Phone className="h-5 w-5" />
@@ -88,13 +99,7 @@ export default function Index() {
           </div>
           
           <div className="grid md:grid-cols-3 gap-6 mb-8">
-            {recentPublications.map((pub) => (
-              <PublicationCard 
-                key={pub.id} 
-                publication={pub} 
-                variant="compact"
-              />
-            ))}
+            {recentPublications.map(pub => <PublicationCard key={pub.id} publication={pub} variant="compact" />)}
           </div>
 
           <div className="text-center">
@@ -120,22 +125,15 @@ export default function Index() {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            {areas.map((area, index) => (
-              <Link 
-                key={index} 
-                to={area.href}
-                className="group relative rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl bg-card min-h-[280px]"
-              >
+            {areas.map((area, index) => <Link key={index} to={area.href} className="group relative rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl bg-card min-h-[280px]">
                 <div className="absolute inset-0">
                   <img src={area.image} alt={area.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-105 contrast-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                 </div>
 
-                {area.highlight && (
-                  <div className="absolute top-4 right-4 z-10 bg-accent text-accent-foreground text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
+                {area.highlight && <div className="absolute top-4 right-4 z-10 bg-accent text-accent-foreground text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
                     Destaque
-                  </div>
-                )}
+                  </div>}
 
                 <div className="relative z-10 p-6 min-h-[280px] flex flex-col justify-end">
                   <div className="absolute top-4 left-4">
@@ -148,7 +146,7 @@ export default function Index() {
                     {area.title}
                   </h3>
                   
-                  <p className="text-foreground/90 text-sm leading-relaxed mb-4 line-clamp-2 drop-shadow-md">
+                  <p className="text-foreground/90 text-sm leading-relaxed mb-4 line-clamp-2 drop-shadow-md text-left">
                     {area.description}
                   </p>
 
@@ -157,8 +155,7 @@ export default function Index() {
                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-2" />
                   </div>
                 </div>
-              </Link>
-            ))}
+              </Link>)}
           </div>
 
           <div className="text-center">
@@ -178,6 +175,5 @@ export default function Index() {
 
       {/* CTA */}
       <CTASection />
-    </Layout>
-  );
+    </Layout>;
 }
