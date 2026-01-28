@@ -42,7 +42,7 @@ export default function Index() {
             <h1 className="text-balance animate-fade-in text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-overlay-strong">
               <span className="block text-accent drop-shadow-lg">Soluções legais confiáveis e eficazes</span>
             </h1>
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl lg:text-2xl text-white animate-slide-up font-normal text-mobile-justified text-overlay-accessible">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl lg:text-2xl text-foreground animate-slide-up font-normal text-mobile-justified text-overlay-accessible">
               Assessoria jurídica empresarial com excelência e segurança.
             </p>
             <div className="mt-6 sm:mt-8 md:mt-10 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 animate-slide-up" style={{
@@ -55,7 +55,7 @@ export default function Index() {
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="bg-white/15 border-white/40 text-white hover:bg-white/25 font-medium w-full sm:w-auto shadow-lg">
+              <Button asChild size="lg" variant="outline" className="bg-foreground/15 border-foreground/40 text-foreground hover:bg-foreground/25 font-medium w-full sm:w-auto shadow-lg">
                 <Link to="/atuacao#areas-grid">Áreas de Atuação</Link>
               </Button>
             </div>
