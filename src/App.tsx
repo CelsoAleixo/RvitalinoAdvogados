@@ -6,7 +6,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { legacyIdToSlug } from "@/data/publications";
-
+import { LanguageProvider } from "@/contexts/LanguageContext";
+import { translations } from "@/i18n/translations";
 // Lazy load all pages for code splitting
 const Index = lazy(() => import("./pages/Index"));
 const Escritorio = lazy(() => import("./pages/Escritorio"));
@@ -47,36 +48,38 @@ function LegacyPublicationRedirect({ id }: { id: string }) {
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Suspense fallback={<div className="min-h-screen bg-background" />}>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/escritorio" element={<Escritorio />} />
-            <Route path="/equipe" element={<Equipe />} />
-            <Route path="/atuacao" element={<Atuacao />} />
-            <Route path="/atuacao/direito-empresarial" element={<DireitoEmpresarial />} />
-            <Route path="/atuacao/negociacao-juridica" element={<NegociacaoJuridica />} />
-            <Route path="/atuacao/direito-tributario" element={<DireitoTributario />} />
-            <Route path="/atuacao/direito-trabalhista" element={<DireitoTrabalhista />} />
-            <Route path="/atuacao/familia-e-sucessoes" element={<FamiliaSucessoes />} />
-            <Route path="/atuacao/direito-civil" element={<DireitoCivil />} />
-            <Route path="/atuacao/credito-de-carbono" element={<CreditoCarbono />} />
-            <Route path="/atuacao/recuperacao-judicial" element={<RecuperacaoJudicial />} />
-            <Route path="/publicacoes" element={<Publicacoes />} />
-            {/* New SEO-friendly slug-based publication URLs */}
-            <Route path="/publicacoes/:slug" element={<PublicacaoDetalhe />} />
-            <Route path="/portugal" element={<Portugal />} />
-            <Route path="/contato" element={<Contato />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
-      </BrowserRouter>
-    </TooltipProvider>
+    <LanguageProvider translations={translations}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <ScrollToTop />
+          <Suspense fallback={<div className="min-h-screen bg-background" />}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/escritorio" element={<Escritorio />} />
+              <Route path="/equipe" element={<Equipe />} />
+              <Route path="/atuacao" element={<Atuacao />} />
+              <Route path="/atuacao/direito-empresarial" element={<DireitoEmpresarial />} />
+              <Route path="/atuacao/negociacao-juridica" element={<NegociacaoJuridica />} />
+              <Route path="/atuacao/direito-tributario" element={<DireitoTributario />} />
+              <Route path="/atuacao/direito-trabalhista" element={<DireitoTrabalhista />} />
+              <Route path="/atuacao/familia-e-sucessoes" element={<FamiliaSucessoes />} />
+              <Route path="/atuacao/direito-civil" element={<DireitoCivil />} />
+              <Route path="/atuacao/credito-de-carbono" element={<CreditoCarbono />} />
+              <Route path="/atuacao/recuperacao-judicial" element={<RecuperacaoJudicial />} />
+              <Route path="/publicacoes" element={<Publicacoes />} />
+              {/* New SEO-friendly slug-based publication URLs */}
+              <Route path="/publicacoes/:slug" element={<PublicacaoDetalhe />} />
+              <Route path="/portugal" element={<Portugal />} />
+              <Route path="/contato" element={<Contato />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </BrowserRouter>
+      </TooltipProvider>
+    </LanguageProvider>
   </QueryClientProvider>
 );
 

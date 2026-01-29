@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/shared/SectionHeading";
-
 import { CTASection } from "@/components/shared/CTASection";
 import { ManifestoModal } from "@/components/shared/ManifestoModal";
 import { TrustIndicators } from "@/components/shared/TrustIndicators";
 import { ResponsiveHeroVideo } from "@/components/shared/ResponsiveHeroVideo";
 import { PublicationCard } from "@/components/shared/PublicationCard";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { ArrowRight, Scale, Building2, Phone, BookOpen, Briefcase } from "lucide-react";
 import institutionalVideo from "@/assets/institutional-video.mp4";
 import { getPublicationsSortedByDate } from "@/data/publications";
@@ -17,60 +17,89 @@ import direitoEmpresarialImg from "@/assets/areas/direito-empresarial-hero.jpg";
 import negociacaoJuridicaImg from "@/assets/areas/negociacao-juridica-hero.jpg";
 import recuperacaoJudicialImg from "@/assets/areas/recuperacao-judicial-hero.jpg";
 import direitoTributarioImg from "@/assets/areas/direito-tributario-hero.jpg";
+
 const WHATSAPP_LINK = "https://wa.me/5511974083838?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20advogado.";
-const areas = [{
-  icon: Building2,
-  title: "Direito Empresarial",
-  description: "Assessoria completa para empresas em questões societárias, contratuais e estratégicas.",
-  href: "/atuacao/direito-empresarial",
-  image: direitoEmpresarialImg
-}, {
-  icon: Scale,
-  title: "Negociação Jurídica",
-  description: "Soluções eficazes em mediação e negociação de conflitos empresariais.",
-  href: "/atuacao/negociacao-juridica",
-  image: negociacaoJuridicaImg
-}, {
-  icon: Briefcase,
-  title: "Recuperação Judicial",
-  description: "Atuação ampla com destaque para transporte público e agronegócio.",
-  href: "/atuacao/recuperacao-judicial",
-  highlight: true,
-  image: recuperacaoJudicialImg
-}, {
-  icon: Scale,
-  title: "Direito Tributário",
-  description: "Planejamento e defesa em questões fiscais e tributárias.",
-  href: "/atuacao/direito-tributario",
-  image: direitoTributarioImg
-}];
+
 export default function Index() {
+  const { t, language } = useLanguage();
   const recentPublications = getPublicationsSortedByDate().slice(0, 6);
-  return <Layout>
+
+  const areas = [
+    {
+      icon: Building2,
+      titleKey: "area.corporateLaw",
+      descKey: "area.corporateLaw.desc",
+      href: "/atuacao/direito-empresarial",
+      image: direitoEmpresarialImg,
+    },
+    {
+      icon: Scale,
+      titleKey: "area.legalNegotiation",
+      descKey: "area.legalNegotiation.desc",
+      href: "/atuacao/negociacao-juridica",
+      image: negociacaoJuridicaImg,
+    },
+    {
+      icon: Briefcase,
+      titleKey: "area.judicialRecovery",
+      descKey: "area.judicialRecovery.desc",
+      href: "/atuacao/recuperacao-judicial",
+      highlight: true,
+      image: recuperacaoJudicialImg,
+    },
+    {
+      icon: Scale,
+      titleKey: "area.taxLaw",
+      descKey: "area.taxLaw.desc",
+      href: "/atuacao/direito-tributario",
+      image: direitoTributarioImg,
+    },
+  ];
+
+  return (
+    <Layout>
       {/* Hero Section with Video Background */}
       <section className="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-[90vh] flex items-center overflow-hidden">
-        <ResponsiveHeroVideo mp4Src={institutionalVideo} posterImage="/lovable-uploads/3c2a2065-697e-4647-b72f-b5b713512bde.png" overlayClassName="bg-[#1a2e1a]/60 sm:bg-[#1a2e1a]/70" playbackRate={1.0} priority />
+        <ResponsiveHeroVideo
+          mp4Src={institutionalVideo}
+          posterImage="/lovable-uploads/3c2a2065-697e-4647-b72f-b5b713512bde.png"
+          overlayClassName="bg-[#1a2e1a]/60 sm:bg-[#1a2e1a]/70"
+          playbackRate={1.0}
+          priority
+        />
 
         <div className="container-site relative z-20 py-12 sm:py-16 md:py-24">
           <div className="max-w-2xl">
             <h1 className="text-balance animate-fade-in text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-overlay-strong">
-              <span className="block text-accent drop-shadow-lg">Soluções legais confiáveis e eficazes</span>
+              <span className="block text-accent drop-shadow-lg">
+                {t("home.hero.title")}
+              </span>
             </h1>
             <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl lg:text-2xl text-foreground animate-slide-up font-normal text-mobile-justified text-overlay-accessible">
-              Assessoria jurídica empresarial com excelência e segurança.
+              {t("home.hero.subtitle")}
             </p>
-            <div className="mt-6 sm:mt-8 md:mt-10 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 animate-slide-up" style={{
-            animationDelay: "0.1s"
-          }}>
-              <Button asChild size="lg" className="group bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full sm:w-auto shadow-lg">
+            <div
+              className="mt-6 sm:mt-8 md:mt-10 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 animate-slide-up"
+              style={{ animationDelay: "0.1s" }}
+            >
+              <Button
+                asChild
+                size="lg"
+                className="group bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full sm:w-auto shadow-lg"
+              >
                 <Link to="/contato" className="flex items-center justify-center gap-2">
                   <Phone className="h-5 w-5" />
-                  Contato
+                  {t("home.hero.contact")}
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="bg-foreground/15 border-foreground/40 text-foreground hover:bg-foreground/25 font-medium w-full sm:w-auto shadow-lg">
-                <Link to="/atuacao#areas-grid">Áreas de Atuação</Link>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="bg-foreground/15 border-foreground/40 text-foreground hover:bg-foreground/25 font-medium w-full sm:w-auto shadow-lg"
+              >
+                <Link to="/atuacao#areas-grid">{t("home.hero.areas")}</Link>
               </Button>
             </div>
 
@@ -95,18 +124,20 @@ export default function Index() {
             <div className="p-2 rounded-lg bg-accent/10">
               <BookOpen className="h-6 w-6 text-accent" />
             </div>
-            <SectionHeading title="Publicações" />
+            <SectionHeading title={t("home.publications")} />
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-6 mb-8">
-            {recentPublications.map(pub => <PublicationCard key={pub.id} publication={pub} variant="compact" />)}
+            {recentPublications.map((pub) => (
+              <PublicationCard key={pub.id} publication={pub} variant="compact" />
+            ))}
           </div>
 
           <div className="text-center">
             <Button asChild variant="outline" className="group">
               <Link to="/publicacoes" className="flex items-center gap-2">
                 <BookOpen className="h-4 w-4" />
-                Ver Todas as Publicações
+                {t("home.viewAllPublications")}
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
@@ -121,19 +152,34 @@ export default function Index() {
             <div className="p-2 rounded-lg bg-accent/10">
               <Briefcase className="h-6 w-6 text-accent" />
             </div>
-            <SectionHeading title="Áreas de Atuação" />
+            <SectionHeading title={t("nav.areas")} />
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            {areas.map((area, index) => <Link key={index} to={area.href} className="group relative rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl bg-card min-h-[280px]">
+            {areas.map((area, index) => (
+              <Link
+                key={index}
+                to={area.href}
+                className="group relative rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl bg-card min-h-[280px]"
+              >
                 <div className="absolute inset-0">
-                  <img src={area.image} alt={area.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-105 contrast-105" loading="lazy" decoding="async" width={498} height={280} />
+                  <img
+                    src={area.image}
+                    alt={t(area.titleKey)}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-105 contrast-105"
+                    loading="lazy"
+                    decoding="async"
+                    width={498}
+                    height={280}
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                 </div>
 
-                {area.highlight && <div className="absolute top-4 right-4 z-10 bg-accent text-accent-foreground text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
-                    Destaque
-                  </div>}
+                {area.highlight && (
+                  <div className="absolute top-4 right-4 z-10 bg-accent text-accent-foreground text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
+                    {t("home.highlight")}
+                  </div>
+                )}
 
                 <div className="relative z-10 p-6 min-h-[280px] flex flex-col justify-end">
                   <div className="absolute top-4 left-4">
@@ -143,26 +189,27 @@ export default function Index() {
                   </div>
 
                   <h3 className="font-serif text-xl text-foreground mb-2 transition-colors duration-300 group-hover:text-accent drop-shadow-lg">
-                    {area.title}
+                    {t(area.titleKey)}
                   </h3>
-                  
+
                   <p className="text-foreground/90 text-sm leading-relaxed mb-4 line-clamp-2 drop-shadow-md no-justify">
-                    {area.description}
+                    {t(area.descKey)}
                   </p>
 
                   <div className="flex items-center gap-2 text-accent text-sm font-medium">
-                    <span>Saiba mais</span>
+                    <span>{t("home.learnMore")}</span>
                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-2" />
                   </div>
                 </div>
-              </Link>)}
+              </Link>
+            ))}
           </div>
 
           <div className="text-center">
             <Button asChild variant="outline" className="group">
               <Link to="/atuacao" className="flex items-center gap-2">
                 <Briefcase className="h-4 w-4" />
-                Ver Todas as Áreas de Atuação
+                {t("home.viewAllAreas")}
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
@@ -172,5 +219,6 @@ export default function Index() {
 
       {/* CTA */}
       <CTASection />
-    </Layout>;
+    </Layout>
+  );
 }
