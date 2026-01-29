@@ -18,7 +18,8 @@ interface ResponsiveHeroVideoProps {
  * - Poster image for instant visual feedback
  * - Reduced motion support for accessibility
  * - Priority loading for above-the-fold videos
- * - Preload metadata for faster playback start
+ * - Connection-aware loading for slow networks
+ * - Smooth skeleton → poster → video transition
  */
 export function ResponsiveHeroVideo({
   mp4Src,
@@ -34,6 +35,29 @@ export function ResponsiveHeroVideo({
   const [isReady, setIsReady] = useState(priority);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [isPosterLoaded, setIsPosterLoaded] = useState(false);
+  const [isSlowConnection, setIsSlowConnection] = useState(false);
+  const [loadProgress, setLoadProgress] = useState(0);
+
+  // Check connection speed
+  useEffect(() => {
+    const connection = (navigator as any).connection || (navigator as any).mozConnection || (navigator as any).webkitConnection;
+    
+    if (connection) {
+      const checkConnection = () => {
+        // Consider slow if: slow-2g, 2g, 3g, or saveData enabled, or downlink < 1.5 Mbps
+        const isSlow = 
+          connection.saveData || 
+          ['slow-2g', '2g', '3g'].includes(connection.effectiveType) ||
+          (connection.downlink && connection.downlink < 1.5);
+        setIsSlowConnection(isSlow);
+      };
+      
+      checkConnection();
+      connection.addEventListener?.('change', checkConnection);
+      return () => connection.removeEventListener?.('change', checkConnection);
+    }
+  }, []);
 
   // Check for reduced motion preference
   useEffect(() => {
@@ -44,6 +68,19 @@ export function ResponsiveHeroVideo({
     mediaQuery.addEventListener("change", handler);
     return () => mediaQuery.removeEventListener("change", handler);
   }, []);
+
+  // Preload poster image
+  useEffect(() => {
+    if (!posterImage) {
+      setIsPosterLoaded(true);
+      return;
+    }
+
+    const img = new Image();
+    img.onload = () => setIsPosterLoaded(true);
+    img.onerror = () => setIsPosterLoaded(true); // Continue even if poster fails
+    img.src = posterImage;
+  }, [posterImage]);
 
   // Lazy load video when in viewport (only if not priority)
   useEffect(() => {
@@ -66,21 +103,34 @@ export function ResponsiveHeroVideo({
     return () => observer.disconnect();
   }, [priority]);
 
-  // Set playback rate and handle video ready state
+  // Set playback rate and handle video ready state with progress tracking
   useEffect(() => {
     const video = videoRef.current;
     if (!video || !isReady) return;
 
     video.playbackRate = playbackRate;
 
+    // Track loading progress for slow connections
+    const handleProgress = () => {
+      if (video.buffered.length > 0) {
+        const bufferedEnd = video.buffered.end(video.buffered.length - 1);
+        const duration = video.duration;
+        if (duration > 0) {
+          setLoadProgress(Math.min((bufferedEnd / duration) * 100, 100));
+        }
+      }
+    };
+
     // Handle canplaythrough for smoother playback
     const handleCanPlay = () => {
       setIsVideoLoaded(true);
+      setLoadProgress(100);
       video.play().catch(() => {
         // Autoplay was prevented, user interaction needed
       });
     };
 
+    video.addEventListener("progress", handleProgress);
     video.addEventListener("canplaythrough", handleCanPlay);
     
     // If already ready (cached), trigger immediately
@@ -88,21 +138,51 @@ export function ResponsiveHeroVideo({
       handleCanPlay();
     }
 
-    return () => video.removeEventListener("canplaythrough", handleCanPlay);
+    return () => {
+      video.removeEventListener("progress", handleProgress);
+      video.removeEventListener("canplaythrough", handleCanPlay);
+    };
   }, [isReady, playbackRate]);
 
-  // Show static poster for reduced motion preference
-  if (prefersReducedMotion && posterImage) {
+  // Show static poster for reduced motion preference or very slow connections
+  if (prefersReducedMotion || (isSlowConnection && !isVideoLoaded)) {
     return (
       <div ref={containerRef} className={`absolute inset-0 z-0 ${className}`}>
-        <img
-          src={posterImage}
-          alt=""
-          className="w-full h-full object-cover"
-          aria-hidden="true"
-          loading="eager"
-          fetchPriority="high"
-        />
+        {/* Skeleton while poster loads */}
+        {!isPosterLoaded && (
+          <div className="absolute inset-0 bg-gradient-to-br from-muted via-muted/80 to-muted animate-pulse" />
+        )}
+        
+        {posterImage && (
+          <img
+            src={posterImage}
+            alt=""
+            className={`w-full h-full object-cover transition-opacity duration-700 ${
+              isPosterLoaded ? "opacity-100" : "opacity-0"
+            }`}
+            aria-hidden="true"
+            loading="eager"
+            fetchPriority="high"
+          />
+        )}
+        
+        {/* Loading indicator for slow connections (only if video will eventually load) */}
+        {isSlowConnection && !prefersReducedMotion && !isVideoLoaded && isPosterLoaded && (
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+            <div className="flex items-center gap-3 bg-black/40 backdrop-blur-sm rounded-full px-4 py-2">
+              <div className="w-24 h-1 bg-white/20 rounded-full overflow-hidden">
+                <div 
+                  className="h-full bg-accent rounded-full transition-all duration-300"
+                  style={{ width: `${loadProgress}%` }}
+                />
+              </div>
+              <span className="text-white/70 text-xs font-medium">
+                {loadProgress < 100 ? 'Carregando...' : 'Pronto'}
+              </span>
+            </div>
+          </div>
+        )}
+        
         {overlayClassName && <div className={`absolute inset-0 ${overlayClassName}`} />}
       </div>
     );
@@ -110,13 +190,20 @@ export function ResponsiveHeroVideo({
 
   return (
     <div ref={containerRef} className={`absolute inset-0 z-0 ${className}`}>
-      {/* Always show poster as background for instant visual */}
+      {/* Skeleton background while nothing is loaded */}
+      <div 
+        className={`absolute inset-0 bg-gradient-to-br from-muted via-muted/80 to-muted transition-opacity duration-500 ${
+          isPosterLoaded || isVideoLoaded ? "opacity-0" : "opacity-100"
+        }`}
+      />
+      
+      {/* Poster image - shows while video loads */}
       {posterImage && (
         <img
           src={posterImage}
           alt=""
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
-            isVideoLoaded ? "opacity-0" : "opacity-100"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+            isPosterLoaded && !isVideoLoaded ? "opacity-100" : "opacity-0"
           }`}
           aria-hidden="true"
           loading="eager"
@@ -124,6 +211,7 @@ export function ResponsiveHeroVideo({
         />
       )}
       
+      {/* Video element */}
       {isReady && (
         <video
           ref={videoRef}
@@ -133,7 +221,7 @@ export function ResponsiveHeroVideo({
           playsInline
           preload="auto"
           poster={posterImage}
-          className={`absolute inset-0 w-full h-full object-cover video-enhance transition-opacity duration-500 ${
+          className={`absolute inset-0 w-full h-full object-cover video-enhance transition-opacity duration-700 ${
             isVideoLoaded ? "opacity-100" : "opacity-0"
           }`}
           aria-hidden="true"
@@ -143,6 +231,23 @@ export function ResponsiveHeroVideo({
           {/* MP4 fallback for Safari/iOS */}
           <source src={mp4Src} type="video/mp4" />
         </video>
+      )}
+      
+      {/* Loading progress indicator for slow connections */}
+      {!isVideoLoaded && isPosterLoaded && loadProgress > 0 && loadProgress < 100 && (
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+          <div className="flex items-center gap-3 bg-black/40 backdrop-blur-sm rounded-full px-4 py-2">
+            <div className="w-24 h-1 bg-white/20 rounded-full overflow-hidden">
+              <div 
+                className="h-full bg-accent rounded-full transition-all duration-300"
+                style={{ width: `${loadProgress}%` }}
+              />
+            </div>
+            <span className="text-white/70 text-xs font-medium">
+              {Math.round(loadProgress)}%
+            </span>
+          </div>
+        </div>
       )}
       
       {overlayClassName && <div className={`absolute inset-0 ${overlayClassName}`} />}
