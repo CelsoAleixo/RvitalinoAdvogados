@@ -1,34 +1,11 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/shared/CTASection";
 import { OptimizedImage } from "@/components/shared/OptimizedImage";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { CheckCircle, Scale, Users, Building2, Globe, Award, MapPin, History, Heart } from "lucide-react";
+import { CheckCircle, Scale, Users, Building2, Globe, Award, History, Heart } from "lucide-react";
 import escritorioHero from "@/assets/escritorio-hero.png";
-
-const WHATSAPP_LINK = "https://wa.me/5511974083838?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20advogado.";
-
-const diferenciais = [{
-  icon: Scale,
-  title: "Especialização",
-  description: "Nosso escritório atua fortemente em Direito Empresarial e Corporativo, unindo segurança técnica e visão estratégica. Compreendemos as necessidades de cada cliente e transformamos desafios em soluções práticas e sustentáveis."
-}, {
-  icon: Users,
-  title: "Excelência",
-  description: "Somos referência em soluções jurídicas, conduzindo processos com excelência, elaborando estratégias consistentes e negociando com segurança para garantir que nossos clientes superem desafios com tranquilidade."
-}];
-
-const valores = [
-  "Ética e seriedade na aplicação do Direito",
-  "Soluções jurídicas personalizadas e eficientes",
-  "Confiabilidade e bom relacionamento com nossos clientes",
-  "Conhecimento, competência e aperfeiçoamento técnico",
-  "Foco nas necessidades do cliente",
-  "Comprometimento com os princípios legais",
-  "Transparência sobre os riscos de ações ou projetos",
-  "Empreendedorismo"
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const clientesInternacionais = [
   "Proview Electronics Co Ltd – Taipei / Taiwan",
@@ -40,15 +17,38 @@ const clientesInternacionais = [
   "Dti Korea Co. Ltd – Coreia do Sul"
 ];
 
-const clientesNacionais = [
-  "Transporte Público Urbano e Rodoviário: suporte jurídico a concessionárias em SP, PR, GO, AM, AC, RO, BA, RJ e SC.",
-  "Mineração de Ferro e Manganês: assessoria a mineradoras no PA, AP e CE.",
-  "Mineração de Granito e Pedras Preciosas: atuação junto a empresas na BA, MG e GO.",
-  "Indústria de Alimentos e Restaurantes: apoio jurídico à produção de charque em GO e ao setor de alimentação em SP.",
-  "Parcerias Público-Privadas (PPP): consultoria em projetos de iluminação pública em SP e SC."
-];
-
 export default function Escritorio() {
+  const { t } = useLanguage();
+
+  const valores = [
+    t("office.valor1"),
+    t("office.valor2"),
+    t("office.valor3"),
+    t("office.valor4"),
+    t("office.valor5"),
+    t("office.valor6"),
+    t("office.valor7"),
+    t("office.valor8")
+  ];
+
+  const clientesNacionais = [
+    t("office.nationalClient1"),
+    t("office.nationalClient2"),
+    t("office.nationalClient3"),
+    t("office.nationalClient4"),
+    t("office.nationalClient5")
+  ];
+
+  const diferenciais = [{
+    icon: Scale,
+    title: t("office.specialization"),
+    description: t("office.specializationDesc")
+  }, {
+    icon: Users,
+    title: t("office.excellence"),
+    description: t("office.excellenceDesc")
+  }];
+
   return (
     <Layout>
       {/* Premium Hero Section */}
@@ -76,38 +76,38 @@ export default function Escritorio() {
             {/* Breadcrumb */}
             <nav className="flex items-center gap-2 text-sm mb-8 animate-fade-in">
               <Link to="/" className="text-foreground/80 hover:text-accent transition-colors drop-shadow-md">
-                Início
+                {t("common.home")}
               </Link>
               <span className="text-foreground/60 drop-shadow-md">/</span>
-              <span className="text-accent font-medium drop-shadow-md">Nosso Escritório</span>
+              <span className="text-accent font-medium drop-shadow-md">{t("office.title")}</span>
             </nav>
 
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 border border-accent/40 mb-6 backdrop-blur-sm animate-fade-in">
               <Scale className="w-4 h-4 text-accent" />
-              <span className="text-accent text-sm font-semibold">Desde 2008</span>
+              <span className="text-accent text-sm font-semibold">{t("office.since")}</span>
             </div>
 
             {/* Title */}
             <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight animate-fade-in" style={{
               textShadow: '2px 2px 8px rgba(0,0,0,0.5)'
             }}>
-              Nosso Escritório
+              {t("office.title")}
             </h1>
 
             {/* Stats Row */}
             <div className="flex flex-wrap gap-8 md:gap-12 animate-slide-up">
               <div className="text-center">
                 <div className="text-4xl md:text-5xl font-serif font-bold text-accent drop-shadow-lg">17+</div>
-                <div className="text-foreground/80 text-sm mt-1 drop-shadow-md">Anos de<br />Experiência</div>
+                <div className="text-foreground/80 text-sm mt-1 drop-shadow-md">{t("office.yearsExperience")}</div>
               </div>
               <div className="text-center">
                 <div className="text-4xl md:text-5xl font-serif font-bold text-accent drop-shadow-lg">500+</div>
-                <div className="text-foreground/80 text-sm mt-1 drop-shadow-md">Clientes<br />Atendidos</div>
+                <div className="text-foreground/80 text-sm mt-1 drop-shadow-md">{t("office.clientsServed")}</div>
               </div>
               <div className="text-center">
                 <div className="text-4xl md:text-5xl font-serif font-bold text-accent drop-shadow-lg">17</div>
-                <div className="text-foreground/80 text-sm mt-1 drop-shadow-md">Países de<br />Atuação</div>
+                <div className="text-foreground/80 text-sm mt-1 drop-shadow-md">{t("office.countriesOperation")}</div>
               </div>
             </div>
           </div>
@@ -125,27 +125,15 @@ export default function Escritorio() {
                   <div className="p-2 rounded-lg bg-accent/10">
                     <History className="h-5 w-5 text-accent" />
                   </div>
-                  <span className="font-serif text-xl font-semibold">Sobre Nós</span>
+                  <span className="font-serif text-xl font-semibold">{t("office.aboutUs")}</span>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6">
                 <div className="space-y-6">
                   <div className="space-y-4 text-muted-foreground leading-relaxed">
-                    <p>
-                      Rodrigo Vitalino Advogados vem construindo uma atuação sólida no cenário jurídico e empresarial. 
-                      Idealizado por seu fundador, Rodrigo Vitalino, o escritório nasceu com a missão de oferecer soluções 
-                      jurídicas estratégicas e consultoria empresarial voltada para resultados práticos e sustentáveis.
-                    </p>
-                    <p>
-                      Ao longo dos anos, reunimos uma equipe multidisciplinar de profissionais que trabalham lado a lado 
-                      com empresas de diferentes setores, tanto na prevenção de riscos quanto na defesa em litígios, 
-                      sempre com foco em transparência, eficiência e segurança jurídica.
-                    </p>
-                    <p>
-                      Expandimos nossa presença além das fronteiras brasileiras: o advogado Rodrigo Vitalino também 
-                      possui inscrição na Ordem dos Advogados de Portugal, o que nos permite atender clientes em âmbito 
-                      internacional e oferecer suporte jurídico em operações que envolvem Brasil e Europa.
-                    </p>
+                    <p>{t("office.aboutUsText1")}</p>
+                    <p>{t("office.aboutUsText2")}</p>
+                    <p>{t("office.aboutUsText3")}</p>
                   </div>
                   
                   <div className="rounded-xl overflow-hidden shadow-lg">
@@ -162,10 +150,10 @@ export default function Escritorio() {
                   <div className="flex items-center gap-4 p-4 bg-accent/10 rounded-xl border border-accent/20">
                     <div className="bg-accent text-accent-foreground px-4 py-2 rounded-lg">
                       <div className="text-2xl font-serif font-bold">2008</div>
-                      <div className="text-xs uppercase tracking-wider">Fundação</div>
+                      <div className="text-xs uppercase tracking-wider">{t("office.foundation")}</div>
                     </div>
                     <p className="text-muted-foreground text-sm">
-                      Mais de 17 anos construindo uma trajetória de excelência em assessoria jurídica empresarial.
+                      {t("office.foundationBadgeText")}
                     </p>
                   </div>
                 </div>
@@ -179,7 +167,7 @@ export default function Escritorio() {
                   <div className="p-2 rounded-lg bg-accent/10">
                     <Award className="h-5 w-5 text-accent" />
                   </div>
-                  <span className="font-serif text-xl font-semibold">Nossos Diferenciais</span>
+                  <span className="font-serif text-xl font-semibold">{t("office.ourDifferentials")}</span>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6">
@@ -202,7 +190,7 @@ export default function Escritorio() {
                         <Heart className="w-5 h-5 text-accent" />
                       </div>
                       <h4 className="font-serif text-xl font-semibold text-foreground">
-                        Nossos Princípios - Valores que nos Guiam
+                        {t("office.principles")}
                       </h4>
                     </div>
                     <div className="grid md:grid-cols-2 gap-3">
@@ -228,7 +216,7 @@ export default function Escritorio() {
                   <div className="p-2 rounded-lg bg-accent/10">
                     <Users className="h-5 w-5 text-accent" />
                   </div>
-                  <span className="font-serif text-xl font-semibold">Clientes Atendidos</span>
+                  <span className="font-serif text-xl font-semibold">{t("office.clientsServedSection")}</span>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6">
@@ -239,7 +227,7 @@ export default function Escritorio() {
                       <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
                         <Building2 className="h-6 w-6 text-accent" />
                       </div>
-                      <h4 className="font-serif text-lg font-semibold">Companhias Nacionais</h4>
+                      <h4 className="font-serif text-lg font-semibold">{t("office.nationalCompanies")}</h4>
                     </div>
                     <ul className="space-y-3 text-muted-foreground text-sm">
                       {clientesNacionais.map((cliente, index) => (
@@ -256,7 +244,7 @@ export default function Escritorio() {
                       <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
                         <Globe className="h-6 w-6 text-accent" />
                       </div>
-                      <h4 className="font-serif text-lg font-semibold">Companhias Internacionais</h4>
+                      <h4 className="font-serif text-lg font-semibold">{t("office.internationalCompanies")}</h4>
                     </div>
                     <ul className="space-y-3 text-muted-foreground text-sm">
                       {clientesInternacionais.map((cliente, index) => (
