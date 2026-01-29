@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/shared/CTASection";
-import { TrustIndicators } from "@/components/shared/TrustIndicators";
 import { Link } from "react-router-dom";
-import { Building2, Handshake, TrendingUp, Calculator, Briefcase, Heart, Scale, Leaf, ArrowRight, Award, Shield, Users, Phone, CheckCircle, Clock } from "lucide-react";
+import { Building2, Handshake, TrendingUp, Calculator, Briefcase, Heart, Scale, Leaf, ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Import area images
 import direitoEmpresarialImg from "@/assets/areas/direito-empresarial-hero.jpg";
@@ -16,81 +16,79 @@ import direitoTrabalhistaImg from "@/assets/areas/direito-trabalhista-hero.jpg";
 import familiaSucessoesImg from "@/assets/areas/familia-sucessoes-hero.jpg";
 import direitoCivilImg from "@/assets/areas/direito-civil-hero.jpg";
 import creditoCarbonoImg from "@/assets/areas/credito-carbono-hero.jpg";
-import logoHero from "@/assets/logo-hero-atuacao.png";
 
 const WHATSAPP_LINK = "https://wa.me/5511974083838?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20advogado.";
-const areas = [{
-  icon: Building2,
-  title: "Direito Empresarial",
-  description: "Assessoria completa para empresas em questões societárias, contratuais e estratégicas.",
-  href: "/atuacao/direito-empresarial",
-  highlight: false,
-  image: direitoEmpresarialImg
-}, {
-  icon: Handshake,
-  title: "Negociação Jurídica",
-  description: "Soluções eficazes em mediação e negociação de conflitos empresariais.",
-  href: "/atuacao/negociacao-juridica",
-  highlight: false,
-  image: negociacaoJuridicaImg
-}, {
-  icon: TrendingUp,
-  title: "Recuperação Judicial",
-  description: "Atuação ampla com destaque para transporte público e agronegócio.",
-  href: "/atuacao/recuperacao-judicial",
-  highlight: true,
-  image: recuperacaoJudicialImg
-}, {
-  icon: Calculator,
-  title: "Direito Tributário",
-  description: "Planejamento e defesa em questões fiscais e tributárias.",
-  href: "/atuacao/direito-tributario",
-  highlight: false,
-  image: direitoTributarioImg
-}, {
-  icon: Briefcase,
-  title: "Direito Trabalhista",
-  description: "Suporte completo em relações de trabalho e defesa empresarial.",
-  href: "/atuacao/direito-trabalhista",
-  highlight: false,
-  image: direitoTrabalhistaImg
-}, {
-  icon: Heart,
-  title: "Família e Sucessões",
-  description: "Orientação em divórcios, inventários e planejamento sucessório.",
-  href: "/atuacao/familia-e-sucessoes",
-  highlight: false,
-  image: familiaSucessoesImg
-}, {
-  icon: Scale,
-  title: "Direito Civil",
-  description: "Consultoria e defesa em contratos e responsabilidade civil.",
-  href: "/atuacao/direito-civil",
-  highlight: false,
-  image: direitoCivilImg
-}, {
-  icon: Leaf,
-  title: "Crédito de Carbono",
-  description: "Assessoria em projetos sustentáveis e mercado de créditos de carbono.",
-  href: "/atuacao/credito-de-carbono",
-  highlight: true,
-  image: creditoCarbonoImg
-}];
-const stats = [{
-  number: "17+",
-  label: "Anos de Experiência"
-}, {
-  number: "500+",
-  label: "Clientes Atendidos"
-}, {
-  number: "8",
-  label: "Áreas de Especialização"
-}, {
-  number: "100%",
-  label: "Comprometimento"
-}];
+
 export default function Atuacao() {
   const location = useLocation();
+  const { t } = useLanguage();
+
+  const areas = [{
+    icon: Building2,
+    title: t("area.corporateLaw"),
+    description: t("area.corporateLaw.desc"),
+    href: "/atuacao/direito-empresarial",
+    highlight: false,
+    image: direitoEmpresarialImg
+  }, {
+    icon: Handshake,
+    title: t("area.legalNegotiation"),
+    description: t("area.legalNegotiation.desc"),
+    href: "/atuacao/negociacao-juridica",
+    highlight: false,
+    image: negociacaoJuridicaImg
+  }, {
+    icon: TrendingUp,
+    title: t("area.judicialRecovery"),
+    description: t("area.judicialRecovery.desc"),
+    href: "/atuacao/recuperacao-judicial",
+    highlight: true,
+    image: recuperacaoJudicialImg
+  }, {
+    icon: Calculator,
+    title: t("area.taxLaw"),
+    description: t("area.taxLaw.desc"),
+    href: "/atuacao/direito-tributario",
+    highlight: false,
+    image: direitoTributarioImg
+  }, {
+    icon: Briefcase,
+    title: t("area.laborLaw"),
+    description: t("area.laborLaw.desc"),
+    href: "/atuacao/direito-trabalhista",
+    highlight: false,
+    image: direitoTrabalhistaImg
+  }, {
+    icon: Heart,
+    title: t("area.familySuccession"),
+    description: t("area.familySuccession.desc"),
+    href: "/atuacao/familia-e-sucessoes",
+    highlight: false,
+    image: familiaSucessoesImg
+  }, {
+    icon: Scale,
+    title: t("area.civilLaw"),
+    description: t("area.civilLaw.desc"),
+    href: "/atuacao/direito-civil",
+    highlight: false,
+    image: direitoCivilImg
+  }, {
+    icon: Leaf,
+    title: t("area.carbonCredit"),
+    description: t("area.carbonCredit.desc"),
+    href: "/atuacao/credito-de-carbono",
+    highlight: true,
+    image: creditoCarbonoImg
+  }];
+
+  const benefits = [
+    t("areas.benefit1"),
+    t("areas.benefit2"),
+    t("areas.benefit3"),
+    t("areas.benefit4"),
+    t("areas.benefit5")
+  ];
+
   useEffect(() => {
     if (location.hash === "#areas-grid") {
       setTimeout(() => {
@@ -104,16 +102,9 @@ export default function Atuacao() {
       }, 100);
     }
   }, [location]);
-  return <Layout>
-      {/* Hero Section - Premium Design */}
-      
 
-      {/* Stats Section */}
-      
-
-      {/* Introduction Section */}
-      
-
+  return (
+    <Layout>
       {/* Quick Contact Banner */}
       <section className="bg-accent/10 border-b border-accent/20 py-4">
         <div className="container-site">
@@ -123,12 +114,12 @@ export default function Atuacao() {
                 <span className="absolute w-2.5 h-2.5 bg-accent rounded-full animate-ping opacity-75" />
                 <span className="relative w-2.5 h-2.5 bg-accent rounded-full" />
               </div>
-              <span className="text-sm font-medium">Precisa de orientação em alguma dessas áreas?</span>
+              <span className="text-sm font-medium">{t("areas.needGuidance")}</span>
             </div>
             <Button asChild size="sm" className="group">
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                Falar com Especialista
+                {t("areas.talkToSpecialist")}
                 <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
@@ -141,30 +132,40 @@ export default function Atuacao() {
         <div className="container-site">
           <div className="text-center mb-16">
             <span className="text-accent text-sm font-medium uppercase tracking-[0.2em] mb-4 block">
-              Nossas Especialidades
+              {t("areas.ourSpecialties")}
             </span>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-6">
-              Conheça Nossas Áreas de Atuação
+              {t("areas.discoverAreas")}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              Cada área do Direito demanda conhecimento específico e experiência prática. 
-              Explore nossas especialidades e descubra como podemos ajudá-lo.
+              {t("areas.discoverAreasDesc")}
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {areas.map((area, index) => <Link key={index} to={area.href} className="group relative rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl bg-card">
+            {areas.map((area, index) => (
+              <Link 
+                key={index} 
+                to={area.href} 
+                className="group relative rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl bg-card"
+              >
                 {/* Background Image - more visible */}
                 <div className="absolute inset-0">
-                  <img src={area.image} alt={area.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-105 contrast-105" />
+                  <img 
+                    src={area.image} 
+                    alt={area.title} 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-105 contrast-105" 
+                  />
                   {/* Lighter gradient overlay - only bottom half for text readability */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                 </div>
 
                 {/* Highlight badge */}
-                {area.highlight && <div className="absolute top-4 right-4 z-10 bg-accent text-[#1a2e1a] text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
-                    Destaque
-                  </div>}
+                {area.highlight && (
+                  <div className="absolute top-4 right-4 z-10 bg-accent text-[#1a2e1a] text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
+                    {t("areas.highlight")}
+                  </div>
+                )}
 
                 {/* Content */}
                 <div className="relative z-10 p-6 min-h-[320px] flex flex-col justify-end">
@@ -187,11 +188,12 @@ export default function Atuacao() {
 
                   {/* Arrow */}
                   <div className="flex items-center gap-2 text-accent text-sm font-medium">
-                    <span>Saiba mais</span>
+                    <span>{t("areas.learnMore")}</span>
                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-2" />
                   </div>
                 </div>
-              </Link>)}
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -206,14 +208,13 @@ export default function Atuacao() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="text-accent text-7xl font-serif mb-8 opacity-60">"</div>
             <blockquote className="font-serif text-2xl md:text-3xl lg:text-4xl text-white leading-relaxed mb-10 font-light">
-              Nosso compromisso é oferecer soluções jurídicas que vão além da técnica, 
-              construindo relações de confiança duradouras e resultados que fazem a diferença.
+              {t("areas.quote")}
             </blockquote>
             <div className="flex items-center justify-center gap-6">
               <div className="w-16 h-px bg-gradient-to-r from-transparent to-accent/50" />
               <div className="text-center">
                 <span className="text-accent font-semibold text-lg block">Rodrigo Vitalino</span>
-                <span className="text-white/50 text-sm">Advogado Fundador</span>
+                <span className="text-white/50 text-sm">{t("areas.founderLawyer")}</span>
               </div>
               <div className="w-16 h-px bg-gradient-to-l from-transparent to-accent/50" />
             </div>
@@ -227,24 +228,24 @@ export default function Atuacao() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <span className="text-accent text-sm font-medium uppercase tracking-[0.2em] mb-6 block">
-                Por que nos escolher
+                {t("areas.whyChooseUs")}
               </span>
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-8 leading-tight">
-                Excelência e Comprometimento em Cada Caso
+                {t("areas.excellenceCommitment")}
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-10 text-lg">
-                Acreditamos que cada cliente é único e merece uma abordagem personalizada. 
-                Nossa equipe combina expertise técnica com uma visão estratégica, garantindo 
-                soluções eficazes e resultados consistentes.
+                {t("areas.excellenceCommitmentDesc")}
               </p>
               
               <div className="space-y-5">
-                {["Atendimento personalizado e dedicado", "Equipe multidisciplinar e experiente", "Estratégias jurídicas inovadoras", "Transparência em todas as etapas", "Resultados comprovados ao longo de 17 anos"].map((item, index) => <div key={index} className="flex items-center gap-4 group">
+                {benefits.map((item, index) => (
+                  <div key={index} className="flex items-center gap-4 group">
                     <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center flex-shrink-0 group-hover:from-accent/30 group-hover:to-accent/20 transition-all duration-300">
                       <div className="w-2 h-2 rounded-full bg-accent" />
                     </div>
                     <span className="text-foreground text-lg">{item}</span>
-                  </div>)}
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -260,7 +261,7 @@ export default function Atuacao() {
                   <div className="font-serif text-6xl lg:text-7xl bg-gradient-to-r from-accent via-[#d4b65c] to-accent bg-clip-text text-transparent font-semibold mb-3">
                     2008
                   </div>
-                  <div className="text-white/60 text-lg">Fundação do Escritório</div>
+                  <div className="text-white/60 text-lg">{t("areas.firmFoundation")}</div>
                 </div>
               </div>
               {/* Decorative elements */}
@@ -272,6 +273,7 @@ export default function Atuacao() {
       </section>
 
       {/* CTA Section */}
-      <CTASection title="Precisa de assessoria jurídica especializada?" description="Entre em contato e conheça soluções jurídicas personalizadas para suas necessidades. Nossa equipe está pronta para ajudá-lo." />
-    </Layout>;
+      <CTASection title={t("areas.ctaTitle")} description={t("areas.ctaDesc")} />
+    </Layout>
+  );
 }

@@ -10,21 +10,24 @@ import {
   categories, 
   getPublicationsSortedByDate 
 } from "@/data/publications";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Publicacoes() {
+  const { t, language } = useLanguage();
   const [searchTerm, setSearchTerm] = useState("");
-  const [activeCategory, setActiveCategory] = useState("Todas");
+  const [activeCategory, setActiveCategory] = useState(language === 'pt' ? "Todas" : "All");
 
   const sortedPosts = useMemo(() => getPublicationsSortedByDate(), []);
 
   const filteredPosts = useMemo(() => {
+    const allLabel = language === 'pt' ? "Todas" : "All";
     return sortedPosts.filter((post) => {
       const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesCategory = activeCategory === "Todas" || post.category === activeCategory;
+      const matchesCategory = activeCategory === allLabel || post.category === activeCategory;
       return matchesSearch && matchesCategory;
     });
-  }, [sortedPosts, searchTerm, activeCategory]);
+  }, [sortedPosts, searchTerm, activeCategory, language]);
 
   const featuredPost = filteredPosts[0];
   const remainingPosts = filteredPosts.slice(1);
@@ -34,12 +37,16 @@ export default function Publicacoes() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const displayCategories = language === 'pt' 
+    ? categories 
+    : ["All", ...categories.filter(c => c !== "Todas")];
+
   return (
     <Layout>
       <PageHero
-        title="Atualizações Jurídicas"
-        description="Artigos, notícias e análises sobre legislação, tributação e impactos no mundo dos negócios."
-        breadcrumb={[{ label: "Publicações" }]}
+        title={t("publications.heroTitle")}
+        description={t("publications.heroDesc")}
+        breadcrumb={[{ label: t("publications.title") }]}
         backgroundImage={publicationsHero}
       />
 
@@ -52,7 +59,7 @@ export default function Publicacoes() {
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 type="search"
-                placeholder="Buscar publicações..."
+                placeholder={t("publications.search")}
                 className="pl-11 h-12 bg-card border-border rounded-lg"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -61,7 +68,7 @@ export default function Publicacoes() {
 
             {/* Categories */}
             <div className="flex flex-wrap gap-2">
-              {categories.map((category) => (
+              {displayCategories.map((category) => (
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}
@@ -81,7 +88,7 @@ export default function Publicacoes() {
           <div className="flex items-center gap-2 mb-8 text-muted-foreground">
             <BookOpen className="h-4 w-4" />
             <span className="text-sm">
-              {filteredPosts.length} {filteredPosts.length === 1 ? "publicação encontrada" : "publicações encontradas"}
+              {filteredPosts.length} {filteredPosts.length === 1 ? t("publications.found") : t("publications.foundPlural")}
             </span>
           </div>
 
@@ -116,19 +123,19 @@ export default function Publicacoes() {
             <div className="text-center py-16 bg-secondary/30 rounded-lg border border-border">
               <BookOpen className="h-12 w-12 text-muted-foreground/50 mx-auto mb-4" />
               <p className="text-muted-foreground text-lg mb-2">
-                Nenhuma publicação encontrada
+                {t("publications.noResults")}
               </p>
               <p className="text-muted-foreground/70 text-sm">
-                Tente ajustar os filtros ou termos de busca.
+                {t("publications.noResultsDesc")}
               </p>
               <button
                 onClick={() => {
                   setSearchTerm("");
-                  setActiveCategory("Todas");
+                  setActiveCategory(language === 'pt' ? "Todas" : "All");
                 }}
                 className="mt-4 text-accent hover:underline text-sm font-medium"
               >
-                Limpar filtros
+                {t("publications.clearFilters")}
               </button>
             </div>
           )}
