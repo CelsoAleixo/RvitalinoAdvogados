@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/shared/SectionHeading";
 import { CTASection } from "@/components/shared/CTASection";
 import { ManifestoModal } from "@/components/shared/ManifestoModal";
 import { TrustIndicators } from "@/components/shared/TrustIndicators";
+import { ScrollDownButton } from "@/components/shared/ScrollDownButton";
 import { ResponsiveHeroVideo } from "@/components/shared/ResponsiveHeroVideo";
 import { PublicationCard } from "@/components/shared/PublicationCard";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -110,7 +111,9 @@ export default function Index() {
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 z-20 bg-gradient-to-t from-background via-background/80 to-transparent pt-8 sm:pt-16 pb-4 sm:pb-8">
-          <div className="container-site"></div>
+          <div className="container-site flex justify-center">
+            <ScrollDownButton targetId="publicacoes-section" />
+          </div>
         </div>
       </section>
 
@@ -118,7 +121,7 @@ export default function Index() {
       <TrustIndicators variant="light" />
 
       {/* Publications Section */}
-      <section className="section-padding bg-secondary/30">
+      <section id="publicacoes-section" className="section-padding bg-secondary/30">
         <div className="container-site">
           <div className="flex items-center gap-3 mb-8">
             <div className="p-2 rounded-lg bg-accent/10">

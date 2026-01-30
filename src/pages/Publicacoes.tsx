@@ -4,6 +4,7 @@ import { PageHero } from "@/components/shared/PageHero";
 import { CTASection } from "@/components/shared/CTASection";
 import { PublicationCard } from "@/components/shared/PublicationCard";
 import { Input } from "@/components/ui/input";
+import { ScrollDownButton } from "@/components/shared/ScrollDownButton";
 import { Search, BookOpen } from "lucide-react";
 import publicationsHero from "@/assets/publications-hero.jpg";
 import { 
@@ -42,12 +43,17 @@ export default function Publicacoes() {
 
   return (
     <Layout>
-      <PageHero
-        title={t("publications.heroTitle")}
-        description={t("publications.heroDesc")}
-        breadcrumb={[{ label: t("publications.title") }]}
-        backgroundImage={publicationsHero}
-      />
+      <div className="relative">
+        <PageHero
+          title={t("publications.heroTitle")}
+          description={t("publications.heroDesc")}
+          breadcrumb={[{ label: t("publications.title") }]}
+          backgroundImage={publicationsHero}
+        />
+        <div className="absolute bottom-4 left-0 right-0 z-20 flex justify-center">
+          <ScrollDownButton targetId="primeira-publicacao" />
+        </div>
+      </div>
 
       <section className="section-padding">
         <div className="container-site">
@@ -95,7 +101,7 @@ export default function Publicacoes() {
             <>
               {/* Featured Post */}
               {featuredPost && (
-                <div className="mb-12">
+                <div id="primeira-publicacao" className="mb-12">
                   <PublicationCard 
                     publication={featuredPost} 
                     variant="featured"
