@@ -12,10 +12,12 @@ import {
   getPublicationUrl,
   Publication 
 } from "@/data/publications";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function PublicacaoDetalhe() {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
+  const { language, t } = useLanguage();
   
   // Scroll to top when navigating to this page
   useEffect(() => {
@@ -74,9 +76,19 @@ export default function PublicacaoDetalhe() {
     );
   }
 
+  // Get localized content
+  const title = language === 'en' ? post.titleEn : post.title;
+  const subtitle = language === 'en' ? post.subtitleEn : post.subtitle;
+  const excerpt = language === 'en' ? post.excerptEn : post.excerpt;
+  const category = language === 'en' ? post.categoryEn : post.category;
+  const content = language === 'en' ? (post.contentEn || post.content) : post.content;
+  const authorDescription = post.authorSection 
+    ? (language === 'en' ? post.authorSection.descriptionEn : post.authorSection.description)
+    : '';
+
   // Simple markdown-like rendering
-  const renderContent = (content: string) => {
-    const lines = content.split('\n');
+  const renderContent = (contentText: string) => {
+    const lines = contentText.split('\n');
     return lines.map((line, index) => {
       // Author section marker
       if (line.trim() === '::author::') {
@@ -93,7 +105,7 @@ export default function PublicacaoDetalhe() {
                 <div className="flex-1">
                   <h4 className="font-serif text-xl text-foreground mb-3">{author.name}</h4>
                   <div className="text-muted-foreground text-sm leading-relaxed space-y-2">
-                    {author.description.split('\n\n').map((paragraph: string, i: number) => (
+                    {authorDescription.split('\n\n').map((paragraph: string, i: number) => (
                       <p key={i}>{paragraph}</p>
                     ))}
                   </div>
@@ -171,27 +183,27 @@ export default function PublicacaoDetalhe() {
     <Layout>
       {isInternational ? (
         <InternationalHero
-          title={post.title}
-          subtitle={post.subtitle}
+          title={title}
+          subtitle={subtitle}
         />
       ) : hasHeroImage ? (
         <PageHero
-          title={post.title}
-          description={post.subtitle}
+          title={title}
+          description={subtitle}
           breadcrumb={[
-            { label: "Publicações", href: "/publicacoes" },
-            { label: post.category },
+            { label: t("publications.title"), href: "/publicacoes" },
+            { label: category },
           ]}
           backgroundImage={post.heroImage}
           showIcons
         />
       ) : (
         <PageHero
-          title={post.title}
-          description={post.subtitle}
+          title={title}
+          description={subtitle}
           breadcrumb={[
-            { label: "Publicações", href: "/publicacoes" },
-            { label: post.category },
+            { label: t("publications.title"), href: "/publicacoes" },
+            { label: category },
           ]}
         />
       )}
@@ -203,7 +215,7 @@ export default function PublicacaoDetalhe() {
             <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-8 pb-6 border-b border-border">
               <span className="flex items-center gap-1">
                 <Calendar className="h-4 w-4" />
-                {new Date(post.date).toLocaleDateString("pt-BR", {
+                {new Date(post.date).toLocaleDateString(language === 'en' ? "en-US" : "pt-BR", {
                   day: "numeric",
                   month: "long",
                   year: "numeric",
@@ -211,23 +223,23 @@ export default function PublicacaoDetalhe() {
               </span>
               <span className="flex items-center gap-1">
                 <Tag className="h-4 w-4" />
-                {post.category}
+                {category}
               </span>
             </div>
 
             {/* Article title */}
             <h1 className="font-serif text-3xl md:text-4xl mb-6 text-foreground leading-tight">
-              {post.title}
+              {title}
             </h1>
 
             {/* Excerpt */}
             <p className="text-lg text-muted-foreground mb-8 font-medium border-l-4 border-accent pl-4">
-              {post.excerpt}
+              {excerpt}
             </p>
 
             {/* Content */}
             <div className="prose prose-lg max-w-none">
-              {post.content && renderContent(post.content)}
+              {content && renderContent(content)}
             </div>
 
             {/* Share and back */}
@@ -235,7 +247,7 @@ export default function PublicacaoDetalhe() {
               <Link to="/publicacoes">
                 <Button variant="outline" className="gap-2">
                   <ArrowLeft className="h-4 w-4" />
-                  Voltar para Publicações
+                  {language === 'en' ? 'Back to Publications' : 'Voltar para Publicações'}
                 </Button>
               </Link>
               <Button
@@ -244,8 +256,8 @@ export default function PublicacaoDetalhe() {
                 onClick={() => {
                   if (navigator.share) {
                     navigator.share({
-                      title: post.title,
-                      text: post.excerpt,
+                      title: title,
+                      text: excerpt,
                       url: window.location.href,
                     });
                   } else {
@@ -254,7 +266,7 @@ export default function PublicacaoDetalhe() {
                 }}
               >
                 <Share2 className="h-4 w-4" />
-                Compartilhar
+                {language === 'en' ? 'Share' : 'Compartilhar'}
               </Button>
             </div>
           </article>
