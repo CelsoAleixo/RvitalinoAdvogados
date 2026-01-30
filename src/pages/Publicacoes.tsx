@@ -51,11 +51,11 @@ export default function Publicacoes() {
           backgroundImage={publicationsHero}
         />
         <div className="absolute bottom-4 left-0 right-0 z-20 flex justify-center">
-          <ScrollDownButton targetId="primeira-publicacao" />
+          <ScrollDownButton targetId="publicacoes-content" />
         </div>
       </div>
 
-      <section className="section-padding">
+      <section id="publicacoes-content" className="section-padding">
         <div className="container-site">
           {/* Search and Filter Bar */}
           <div className="mb-12 space-y-6">
