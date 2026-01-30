@@ -7,7 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Search, BookOpen } from "lucide-react";
 import publicationsHero from "@/assets/publications-hero.jpg";
 import { 
-  categories, 
+  categories,
+  categoriesEn,
   getPublicationsSortedByDate 
 } from "@/data/publications";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -37,9 +38,7 @@ export default function Publicacoes() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const displayCategories = language === 'pt' 
-    ? categories 
-    : ["All", ...categories.filter(c => c !== "Todas")];
+  const displayCategories = language === 'pt' ? categories : categoriesEn;
 
   return (
     <Layout>

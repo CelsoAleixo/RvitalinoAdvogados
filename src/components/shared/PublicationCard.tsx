@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Calendar, ArrowRight, User } from "lucide-react";
 import { Publication, getPublicationUrl } from "@/data/publications";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Default author when publication doesn't have a specific authorSection
 const DEFAULT_AUTHOR = {
@@ -15,8 +16,16 @@ interface PublicationCardProps {
 }
 
 export function PublicationCard({ publication, variant = "default", onCategoryClick }: PublicationCardProps) {
+  const { language, t } = useLanguage();
   const authorName = publication.authorSection?.name || DEFAULT_AUTHOR.name;
-  const formattedDate = new Date(publication.date).toLocaleDateString("pt-BR", {
+  
+  // Get localized content
+  const title = language === 'en' ? publication.titleEn : publication.title;
+  const subtitle = language === 'en' ? publication.subtitleEn : publication.subtitle;
+  const excerpt = language === 'en' ? publication.excerptEn : publication.excerpt;
+  const category = language === 'en' ? publication.categoryEn : publication.category;
+  
+  const formattedDate = new Date(publication.date).toLocaleDateString(language === 'en' ? "en-US" : "pt-BR", {
     day: "numeric",
     month: variant === "featured" ? "long" : "short",
     year: "numeric",
@@ -29,22 +38,22 @@ export function PublicationCard({ publication, variant = "default", onCategoryCl
           {/* Category Badge */}
           <div className="mb-4">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-accent/10 text-accent text-xs font-semibold rounded uppercase tracking-wider">
-              {publication.category}
+              {category}
             </span>
           </div>
 
           {/* Title */}
           <Link to={getPublicationUrl(publication)}>
             <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl mb-4 text-foreground group-hover:text-accent transition-colors leading-tight cursor-pointer">
-              {publication.title}
+              {title}
             </h2>
           </Link>
 
           {/* Subtitle */}
-          {publication.subtitle && <p className="text-lg text-accent/80 font-medium mb-4">{publication.subtitle}</p>}
+          {subtitle && <p className="text-lg text-accent/80 font-medium mb-4">{subtitle}</p>}
 
           {/* Excerpt */}
-          <p className="text-muted-foreground leading-relaxed text-lg mb-6 max-w-3xl">{publication.excerpt}</p>
+          <p className="text-muted-foreground leading-relaxed text-lg mb-6 max-w-3xl">{excerpt}</p>
 
           {/* Footer with Author */}
           <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-border">
@@ -67,7 +76,7 @@ export function PublicationCard({ publication, variant = "default", onCategoryCl
               to={getPublicationUrl(publication)}
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-accent-foreground rounded font-medium hover:bg-accent/90 transition-colors"
             >
-              Ler artigo completo
+              {language === 'en' ? 'Read full article' : 'Ler artigo completo'}
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -83,16 +92,16 @@ export function PublicationCard({ publication, variant = "default", onCategoryCl
         className="group bg-card rounded-xl p-6 border border-border hover:border-accent/30 transition-all duration-300 hover:shadow-lg flex flex-col h-full"
       >
         <div className="flex items-center justify-between gap-2 mb-2">
-          <span className="text-xs font-medium text-accent uppercase tracking-wider">{publication.category}</span>
+          <span className="text-xs font-medium text-accent uppercase tracking-wider">{category}</span>
           <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
             <Calendar className="h-3 w-3" />
             {formattedDate}
           </span>
         </div>
         <h3 className="font-serif text-lg mb-3 group-hover:text-accent transition-colors line-clamp-2 flex-grow">
-          {publication.title}
+          {title}
         </h3>
-        <p className="text-muted-foreground text-sm line-clamp-2 mb-4">{publication.excerpt}</p>
+        <p className="text-muted-foreground text-sm line-clamp-2 mb-4">{excerpt}</p>
 
         {/* Author & Read more Row */}
         <div className="flex items-center justify-between gap-2 pt-4 border-t border-border mt-auto">
@@ -101,7 +110,7 @@ export function PublicationCard({ publication, variant = "default", onCategoryCl
             <span className="truncate max-w-[120px]">{authorName}</span>
           </div>
           <div className="flex items-center gap-2 text-accent text-sm font-medium">
-            <span>Ler mais</span>
+            <span>{language === 'en' ? 'Read more' : 'Ler mais'}</span>
             <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </div>
         </div>
@@ -122,11 +131,11 @@ export function PublicationCard({ publication, variant = "default", onCategoryCl
             }}
             className="flex items-center gap-1.5 px-2 py-0.5 bg-secondary rounded text-xs font-medium hover:text-accent transition-colors"
           >
-            {publication.category}
+            {category}
           </button>
         ) : (
           <span className="flex items-center gap-1.5 px-2 py-0.5 bg-secondary rounded text-xs font-medium">
-            {publication.category}
+            {category}
           </span>
         )}
         <span className="flex items-center gap-1.5">
@@ -138,12 +147,12 @@ export function PublicationCard({ publication, variant = "default", onCategoryCl
       {/* Title */}
       <Link to={getPublicationUrl(publication)}>
         <h3 className="font-serif text-lg md:text-xl mb-3 text-foreground group-hover:text-accent transition-colors leading-snug cursor-pointer line-clamp-2">
-          {publication.title}
+          {title}
         </h3>
       </Link>
 
       {/* Excerpt */}
-      <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-3 flex-grow">{publication.excerpt}</p>
+      <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-3 flex-grow">{excerpt}</p>
 
       {/* Author & Read more */}
       <div className="flex items-center justify-between gap-2 pt-4 border-t border-border mt-auto">
@@ -155,7 +164,7 @@ export function PublicationCard({ publication, variant = "default", onCategoryCl
           to={getPublicationUrl(publication)}
           className="inline-flex items-center gap-2 text-accent text-sm font-medium hover:gap-3 transition-all"
         >
-          Ler mais
+          {language === 'en' ? 'Read more' : 'Ler mais'}
           <ArrowRight className="h-3.5 w-3.5" />
         </Link>
       </div>

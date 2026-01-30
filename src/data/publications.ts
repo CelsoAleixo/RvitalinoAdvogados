@@ -5,16 +5,22 @@ export interface Publication {
   id: number;
   slug: string;
   title: string;
+  titleEn: string;
   subtitle: string;
+  subtitleEn: string;
   excerpt: string;
+  excerptEn: string;
   date: string;
   category: string;
+  categoryEn: string;
   categorySlug: string;
   heroImage?: string;
   content?: string;
+  contentEn?: string;
   authorSection?: {
     name: string;
     description: string;
+    descriptionEn: string;
     photo: string;
   };
 }
@@ -46,6 +52,15 @@ export const categorySlugMap: Record<string, string> = {
   "Direito Civil": "direito-civil",
 };
 
+export const categoryEnMap: Record<string, string> = {
+  "Direito Empresarial": "Corporate Law",
+  "Direito Trabalhista": "Labor Law",
+  "Direito Tributário": "Tax Law",
+  "Direito Internacional": "International Law",
+  "Direito Rural": "Agricultural Law",
+  "Direito Civil": "Civil Law",
+};
+
 export const categoryFromSlug: Record<string, string> = Object.fromEntries(
   Object.entries(categorySlugMap).map(([k, v]) => [v, k])
 );
@@ -59,6 +74,15 @@ export const categories = [
   "Direito Rural",
 ];
 
+export const categoriesEn = [
+  "All",
+  "Corporate Law",
+  "Labor Law",
+  "Tax Law",
+  "International Law",
+  "Agricultural Law",
+];
+
 /**
  * Publications data with SEO-friendly slugs
  */
@@ -67,10 +91,14 @@ export const publications: Publication[] = [
     id: 8,
     slug: "recuperacao-judicial-produtor-rural-lei-14112",
     title: "Recuperação Judicial do Produtor Rural – Lei 14.112/20",
+    titleEn: "Judicial Recovery for Rural Producers – Law 14.112/20",
     subtitle: "Proteção patrimonial e reestruturação de dívidas no agronegócio",
+    subtitleEn: "Asset protection and debt restructuring in agribusiness",
     excerpt: "A Lei 14.112/20 ampliou o acesso à recuperação judicial para produtores rurais, permitindo a preservação de negócios viáveis e a reorganização de obrigações financeiras.",
+    excerptEn: "Law 14.112/20 expanded access to judicial recovery for rural producers, enabling the preservation of viable businesses and the reorganization of financial obligations.",
     date: "2026-01-20",
     category: "Direito Rural",
+    categoryEn: "Agricultural Law",
     categorySlug: "direito-rural",
     heroImage: recuperacaoRuralHero,
     content: `---
@@ -126,6 +154,59 @@ A orientação jurídica especializada é fundamental para avaliar a viabilidade
 ---
 
 ::author::`,
+    contentEn: `---
+
+
+### Law 14.112/2020 and the Rural Producer
+
+Law 14.112/2020 brought significant advances for Brazilian agribusiness, expanding rural producers' access to judicial recovery proceedings. Before this amendment, many farmers and ranchers faced legal barriers when seeking to restructure their debts in an organized manner.
+
+**Key innovations of the law:**
+- Possibility of judicial recovery for individual rural producers
+- Flexibility in activity time requirements
+- Protection of assets essential for continuing production
+- Suspension of lawsuits and enforcement actions against the debtor
+
+### When to Consider Judicial Recovery
+
+Judicial recovery should be evaluated when the rural producer faces:
+- Accumulation of bank debts and debts to suppliers
+- Imminent risk of losing land or machinery through enforcement
+- Difficulty in direct renegotiation with creditors
+- Extrajudicial auctions scheduled on properties
+
+### Benefits of Judicial Recovery
+
+**For the producer:**
+- Suspension of collections and enforcements for 180 days (stay period)
+- Opportunity to present a payment plan to creditors
+- Preservation of assets essential to rural activity
+- Maintenance of production and income generation during the process
+
+**For the economy:**
+- Maintenance of rural jobs
+- Preservation of the agribusiness production chain
+- Orderly credit recovery by creditors
+
+### Specialized Practice
+
+Our practice covers all stages of the recovery process:
+
+1. **Viability analysis:** Financial and legal diagnosis of the producer's situation
+2. **Filing preparation:** Documentation and initial petition preparation
+3. **Creditor negotiation:** Mediation for building the recovery plan
+4. **Auction contestation:** Immediate action to suspend forced sales
+5. **Judicial monitoring:** Defense of the producer's interests at all levels
+
+### Final Considerations
+
+Judicial recovery represents a powerful tool for rural producers facing financial crises but wishing to maintain their activities and honor their commitments sustainably.
+
+Specialized legal guidance is essential to assess the viability of the application and conduct the process strategically, maximizing the chances of success in debt restructuring.
+
+---
+
+::author::`,
     authorSection: {
       name: "Dr. Rodrigo Vitalino",
       description: `Sou advogado com atuação voltada à Recuperação Judicial de empresas, renegociação e reestruturação de dívidas rurais, além de contestação e suspensão de leilões extrajudiciais.
@@ -133,6 +214,11 @@ A orientação jurídica especializada é fundamental para avaliar a viabilidade
 Minha prática profissional é orientada pelo compromisso de preservar negócios viáveis e assegurar o patrimônio de empresários e produtores que enfrentam dificuldades financeiras.
 
 Com uma abordagem técnica e estratégica, busco soluções jurídicas eficazes que permitam reorganizar obrigações, evitar perdas patrimoniais e restabelecer o equilíbrio econômico, sempre pautado pela ética, transparência e profissionalismo.`,
+      descriptionEn: `I am a lawyer focused on Corporate Judicial Recovery, rural debt renegotiation and restructuring, as well as contestation and suspension of extrajudicial auctions.
+
+My professional practice is guided by the commitment to preserve viable businesses and protect the assets of entrepreneurs and producers facing financial difficulties.
+
+With a technical and strategic approach, I seek effective legal solutions that allow reorganizing obligations, avoiding asset losses, and restoring economic balance, always guided by ethics, transparency, and professionalism.`,
       photo: rodrigoVitalinoAutor
     }
   },
@@ -140,14 +226,19 @@ Com uma abordagem técnica e estratégica, busco soluções jurídicas eficazes 
     id: 7,
     slug: "semana-internacional-direito-portugal-2026",
     title: "Semana Internacional de Direito em Portugal 2026: Oportunidade para Internacionalizar Sua Carreira",
+    titleEn: "International Law Week in Portugal 2026: Opportunity to Internationalize Your Career",
     subtitle: "Evento presencial no Porto com imersão acadêmica e networking global",
+    subtitleEn: "In-person event in Porto with academic immersion and global networking",
     excerpt: "Evento presencial no Porto reúne advogados, estudantes e gestores para imersão acadêmica, networking global e certificação internacional em abril de 2026.",
+    excerptEn: "In-person event in Porto brings together lawyers, students, and managers for academic immersion, global networking, and international certification in April 2026.",
     date: "2026-01-19",
     category: "Direito Internacional",
+    categoryEn: "International Law",
     categorySlug: "direito-internacional",
     authorSection: {
       name: "CJ Arthur Vitalino",
       description: "Especialista em Direito Internacional",
+      descriptionEn: "International Law Specialist",
       photo: "/lovable-uploads/arthur-vitalino.png"
     },
     content: `## Internacionalização Jurídica: Por Que Atuar Além das Fronteiras?
@@ -193,15 +284,62 @@ A participação em eventos de imersão internacional representa investimento es
 ---
 
 *Publicado por Rodrigo Vitalino Advogados*`,
+    contentEn: `## Legal Internationalization: Why Practice Beyond Borders?
+
+Contemporary legal practice requires competencies that transcend territorial boundaries. The globalized legal market demands professionals capable of understanding treaties, international conventions, and the dynamics of cooperation between jurisdictions. In this context, academic immersion and international networking events gain strategic relevance.
+
+The I International Law Week – Portugal, scheduled for April 2026, represents one of these unique professional development opportunities.
+
+### Event Structure
+
+The program will take place between **April 12 and 17, 2026**, in the city of Porto, with in-person activities organized by Portucalense University (UPT), in partnership with the Internazionale Juris Academy and FOL Academy.
+
+**Experience format:**
+- 28 hours of in-person classes and lectures
+- Triple certification: UPT, Internazionale Juris Academy, and FOL Academy
+- Institutional visits to the Porto Court of Appeals and the University of Coimbra
+- Business rounds among professionals from Brazil, Portugal, Europe, and the USA
+
+### Main Topics Covered
+
+The curriculum covers essential areas for those intending to expand their professional practice internationally:
+
+**International Law and Cooperation:**
+- Brazil-Portugal International Agreements and Treaties
+- Transnational Crimes and Brazil-Europe Criminal Cooperation
+- International Child Abduction and the Hague Convention
+- Transnational Contracts and Professional Mobility
+
+**Planning and Management:**
+- Estate Planning in an International Context
+- Special Retirement with International Time Credits
+- Networking Strategies and Firm Expansion
+
+**Professional Development:**
+- Technological Tools for Legal Management
+- Global Professional Positioning and Branding
+- Intelligence and Communication Posture
+
+### Final Considerations
+
+Participation in international immersion events represents a strategic investment in a legal career. The combination of academic training, recognized certification, and qualified networking offers tangible returns for professionals who wish to differentiate themselves in an increasingly competitive and globalized market.
+
+---
+
+*Published by Rodrigo Vitalino Advogados*`,
   },
   {
     id: 6,
     slug: "obrigacoes-empresariais-2026-guia-gestores",
     title: "Obrigações Empresariais em 2026: Guia Completo para Gestores",
+    titleEn: "Business Obligations in 2026: Complete Guide for Managers",
     subtitle: "Adequação fiscal, tecnológica e contábil no novo cenário regulatório",
+    subtitleEn: "Tax, technological, and accounting compliance in the new regulatory landscape",
     excerpt: "O novo cenário regulatório exige adequação fiscal, tecnológica e contábil das empresas. Conheça as principais exigências da Reforma Tributária e como se preparar.",
+    excerptEn: "The new regulatory landscape requires tax, technological, and accounting compliance from companies. Learn about the main requirements of the Tax Reform and how to prepare.",
     date: "2026-01-19",
     category: "Direito Empresarial",
+    categoryEn: "Corporate Law",
     categorySlug: "direito-empresarial",
     content: `## Novo Marco Regulatório Empresarial: Prepare Sua Empresa para 2026
 
@@ -232,9 +370,39 @@ Durante o período de transição (2026-2032), as empresas operam com dois siste
 ---
 
 *Publicado por Rodrigo Vitalino Advogados*`,
+    contentEn: `## New Business Regulatory Framework: Prepare Your Company for 2026
+
+The year 2026 marks a new phase in Brazilian business management. With the beginning of the Tax Reform transition and significant changes in fiscal, accounting, and technological fields, organizations face a scenario that demands not only documentary compliance but true reorganization of internal processes.
+
+### 1. Reformulation of Electronic Tax Documents
+
+One of the most immediate requirements relates to updating tax documents. Starting January 2026, invoices must include specific fields for CBS (Contribution on Goods and Services) and IBS (Tax on Goods and Services).
+
+**Required actions:**
+- Updating invoice issuing systems
+- Reviewing tax parameterizations
+- Training teams responsible for issuance
+
+### 2. Simultaneous Operation of Two Tax Regimes
+
+During the transition period (2026-2032), companies operate with two parallel tax systems: the current one and the new Reform model.
+
+### Recommendations for Entrepreneurs and Managers
+
+**Immediate actions:**
+1. Conduct a complete diagnosis of the current tax situation
+2. Invest in updating management systems
+3. Train teams on the new rules
+4. Establish compliance and checking routines
+5. Seek specialized legal advice for tax planning
+
+---
+
+*Published by Rodrigo Vitalino Advogados*`,
     authorSection: {
       name: "Dr. Deidre Scaranello",
       description: "Advogada especialista em Direito Empresarial",
+      descriptionEn: "Corporate Law Specialist Attorney",
       photo: "/lovable-uploads/deidre-scaranello-fixed.png"
     }
   },
@@ -242,10 +410,14 @@ Durante o período de transição (2026-2032), as empresas operam com dois siste
     id: 5,
     slug: "mudancas-trabalhistas-2026-portaria-mte",
     title: "Mudanças Trabalhistas a partir de 2026: O Que Sua Empresa Precisa Saber",
+    titleEn: "Labor Changes from 2026: What Your Company Needs to Know",
     subtitle: "Portaria MTE nº 1/2025 moderniza fiscalização e consolida eSocial",
+    subtitleEn: "MTE Ordinance No. 1/2025 modernizes inspection and consolidates eSocial",
     excerpt: "A Portaria Consolidada MTE nº 1/2025 moderniza as relações de trabalho com fiscalização 100% digital, novos prazos de admissão e consolidação do eSocial.",
+    excerptEn: "Consolidated MTE Ordinance No. 1/2025 modernizes labor relations with 100% digital inspection, new hiring deadlines, and eSocial consolidation.",
     date: "2026-01-18",
     category: "Direito Trabalhista",
+    categoryEn: "Labor Law",
     categorySlug: "direito-trabalhista",
     content: `## Nova Era das Relações Trabalhistas: Portaria Consolidada MTE nº 1/2025
 
@@ -265,19 +437,42 @@ O Domicílio Eletrônico Trabalhista (DET) assume protagonismo como canal exclus
 ---
 
 *Publicado por Rodrigo Vitalino Advogados*`,
+    contentEn: `## New Era of Labor Relations: Consolidated MTE Ordinance No. 1/2025
+
+The landscape of labor obligations in Brazil has undergone a significant transformation. With the entry into force of Consolidated MTE Ordinance No. 1/2025, on January 2, 2026, the Ministry of Labor and Employment consolidated rules that directly impact companies' Personnel Department and HR.
+
+### Main Provisions of the Ordinance
+
+**Fully Digitalized Inspection**
+
+The Electronic Labor Domicile (DET) takes center stage as the exclusive official communication channel between MTE and employers.
+
+**New Hiring and Registration Rules:**
+- **Anticipated registration deadline:** The employer must register the hire by the day before the actual start of activities
+- **CPF as unique identifier:** The CPF number becomes sufficient data for registration in the Digital Work Card
+- **eSocial as exclusive base:** All contractual annotations must be made via eSocial
+
+---
+
+*Published by Rodrigo Vitalino Advogados*`,
   },
   {
     id: 1,
     slug: "reforma-tributaria-lc-227-2026-ibs-itcmd-itbi",
     title: "Reforma Tributária Avança: LC 227/2026 Define Novas Regras para IBS, ITCMD e ITBI",
+    titleEn: "Tax Reform Advances: LC 227/2026 Sets New Rules for IBS, ITCMD and ITBI",
     subtitle: "Segunda fase da Reforma estabelece Comitê Gestor e altera transmissão de bens",
+    subtitleEn: "Second phase of the Reform establishes Management Committee and changes asset transfers",
     excerpt: "A regulamentação da segunda fase da Reforma Tributária estabelece o Comitê Gestor do IBS e traz mudanças significativas para impostos sobre transmissão de bens.",
+    excerptEn: "The regulation of the second phase of the Tax Reform establishes the IBS Management Committee and brings significant changes to asset transfer taxes.",
     date: "2026-01-15",
     category: "Direito Tributário",
+    categoryEn: "Tax Law",
     categorySlug: "direito-tributario",
     authorSection: {
       name: "Dra. Elisandra Sousa Barbosa",
       description: "Advogada especialista em Direito Tributário",
+      descriptionEn: "Tax Law Specialist Attorney",
       photo: "/lovable-uploads/elisandra-sousa.png"
     },
     content: `## A Nova Etapa da Reforma Tributária Entra em Vigor
@@ -297,15 +492,36 @@ A principal inovação é a criação do Comitê Gestor do Imposto sobre Bens e 
 ---
 
 *Publicado por Rodrigo Vitalino Advogados*`,
+    contentEn: `## The New Phase of Tax Reform Takes Effect
+
+The Federal Government has formalized another important chapter of the Brazilian Tax Reform. With the presidential sanction of Complementary Law Bill No. 108/2024, Complementary Law No. 227/2026 was born.
+
+### What Changes in Practice
+
+The main innovation is the creation of the Tax on Goods and Services Management Committee (CG-IBS), responsible for coordinating tax collection, inspection, and distribution.
+
+### Changes in ITCMD
+
+- **Mandatory progressive rates** by states, with a maximum limit of 8%
+- **Expansion of the donation concept**, including debt forgiveness
+- **Taxation of foreign inheritances and donations**, covering Trust structures
+
+---
+
+*Published by Rodrigo Vitalino Advogados*`,
   },
   {
     id: 2,
     slug: "notas-fiscais-2026-receita-federal-cg-ibs-transicao",
     title: "Notas Fiscais em 2026: Receita Federal e CG-IBS Definem Regras de Transição",
+    titleEn: "Tax Invoices in 2026: Federal Revenue and CG-IBS Define Transition Rules",
     subtitle: "Documentos fiscais na transição IBS/CBS com período sem multas",
+    subtitleEn: "Tax documents in IBS/CBS transition with penalty-free period",
     excerpt: "Ato Conjunto esclarece como funcionarão os documentos fiscais durante o primeiro ano de implementação do IBS e CBS, com período de adaptação sem multas.",
+    excerptEn: "Joint Act clarifies how tax documents will work during the first year of IBS and CBS implementation, with a penalty-free adaptation period.",
     date: "2026-01-12",
     category: "Direito Tributário",
+    categoryEn: "Tax Law",
     categorySlug: "direito-tributario",
     content: `## Transição Tributária: Novas Regras para Documentos Fiscais
 
@@ -318,15 +534,30 @@ Durante os primeiros meses de 2026, as empresas terão um período sem multas pa
 ---
 
 *Publicado por Rodrigo Vitalino Advogados*`,
+    contentEn: `## Tax Transition: New Rules for Tax Documents
+
+The Federal Revenue Service and the IBS Management Committee have published guidelines on the issuance of tax documents during the transition period to the new tax system.
+
+### Adaptation Period
+
+During the first months of 2026, companies will have a penalty-free period to adapt their invoice issuance systems to the new required fields.
+
+---
+
+*Published by Rodrigo Vitalino Advogados*`,
   },
   {
     id: 3,
     slug: "cib-cpf-imoveis-tributacao-iptu-itbi-itcmd",
     title: "CIB: Entenda o 'CPF dos Imóveis' e Seus Reflexos na Tributação",
+    titleEn: "CIB: Understanding the 'Property ID' and Its Tax Implications",
     subtitle: "Cadastro unificado de propriedades pode impactar IPTU, ITBI e ITCMD",
+    subtitleEn: "Unified property registry may impact property taxes",
     excerpt: "Novo cadastro unificado de propriedades promete maior transparência, mas especialistas alertam para possível aumento na carga tributária de IPTU, ITBI e ITCMD.",
+    excerptEn: "New unified property registry promises greater transparency, but experts warn of possible increase in IPTU, ITBI, and ITCMD tax burden.",
     date: "2026-01-08",
     category: "Direito Tributário",
+    categoryEn: "Tax Law",
     categorySlug: "direito-tributario",
     content: `## O Cadastro Imobiliário Brasileiro (CIB)
 
@@ -341,19 +572,37 @@ O novo Cadastro Imobiliário Brasileiro (CIB) funcionará como um "CPF dos imóv
 ---
 
 *Publicado por Rodrigo Vitalino Advogados*`,
+    contentEn: `## The Brazilian Property Registry (CIB)
+
+The new Brazilian Property Registry (CIB) will function as a "Property ID," unifying cadastral information for properties throughout the national territory.
+
+### Tax Impacts
+
+- **IPTU:** More precise calculation base
+- **ITBI:** More transparent market values
+- **ITCMD:** Greater control over transfers
+
+---
+
+*Published by Rodrigo Vitalino Advogados*`,
   },
   {
     id: 4,
     slug: "ibs-cbs-2026-prazo-estendido-obrigacoes",
     title: "IBS e CBS em 2026: Prazo Estendido para Cumprimento de Obrigações",
+    titleEn: "IBS and CBS in 2026: Extended Deadline for Compliance",
     subtitle: "Receita Federal concede 4 meses sem exigência dos novos tributos",
+    subtitleEn: "Federal Revenue grants 4 months without new tax requirements",
     excerpt: "Receita Federal e Comitê Gestor concedem até 4 meses sem exigência de destaque ou recolhimento dos novos tributos nos documentos fiscais.",
+    excerptEn: "Federal Revenue and Management Committee grant up to 4 months without requiring highlighting or collection of new taxes on tax documents.",
     date: "2025-12-23",
     category: "Direito Tributário",
+    categoryEn: "Tax Law",
     categorySlug: "direito-tributario",
     authorSection: {
       name: "Dra. Elisandra Sousa Barbosa",
       description: "Advogada especialista em Direito Tributário",
+      descriptionEn: "Tax Law Specialist Attorney",
       photo: "/lovable-uploads/elisandra-sousa.png"
     },
     content: `## Prazo Estendido para Adaptação ao Novo Sistema
@@ -367,6 +616,17 @@ Durante este período, não haverá exigência de destaque ou recolhimento dos n
 ---
 
 *Publicado por Rodrigo Vitalino Advogados*`,
+    contentEn: `## Extended Deadline for Adaptation to the New System
+
+The Federal Revenue Service and the IBS Management Committee have granted an additional 4-month period for companies to adapt to the new tax obligations related to IBS and CBS.
+
+### What This Means
+
+During this period, there will be no requirement to highlight or collect the new taxes on tax documents, allowing taxpayers to adjust their systems.
+
+---
+
+*Published by Rodrigo Vitalino Advogados*`,
   },
 ];
 
