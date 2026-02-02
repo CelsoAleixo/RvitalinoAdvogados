@@ -1,35 +1,37 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-
 export function Footer() {
-  const { t, language } = useLanguage();
-
-  const quickLinks = [
-    { key: "nav.home", href: "/" },
-    { key: "nav.office", href: "/escritorio" },
-    { key: "nav.areas", href: "/atuacao" },
-    { key: "nav.publications", href: "/publicacoes" },
-    { key: "nav.portugal", href: "/portugal" },
-    { key: "nav.contact", href: "/contato" },
-  ];
-
-  return (
-    <footer className="bg-secondary border-t border-border">
+  const {
+    t,
+    language
+  } = useLanguage();
+  const quickLinks = [{
+    key: "nav.home",
+    href: "/"
+  }, {
+    key: "nav.office",
+    href: "/escritorio"
+  }, {
+    key: "nav.areas",
+    href: "/atuacao"
+  }, {
+    key: "nav.publications",
+    href: "/publicacoes"
+  }, {
+    key: "nav.portugal",
+    href: "/portugal"
+  }, {
+    key: "nav.contact",
+    href: "/contato"
+  }];
+  return <footer className="bg-secondary border-t border-border">
       <div className="container-site section-padding">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-flex items-center gap-3" aria-label="Rodrigo Vitalino Advogados">
-              <img
-                alt="Rodrigo Vitalino Advogados"
-                className="h-12 w-auto"
-                width="48"
-                height="48"
-                loading="lazy"
-                decoding="async"
-                src="/lovable-uploads/f4d5c306-1174-4338-8a66-2c93f062cb97.png"
-              />
+              <img alt="Rodrigo Vitalino Advogados" className="h-12 w-auto" width="48" height="48" loading="lazy" decoding="async" src="/lovable-uploads/f4d5c306-1174-4338-8a66-2c93f062cb97.png" />
               <span className="font-serif text-xl font-semibold tracking-tight text-primary">
                 Rodrigo Vitalino
                 <span className="block text-sm font-sans font-normal text-muted-foreground tracking-widest uppercase">
@@ -38,9 +40,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-xs">
-              {language === "en"
-                ? "Legal advisory and business consulting with practical, efficient and transparent practice since 2008."
-                : "Assessoria jurídica e consultoria empresarial com atuação prática, eficiente e transparente desde 2008."}
+              {language === "en" ? "Legal advisory and business consulting with practical, efficient and transparent practice since 2008." : "Assessoria jurídica e consultoria empresarial com atuação prática, eficiente e transparente desde 2008."}
             </p>
           </div>
 
@@ -50,16 +50,11 @@ export function Footer() {
               {language === "en" ? "Quick Links" : "Links Rápidos"}
             </h4>
             <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.key}>
-                  <Link
-                    to={link.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
+              {quickLinks.map(link => <li key={link.key}>
+                  <Link to={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     {t(link.key)}
                   </Link>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
 
@@ -79,21 +74,15 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="h-4 w-4 mt-0.5 flex-shrink-0 text-accent" />
-                <a
-                  href="https://wa.me/5511940449696?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20especialista."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-primary transition-colors"
-                >
-                  +55 (11) 94044-9696
+                <a href="https://wa.me/5511940449696?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20especialista." target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                  
+                  ‎+55 11 5610-0812
+                
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="h-4 w-4 mt-0.5 flex-shrink-0 text-accent" />
-                <a
-                  href="mailto:contato@rvitalinoadvogados.com.br"
-                  className="hover:text-primary transition-colors break-all sm:break-normal"
-                >
+                <a href="mailto:contato@rvitalinoadvogados.com.br" className="hover:text-primary transition-colors break-all sm:break-normal">
                   contato@rvitalinoadvogados.com.br
                 </a>
               </li>
@@ -109,28 +98,18 @@ export function Footer() {
                 <address className="not-italic">
                   Av. da Liberdade, 706 - 1º Esq,<br />
                   Código postal 4710-249, Braga/Portugal<br />
-                  {language === "en"
-                    ? "(Registered with the Portuguese Bar Association)"
-                    : "(Inscrito na Ordem dos Advogados de Portugal)"}
+                  {language === "en" ? "(Registered with the Portuguese Bar Association)" : "(Inscrito na Ordem dos Advogados de Portugal)"}
                 </address>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="h-4 w-4 mt-0.5 flex-shrink-0 text-accent" />
-                <a
-                  href="https://wa.me/351910385021?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20o%20Representante%20Uni%C3%A3o%20Europeia."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-primary transition-colors"
-                >
+                <a href="https://wa.me/351910385021?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20o%20Representante%20Uni%C3%A3o%20Europeia." target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
                   +351 910 385 021
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="h-4 w-4 mt-0.5 flex-shrink-0 text-accent" />
-                <a
-                  href="mailto:arthur@rvitalinoadvogados.com.br"
-                  className="hover:text-primary transition-colors break-all sm:break-normal"
-                >
+                <a href="mailto:arthur@rvitalinoadvogados.com.br" className="hover:text-primary transition-colors break-all sm:break-normal">
                   arthur@rvitalinoadvogados.com.br
                 </a>
               </li>
@@ -153,6 +132,5 @@ export function Footer() {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 }
