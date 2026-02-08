@@ -6,38 +6,38 @@ export function StorytellingIntro() {
   const isEn = language === "en";
 
   const title = isEn
-    ? "Born from practice, built on real cases"
-    : "Nasceu da prática, construída em casos reais";
+    ? "Where law meets the real life of businesses"
+    : "Onde o Direito encontra a vida real das empresas";
 
   const blocks = isEn
     ? [
         {
-          text: "Over the years, we've seen contracts destroy partnerships, startups lose investors for lack of structure, and brands copied overnight. Each of these stories shaped who we are.",
+          text: "Partnerships undone by a poorly drafted clause. Brands built over years, copied overnight. Investors who walked away because nobody structured the deal. Family businesses that crumbled in silence, without a succession plan. These aren't hypothetical scenarios — they are stories we lived alongside our clients. And it was from each of them that our way of practicing law was born.",
         },
         {
           highlight: true,
           icon: Shield,
-          text: "We are not just lawyers. We are guardians of continuity, security and business strategy.",
+          text: "We are not just lawyers. We are guardians of what you've built — and architects of what you will build next.",
         },
         {
           quote: true,
           icon: Flame,
-          text: "We exist to protect what you've built — and to prepare the ground for what you will build next.",
+          text: "Our expertise was forged in practice: in late-night calls, in restructurings that saved companies, in strategies that turned risk into growth. We exist because we learned that Corporate Law isn't about putting out fires — it's about making sure they never start.",
         },
       ]
     : [
         {
-          text: "Ao longo dos anos, vimos contratos destruírem sociedades, startups perderem investidores por falta de estrutura e marcas serem copiadas da noite para o dia. Cada uma dessas histórias moldou quem somos.",
+          text: "Sociedades desfeitas por uma cláusula mal redigida. Marcas construídas ao longo de anos, copiadas da noite para o dia. Investidores que recuaram porque ninguém estruturou a operação. Empresas familiares que ruíram em silêncio, sem um plano de sucessão. Não são cenários hipotéticos — são histórias que vivemos ao lado dos nossos clientes. E foi de cada uma delas que nasceu a nossa forma de advogar.",
         },
         {
           highlight: true,
           icon: Shield,
-          text: "Não somos apenas advogados. Somos guardiões da continuidade, da segurança e da estratégia empresarial.",
+          text: "Não somos apenas advogados. Somos guardiões do que você construiu — e arquitetos do que você ainda vai construir.",
         },
         {
           quote: true,
           icon: Flame,
-          text: "Existimos para proteger o que você construiu — e preparar o terreno para o que ainda vai construir.",
+          text: "Nossa expertise foi forjada na prática: nas ligações de madrugada, nas reestruturações que salvaram empresas, nas estratégias que transformaram risco em crescimento. Existimos porque aprendemos que o Direito Empresarial não é sobre apagar incêndios — é sobre garantir que eles nunca comecem.",
         },
       ];
 
