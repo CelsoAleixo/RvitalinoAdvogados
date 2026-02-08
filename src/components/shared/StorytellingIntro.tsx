@@ -20,7 +20,7 @@ export function StorytellingIntro() {
         "Living these scenarios side by side with entrepreneurs, we understood our role goes far beyond interpreting laws. It lies in anticipating risks before they become crises, structuring partnerships to prevent conflicts, building contracts that protect present and future, shielding brands and intellectual assets, strengthening governance, guiding startups through their first steps, and redesigning paths when a company needs to breathe to be reborn.",
       ]
     : [
-        "Sociedades que desmoronaram por uma cláusula esquecida. Startups brilhantes que perderam investimentos porque ninguém estruturou a base jurídica. Marcas construídas com anos de esforço, copiadas em questão de horas. Empresas familiares que se fragmentaram por falta de planejamento. Operações que quase ruíram por ausência de compliance. Negócios promissores que só sobreviveram porque a Recuperação Judicial chegou a tempo.",
+        "Ao longo da nossa trajetória, fortalecemos sociedades, estruturamos startups que hoje atraem investimentos, blindamos marcas que se tornaram líderes em seus mercados e implementamos governança que transformou operações inteiras. Em cada área do Direito Empresarial, deixamos um rastro de segurança, estratégia e crescimento.\n\nE quando o desafio foi maior, fomos ainda melhores. Conduzimos Recuperações Judiciais que salvaram empresas, preservaram empregos e devolveram futuro a negócios que muitos já davam por perdidos. Transformamos crises em reestruturação, e reestruturação em novos ciclos de prosperidade.",
         "Nada disso é teoria. São histórias reais que acompanhamos de perto — e que moldaram a forma como enxergamos o Direito Empresarial.",
         "Foi vivendo esses cenários, lado a lado com empresários, que entendemos que nosso papel vai muito além de interpretar leis. Ele está em antecipar riscos antes que se tornem crises, estruturar sociedades para evitar conflitos, construir contratos que protegem o presente e o futuro, blindar marcas e ativos intelectuais, fortalecer a governança, orientar startups em seus primeiros passos e redesenhar caminhos quando a empresa precisa respirar para renascer.",
       ];
@@ -65,9 +65,11 @@ export function StorytellingIntro() {
             className="space-y-5 animate-fade-in md:pr-10"
             style={{ animationDelay: "0.2s" }}
           >
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed text-mobile-justified">
-              {paragraphs[0]}
-            </p>
+            {paragraphs[0].split("\n\n").map((part, j) => (
+              <p key={j} className="text-base md:text-lg text-muted-foreground leading-relaxed text-mobile-justified">
+                {part}
+              </p>
+            ))}
             <p className="text-base md:text-lg text-foreground/90 font-medium leading-relaxed">
               {paragraphs[1]}
             </p>
