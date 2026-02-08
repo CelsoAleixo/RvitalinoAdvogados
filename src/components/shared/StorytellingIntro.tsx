@@ -1,7 +1,9 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Shield, Flame, ChevronRight } from "lucide-react";
+import { Shield, Flame, ChevronRight, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import hopeImg from "@/assets/storytelling-hope.jpg";
+import renewalImg from "@/assets/storytelling-renewal.jpg";
 
 export function StorytellingIntro() {
   const { language } = useLanguage();
@@ -13,17 +15,24 @@ export function StorytellingIntro() {
 
   const label = isEn ? "Our Story" : "Nossa História";
 
-  const paragraphs = isEn
+  const block1 = isEn
     ? [
-        "Partnerships that crumbled over a forgotten clause. Brilliant startups that lost investments because nobody built the legal foundation. Brands forged through years of effort, copied in hours. Family businesses that fragmented for lack of planning. Operations that nearly collapsed without compliance. Promising ventures that only survived because Judicial Recovery arrived in time.",
-        "None of this is theory. These are real stories we witnessed firsthand — and they shaped how we see Corporate Law.",
-        "Living these scenarios side by side with entrepreneurs, we understood our role goes far beyond interpreting laws. It lies in anticipating risks before they become crises, structuring partnerships to prevent conflicts, building contracts that protect present and future, shielding brands and intellectual assets, strengthening governance, guiding startups through their first steps, and redesigning paths when a company needs to breathe to be reborn.",
+        "Throughout our journey, we strengthened partnerships, structured startups that now attract investments, shielded brands that became market leaders, and implemented governance that transformed entire operations. In every area of Corporate Law, we leave a trail of security, strategy and growth.",
+        "And when the challenge was greater, we were even better. We led Judicial Recoveries that saved companies, preserved jobs and gave a future back to businesses many had already given up on. We turned crises into restructuring, and restructuring into new cycles of prosperity.",
       ]
     : [
-        "Ao longo da nossa trajetória, fortalecemos sociedades, estruturamos startups que hoje atraem investimentos, blindamos marcas que se tornaram líderes em seus mercados e implementamos governança que transformou operações inteiras. Em cada área do Direito Empresarial, deixamos um rastro de segurança, estratégia e crescimento.\n\nE quando o desafio foi maior, fomos ainda melhores. Conduzimos Recuperações Judiciais que salvaram empresas, preservaram empregos e devolveram futuro a negócios que muitos já davam por perdidos. Transformamos crises em reestruturação, e reestruturação em novos ciclos de prosperidade.",
-        "Nada disso é teoria. São histórias reais que acompanhamos de perto — e que moldaram a forma como enxergamos o Direito Empresarial.",
-        "Foi vivendo esses cenários, lado a lado com empresários, que entendemos que nosso papel vai muito além de interpretar leis. Ele está em antecipar riscos antes que se tornem crises, estruturar sociedades para evitar conflitos, construir contratos que protegem o presente e o futuro, blindar marcas e ativos intelectuais, fortalecer a governança, orientar startups em seus primeiros passos e redesenhar caminhos quando a empresa precisa respirar para renascer.",
+        "Ao longo da nossa trajetória, fortalecemos sociedades, estruturamos startups que hoje atraem investimentos, blindamos marcas que se tornaram líderes em seus mercados e implementamos governança que transformou operações inteiras. Em cada área do Direito Empresarial, deixamos um rastro de segurança, estratégia e crescimento.",
+        "E quando o desafio foi maior, fomos ainda melhores. Conduzimos Recuperações Judiciais que salvaram empresas, preservaram empregos e devolveram futuro a negócios que muitos já davam por perdidos. Transformamos crises em reestruturação, e reestruturação em novos ciclos de prosperidade.",
       ];
+
+  const block2Title = isEn ? "Real stories, real impact" : "Histórias reais, impacto real";
+  const block2Text = isEn
+    ? "None of this is theory. These are real stories we witnessed firsthand — and they shaped how we see Corporate Law."
+    : "Nada disso é teoria. São histórias reais que acompanhamos de perto — e que moldaram a forma como enxergamos o Direito Empresarial.";
+
+  const block3Text = isEn
+    ? "Living these scenarios side by side with entrepreneurs, we understood our role goes far beyond interpreting laws. It lies in anticipating risks before they become crises, structuring partnerships to prevent conflicts, building contracts that protect present and future, shielding brands and intellectual assets, strengthening governance, guiding startups through their first steps, and redesigning paths when a company needs to breathe to be reborn."
+    : "Foi vivendo esses cenários, lado a lado com empresários, que entendemos que nosso papel vai muito além de interpretar leis. Ele está em antecipar riscos antes que se tornem crises, estruturar sociedades para evitar conflitos, construir contratos que protegem o presente e o futuro, blindar marcas e ativos intelectuais, fortalecer a governança, orientar startups em seus primeiros passos e redesenhar caminhos quando a empresa precisa respirar para renascer.";
 
   const highlightText = isEn
     ? "We are not just lawyers. We are guardians of what you've built — and architects of what you will build next."
@@ -37,7 +46,7 @@ export function StorytellingIntro() {
 
   return (
     <section className="relative py-16 md:py-24 overflow-hidden">
-      {/* Subtle radial glow */}
+      {/* Background effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-accent/[0.03] via-transparent to-transparent pointer-events-none" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/[0.04] rounded-full blur-3xl pointer-events-none" />
 
@@ -52,42 +61,69 @@ export function StorytellingIntro() {
 
         {/* Title */}
         <h2
-          className="font-serif text-3xl md:text-4xl lg:text-5xl text-center leading-[1.15] mb-12 animate-fade-in"
+          className="font-serif text-3xl md:text-4xl lg:text-5xl text-center leading-[1.15] mb-14 animate-fade-in"
           style={{ animationDelay: "0.1s" }}
         >
           <span className="text-accent">{subtitle}</span>
         </h2>
 
-        {/* Two-column narrative layout */}
-        <div className="grid md:grid-cols-[1fr_auto_1fr] gap-8 md:gap-0 mb-12">
-          {/* Left column */}
-          <div
-            className="space-y-5 animate-fade-in md:pr-10"
-            style={{ animationDelay: "0.2s" }}
-          >
-            {paragraphs[0].split("\n\n").map((part, j) => (
-              <p key={j} className="text-base md:text-lg text-muted-foreground leading-relaxed text-mobile-justified">
-                {part}
+        {/* Block 1: Image + Text */}
+        <div
+          className="animate-fade-in grid md:grid-cols-2 gap-6 mb-6"
+          style={{ animationDelay: "0.2s" }}
+        >
+          <div className="relative rounded-2xl overflow-hidden min-h-[220px] md:min-h-[280px]">
+            <img
+              src={hopeImg}
+              alt={isEn ? "Business partnership and hope" : "Parceria empresarial e esperança"}
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+              width={800}
+              height={544}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-6">
+              <p className="font-serif text-lg md:text-xl text-foreground drop-shadow-lg">
+                {block2Title}
+              </p>
+            </div>
+          </div>
+
+          <div className="rounded-2xl bg-secondary/30 border border-border/30 p-6 md:p-8 flex flex-col justify-center space-y-4">
+            {block1.map((text, i) => (
+              <p key={i} className="text-base md:text-lg text-muted-foreground leading-relaxed text-mobile-justified">
+                {text}
               </p>
             ))}
+          </div>
+        </div>
+
+        {/* Block 2: Statement + Image */}
+        <div
+          className="animate-fade-in grid md:grid-cols-2 gap-6 mb-6"
+          style={{ animationDelay: "0.3s" }}
+        >
+          <div className="rounded-2xl bg-secondary/30 border border-border/30 p-6 md:p-8 flex flex-col justify-center space-y-4 order-2 md:order-1">
             <p className="text-base md:text-lg text-foreground/90 font-medium leading-relaxed">
-              {paragraphs[1]}
+              {block2Text}
             </p>
-          </div>
-
-          {/* Vertical divider */}
-          <div className="hidden md:flex flex-col items-center">
-            <div className="w-px h-full bg-gradient-to-b from-transparent via-accent/30 to-transparent" />
-          </div>
-
-          {/* Right column */}
-          <div
-            className="space-y-5 animate-fade-in md:pl-10"
-            style={{ animationDelay: "0.3s" }}
-          >
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed text-mobile-justified">
-              {paragraphs[2]}
+              {block3Text}
             </p>
+          </div>
+
+          <div className="relative rounded-2xl overflow-hidden min-h-[220px] md:min-h-[280px] order-1 md:order-2">
+            <img
+              src={renewalImg}
+              alt={isEn ? "Corporate renewal and growth" : "Renovação e crescimento empresarial"}
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+              width={800}
+              height={544}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
           </div>
         </div>
 
@@ -98,7 +134,7 @@ export function StorytellingIntro() {
         >
           <div className="absolute inset-0 bg-gradient-to-r from-accent/10 via-accent/5 to-accent/10" />
           <div className="absolute inset-0 border border-accent/20 rounded-2xl" />
-          <div className="relative px-8 py-7 flex items-start gap-5">
+          <div className="relative px-6 md:px-8 py-6 md:py-7 flex items-start gap-4 md:gap-5">
             <div className="shrink-0 mt-1 p-2.5 rounded-xl bg-accent/15">
               <Shield className="h-6 w-6 text-accent" />
             </div>
@@ -110,7 +146,7 @@ export function StorytellingIntro() {
 
         {/* Closing quote */}
         <div
-          className="animate-fade-in rounded-2xl bg-secondary/40 border-l-[3px] border-accent/40 px-8 py-6 flex items-start gap-5 mb-10"
+          className="animate-fade-in rounded-2xl bg-secondary/40 border-l-[3px] border-accent/40 px-6 md:px-8 py-6 flex items-start gap-4 md:gap-5 mb-10"
           style={{ animationDelay: "0.5s" }}
         >
           <div className="shrink-0 mt-1">
@@ -126,8 +162,9 @@ export function StorytellingIntro() {
           className="flex justify-center animate-fade-in"
           style={{ animationDelay: "0.6s" }}
         >
-          <Button asChild variant="outline" className="group border-accent/30 hover:bg-accent/10 hover:border-accent/50">
-            <Link to="/contato" className="flex items-center gap-2 text-accent">
+          <Button asChild size="lg" className="group bg-accent hover:bg-accent/90 text-accent-foreground font-semibold shadow-lg">
+            <Link to="/contato" className="flex items-center gap-2">
+              <Phone className="h-5 w-5" />
               {ctaText}
               <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
