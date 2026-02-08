@@ -33,7 +33,7 @@ export function StorytellingIntro() {
     ? "Our expertise was forged in practice: in late-night calls, in restructurings that saved companies, in strategies that turned risk into growth. We exist because we learned that Corporate Law isn't about putting out fires — it's about making sure they never start."
     : "Nossa expertise foi forjada na prática: nas ligações de madrugada, nas reestruturações que salvaram empresas, nas estratégias que transformaram risco em crescimento. Existimos porque aprendemos que o Direito Empresarial não é sobre apagar incêndios — é sobre garantir que eles nunca comecem.";
 
-  const ctaText = isEn ? "Discover our practice areas" : "Conheça nossas áreas de atuação";
+  const ctaText = isEn ? "Schedule a legal consultation" : "Agendar consulta jurídica";
 
   return (
     <section className="relative py-16 md:py-24 overflow-hidden">
@@ -127,7 +127,7 @@ export function StorytellingIntro() {
           style={{ animationDelay: "0.6s" }}
         >
           <Button asChild variant="outline" className="group border-accent/30 hover:bg-accent/10 hover:border-accent/50">
-            <Link to="/atuacao" className="flex items-center gap-2 text-accent">
+            <Link to="/contato" className="flex items-center gap-2 text-accent">
               {ctaText}
               <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
