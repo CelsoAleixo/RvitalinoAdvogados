@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/shared/CTASection";
 import heroImage from "@/assets/areas/direito-empresarial-hero.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Scale, ShieldCheck, FileText, Rocket, Fingerprint, ClipboardCheck, Users, ArrowDown } from "lucide-react";
 
 export default function DireitoEmpresarial() {
   const { language } = useLanguage();
@@ -40,6 +41,25 @@ export default function DireitoEmpresarial() {
         </div>
       </section>
 
+      {/* Intro Summary */}
+      <section className="section-padding bg-muted/30">
+        <div className="container-site">
+          <div className="max-w-3xl mx-auto text-center animate-fade-in">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-4">
+              {language === "en"
+                ? "Business Law is the legal foundation that governs how companies are born, grow, protect themselves and endure. From corporate structuring to crisis recovery, every strategic decision requires specialized legal support."
+                : "O Direito Empresarial é a base jurídica que rege como empresas nascem, crescem, se protegem e perduram. Da estruturação societária à recuperação em momentos de crise, cada decisão estratégica exige suporte jurídico especializado."}
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              {language === "en"
+                ? "Below, understand how each area of Business Law directly impacts your company — and why having a specialized team can mean the difference between vulnerability and competitive advantage."
+                : "Abaixo, entenda como cada área do Direito Empresarial impacta diretamente o seu negócio — e por que contar com uma equipe especializada pode significar a diferença entre vulnerabilidade e vantagem competitiva."}
+            </p>
+            <ArrowDown className="mx-auto text-accent animate-bounce" size={24} />
+          </div>
+        </div>
+      </section>
+
       {/* Content */}
       <section className="section-padding">
         <div className="container-site">
@@ -47,7 +67,10 @@ export default function DireitoEmpresarial() {
 
             {/* 1 - Recuperação Judicial */}
             <div className="animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              <h2 className="font-serif text-2xl md:text-3xl text-accent mb-4">Recuperação Judicial e Extrajudicial</h2>
+              <div className="flex items-center gap-3 mb-4">
+                <Scale className="text-accent shrink-0" size={28} />
+                <h2 className="font-serif text-2xl md:text-3xl text-accent">Recuperação Judicial e Extrajudicial</h2>
+              </div>
               <p className="text-lg text-muted-foreground leading-relaxed font-medium mb-4">
                 Por que isso importa para sua empresa?
               </p>
@@ -64,7 +87,10 @@ export default function DireitoEmpresarial() {
 
             {/* 2 - Prevenção de Riscos */}
             <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              <h2 className="font-serif text-2xl md:text-3xl text-accent mb-4">Prevenção de Riscos e Atuação Preventiva</h2>
+              <div className="flex items-center gap-3 mb-4">
+                <ShieldCheck className="text-accent shrink-0" size={28} />
+                <h2 className="font-serif text-2xl md:text-3xl text-accent">Prevenção de Riscos e Atuação Preventiva</h2>
+              </div>
               <p className="text-lg text-muted-foreground leading-relaxed font-medium mb-4">
                 Por que prevenir custa menos do que remediar?
               </p>
@@ -81,7 +107,10 @@ export default function DireitoEmpresarial() {
 
             {/* 3 - Contratos */}
             <div className="animate-fade-in" style={{ animationDelay: "0.3s" }}>
-              <h2 className="font-serif text-2xl md:text-3xl text-accent mb-4">Contratos Empresariais</h2>
+              <div className="flex items-center gap-3 mb-4">
+                <FileText className="text-accent shrink-0" size={28} />
+                <h2 className="font-serif text-2xl md:text-3xl text-accent">Contratos Empresariais</h2>
+              </div>
               <p className="text-lg text-muted-foreground leading-relaxed font-medium mb-4">
                 Por que um contrato genérico pode destruir seu negócio?
               </p>
@@ -98,7 +127,10 @@ export default function DireitoEmpresarial() {
 
             {/* 4 - Startups e Estruturação Societária */}
             <div className="animate-fade-in" style={{ animationDelay: "0.4s" }}>
-              <h2 className="font-serif text-2xl md:text-3xl text-accent mb-4">Startups e Estruturação Societária</h2>
+              <div className="flex items-center gap-3 mb-4">
+                <Rocket className="text-accent shrink-0" size={28} />
+                <h2 className="font-serif text-2xl md:text-3xl text-accent">Startups e Estruturação Societária</h2>
+              </div>
               <p className="text-lg text-muted-foreground leading-relaxed font-medium mb-4">
                 Por que startups promissoras fracassam por falta de estrutura jurídica?
               </p>
@@ -115,7 +147,10 @@ export default function DireitoEmpresarial() {
 
             {/* 5 - Propriedade Intelectual */}
             <div className="animate-fade-in" style={{ animationDelay: "0.5s" }}>
-              <h2 className="font-serif text-2xl md:text-3xl text-accent mb-4">Propriedade Intelectual e Proteção de Marca</h2>
+              <div className="flex items-center gap-3 mb-4">
+                <Fingerprint className="text-accent shrink-0" size={28} />
+                <h2 className="font-serif text-2xl md:text-3xl text-accent">Propriedade Intelectual e Proteção de Marca</h2>
+              </div>
               <p className="text-lg text-muted-foreground leading-relaxed font-medium mb-4">
                 Por que sua marca é seu patrimônio mais vulnerável?
               </p>
@@ -129,7 +164,10 @@ export default function DireitoEmpresarial() {
 
             {/* 6 - Compliance */}
             <div className="animate-fade-in" style={{ animationDelay: "0.6s" }}>
-              <h2 className="font-serif text-2xl md:text-3xl text-accent mb-4">Compliance e Governança Corporativa</h2>
+              <div className="flex items-center gap-3 mb-4">
+                <ClipboardCheck className="text-accent shrink-0" size={28} />
+                <h2 className="font-serif text-2xl md:text-3xl text-accent">Compliance e Governança Corporativa</h2>
+              </div>
               <p className="text-lg text-muted-foreground leading-relaxed font-medium mb-4">
                 Por que compliance não é opcional?
               </p>
@@ -143,7 +181,10 @@ export default function DireitoEmpresarial() {
 
             {/* 7 - Sucessório */}
             <div className="animate-fade-in" style={{ animationDelay: "0.7s" }}>
-              <h2 className="font-serif text-2xl md:text-3xl text-accent mb-4">Planejamento Sucessório e Empresas Familiares</h2>
+              <div className="flex items-center gap-3 mb-4">
+                <Users className="text-accent shrink-0" size={28} />
+                <h2 className="font-serif text-2xl md:text-3xl text-accent">Planejamento Sucessório e Empresas Familiares</h2>
+              </div>
               <p className="text-lg text-muted-foreground leading-relaxed font-medium mb-4">
                 Por que menos de um terço das empresas familiares sobrevivem à segunda geração?
               </p>
