@@ -113,7 +113,7 @@ export default function Index() {
 
         <div className="absolute bottom-0 left-0 right-0 z-20 bg-gradient-to-t from-background via-background/80 to-transparent pt-8 sm:pt-16 pb-4 sm:pb-8">
           <div className="container-site flex justify-center">
-            <ScrollDownButton targetId="publicacoes-section" />
+            <ScrollDownButton targetId="storytelling-section" />
           </div>
         </div>
       </section>
@@ -122,34 +122,8 @@ export default function Index() {
       <TrustIndicators variant="light" />
 
       {/* Storytelling Intro */}
-      <StorytellingIntro />
-
-      {/* Publications Section */}
-      <section id="publicacoes-section" className="section-padding bg-secondary/30">
-        <div className="container-site">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="p-2 rounded-lg bg-accent/10">
-              <BookOpen className="h-6 w-6 text-accent" />
-            </div>
-            <SectionHeading title={t("home.publications")} />
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            {recentPublications.map((pub) => (
-              <PublicationCard key={pub.id} publication={pub} variant="compact" />
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Button asChild variant="outline" className="group">
-              <Link to="/publicacoes" className="flex items-center gap-2">
-                <BookOpen className="h-4 w-4" />
-                {t("home.viewAllPublications")}
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
-          </div>
-        </div>
+      <section id="storytelling-section">
+        <StorytellingIntro />
       </section>
 
       {/* Areas of Practice Section */}
@@ -217,6 +191,34 @@ export default function Index() {
               <Link to="/atuacao" className="flex items-center gap-2">
                 <Briefcase className="h-4 w-4" />
                 {t("home.viewAllAreas")}
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Publications Section */}
+      <section id="publicacoes-section" className="section-padding bg-secondary/30">
+        <div className="container-site">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="p-2 rounded-lg bg-accent/10">
+              <BookOpen className="h-6 w-6 text-accent" />
+            </div>
+            <SectionHeading title={t("home.publications")} />
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            {recentPublications.map((pub) => (
+              <PublicationCard key={pub.id} publication={pub} variant="compact" />
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Button asChild variant="outline" className="group">
+              <Link to="/publicacoes" className="flex items-center gap-2">
+                <BookOpen className="h-4 w-4" />
+                {t("home.viewAllPublications")}
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
