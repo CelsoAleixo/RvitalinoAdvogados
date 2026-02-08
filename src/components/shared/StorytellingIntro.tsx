@@ -22,7 +22,7 @@ export function StorytellingIntro() {
       ]
     : [
         "Ao longo da nossa trajetória, fortalecemos sociedades, estruturamos startups que hoje atraem investimentos, blindamos marcas que se tornaram líderes em seus mercados e implementamos governança que transformou operações inteiras. Em cada área do Direito Empresarial, deixamos um rastro de segurança, estratégia e crescimento.",
-        "E quando o desafio foi maior, fomos ainda melhores. Conduzimos Recuperações Judiciais que salvaram empresas, preservaram empregos e devolveram futuro a negócios que muitos já davam por perdidos. Transformamos crises em reestruturação, e reestruturação em novos ciclos de prosperidade.",
+        "E quando o desafio foi maior, fomos ainda melhores. Conduzimos Recuperações Judiciais que salvaram empresas e devolveram futuro a negócios que muitos já davam por perdidos. Transformamos crises em reestruturação, e reestruturação em novos ciclos de prosperidade.",
       ];
 
   const block2Title = isEn ? "Real stories, real impact" : "Histórias reais, impacto real";
