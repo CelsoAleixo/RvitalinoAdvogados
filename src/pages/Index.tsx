@@ -8,6 +8,7 @@ import { TrustIndicators } from "@/components/shared/TrustIndicators";
 import { ScrollDownButton } from "@/components/shared/ScrollDownButton";
 import { ResponsiveHeroVideo } from "@/components/shared/ResponsiveHeroVideo";
 import { PublicationCard } from "@/components/shared/PublicationCard";
+import { StorytellingIntro } from "@/components/shared/StorytellingIntro";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ArrowRight, Scale, Building2, Phone, BookOpen, Briefcase } from "lucide-react";
 import institutionalVideo from "@/assets/institutional-video.mp4";
@@ -119,6 +120,9 @@ export default function Index() {
 
       {/* Trust Indicators Bar */}
       <TrustIndicators variant="light" />
+
+      {/* Storytelling Intro */}
+      <StorytellingIntro />
 
       {/* Publications Section */}
       <section id="publicacoes-section" className="section-padding bg-secondary/30">
