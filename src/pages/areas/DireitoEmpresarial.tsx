@@ -9,7 +9,7 @@ export default function DireitoEmpresarial() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative min-h-[75vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat image-enhance-strong" 
           style={{ backgroundImage: `url(${heroImage})` }} 
@@ -33,114 +33,139 @@ export default function DireitoEmpresarial() {
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
               {language === "en"
-                ? "Every company has a story. The ones that endure are those that chose to write it with strategy, foresight, and the right guidance."
-                : "Toda empresa tem uma história. As que perduram são aquelas que escolheram escrevê-la com estratégia, visão e a orientação certa."}
+                ? "Strategic legal protection for companies that want to grow with security, prevent risks and turn challenges into competitive advantages."
+                : "Proteção jurídica estratégica para empresas que querem crescer com segurança, prevenir riscos e transformar desafios em vantagem competitiva."}
             </p>
           </div>
         </div>
       </section>
 
-      {/* Storytelling Content */}
+      {/* Content */}
       <section className="section-padding">
         <div className="container-site">
-          <div className="max-w-3xl mx-auto space-y-10">
+          <div className="max-w-3xl mx-auto space-y-14">
 
-            {/* Block 1 - Opening */}
+            {/* 1 - Recuperação Judicial */}
             <div className="animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              <p className="text-lg text-muted-foreground leading-relaxed italic border-l-4 border-accent pl-5">
-                Um empresário experiente certa vez nos procurou depois de perder um sócio, metade do faturamento e a confiança de seus investidores — tudo em menos de noventa dias. O motivo? Um contrato social genérico, copiado da internet, que não previa quase nada do que realmente importava.
+              <h2 className="font-serif text-2xl md:text-3xl text-accent mb-4">Recuperação Judicial e Extrajudicial</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed font-medium mb-4">
+                Por que isso importa para sua empresa?
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Quando a crise financeira bate à porta, muitos empresários acreditam que o fim é inevitável. Não é. A recuperação judicial existe para permitir que empresas viáveis reorganizem suas dívidas, preservem empregos e retomem a operação — sem encerrar as atividades.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                A diferença entre recuperação e falência é, acima de tudo, uma questão de tempo e estratégia. A falência encerra. A recuperação reconstrói. E a recuperação extrajudicial permite negociar diretamente com credores, de forma mais ágil e discreta, sem a exposição de um processo público.
+              </p>
+              <p className="text-muted-foreground leading-relaxed italic border-l-4 border-accent pl-5">
+                O papel do advogado empresarial aqui é decisivo: elaborar um plano de reestruturação sólido, negociar condições viáveis e transformar credores em aliados da recuperação. Empresas que agem rápido e com orientação especializada sobrevivem. As que hesitam, perdem essa janela.
               </p>
             </div>
 
-            {/* Block 2 - Prevention */}
+            {/* 2 - Prevenção de Riscos */}
             <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              <h2 className="font-serif text-2xl md:text-3xl text-accent mb-4">O custo invisível da improvisação</h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Histórias como essa se repetem todos os dias em empresas de todos os portes. Não por falta de competência ou ambição, mas por uma crença perigosa: a de que o jurídico pode esperar. Que o contrato "resolve depois". Que o acordo de sócios "é formalidade". Que compliance "é coisa de multinacional".
+              <h2 className="font-serif text-2xl md:text-3xl text-accent mb-4">Prevenção de Riscos e Atuação Preventiva</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed font-medium mb-4">
+                Por que prevenir custa menos do que remediar?
               </p>
-              <p className="text-muted-foreground leading-relaxed">
-                A verdade é que a maioria dos litígios empresariais que chegam ao Judiciário poderiam ter sido evitados com uma única decisão: investir em prevenção. Um contrato bem elaborado não é burocracia — é blindagem. Um programa de governança não é custo — é seguro contra crises que ainda não aconteceram, mas que, sem proteção, inevitavelmente acontecerão.
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                A maioria dos litígios empresariais que chegam ao Judiciário poderiam ter sido evitados. Contratos mal redigidos, ausência de governança, processos internos frágeis — problemas que parecem pequenos até gerarem prejuízos milionários.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                A assessoria jurídica preventiva identifica vulnerabilidades antes que se tornem crises. Implementa programas de compliance, estrutura processos de governança e garante que cada decisão do negócio esteja juridicamente sustentada.
+              </p>
+              <p className="text-muted-foreground leading-relaxed italic border-l-4 border-accent pl-5">
+                Ter um advogado empresarial ao lado do negócio não é despesa — é o investimento que separa empresas que crescem com segurança daquelas que vivem apagando incêndios.
               </p>
             </div>
 
-            {/* Block 3 - Consultoria vs Contencioso */}
+            {/* 3 - Contratos */}
             <div className="animate-fade-in" style={{ animationDelay: "0.3s" }}>
-              <h2 className="font-serif text-2xl md:text-3xl text-accent mb-4">Consultoria e contencioso: dois lados da mesma moeda</h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Existe uma diferença fundamental entre o advogado que aparece quando o problema já existe e aquele que trabalha para que o problema nunca chegue. A assessoria jurídica contínua opera exatamente nessa fronteira: antecipar cenários, mapear vulnerabilidades, estruturar processos internos e garantir que cada decisão do negócio esteja juridicamente sustentada.
+              <h2 className="font-serif text-2xl md:text-3xl text-accent mb-4">Contratos Empresariais</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed font-medium mb-4">
+                Por que um contrato genérico pode destruir seu negócio?
               </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Quando o contencioso se torna inevitável, a empresa que já contava com assessoria preventiva chega à disputa com documentação organizada, contratos sólidos e uma narrativa jurídica coerente. Não por sorte — por estratégia. É a diferença entre reagir ao caos e conduzir o jogo.
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Modelos prontos da internet ignoram a realidade específica de cada empresa. Cláusulas de rescisão mal redigidas, ausência de penalidades, omissão sobre propriedade intelectual e falta de definição sobre foro competente são erros que custam fortunas quando o conflito aparece.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Um contrato personalizado prevê o que pode dar errado, distribui responsabilidades com clareza e cria mecanismos de resolução antes que qualquer disputa precise de um juiz. Cada negociação é única — o contrato que a protege também precisa ser.
+              </p>
+              <p className="text-muted-foreground leading-relaxed italic border-l-4 border-accent pl-5">
+                Nossos contratos não são documentos jurídicos genéricos. São ferramentas de proteção desenhadas sob medida para a realidade de cada operação.
               </p>
             </div>
 
-            {/* Block 4 - Startups */}
+            {/* 4 - Startups e Estruturação Societária */}
             <div className="animate-fade-in" style={{ animationDelay: "0.4s" }}>
-              <h2 className="font-serif text-2xl md:text-3xl text-accent mb-4">Startups: quando a velocidade encontra a lei</h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Uma startup promissora captou seu primeiro investimento-anjo. Seis meses depois, os três fundadores discordavam sobre participação societária, vesting e poder de decisão. Não havia acordo de sócios. Não havia cláusula de não competição. O investidor recuou e o negócio travou — não por falta de produto, mas por falta de estrutura jurídica.
+              <h2 className="font-serif text-2xl md:text-3xl text-accent mb-4">Startups e Estruturação Societária</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed font-medium mb-4">
+                Por que startups promissoras fracassam por falta de estrutura jurídica?
               </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Estruturação societária, acordo de sócios, due diligence e captação de investimentos não são etapas opcionais do empreendedorismo. São os alicerces que permitem ao negócio crescer sem implodir por dentro. O advogado empresarial, nesse contexto, não é um obstáculo à inovação — é o arquiteto da sua viabilidade.
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Três fundadores criam um produto inovador, captam investimento e, meses depois, discordam sobre participação, vesting e poder de decisão. Sem acordo de sócios, sem cláusula de não competição, o investidor recua e o negócio trava. Isso acontece todos os dias.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Estruturação societária, acordo de sócios, due diligence e captação de investimentos são os alicerces que permitem ao negócio escalar sem implodir. O advogado empresarial não é obstáculo à inovação — é o arquiteto da viabilidade do projeto.
+              </p>
+              <p className="text-muted-foreground leading-relaxed italic border-l-4 border-accent pl-5">
+                Atuamos desde a constituição da sociedade até rodadas de investimento, garantindo que o crescimento aconteça sobre bases jurídicas sólidas.
               </p>
             </div>
 
-            {/* Block 5 - Contratos */}
+            {/* 5 - Propriedade Intelectual */}
             <div className="animate-fade-in" style={{ animationDelay: "0.5s" }}>
-              <h2 className="font-serif text-2xl md:text-3xl text-accent mb-4">Contratos: a linha entre o acordo e o abismo</h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Modelos genéricos de contrato são como remédios sem receita: podem até resolver um sintoma, mas ignoram o diagnóstico. Cada empresa tem riscos específicos, dinâmicas próprias e relações comerciais únicas. Um contrato personalizado prevê o que pode dar errado, distribui responsabilidades com clareza e estabelece mecanismos de resolução antes que qualquer conflito precise de um juiz.
+              <h2 className="font-serif text-2xl md:text-3xl text-accent mb-4">Propriedade Intelectual e Proteção de Marca</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed font-medium mb-4">
+                Por que sua marca é seu patrimônio mais vulnerável?
               </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Cláusulas de rescisão mal redigidas, ausência de penalidades, omissão de propriedade intelectual, falta de definição sobre foro competente — erros aparentemente pequenos que, na prática, custam fortunas. O contrato não é o fim da negociação; é a garantia de que ela será cumprida.
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Uma empresa consolida sua marca ao longo de anos e descobre que um concorrente registrou nome semelhante no INPI. A disputa judicial custa mais do que o registro preventivo jamais teria custado. Marcas, patentes, direitos autorais e segredos industriais precisam de proteção ativa e contínua.
+              </p>
+              <p className="text-muted-foreground leading-relaxed italic border-l-4 border-accent pl-5">
+                Registrar sua marca não é formalidade — é a certidão de nascimento da identidade do seu negócio. Sem proteção, qualquer um pode reivindicar o que você construiu. Cuidamos do registro, monitoramento e defesa da sua propriedade intelectual.
               </p>
             </div>
 
-            {/* Block 6 - Recuperação Judicial */}
+            {/* 6 - Compliance */}
             <div className="animate-fade-in" style={{ animationDelay: "0.6s" }}>
-              <h2 className="font-serif text-2xl md:text-3xl text-accent mb-4">Recuperação judicial: recomeçar não é fracassar</h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Quando uma empresa enfrenta crise financeira severa, a diferença entre sobrevivência e encerramento muitas vezes está na velocidade e na qualidade da resposta jurídica. A recuperação judicial não é sinônimo de falência — é, na verdade, o oposto: uma ferramenta legal que permite à empresa reorganizar suas dívidas, preservar empregos e retomar a operação.
+              <h2 className="font-serif text-2xl md:text-3xl text-accent mb-4">Compliance e Governança Corporativa</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed font-medium mb-4">
+                Por que compliance não é opcional?
               </p>
-              <p className="text-muted-foreground leading-relaxed">
-                A recuperação extrajudicial, por sua vez, oferece um caminho mais discreto e negociado, ideal para empresas que ainda têm margem de manobra. Em ambos os casos, a estratégia jurídica define o destino: um plano de reestruturação bem desenhado transforma credores em aliados e converte desconfiança em oportunidade.
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Programas de compliance deixaram de ser diferenciais — são exigências do mercado, dos investidores e da legislação. A responsabilidade dos administradores é pessoal e pode ultrapassar os limites da empresa. Um problema de governança não afeta apenas o balanço: destrói relações comerciais, afasta talentos e compromete a reputação de forma duradoura.
+              </p>
+              <p className="text-muted-foreground leading-relaxed italic border-l-4 border-accent pl-5">
+                Implementamos programas de compliance sob medida, treinamos equipes e criamos mecanismos de controle que protegem a empresa e as pessoas que a conduzem.
               </p>
             </div>
 
-            {/* Block 7 - Propriedade Intelectual */}
+            {/* 7 - Sucessório */}
             <div className="animate-fade-in" style={{ animationDelay: "0.7s" }}>
-              <h2 className="font-serif text-2xl md:text-3xl text-accent mb-4">Sua marca é seu patrimônio mais vulnerável</h2>
+              <h2 className="font-serif text-2xl md:text-3xl text-accent mb-4">Planejamento Sucessório e Empresas Familiares</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed font-medium mb-4">
+                Por que menos de um terço das empresas familiares sobrevivem à segunda geração?
+              </p>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Uma empresa consolidou sua marca ao longo de uma década. Descobriu, então, que um concorrente havia registrado nome semelhante no INPI. A disputa judicial durou anos e custou mais do que o registro preventivo jamais teria custado. Propriedade intelectual não é detalhe — é patrimônio. Marcas, patentes, direitos autorais e segredos industriais precisam de proteção ativa e contínua.
+                Conflitos entre herdeiros, ausência de holdings, governança improvisada e patrimônio misturado com pessoa física destroem em meses o que foi construído em décadas. Planejamento sucessório não é sobre herança — é sobre continuidade. É garantir que o negócio prospere nas mãos de quem o dará sequência.
               </p>
-              <p className="text-muted-foreground leading-relaxed">
-                O registro de marca não é formalidade: é a certidão de nascimento da identidade do seu negócio. Sem ele, qualquer um pode reivindicar o que você construiu.
-              </p>
-            </div>
-
-            {/* Block 8 - Compliance */}
-            <div className="animate-fade-in" style={{ animationDelay: "0.8s" }}>
-              <h2 className="font-serif text-2xl md:text-3xl text-accent mb-4">Compliance: reputação não se reconstrói com facilidade</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Programas de compliance deixaram de ser diferenciais — são exigências do mercado, dos investidores e da legislação. A responsabilidade dos administradores é pessoal e pode ultrapassar os limites da empresa. Um escândalo de governança não afeta apenas o balanço: destrói relações comerciais, afasta talentos e mancha a reputação de forma duradoura. Implementar uma cultura de conformidade é proteger não apenas a empresa, mas as pessoas que a conduzem.
+              <p className="text-muted-foreground leading-relaxed italic border-l-4 border-accent pl-5">
+                Estruturamos holdings, definimos regras de governança familiar e criamos mecanismos que previnem disputas e garantem a perenidade do negócio.
               </p>
             </div>
 
-            {/* Block 9 - Sucessório */}
-            <div className="animate-fade-in" style={{ animationDelay: "0.9s" }}>
-              <h2 className="font-serif text-2xl md:text-3xl text-accent mb-4">Empresas familiares: o legado exige planejamento</h2>
+            {/* Closing - Why Us */}
+            <div className="animate-fade-in border-t border-accent/20 pt-10" style={{ animationDelay: "0.8s" }}>
+              <h2 className="font-serif text-2xl md:text-3xl text-accent mb-4">Por que contar com a nossa equipe?</h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                A estatística é conhecida: menos de um terço das empresas familiares sobrevivem à segunda geração. Não por falta de talento dos herdeiros, mas por falta de planejamento sucessório. Conflitos entre familiares, ausência de holdings, governança improvisada e patrimônio misturado com pessoa física são armadilhas que destroem em meses o que foi construído em décadas.
+                Porque não oferecemos apenas soluções jurídicas — oferecemos visão de negócio. Nossa equipe pensa a empresa do cliente como um todo: entende a operação, antecipa riscos, desenha estratégias e constrói a arquitetura legal que transforma vulnerabilidade em vantagem competitiva.
               </p>
-              <p className="text-muted-foreground leading-relaxed">
-                O planejamento societário e sucessório não é apenas sobre herança — é sobre continuidade. É garantir que o negócio sobreviva às pessoas que o criaram e prospere nas mãos de quem o continuará.
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Atuamos de forma preventiva e estratégica, lado a lado com empresários, gestores e departamentos jurídicos que entendem que o Direito Empresarial não é sobre leis — é sobre decisões que definem o futuro do negócio.
               </p>
-            </div>
-
-            {/* Closing */}
-            <div className="animate-fade-in border-t border-accent/20 pt-10" style={{ animationDelay: "1s" }}>
-              <p className="text-lg text-muted-foreground leading-relaxed italic border-l-4 border-accent pl-5">
-                Direito Empresarial não é sobre leis — é sobre decisões. Cada cláusula, cada estrutura, cada registro é uma escolha que define se a empresa estará protegida ou exposta. Nossa atuação vai além do jurídico: pensamos o negócio, antecipamos riscos e construímos, ao lado de cada cliente, a arquitetura legal que transforma vulnerabilidade em vantagem competitiva.
+              <p className="text-lg text-muted-foreground leading-relaxed font-semibold">
+                Sua empresa merece uma assessoria que evolua com ela.
               </p>
             </div>
 
@@ -149,7 +174,7 @@ export default function DireitoEmpresarial() {
       </section>
 
       <CTASection 
-        title={language === "en" ? "Ready to protect your business?" : "Pronto para proteger seu negócio?"} 
+        title={language === "en" ? "Ready to protect and grow your business?" : "Pronto para proteger e fazer seu negócio evoluir?"} 
         description={language === "en" 
           ? "Talk to our specialists and discover how strategic legal counsel can transform your company's future."
           : "Fale com nossos especialistas e descubra como a assessoria jurídica estratégica pode transformar o futuro da sua empresa."} 
