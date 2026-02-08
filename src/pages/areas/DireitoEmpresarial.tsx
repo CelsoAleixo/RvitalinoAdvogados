@@ -2,10 +2,65 @@ import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/shared/CTASection";
 import heroImage from "@/assets/areas/direito-empresarial-hero.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Scale, ShieldCheck, FileText, Rocket, Fingerprint, ClipboardCheck, Users, ArrowDown } from "lucide-react";
+import { Link } from "react-router-dom";
+import { 
+  Scale, ShieldCheck, FileText, Rocket, Fingerprint, ClipboardCheck, Users, 
+  ArrowDown, ArrowRight, Handshake, TrendingUp, Calculator, Briefcase, Heart, Building2
+} from "lucide-react";
 
 export default function DireitoEmpresarial() {
   const { language } = useLanguage();
+
+  const otherAreas = [
+    {
+      icon: Handshake,
+      title: language === "en" ? "Legal Negotiation" : "Negociação Jurídica",
+      description: language === "en" 
+        ? "Strategic negotiation to resolve disputes before they reach court, saving time and resources."
+        : "Negociação estratégica para resolver conflitos antes que cheguem ao Judiciário, economizando tempo e recursos.",
+      href: "/atuacao/negociacao-juridica",
+    },
+    {
+      icon: Calculator,
+      title: language === "en" ? "Tax Law" : "Direito Tributário",
+      description: language === "en"
+        ? "Tax planning, defense in tax proceedings and strategies to reduce the tax burden legally."
+        : "Planejamento tributário, defesa em processos fiscais e estratégias para reduzir a carga tributária de forma legal.",
+      href: "/atuacao/direito-tributario",
+    },
+    {
+      icon: Briefcase,
+      title: language === "en" ? "Labor Law" : "Direito Trabalhista",
+      description: language === "en"
+        ? "Prevention of labor lawsuits, compliance with labor laws and strategic defense of companies."
+        : "Prevenção de reclamações trabalhistas, adequação à legislação e defesa estratégica de empresas.",
+      href: "/atuacao/direito-trabalhista",
+    },
+    {
+      icon: Heart,
+      title: language === "en" ? "Family & Succession" : "Família e Sucessões",
+      description: language === "en"
+        ? "Estate planning, prenuptial agreements and protection of family assets across generations."
+        : "Planejamento patrimonial, acordos pré-nupciais e proteção de bens familiares entre gerações.",
+      href: "/atuacao/familia-e-sucessoes",
+    },
+    {
+      icon: Scale,
+      title: language === "en" ? "Civil Law" : "Direito Civil",
+      description: language === "en"
+        ? "Civil contracts, liability, credit recovery and judicial defense for companies and individuals."
+        : "Contratos civis, responsabilidade civil, recuperação de créditos e defesa judicial para empresas e pessoas.",
+      href: "/atuacao/direito-civil",
+    },
+    {
+      icon: TrendingUp,
+      title: language === "en" ? "Judicial Recovery" : "Recuperação Judicial",
+      description: language === "en"
+        ? "Restructuring plans, creditor negotiation and strategies to keep viable businesses alive."
+        : "Planos de reestruturação, negociação com credores e estratégias para manter empresas viáveis em operação.",
+      href: "/atuacao/recuperacao-judicial",
+    },
+  ];
 
   return (
     <Layout>
@@ -44,18 +99,28 @@ export default function DireitoEmpresarial() {
       {/* Intro Summary */}
       <section className="section-padding bg-muted/30">
         <div className="container-site">
-          <div className="max-w-3xl mx-auto text-center animate-fade-in">
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-4">
-              {language === "en"
-                ? "Business Law is the legal foundation that governs how companies are born, grow, protect themselves and endure. From corporate structuring to crisis recovery, every strategic decision requires specialized legal support."
-                : "O Direito Empresarial é a base jurídica que rege como empresas nascem, crescem, se protegem e perduram. Da estruturação societária à recuperação em momentos de crise, cada decisão estratégica exige suporte jurídico especializado."}
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              {language === "en"
-                ? "Below, understand how each area of Business Law directly impacts your company — and why having a specialized team can mean the difference between vulnerability and competitive advantage."
-                : "Abaixo, entenda como cada área do Direito Empresarial impacta diretamente o seu negócio — e por que contar com uma equipe especializada pode significar a diferença entre vulnerabilidade e vantagem competitiva."}
-            </p>
-            <ArrowDown className="mx-auto text-accent animate-bounce" size={24} />
+          <div className="max-w-3xl mx-auto animate-fade-in">
+            <div className="flex items-start gap-4 mb-6">
+              <Building2 className="text-accent shrink-0 mt-1" size={32} />
+              <div>
+                <h2 className="font-serif text-2xl md:text-3xl text-accent mb-4">
+                  {language === "en" ? "What is Business Law?" : "O que é Direito Empresarial?"}
+                </h2>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                  {language === "en"
+                    ? "Business Law is the area of law that structures, protects and drives companies at every stage — from founding to expansion, from contracts to crisis resolution. It's the legal intelligence behind every decision that defines the future of a business."
+                    : "O Direito Empresarial é a área do Direito que estrutura, protege e impulsiona empresas em todas as fases — da fundação à expansão, dos contratos à resolução de crises. É a inteligência jurídica por trás de cada decisão que define o futuro de um negócio."}
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  {language === "en"
+                    ? "Without specialized legal support, companies expose themselves to avoidable risks: poorly drafted contracts, disorganized corporate structures, compliance failures and million-dollar disputes. Below, see how each pillar of Business Law works to protect your company."
+                    : "Sem assessoria jurídica especializada, empresas se expõem a riscos evitáveis: contratos mal redigidos, estruturas societárias desorganizadas, falhas de compliance e disputas milionárias. Abaixo, veja como cada pilar do Direito Empresarial atua para proteger a sua empresa."}
+                </p>
+              </div>
+            </div>
+            <div className="text-center mt-8">
+              <ArrowDown className="mx-auto text-accent animate-bounce" size={24} />
+            </div>
           </div>
         </div>
       </section>
@@ -85,8 +150,8 @@ export default function DireitoEmpresarial() {
               </p>
             </div>
 
-            {/* 3 - Contratos */}
-            <div className="animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            {/* 2 - Contratos */}
+            <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
               <div className="flex items-center gap-3 mb-4">
                 <FileText className="text-accent shrink-0" size={28} />
                 <h2 className="font-serif text-2xl md:text-3xl text-accent">Contratos Empresariais</h2>
@@ -105,8 +170,8 @@ export default function DireitoEmpresarial() {
               </p>
             </div>
 
-            {/* 4 - Startups e Estruturação Societária */}
-            <div className="animate-fade-in" style={{ animationDelay: "0.4s" }}>
+            {/* 3 - Startups */}
+            <div className="animate-fade-in" style={{ animationDelay: "0.3s" }}>
               <div className="flex items-center gap-3 mb-4">
                 <Rocket className="text-accent shrink-0" size={28} />
                 <h2 className="font-serif text-2xl md:text-3xl text-accent">Startups e Estruturação Societária</h2>
@@ -125,8 +190,8 @@ export default function DireitoEmpresarial() {
               </p>
             </div>
 
-            {/* 5 - Propriedade Intelectual */}
-            <div className="animate-fade-in" style={{ animationDelay: "0.5s" }}>
+            {/* 4 - Propriedade Intelectual */}
+            <div className="animate-fade-in" style={{ animationDelay: "0.4s" }}>
               <div className="flex items-center gap-3 mb-4">
                 <Fingerprint className="text-accent shrink-0" size={28} />
                 <h2 className="font-serif text-2xl md:text-3xl text-accent">Propriedade Intelectual e Proteção de Marca</h2>
@@ -142,8 +207,8 @@ export default function DireitoEmpresarial() {
               </p>
             </div>
 
-            {/* 6 - Compliance */}
-            <div className="animate-fade-in" style={{ animationDelay: "0.6s" }}>
+            {/* 5 - Compliance */}
+            <div className="animate-fade-in" style={{ animationDelay: "0.5s" }}>
               <div className="flex items-center gap-3 mb-4">
                 <ClipboardCheck className="text-accent shrink-0" size={28} />
                 <h2 className="font-serif text-2xl md:text-3xl text-accent">Compliance e Governança Corporativa</h2>
@@ -159,8 +224,8 @@ export default function DireitoEmpresarial() {
               </p>
             </div>
 
-            {/* 7 - Sucessório */}
-            <div className="animate-fade-in" style={{ animationDelay: "0.7s" }}>
+            {/* 6 - Sucessório */}
+            <div className="animate-fade-in" style={{ animationDelay: "0.6s" }}>
               <div className="flex items-center gap-3 mb-4">
                 <Users className="text-accent shrink-0" size={28} />
                 <h2 className="font-serif text-2xl md:text-3xl text-accent">Planejamento Sucessório e Empresas Familiares</h2>
@@ -176,10 +241,10 @@ export default function DireitoEmpresarial() {
               </p>
             </div>
 
-            {/* 8 - Recuperação Judicial */}
-            <div className="animate-fade-in" style={{ animationDelay: "0.8s" }}>
+            {/* 7 - Recuperação Judicial */}
+            <div className="animate-fade-in" style={{ animationDelay: "0.7s" }}>
               <div className="flex items-center gap-3 mb-4">
-                <Scale className="text-accent shrink-0" size={28} />
+                <TrendingUp className="text-accent shrink-0" size={28} />
                 <h2 className="font-serif text-2xl md:text-3xl text-accent">Recuperação Judicial e Extrajudicial</h2>
               </div>
               <p className="text-lg text-muted-foreground leading-relaxed font-medium mb-4">
@@ -210,6 +275,52 @@ export default function DireitoEmpresarial() {
               </p>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* Other Practice Areas */}
+      <section className="section-padding bg-muted/30">
+        <div className="container-site">
+          <div className="text-center mb-12 animate-fade-in">
+            <span className="text-accent text-sm font-medium uppercase tracking-[0.2em] mb-4 block">
+              {language === "en" ? "Complete Legal Protection" : "Proteção Jurídica Completa"}
+            </span>
+            <h2 className="font-serif text-3xl md:text-4xl text-accent mb-4">
+              {language === "en" ? "Explore our other practice areas" : "Conheça nossas demais áreas de atuação"}
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              {language === "en"
+                ? "Business Law is just one of the pillars that protect your company. Our team acts across complementary areas to ensure complete legal security."
+                : "O Direito Empresarial é apenas um dos pilares que protegem a sua empresa. Nossa equipe atua em áreas complementares para garantir segurança jurídica completa."}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {otherAreas.map((area, index) => (
+              <Link
+                key={index}
+                to={area.href}
+                className="group bg-card border border-border/50 rounded-2xl p-6 hover:border-accent/40 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in"
+                style={{ animationDelay: `${0.1 * (index + 1)}s` }}
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                    <area.icon className="text-accent" size={20} />
+                  </div>
+                  <h3 className="font-serif text-lg text-foreground group-hover:text-accent transition-colors">
+                    {area.title}
+                  </h3>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  {area.description}
+                </p>
+                <div className="flex items-center gap-1 text-accent text-sm font-medium">
+                  <span>{language === "en" ? "Learn more" : "Saiba mais"}</span>
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" size={14} />
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
