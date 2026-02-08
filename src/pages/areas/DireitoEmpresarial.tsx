@@ -2,7 +2,6 @@ import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/shared/CTASection";
 import heroImage from "@/assets/areas/direito-empresarial-hero.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Scale, ShieldCheck, FileText, Rocket, Stamp, ClipboardCheck, Users } from "lucide-react";
 
 export default function DireitoEmpresarial() {
   const { language } = useLanguage();
@@ -37,39 +36,6 @@ export default function DireitoEmpresarial() {
                 ? "Strategic legal protection for companies that want to grow with security, prevent risks and turn challenges into competitive advantages."
                 : "Proteção jurídica estratégica para empresas que querem crescer com segurança, prevenir riscos e transformar desafios em vantagem competitiva."}
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Summary Grid with Icons */}
-      <section className="section-padding bg-muted/30">
-        <div className="container-site">
-          <div className="text-center mb-10 animate-fade-in">
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              {language === "en"
-                ? "Every business faces legal challenges. The difference is having the right team to turn risks into strategy. Explore what we do:"
-                : "Toda empresa enfrenta desafios jurídicos. A diferença está em ter a equipe certa para transformar riscos em estratégia. Conheça nossas frentes de atuação:"}
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
-            {[
-              { icon: Scale, label: language === "en" ? "Judicial Recovery" : "Recuperação Judicial" },
-              { icon: ShieldCheck, label: language === "en" ? "Risk Prevention" : "Prevenção de Riscos" },
-              { icon: FileText, label: language === "en" ? "Contracts" : "Contratos" },
-              { icon: Rocket, label: language === "en" ? "Startups" : "Startups" },
-              { icon: Stamp, label: language === "en" ? "Intellectual Property" : "Propriedade Intelectual" },
-              { icon: ClipboardCheck, label: language === "en" ? "Compliance" : "Compliance" },
-              { icon: Users, label: language === "en" ? "Succession" : "Planejamento Sucessório" },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="flex flex-col items-center text-center gap-3 p-4 rounded-xl bg-background border border-accent/10 hover:border-accent/30 transition-all duration-300 animate-fade-in"
-                style={{ animationDelay: `${i * 0.08}s` }}
-              >
-                <item.icon className="w-7 h-7 text-accent" />
-                <span className="text-xs sm:text-sm font-medium text-foreground leading-tight">{item.label}</span>
-              </div>
-            ))}
           </div>
         </div>
       </section>
