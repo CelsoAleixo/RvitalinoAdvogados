@@ -1,111 +1,135 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Quote, Shield, Flame } from "lucide-react";
+import { Shield, Flame, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 export function StorytellingIntro() {
   const { language } = useLanguage();
   const isEn = language === "en";
 
-  const title = isEn
+  const subtitle = isEn
     ? "Where law meets the real life of businesses"
     : "Onde o Direito encontra a vida real das empresas";
 
-  const blocks = isEn
+  const label = isEn ? "Our Story" : "Nossa História";
+
+  const paragraphs = isEn
     ? [
-        {
-          text: "Partnerships undone by a poorly drafted clause. Brands built over years, copied overnight. Investors who walked away because nobody structured the deal. Family businesses that crumbled in silence, without a succession plan. These aren't hypothetical scenarios — they are stories we lived alongside our clients. And it was from each of them that our way of practicing law was born.",
-        },
-        {
-          highlight: true,
-          icon: Shield,
-          text: "We are not just lawyers. We are guardians of what you've built — and architects of what you will build next.",
-        },
-        {
-          quote: true,
-          icon: Flame,
-          text: "Our expertise was forged in practice: in late-night calls, in restructurings that saved companies, in strategies that turned risk into growth. We exist because we learned that Corporate Law isn't about putting out fires — it's about making sure they never start.",
-        },
+        "Partnerships that crumbled over a forgotten clause. Brilliant startups that lost investments because nobody built the legal foundation. Brands forged through years of effort, copied in hours. Family businesses that fragmented for lack of planning. Operations that nearly collapsed without compliance. Promising ventures that only survived because Judicial Recovery arrived in time.",
+        "None of this is theory. These are real stories we witnessed firsthand — and they shaped how we see Corporate Law.",
+        "Living these scenarios side by side with entrepreneurs, we understood our role goes far beyond interpreting laws. It lies in anticipating risks before they become crises, structuring partnerships to prevent conflicts, building contracts that protect present and future, shielding brands and intellectual assets, strengthening governance, guiding startups through their first steps, and redesigning paths when a company needs to breathe to be reborn.",
       ]
     : [
-        {
-          text: "Sociedades que desmoronaram por uma cláusula esquecida. Startups brilhantes que perderam investimentos porque ninguém estruturou a base jurídica. Marcas construídas com anos de esforço, copiadas em questão de horas. Empresas familiares que se fragmentaram por falta de planejamento. Operações que quase ruíram por ausência de compliance. Negócios promissores que só sobreviveram porque a Recuperação Judicial chegou a tempo.\nNada disso é teoria. São histórias reais que acompanhamos de perto — e que moldaram a forma como enxergamos o Direito Empresarial.\nFoi vivendo esses cenários, lado a lado com empresários, que entendemos que nosso papel vai muito além de interpretar leis. Ele está em antecipar riscos antes que se tornem crises, estruturar sociedades para evitar conflitos, construir contratos que protegem o presente e o futuro, blindar marcas e ativos intelectuais, fortalecer a governança, orientar startups em seus primeiros passos e redesenhar caminhos quando a empresa precisa respirar para renascer.",
-        },
-        {
-          highlight: true,
-          icon: Shield,
-          text: "Não somos apenas advogados. Somos guardiões do que você construiu — e arquitetos do que você ainda vai construir.",
-        },
-        {
-          quote: true,
-          icon: Flame,
-          text: "Nossa expertise foi forjada na prática: nas ligações de madrugada, nas reestruturações que salvaram empresas, nas estratégias que transformaram risco em crescimento. Existimos porque aprendemos que o Direito Empresarial não é sobre apagar incêndios — é sobre garantir que eles nunca comecem.",
-        },
+        "Sociedades que desmoronaram por uma cláusula esquecida. Startups brilhantes que perderam investimentos porque ninguém estruturou a base jurídica. Marcas construídas com anos de esforço, copiadas em questão de horas. Empresas familiares que se fragmentaram por falta de planejamento. Operações que quase ruíram por ausência de compliance. Negócios promissores que só sobreviveram porque a Recuperação Judicial chegou a tempo.",
+        "Nada disso é teoria. São histórias reais que acompanhamos de perto — e que moldaram a forma como enxergamos o Direito Empresarial.",
+        "Foi vivendo esses cenários, lado a lado com empresários, que entendemos que nosso papel vai muito além de interpretar leis. Ele está em antecipar riscos antes que se tornem crises, estruturar sociedades para evitar conflitos, construir contratos que protegem o presente e o futuro, blindar marcas e ativos intelectuais, fortalecer a governança, orientar startups em seus primeiros passos e redesenhar caminhos quando a empresa precisa respirar para renascer.",
       ];
 
+  const highlightText = isEn
+    ? "We are not just lawyers. We are guardians of what you've built — and architects of what you will build next."
+    : "Não somos apenas advogados. Somos guardiões do que você construiu — e arquitetos do que você ainda vai construir.";
+
+  const closingText = isEn
+    ? "Our expertise was forged in practice: in late-night calls, in restructurings that saved companies, in strategies that turned risk into growth. We exist because we learned that Corporate Law isn't about putting out fires — it's about making sure they never start."
+    : "Nossa expertise foi forjada na prática: nas ligações de madrugada, nas reestruturações que salvaram empresas, nas estratégias que transformaram risco em crescimento. Existimos porque aprendemos que o Direito Empresarial não é sobre apagar incêndios — é sobre garantir que eles nunca comecem.";
+
+  const ctaText = isEn ? "Discover our practice areas" : "Conheça nossas áreas de atuação";
+
   return (
-    <section className="section-padding bg-card/50 border-y border-border/30">
-      <div className="container-site max-w-4xl">
+    <section className="relative py-16 md:py-24 overflow-hidden">
+      {/* Subtle radial glow */}
+      <div className="absolute inset-0 bg-gradient-to-b from-accent/[0.03] via-transparent to-transparent pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/[0.04] rounded-full blur-3xl pointer-events-none" />
+
+      <div className="container-site relative z-10 max-w-5xl">
+        {/* Label */}
         <div className="flex justify-center mb-6 animate-fade-in">
-          <div className="p-3 rounded-full bg-accent/10 border border-accent/20">
-            <Quote className="h-6 w-6 text-accent" />
+          <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] uppercase text-accent border border-accent/20 rounded-full px-4 py-1.5 bg-accent/5">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+            {label}
+          </span>
+        </div>
+
+        {/* Title */}
+        <h2
+          className="font-serif text-3xl md:text-4xl lg:text-5xl text-center leading-[1.15] mb-12 animate-fade-in"
+          style={{ animationDelay: "0.1s" }}
+        >
+          <span className="text-accent">{subtitle}</span>
+        </h2>
+
+        {/* Two-column narrative layout */}
+        <div className="grid md:grid-cols-[1fr_auto_1fr] gap-8 md:gap-0 mb-12">
+          {/* Left column */}
+          <div
+            className="space-y-5 animate-fade-in md:pr-10"
+            style={{ animationDelay: "0.2s" }}
+          >
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed text-mobile-justified">
+              {paragraphs[0]}
+            </p>
+            <p className="text-base md:text-lg text-foreground/90 font-medium leading-relaxed">
+              {paragraphs[1]}
+            </p>
+          </div>
+
+          {/* Vertical divider */}
+          <div className="hidden md:flex flex-col items-center">
+            <div className="w-px h-full bg-gradient-to-b from-transparent via-accent/30 to-transparent" />
+          </div>
+
+          {/* Right column */}
+          <div
+            className="space-y-5 animate-fade-in md:pl-10"
+            style={{ animationDelay: "0.3s" }}
+          >
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed text-mobile-justified">
+              {paragraphs[2]}
+            </p>
           </div>
         </div>
 
-        <h2
-          className="font-serif text-2xl md:text-3xl lg:text-4xl text-accent leading-tight text-center mb-8 animate-fade-in"
-          style={{ animationDelay: "0.1s" }}
+        {/* Highlight card */}
+        <div
+          className="animate-fade-in relative rounded-2xl overflow-hidden mb-6"
+          style={{ animationDelay: "0.4s" }}
         >
-          {title}
-        </h2>
+          <div className="absolute inset-0 bg-gradient-to-r from-accent/10 via-accent/5 to-accent/10" />
+          <div className="absolute inset-0 border border-accent/20 rounded-2xl" />
+          <div className="relative px-8 py-7 flex items-start gap-5">
+            <div className="shrink-0 mt-1 p-2.5 rounded-xl bg-accent/15">
+              <Shield className="h-6 w-6 text-accent" />
+            </div>
+            <p className="text-lg md:text-xl lg:text-2xl font-serif text-foreground leading-relaxed">
+              {highlightText}
+            </p>
+          </div>
+        </div>
 
-        <div className="space-y-4 max-w-3xl mx-auto">
-          {blocks.map((block, i) => {
-            const delay = `${0.15 + i * 0.1}s`;
-            const Icon = block.icon;
+        {/* Closing quote */}
+        <div
+          className="animate-fade-in rounded-2xl bg-secondary/40 border-l-[3px] border-accent/40 px-8 py-6 flex items-start gap-5 mb-10"
+          style={{ animationDelay: "0.5s" }}
+        >
+          <div className="shrink-0 mt-1">
+            <Flame className="h-5 w-5 text-accent/70" />
+          </div>
+          <p className="font-serif text-base md:text-lg text-foreground/80 italic leading-relaxed">
+            {closingText}
+          </p>
+        </div>
 
-            if (block.highlight) {
-              return (
-                <div
-                  key={i}
-                  className="animate-fade-in rounded-xl bg-accent/10 border border-accent/20 px-6 py-5 flex items-start gap-4"
-                  style={{ animationDelay: delay }}
-                >
-                  {Icon && <Icon className="h-6 w-6 text-accent shrink-0 mt-0.5" />}
-                  <p className="text-foreground font-medium text-lg md:text-xl leading-relaxed">
-                    {block.text}
-                  </p>
-                </div>
-              );
-            }
-
-            if (block.quote) {
-              return (
-                <div
-                  key={i}
-                  className="animate-fade-in rounded-xl bg-secondary/60 border-l-2 border-accent/40 px-6 py-5 flex items-start gap-4"
-                  style={{ animationDelay: delay }}
-                >
-                  {Icon && <Icon className="h-5 w-5 text-accent/70 shrink-0 mt-0.5" />}
-                  <p className="font-serif text-lg md:text-xl text-foreground/90 italic leading-relaxed">
-                    {block.text}
-                  </p>
-                </div>
-              );
-            }
-
-            return (
-              <div
-                key={i}
-                className="animate-fade-in rounded-xl bg-secondary/30 px-6 py-5"
-                style={{ animationDelay: delay }}
-              >
-                {block.text.split("\n").map((line, j) => (
-                  <p key={j} className={`text-base md:text-lg text-muted-foreground leading-relaxed text-mobile-justified ${j > 0 ? "mt-4" : ""}`}>
-                    {line}
-                  </p>
-                ))}
-              </div>
-            );
-          })}
+        {/* CTA */}
+        <div
+          className="flex justify-center animate-fade-in"
+          style={{ animationDelay: "0.6s" }}
+        >
+          <Button asChild variant="outline" className="group border-accent/30 hover:bg-accent/10 hover:border-accent/50">
+            <Link to="/atuacao" className="flex items-center gap-2 text-accent">
+              {ctaText}
+              <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>
