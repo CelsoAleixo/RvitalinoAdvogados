@@ -118,9 +118,6 @@ export default function DireitoEmpresarial() {
                 </p>
               </div>
             </div>
-            <div className="text-center mt-8">
-              <ArrowDown className="mx-auto text-accent animate-bounce" size={24} />
-            </div>
           </div>
         </div>
       </section>
