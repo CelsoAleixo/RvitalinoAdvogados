@@ -65,28 +65,8 @@ export default function DireitoEmpresarial() {
         <div className="container-site">
           <div className="max-w-3xl mx-auto space-y-14">
 
-            {/* 1 - Recuperação Judicial */}
+            {/* 1 - Prevenção de Riscos */}
             <div className="animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              <div className="flex items-center gap-3 mb-4">
-                <Scale className="text-accent shrink-0" size={28} />
-                <h2 className="font-serif text-2xl md:text-3xl text-accent">Recuperação Judicial e Extrajudicial</h2>
-              </div>
-              <p className="text-lg text-muted-foreground leading-relaxed font-medium mb-4">
-                Por que isso importa para sua empresa?
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Quando a crise financeira bate à porta, muitos empresários acreditam que o fim é inevitável. Não é. A recuperação judicial existe para permitir que empresas viáveis reorganizem suas dívidas, preservem empregos e retomem a operação — sem encerrar as atividades.
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                A diferença entre recuperação e falência é, acima de tudo, uma questão de tempo e estratégia. A falência encerra. A recuperação reconstrói. E a recuperação extrajudicial permite negociar diretamente com credores, de forma mais ágil e discreta, sem a exposição de um processo público.
-              </p>
-              <p className="text-muted-foreground leading-relaxed italic border-l-4 border-accent pl-5">
-                O papel do advogado empresarial aqui é decisivo: elaborar um plano de reestruturação sólido, negociar condições viáveis e transformar credores em aliados da recuperação. Empresas que agem rápido e com orientação especializada sobrevivem. As que hesitam, perdem essa janela.
-              </p>
-            </div>
-
-            {/* 2 - Prevenção de Riscos */}
-            <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
               <div className="flex items-center gap-3 mb-4">
                 <ShieldCheck className="text-accent shrink-0" size={28} />
                 <h2 className="font-serif text-2xl md:text-3xl text-accent">Prevenção de Riscos e Atuação Preventiva</h2>
@@ -193,6 +173,26 @@ export default function DireitoEmpresarial() {
               </p>
               <p className="text-muted-foreground leading-relaxed italic border-l-4 border-accent pl-5">
                 Estruturamos holdings, definimos regras de governança familiar e criamos mecanismos que previnem disputas e garantem a perenidade do negócio.
+              </p>
+            </div>
+
+            {/* 8 - Recuperação Judicial */}
+            <div className="animate-fade-in" style={{ animationDelay: "0.8s" }}>
+              <div className="flex items-center gap-3 mb-4">
+                <Scale className="text-accent shrink-0" size={28} />
+                <h2 className="font-serif text-2xl md:text-3xl text-accent">Recuperação Judicial e Extrajudicial</h2>
+              </div>
+              <p className="text-lg text-muted-foreground leading-relaxed font-medium mb-4">
+                Por que isso importa para sua empresa?
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Quando a crise financeira bate à porta, muitos empresários acreditam que o fim é inevitável. Não é. A recuperação judicial existe para permitir que empresas viáveis reorganizem suas dívidas, preservem empregos e retomem a operação — sem encerrar as atividades.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                A diferença entre recuperação e falência é, acima de tudo, uma questão de tempo e estratégia. A falência encerra. A recuperação reconstrói. E a recuperação extrajudicial permite negociar diretamente com credores, de forma mais ágil e discreta, sem a exposição de um processo público.
+              </p>
+              <p className="text-muted-foreground leading-relaxed italic border-l-4 border-accent pl-5">
+                O papel do advogado empresarial aqui é decisivo: elaborar um plano de reestruturação sólido, negociar condições viáveis e transformar credores em aliados da recuperação. Empresas que agem rápido e com orientação especializada sobrevivem. As que hesitam, perdem essa janela.
               </p>
             </div>
 
