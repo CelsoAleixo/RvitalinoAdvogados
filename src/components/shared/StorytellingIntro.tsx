@@ -16,27 +16,37 @@ export function StorytellingIntro() {
 
           <div className="space-y-6 text-center">
             <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl text-accent leading-tight">
-              What practice taught us about Corporate Law
+              Our expertise is the result of years protecting businesses in real scenarios
             </h2>
 
             <div className="space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed text-mobile-justified max-w-3xl mx-auto">
               <p>
-                We have seen contracts that nearly destroyed partnerships built over decades. Startups that lost investors
-                because they lacked proper legal structure. Brands copied overnight due to the absence of a simple trademark registration.
+                Every company carries a story. Some are born from a bold idea, others from an urgent need,
+                and others from a long-held dream that finally found space to exist. But over the years serving
+                entrepreneurs, we noticed something that repeats in every scenario: a business's success never
+                depends solely on vision or courage — it depends on well-made legal decisions.
               </p>
               <p>
-                We have watched crises that could have been avoided with governance adjustments —
-                and family businesses that fragmented because no one planned for succession.
+                It was by witnessing contracts that nearly destroyed partnerships, startups that lost investors
+                due to lack of structure, brands copied for lack of registration, companies that could have
+                avoided crises with a simple governance adjustment, and families that watched their businesses
+                fragment due to the absence of planning — that we understood our role.
               </p>
-              <p className="text-foreground font-medium">
-                Each of these stories shaped who we are.
+              <p className="text-foreground font-medium text-lg md:text-xl">
+                We are not just lawyers. We are guardians of continuity, security and business strategy.
               </p>
               <p>
-                Our specialization in Corporate Law was not born in a classroom. It was forged in practice,
-                in late-night calls, in restructurings that saved companies, in the strategies that turned risk into growth.
+                Our specialization was born from practice. From real cases. From real companies.
+                From problems that could have been prevented — and from solutions that turned risks into growth.
+              </p>
+              <p>
+                We learned that Corporate Law is not about putting out fires, but about preventing them from starting.
+                It's about seeing what the entrepreneur hasn't seen yet.
+                It's about protecting what they've built and preparing the ground for what they will build next.
               </p>
               <p className="font-serif text-lg md:text-xl text-foreground/90 italic border-l-2 border-accent/40 pl-6 text-left">
-                We exist to protect what you've built — and to prepare the ground for what you will build next.
+                That's why we are specialists: because we live the daily life of companies, understand their
+                challenges, and know exactly where law meets strategy. And it is in that meeting that our work is born.
               </p>
             </div>
           </div>
@@ -60,29 +70,39 @@ export function StorytellingIntro() {
 
         <div className="space-y-6 text-center">
           <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl text-accent leading-tight">
-            O que a prática nos ensinou sobre Direito Empresarial
+            Nossa especialização é fruto de anos protegendo empresas em cenários reais
           </h2>
 
           <div className="space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed text-mobile-justified max-w-3xl mx-auto">
             <p>
-              Já vimos contratos que quase destruíram sociedades construídas ao longo de décadas.
-              Startups que perderam investidores porque não tinham estrutura jurídica adequada.
-              Marcas copiadas da noite para o dia pela ausência de um simples registro.
+              Toda empresa carrega uma história. Algumas nascem de uma ideia ousada, outras de uma necessidade
+              urgente, outras ainda de um sonho antigo que finalmente encontrou espaço para existir. Mas, ao
+              longo dos anos atendendo empresários, percebemos algo que se repete em todos os cenários: o
+              sucesso de um negócio nunca depende apenas de visão ou coragem — depende de decisões jurídicas
+              bem tomadas.
             </p>
             <p>
-              Acompanhamos crises que poderiam ter sido evitadas com ajustes de governança —
-              e empresas familiares que se fragmentaram porque ninguém planejou a sucessão.
+              Foi observando contratos que quase arruinaram sociedades, startups que perderam investidores por
+              falta de estrutura, marcas copiadas por falta de registro, empresas que poderiam ter evitado
+              crises com um simples ajuste de governança, e famílias que viram seus negócios se fragmentarem
+              por ausência de planejamento, que entendemos nosso papel.
             </p>
-            <p className="text-foreground font-medium">
-              Cada uma dessas histórias moldou quem somos.
+            <p className="text-foreground font-medium text-lg md:text-xl">
+              Não somos apenas advogados. Somos guardiões da continuidade, da segurança e da estratégia empresarial.
             </p>
             <p>
-              Nossa especialização em Direito Empresarial não nasceu na teoria. Foi forjada na prática,
-              nas ligações de madrugada, nas reestruturações que salvaram empresas,
-              nas estratégias que transformaram risco em crescimento.
+              Nossa especialização nasceu da prática. De casos reais. De empresas reais.
+              De problemas que poderiam ter sido evitados — e de soluções que transformaram riscos em crescimento.
+            </p>
+            <p>
+              Aprendemos que o Direito Empresarial não é sobre apagar incêndios, mas sobre impedir que eles
+              comecem. É sobre enxergar o que o empresário ainda não viu. É sobre proteger o que ele construiu
+              e preparar o terreno para o que ainda vai construir.
             </p>
             <p className="font-serif text-lg md:text-xl text-foreground/90 italic border-l-2 border-accent/40 pl-6 text-left">
-              Existimos para proteger o que você construiu — e preparar o terreno para o que ainda vai construir.
+              É por isso que somos especialistas: porque vivemos o cotidiano das empresas, entendemos seus
+              desafios e sabemos exatamente onde a lei encontra a estratégia. E é nesse encontro que nasce
+              o nosso trabalho.
             </p>
           </div>
         </div>
