@@ -27,7 +27,7 @@ export function StorytellingIntro() {
       ]
     : [
         {
-          text: "Sociedades desfeitas por uma cláusula mal redigida. Marcas construídas ao longo de anos, copiadas da noite para o dia. Investidores que recuaram porque ninguém estruturou a operação. Empresas familiares que ruíram em silêncio, sem um plano de sucessão. Não são cenários hipotéticos — são histórias que vivemos ao lado dos nossos clientes. E foi de cada uma delas que nasceu a nossa forma de advogar.",
+          text: "Sociedades que desmoronaram por uma cláusula esquecida. Startups brilhantes que perderam investimentos porque ninguém estruturou a base jurídica. Marcas construídas com anos de esforço, copiadas em questão de horas. Empresas familiares que se fragmentaram por falta de planejamento. Operações que quase ruíram por ausência de compliance. Negócios promissores que só sobreviveram porque a Recuperação Judicial chegou a tempo.\nNada disso é teoria. São histórias reais que acompanhamos de perto — e que moldaram a forma como enxergamos o Direito Empresarial.\nFoi vivendo esses cenários, lado a lado com empresários, que entendemos que nosso papel vai muito além de interpretar leis. Ele está em antecipar riscos antes que se tornem crises, estruturar sociedades para evitar conflitos, construir contratos que protegem o presente e o futuro, blindar marcas e ativos intelectuais, fortalecer a governança, orientar startups em seus primeiros passos e redesenhar caminhos quando a empresa precisa respirar para renascer.",
         },
         {
           highlight: true,
@@ -98,9 +98,11 @@ export function StorytellingIntro() {
                 className="animate-fade-in rounded-xl bg-secondary/30 px-6 py-5"
                 style={{ animationDelay: delay }}
               >
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed text-mobile-justified">
-                  {block.text}
-                </p>
+                {block.text.split("\n").map((line, j) => (
+                  <p key={j} className={`text-base md:text-lg text-muted-foreground leading-relaxed text-mobile-justified ${j > 0 ? "mt-4" : ""}`}>
+                    {line}
+                  </p>
+                ))}
               </div>
             );
           })}
