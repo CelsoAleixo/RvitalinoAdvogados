@@ -52,7 +52,7 @@ export default function DireitoCivil() {
 
             <div className="space-y-6">
               <p className="text-muted-foreground leading-relaxed text-lg italic border-l-4 border-accent pl-6">
-                No mundo dos negócios, cada contrato assinado, cada parceria firmada e cada decisão patrimonial carrega consigo riscos e oportunidades. O Direito Civil Empresarial é a ferramenta que transforma incertezas em segurança — e problemas em soluções.
+                No mundo dos negócios, cada contrato assinado, cada parceria firmada e cada decisão patrimonial carrega consigo riscos e oportunidades. O Direito Empresarial é a ferramenta que transforma incertezas em segurança — e problemas em soluções.
               </p>
               <p className="text-muted-foreground leading-relaxed text-lg">Mais do que resolver conflitos, atuamos para preveni-los. Nossa abordagem é orientada a resultados:  fortalecer suas relações comerciais e garantir que sua empresa cresça sobre bases jurídicas sólidas.<strong className="text-foreground">preveni-los</strong>. Nossa abordagem é orientada a resultados: proteger o que você construiu, fortalecer suas relações comerciais e garantir que sua empresa cresça sobre bases jurídicas sólidas.
               </p>
