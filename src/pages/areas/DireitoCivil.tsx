@@ -2,16 +2,13 @@ import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/shared/CTASection";
 import heroImage from "@/assets/areas/direito-civil-hero.jpg";
 import { Scale, FileText, Shield, Building2, HandshakeIcon, TrendingUp, CheckCircle2, ArrowRight } from "lucide-react";
-
 export default function DireitoCivil() {
-  return (
-    <Layout>
+  return <Layout>
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat image-enhance-strong" 
-          style={{ backgroundImage: `url(${heroImage})` }} 
-        />
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat image-enhance-strong" style={{
+        backgroundImage: `url(${heroImage})`
+      }} />
         <div className="absolute inset-0 bg-gradient-to-r from-background/85 via-background/60 to-background/40" />
         
         <div className="container-site relative z-10 py-20">
@@ -57,8 +54,7 @@ export default function DireitoCivil() {
               <p className="text-muted-foreground leading-relaxed text-lg italic border-l-4 border-accent pl-6">
                 No mundo dos negócios, cada contrato assinado, cada parceria firmada e cada decisão patrimonial carrega consigo riscos e oportunidades. O Direito Civil Empresarial é a ferramenta que transforma incertezas em segurança — e problemas em soluções.
               </p>
-              <p className="text-muted-foreground leading-relaxed text-lg">
-                Mais do que resolver conflitos, atuamos para <strong className="text-foreground">preveni-los</strong>. Nossa abordagem é orientada a resultados: proteger o que você construiu, fortalecer suas relações comerciais e garantir que sua empresa cresça sobre bases jurídicas sólidas.
+              <p className="text-muted-foreground leading-relaxed text-lg">Mais do que resolver conflitos, atuamos para preveni-los. Nossa abordagem é orientada a resultados:  fortalecer suas relações comerciais e garantir que sua empresa cresça sobre bases jurídicas sólidas.<strong className="text-foreground">preveni-los</strong>. Nossa abordagem é orientada a resultados: proteger o que você construiu, fortalecer suas relações comerciais e garantir que sua empresa cresça sobre bases jurídicas sólidas.
               </p>
             </div>
 
@@ -214,10 +210,6 @@ export default function DireitoCivil() {
         </div>
       </section>
 
-      <CTASection 
-        title="Proteja e fortaleça sua empresa com quem entende de Direito Civil" 
-        description="Entre em contato para uma consultoria estratégica e personalizada." 
-      />
-    </Layout>
-  );
+      <CTASection title="Proteja e fortaleça sua empresa com quem entende de Direito Civil" description="Entre em contato para uma consultoria estratégica e personalizada." />
+    </Layout>;
 }
