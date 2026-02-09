@@ -19,7 +19,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "area.taxLaw": "Direito Tributário",
     "area.laborLaw": "Direito Trabalhista",
     "area.familySuccession": "Família e Sucessões",
-    "area.civilLaw": "Direito Civil Empresarial",
+    "area.civilLaw": "Assessoria Jurídica Empresarial",
     "area.carbonCredit": "Crédito de Carbono",
 
     // Home Page
@@ -204,7 +204,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "area.taxLaw": "Tax Law",
     "area.laborLaw": "Labor Law",
     "area.familySuccession": "Family & Succession",
-    "area.civilLaw": "Civil Law",
+    "area.civilLaw": "Corporate Legal Advisory",
     "area.carbonCredit": "Carbon Credit",
 
     // Home Page
