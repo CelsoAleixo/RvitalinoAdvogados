@@ -190,8 +190,7 @@ export default function DireitoCivil() {
             </div>
 
             {/* Fechamento */}
-            <p className="text-muted-foreground leading-relaxed text-lg italic border-l-4 border-accent pl-6 text-center">
-              Sua empresa merece uma assessoria jurídica que entende de negócios, fala a sua língua e está comprometida com os seus resultados. <strong className="text-foreground">Vamos conversar?</strong>
+            <p className="text-muted-foreground leading-relaxed text-lg italic border-l-4 border-accent pl-6 text-center">Sua empresa tem direito a uma assessoria jurídica que entende de negócios, fala a sua língua e está comprometida com os seus resultados. Vamos conversar?<strong className="text-foreground">Vamos conversar?</strong>
             </p>
           </div>
         </div>
