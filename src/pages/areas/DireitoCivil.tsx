@@ -35,7 +35,7 @@ export default function DireitoCivil() {
             
             <div className="animate-slide-up">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-accent mb-4">
-                Direito Civil Empresarial
+                Assessoria Jurídica Empresarial
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground max-w-xl">
                 Proteção jurídica estratégica para empresas que pensam grande
