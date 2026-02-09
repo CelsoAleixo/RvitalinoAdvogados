@@ -121,20 +121,7 @@ export default function DireitoCivil() {
                 </div>
 
                 {/* Card 2 */}
-                <div className="group bg-card border border-border rounded-2xl p-6 hover:border-accent/40 transition-all duration-300">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                      <Shield className="w-5 h-5 text-accent" />
-                    </div>
-                    <h3 className="font-serif text-xl text-foreground">Responsabilidade Civil e Indenizações</h3>
-                  </div>
-                  <ul className="space-y-2 text-muted-foreground text-sm">
-                    <li className="flex items-start gap-2"><ArrowRight className="w-3.5 h-3.5 text-accent mt-1 flex-shrink-0" /><span>Ações de reparação por danos materiais e morais</span></li>
-                    <li className="flex items-start gap-2"><ArrowRight className="w-3.5 h-3.5 text-accent mt-1 flex-shrink-0" /><span>Defesa em ações indenizatórias contra a empresa</span></li>
-                    <li className="flex items-start gap-2"><ArrowRight className="w-3.5 h-3.5 text-accent mt-1 flex-shrink-0" /><span>Responsabilidade contratual e extracontratual</span></li>
-                    <li className="flex items-start gap-2"><ArrowRight className="w-3.5 h-3.5 text-accent mt-1 flex-shrink-0" /><span>Prestação de contas e transparência financeira</span></li>
-                  </ul>
-                </div>
+                
 
                 {/* Card 3 */}
                 <div className="group bg-card border border-border rounded-2xl p-6 hover:border-accent/40 transition-all duration-300">
