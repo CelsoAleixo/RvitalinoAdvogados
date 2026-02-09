@@ -2,14 +2,15 @@ import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/shared/CTASection";
 import { Building2, Scale, Truck, Leaf, Shield, FileText } from "lucide-react";
 import heroImage from "@/assets/areas/recuperacao-judicial-hero.jpg";
-
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
   if (element) {
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
   }
 };
-
 export default function RecuperacaoJudicial() {
   return <Layout>
       {/* Hero Section */}
@@ -32,26 +33,24 @@ export default function RecuperacaoJudicial() {
                 </ol>
               </nav>
               
-              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white mb-6 animate-fade-in" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.5)' }}>
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white mb-6 animate-fade-in" style={{
+              textShadow: '2px 2px 8px rgba(0,0,0,0.5)'
+            }}>
                 Recuperação Judicial
               </h1>
-              <p className="text-lg text-white/90 max-w-2xl animate-slide-up mb-8" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.4)' }}>
+              <p className="text-lg text-white/90 max-w-2xl animate-slide-up mb-8" style={{
+              textShadow: '1px 1px 4px rgba(0,0,0,0.4)'
+            }}>
                 Experiência consolidada na condução de processos de recuperação judicial em diversos setores da economia, com atuação estratégica para preservação de empresas e proteção de credores.
               </p>
               
               {/* Quick Navigation Tags */}
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 animate-fade-in">
-                <button
-                  onClick={() => scrollToSection('transporte-publico')}
-                  className="group flex items-center gap-2 px-4 py-2.5 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 hover:border-accent/50 rounded-full text-white text-sm font-medium transition-all duration-300 hover:scale-105"
-                >
+                <button onClick={() => scrollToSection('transporte-publico')} className="group flex items-center gap-2 px-4 py-2.5 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 hover:border-accent/50 rounded-full text-white text-sm font-medium transition-all duration-300 hover:scale-105">
                   <Truck className="h-4 w-4 text-accent group-hover:scale-110 transition-transform" />
                   <span>Transporte Público</span>
                 </button>
-                <button
-                  onClick={() => scrollToSection('agronegocio')}
-                  className="group flex items-center gap-2 px-4 py-2.5 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 hover:border-accent/50 rounded-full text-white text-sm font-medium transition-all duration-300 hover:scale-105"
-                >
+                <button onClick={() => scrollToSection('agronegocio')} className="group flex items-center gap-2 px-4 py-2.5 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 hover:border-accent/50 rounded-full text-white text-sm font-medium transition-all duration-300 hover:scale-105">
                   <Leaf className="h-4 w-4 text-accent group-hover:scale-110 transition-transform" />
                   <span>Agronegócio</span>
                 </button>
@@ -142,7 +141,7 @@ export default function RecuperacaoJudicial() {
                 </p>
               </div>
 
-              <h3 className="font-serif text-xl mb-4">Principais benefícios para o produtor rural:</h3>
+              <h3 className="font-serif text-xl mb-4">Principais benefícios :</h3>
               
               <div className="grid md:grid-cols-2 gap-6 mb-8">
                 <div className="bg-card rounded-lg p-6 border border-border">
