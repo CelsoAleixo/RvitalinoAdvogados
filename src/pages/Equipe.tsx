@@ -19,7 +19,7 @@ const advogados = [{
   especialidade: "(Operações Estratégicas em Insolvência)",
   especialidadeEn: "(Strategic Insolvency Operations)",
   email: "deidre@rvitalinoadvogados.com.br",
-  foto: "/lovable-uploads/deidre-scaranello-new.avif"
+  foto: "/lovable-uploads/deidre-scaranello-new.png"
 }, {
   nome: "Ana Caroline Ianuck",
   cargo: "Advogada Empresarial",
@@ -73,7 +73,7 @@ export default function Equipe() {
                   <OptimizedImage 
                     src={advogado.foto} 
                     alt={`${advogado.nome} - ${language === 'pt' ? advogado.cargo : advogado.cargoEn}`} 
-                    className={`w-full h-full object-cover ${advogado.nome === "Deidre Scaranello" ? "object-[center_25%]" : ""}`} 
+                    className={`w-full h-full object-cover ${advogado.nome === "Deidre Scaranello" ? "object-[center_20%] scale-110" : ""}`} 
                     loading="lazy" 
                     sizes="(max-width: 640px) 112px, (max-width: 1024px) 128px, 144px" 
                   />
