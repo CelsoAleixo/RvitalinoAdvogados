@@ -43,7 +43,7 @@ const advogados = [{
   especialidade: "(Especialista em recuperação judicial)",
   especialidadeEn: "(Judicial Recovery Specialist)",
   email: "elisandra.sousa@rvitalinoadvogados.com.br",
-  foto: "/lovable-uploads/elisandra-sousa-new.png"
+  foto: "/lovable-uploads/elisandra-sousa-v2.png"
 }];
 
 export default function Equipe() {
@@ -73,7 +73,7 @@ export default function Equipe() {
                   <OptimizedImage 
                     src={advogado.foto} 
                     alt={`${advogado.nome} - ${language === 'pt' ? advogado.cargo : advogado.cargoEn}`} 
-                    className={`w-full h-full object-cover ${advogado.nome === "Deidre Scaranello" ? "object-[center_20%] scale-110" : advogado.nome === "Elisandra Sousa Barbosa" ? "object-[center_10%] scale-125" : ""}`} 
+                    className={`w-full h-full object-cover ${advogado.nome === "Deidre Scaranello" ? "object-[center_20%] scale-110" : advogado.nome === "Elisandra Sousa Barbosa" ? "object-[center_15%]" : ""}`} 
                     loading="lazy" 
                     sizes="(max-width: 640px) 112px, (max-width: 1024px) 128px, 144px" 
                   />
