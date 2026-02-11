@@ -43,7 +43,7 @@ const advogados = [{
   especialidade: "(Especialista em recuperação judicial)",
   especialidadeEn: "(Judicial Recovery Specialist)",
   email: "elisandra.sousa@rvitalinoadvogados.com.br",
-  foto: "/lovable-uploads/elisandra-sousa-v2.png"
+  foto: "/lovable-uploads/elisandra-sousa-v3.png"
 }];
 
 export default function Equipe() {
