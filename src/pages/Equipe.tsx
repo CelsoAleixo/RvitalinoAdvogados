@@ -19,7 +19,7 @@ const advogados = [{
   especialidade: "(Operações Estratégicas em Insolvência)",
   especialidadeEn: "(Strategic Insolvency Operations)",
   email: "deidre@rvitalinoadvogados.com.br",
-  foto: "/lovable-uploads/deidre-scaranello-v3.png"
+  foto: "/lovable-uploads/deidre-scaranello-v4.png"
 }, {
   nome: "Ana Caroline Ianuck",
   cargo: "Advogada Empresarial",
@@ -27,7 +27,7 @@ const advogados = [{
   especialidade: "(Especialista em recuperação judicial)",
   especialidadeEn: "(Judicial Recovery Specialist)",
   email: "ana.caroline@rvitalinoadvogados.com.br",
-  foto: "/lovable-uploads/ana-caroline-v2.png"
+  foto: "/lovable-uploads/ana-caroline-v3.png"
 }, {
   nome: "Arthur Vitalino",
   cargo: "Correspondente Jurídico",
