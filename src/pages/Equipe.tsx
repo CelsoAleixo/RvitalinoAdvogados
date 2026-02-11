@@ -27,7 +27,7 @@ const advogados = [{
   especialidade: "(Especialista em recuperação judicial)",
   especialidadeEn: "(Judicial Recovery Specialist)",
   email: "ana.caroline@rvitalinoadvogados.com.br",
-  foto: "/lovable-uploads/ana-caroline.png"
+  foto: "/lovable-uploads/ana-caroline-v2.png"
 }, {
   nome: "Arthur Vitalino",
   cargo: "Correspondente Jurídico",
