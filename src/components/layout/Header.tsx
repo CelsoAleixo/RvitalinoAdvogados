@@ -53,7 +53,7 @@ export function Header() {
                 width="72"
                 height="72"
                 fetchPriority="high"
-                decoding="async" src="/lovable-uploads/05873d36-1bd6-476a-afdd-6268a6a53de7.png" />
+                decoding="async" src="/lovable-uploads/logo-cracked-glass.png" />
 
 
             </div>
