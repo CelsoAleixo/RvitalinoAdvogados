@@ -49,11 +49,11 @@ export function Header() {
             <div className="relative flex-shrink-0">
               <img
                 alt="Rodrigo Vitalino Advogados"
-                className="h-14 md:h-16 lg:h-[4.5rem] w-auto object-contain transition-all duration-300 group-hover:scale-[1.03] border-2 border-muted"
+                className="h-14 md:h-16 lg:h-[4.5rem] w-auto object-contain transition-all duration-300 group-hover:scale-[1.03] border-muted border"
                 width="72"
                 height="72"
                 fetchPriority="high"
-                decoding="async" src="/lovable-uploads/4ae08732-76d2-4356-a431-ccd393499d6b.png" />
+                decoding="async" src="/lovable-uploads/5c4c713f-ebe3-493b-8bee-69413039cfa5.png" />
 
 
             </div>
