@@ -30,10 +30,10 @@ const advogados = [{
   foto: "/lovable-uploads/ana-caroline-v3.png"
 }, {
   nome: "Arthur Vitalino",
-  cargo: "Correspondente Jurídico",
-  cargoEn: "Legal Correspondent",
-  especialidade: "(Na União Europeia)",
-  especialidadeEn: "(In the European Union)",
+  cargo: "Business Manager",
+  cargoEn: "Business Manager",
+  especialidade: "(Formado em Toronto, Canadá)",
+  especialidadeEn: "(Graduated in Toronto, Canada)",
   email: "arthur@rvitalinoadvogados.com.br",
   foto: "/lovable-uploads/arthur-vitalino-v2.png"
 }, {
