@@ -73,7 +73,7 @@ export default function Equipe() {
                   <OptimizedImage 
                     src={advogado.foto} 
                     alt={`${advogado.nome} - ${language === 'pt' ? advogado.cargo : advogado.cargoEn}`} 
-                    className={`w-full h-full object-cover ${advogado.nome === "Deidre Scaranello" ? "object-[center_20%]" : advogado.nome === "Elisandra Sousa Barbosa" ? "object-[center_15%]" : advogado.nome === "Arthur Vitalino" ? "scale-[0.85] object-[center_30%]" : ""}`} 
+                    className={`w-full h-full object-cover ${advogado.nome === "Deidre Scaranello" ? "object-[center_20%]" : advogado.nome === "Elisandra Sousa Barbosa" ? "object-[center_15%]" : ""}`} 
                     loading="lazy" 
                     sizes="(max-width: 640px) 112px, (max-width: 1024px) 128px, 144px" 
                   />
