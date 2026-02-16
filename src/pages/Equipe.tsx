@@ -35,7 +35,7 @@ const advogados = [{
   especialidade: "(Na União Europeia)",
   especialidadeEn: "(In the European Union)",
   email: "arthur@rvitalinoadvogados.com.br",
-  foto: "/lovable-uploads/arthur-vitalino.png"
+  foto: "/lovable-uploads/arthur-vitalino-v2.png"
 }, {
   nome: "Elisandra Sousa Barbosa",
   cargo: "Advogada Empresarial",
