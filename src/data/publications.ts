@@ -543,6 +543,12 @@ During the transition period (2026-2032), companies operate with two parallel ta
     category: "Direito Trabalhista",
     categoryEn: "Labor Law",
     categorySlug: "direito-trabalhista",
+    authorSection: {
+      name: "Dra. Ana Caroline Ianuck",
+      description: "Advogada especialista em Direito Empresarial e Recuperação Judicial",
+      descriptionEn: "Corporate Law and Judicial Recovery Specialist Attorney",
+      photo: "/lovable-uploads/ana-caroline-v3.png"
+    },
     content: `## Nova Era das Relações Trabalhistas: Portaria Consolidada MTE nº 1/2025
 
 O cenário das obrigações trabalhistas no Brasil passou por uma transformação significativa. Com a entrada em vigor da Portaria Consolidada MTE nº 1/2025, em 02 de janeiro de 2026, o Ministério do Trabalho e Emprego consolidou regras que impactam diretamente o Departamento Pessoal e o RH das empresas.
@@ -647,6 +653,12 @@ The main innovation is the creation of the Tax on Goods and Services Management 
     category: "Direito Tributário",
     categoryEn: "Tax Law",
     categorySlug: "direito-tributario",
+    authorSection: {
+      name: "Dra. Elisandra Sousa Barbosa",
+      description: "Advogada especialista em Direito Tributário",
+      descriptionEn: "Tax Law Specialist Attorney",
+      photo: "/lovable-uploads/elisandra-sousa.png"
+    },
     content: `## Transição Tributária: Novas Regras para Documentos Fiscais
 
 A Receita Federal e o Comitê Gestor do IBS publicaram orientações sobre a emissão de documentos fiscais durante o período de transição para o novo sistema tributário.
@@ -683,6 +695,12 @@ During the first months of 2026, companies will have a penalty-free period to ad
     category: "Direito Tributário",
     categoryEn: "Tax Law",
     categorySlug: "direito-tributario",
+    authorSection: {
+      name: "Dra. Elisandra Sousa Barbosa",
+      description: "Advogada especialista em Direito Tributário",
+      descriptionEn: "Tax Law Specialist Attorney",
+      photo: "/lovable-uploads/elisandra-sousa.png"
+    },
     content: `## O Cadastro Imobiliário Brasileiro (CIB)
 
 O novo Cadastro Imobiliário Brasileiro (CIB) funcionará como um "CPF dos imóveis", unificando informações cadastrais de propriedades em todo o território nacional.
