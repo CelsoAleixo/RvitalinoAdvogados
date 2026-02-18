@@ -1,4 +1,5 @@
 import recuperacaoRuralHero from "@/assets/publications/recuperacao-rural-hero.jpg";
+import criseClimaticaMtHero from "@/assets/publications/crise-climatica-mt-hero.jpg";
 import rodrigoVitalinoAutor from "@/assets/rodrigo-vitalino-autor.png";
 
 export interface Publication {
@@ -87,6 +88,129 @@ export const categoriesEn = [
  * Publications data with SEO-friendly slugs
  */
 export const publications: Publication[] = [
+  {
+    id: 9,
+    slug: "crise-climatica-mato-grosso-safra-2026-impacto-agronegocio",
+    title: "Crise Climática em Mato Grosso: O Peso da Safra 2025/26 Sobre o Agronegócio",
+    titleEn: "Climate Crisis in Mato Grosso: The Weight of the 2025/26 Harvest on Agribusiness",
+    subtitle: "Endividamento, chuvas extremas e o colapso operacional que ameaça produtores rurais",
+    subtitleEn: "Debt, extreme rainfall, and the operational collapse threatening rural producers",
+    excerpt: "Mato Grosso enfrenta uma tempestade perfeita: endividamento crescente, chuvas recordes e uma colheita que não consegue avançar. O campo está no limite — e cada janela de sol é uma corrida contra o relógio.",
+    excerptEn: "Mato Grosso faces a perfect storm: growing debt, record rainfall, and a harvest that cannot advance. The countryside is at its limit — and every window of sunshine is a race against time.",
+    date: "2026-02-18",
+    category: "Direito Rural",
+    categoryEn: "Agricultural Law",
+    categorySlug: "direito-rural",
+    heroImage: criseClimaticaMtHero,
+    content: `## O que veio antes: a crise que já estava formada
+
+Antes mesmo da colheita começar, Mato Grosso já carregava um peso enorme nas costas. O estado vinha de um 2025 turbulento, marcado por endividamento crescente, pedidos recordes de recuperação judicial e um agronegócio operando no limite. Produtores que haviam apostado alto em expansão agora lutavam para manter o fluxo de caixa, renegociar contratos e segurar custos que não paravam de subir.
+
+Era como caminhar sobre um terreno instável — qualquer mudança brusca poderia fazer tudo desmoronar.
+
+E então, 2026 chegou trazendo exatamente o que ninguém queria: um clima imprevisível e implacável.
+
+## O impacto climático — versão mais intensa e narrativa
+
+A Aprosoja MT acendeu o alerta: a colheita da soja 2025/26 está sendo engolida pelo excesso de chuvas. Em apenas quinze dias, regiões inteiras receberam entre 90 mm e 150 mm de precipitação. O campo virou lama, as máquinas pararam, e a safra começou a perder qualidade antes mesmo de sair da lavoura.
+
+O presidente da Aprosoja MT, Lucas Costa Beber, descreve o cenário com precisão: **chuva demais, tempo de menos, e uma colheita que não consegue avançar.**
+
+As consequências são imediatas:
+
+- **Grãos perdendo peso**
+- **Soja brotando ainda na vagem**
+- **Qualidade comprometida**
+- **Janelas de plantio e colheita completamente desorganizadas**
+- **Risco direto para o milho segunda safra**
+
+E o drama não para aí.
+
+O diretor administrativo da Aprosoja MT, Diego Bertuol, reforça o que mais dói no bolso do produtor: os contratos não esperam. Com a colheita atrasada, muitos não conseguem entregar o que foi combinado — e isso trava o fluxo de caixa justamente no início da safra, quando cada decisão financeira é crucial para manter a propriedade de pé.
+
+## A voz do campo — o peso real da crise
+
+Em Vera, o produtor Sandro Mick descreve um cenário que parece tirado de um filme de sobrevivência agrícola:
+
+*"Desde domingo ninguém consegue colocar máquina na lavoura. A soja está abrindo vagem, brotando e dando grão avariado. Quando o sol aparece, colhemos com 30% de umidade. Se deixar no campo, ela debulha, brota ou apodrece. Sem armazém, não existe decisão boa — todas são ruins."*
+
+É a realidade nua e crua: **ou colhe com perda, ou perde tudo.**
+
+Sandro ainda lembra que o atraso começou lá atrás, no plantio. Setembro deu uma trégua, mas outubro travou tudo. Quando a chuva voltou, o plantio foi acelerado — e agora, tudo está chegando junto na colheita, criando um gargalo que ninguém consegue resolver.
+
+## O que vem pela frente
+
+O milho já alcançou 28% da área plantada, mas a tendência é de desaceleração. A previsão indica mais chuva — entre 65 mm e 95 mm — o que pode paralisar novamente as máquinas.
+
+A Aprosoja MT segue monitorando cada região, mas o recado é claro: **o momento exige cautela, estratégia e sangue-frio.**
+
+Os produtores estão no limite, enfrentando desafios operacionais, financeiros e fitossanitários ao mesmo tempo. E enquanto o clima não dá trégua, cada janela de sol se torna uma corrida contra o relógio para salvar o que ainda pode ser salvo.
+
+---
+
+::author::`,
+    contentEn: `## What came before: the crisis that was already forming
+
+Even before the harvest began, Mato Grosso was already carrying an enormous weight on its shoulders. The state was coming off a turbulent 2025, marked by growing indebtedness, record judicial recovery filings, and an agribusiness sector operating at its limit. Producers who had bet heavily on expansion were now fighting to maintain cash flow, renegotiate contracts, and contain costs that wouldn't stop rising.
+
+It was like walking on unstable ground — any sudden change could make everything collapse.
+
+And then, 2026 arrived bringing exactly what no one wanted: unpredictable and relentless weather.
+
+## The climate impact — a more intense and narrative version
+
+Aprosoja MT raised the alarm: the 2025/26 soybean harvest is being swallowed by excessive rainfall. In just fifteen days, entire regions received between 90 mm and 150 mm of precipitation. The fields turned to mud, machines stopped, and the crop began losing quality before it even left the field.
+
+The president of Aprosoja MT, Lucas Costa Beber, describes the scenario precisely: **too much rain, too little time, and a harvest that cannot advance.**
+
+The consequences are immediate:
+
+- **Grains losing weight**
+- **Soybeans sprouting still in the pod**
+- **Compromised quality**
+- **Planting and harvest windows completely disrupted**
+- **Direct risk to the second corn crop**
+
+And the drama doesn't stop there.
+
+The administrative director of Aprosoja MT, Diego Bertuol, reinforces what hurts the producer's pocket the most: contracts don't wait. With the delayed harvest, many cannot deliver what was agreed — and this freezes cash flow right at the start of the season, when every financial decision is crucial to keeping the property standing.
+
+## The voice of the field — the real weight of the crisis
+
+In Vera, producer Sandro Mick describes a scenario that seems taken from an agricultural survival film:
+
+*"Since Sunday, no one has been able to put a machine in the field. The soybeans are opening pods, sprouting, and producing damaged grain. When the sun appears, we harvest at 30% moisture. If left in the field, it shatters, sprouts, or rots. Without storage, there is no good decision — they are all bad."*
+
+It's the raw reality: **either harvest with losses, or lose everything.**
+
+Sandro also remembers that the delay started way back, at planting time. September gave a reprieve, but October stopped everything. When the rain returned, planting was accelerated — and now, everything is arriving at once during harvest, creating a bottleneck that no one can solve.
+
+## What lies ahead
+
+Corn has already reached 28% of the planted area, but the trend is toward deceleration. The forecast indicates more rain — between 65 mm and 95 mm — which could once again paralyze machines.
+
+Aprosoja MT continues monitoring each region, but the message is clear: **the moment demands caution, strategy, and composure.**
+
+Producers are at their limit, facing operational, financial, and phytosanitary challenges simultaneously. And while the weather offers no respite, every window of sunshine becomes a race against the clock to save what can still be saved.
+
+---
+
+::author::`,
+    authorSection: {
+      name: "Dr. Rodrigo Vitalino",
+      description: `A trajetória do Dr. Rodrigo Vitalino no Direito Empresarial e Rural é marcada por uma atuação profundamente conectada à realidade do campo. Ao longo dos anos, ele se especializou em lidar com as dores mais sensíveis do agronegócio: endividamento crescente, risco de perda patrimonial, contratos desbalanceados, pressão de credores e, principalmente, os impactos imprevisíveis do clima sobre a capacidade de pagamento dos produtores.
+
+Sua experiência prática o colocou lado a lado com agricultores, pecuaristas e empresários rurais que enfrentam desde oscilações de mercado até crises severas provocadas por estiagens, excesso de chuvas, pragas e quebras de safra. Em cada caso, o Dr. Rodrigo desenvolveu estratégias jurídicas que vão além do papel — soluções que preservam propriedades, evitam leilões, reestruturam dívidas e garantem fôlego financeiro para que o produtor continue produzindo.
+
+Ele já conduziu processos de Recuperação Judicial envolvendo grupos rurais complexos, renegociações multimilionárias com instituições financeiras, suspensões de leilões extrajudiciais iminentes e defesas técnicas em contratos de barter, CPRs, garantias reais e operações estruturadas. Sua atuação combina conhecimento jurídico sólido com compreensão profunda da dinâmica agrícola: ciclos de plantio, janelas de colheita, sazonalidade de caixa, riscos climáticos e volatilidade de preços.`,
+      descriptionEn: `Dr. Rodrigo Vitalino's career in Corporate and Rural Law is marked by a practice deeply connected to the reality of the field. Over the years, he has specialized in addressing the most sensitive pain points of agribusiness: growing indebtedness, risk of asset loss, unbalanced contracts, creditor pressure, and above all, the unpredictable impacts of climate on producers' ability to pay.
+
+His practical experience has placed him side by side with farmers, ranchers, and rural entrepreneurs facing everything from market fluctuations to severe crises caused by droughts, excessive rainfall, pests, and crop failures. In each case, Dr. Rodrigo has developed legal strategies that go beyond paper — solutions that preserve properties, prevent auctions, restructure debts, and ensure financial breathing room so that producers can keep producing.
+
+He has led Judicial Recovery proceedings involving complex rural groups, multimillion-dollar renegotiations with financial institutions, suspensions of imminent extrajudicial auctions, and technical defenses in barter contracts, CPRs, real guarantees, and structured operations. His practice combines solid legal knowledge with deep understanding of agricultural dynamics: planting cycles, harvest windows, cash seasonality, climate risks, and price volatility.`,
+      photo: rodrigoVitalinoAutor
+    }
+  },
   {
     id: 8,
     slug: "recuperacao-judicial-produtor-rural-lei-14112",
