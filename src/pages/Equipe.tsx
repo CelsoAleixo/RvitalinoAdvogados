@@ -35,7 +35,7 @@ const advogados = [{
   especialidade: "(Formado em Toronto, Canadá)",
   especialidadeEn: "(Graduated in Toronto, Canada)",
   email: "arthur@rvitalinoadvogados.com.br",
-  foto: "/lovable-uploads/arthur-vitalino-v3.png"
+  foto: "/lovable-uploads/arthur-vitalino-v4.png"
 }, {
   nome: "Elisandra Sousa Barbosa",
   cargo: "Advogada Empresarial",
