@@ -72,7 +72,7 @@ export function CookieConsentBanner() {
   const labels = {
     title: isPt ? "Política de Cookies" : "Cookie Policy",
     description: isPt
-      ? "Utilizamos cookies para melhorar sua experiência, analisar o tráfego e personalizar conteúdo. Ao continuar navegando, você pode gerenciar suas preferências."
+      ? "Usamos cookies para deixar sua experiência ainda melhor. Você pode ajustar suas preferências quando quiser."
       : "We use cookies to improve your experience, analyze traffic and personalize content. You can manage your preferences below.",
     acceptAll: isPt ? "Aceitar Tudo" : "Accept All",
     rejectAll: isPt ? "Rejeitar Tudo" : "Reject All",
