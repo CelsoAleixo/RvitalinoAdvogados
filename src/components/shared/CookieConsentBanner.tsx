@@ -70,14 +70,14 @@ export function CookieConsentBanner() {
 
   // Labels
   const labels = {
-    title: isPt ? "Cookies" : "Cookies",
+    title: isPt ? "Política de Cookies" : "Cookie Policy",
     description: isPt
-      ? "Usamos cookies para melhorar sua experiência. Ajuste suas preferências quando desejar."
-      : "We use cookies to improve your experience. Adjust your preferences anytime.",
-    accept: isPt ? "Aceitar" : "Accept",
-    reject: isPt ? "Rejeitar" : "Reject",
-    customize: isPt ? "Preferências" : "Preferences",
-    save: isPt ? "Salvar" : "Save",
+      ? "Usamos cookies para deixar sua experiência ainda melhor. Você pode ajustar suas preferências quando quiser."
+      : "We use cookies to improve your experience, analyze traffic and personalize content. You can manage your preferences below.",
+    acceptAll: isPt ? "Aceitar Tudo" : "Accept All",
+    rejectAll: isPt ? "Rejeitar Tudo" : "Reject All",
+    customize: isPt ? "Personalizar" : "Customize",
+    save: isPt ? "Salvar Preferências" : "Save Preferences",
     necessary: isPt ? "Necessários" : "Necessary",
     necessaryDesc: isPt
       ? "Essenciais para o funcionamento do site. Não podem ser desativados."
@@ -91,12 +91,13 @@ export function CookieConsentBanner() {
       ? "Permitem exibir anúncios relevantes e medir campanhas."
       : "Allow us to show relevant ads and measure campaigns.",
     prefsTitle: isPt ? "Preferências de Cookies" : "Cookie Preferences",
+    privacyLink: isPt ? "Política de Privacidade" : "Privacy Policy",
     alwaysActive: isPt ? "Sempre ativo" : "Always active",
   };
 
   return (
     <>
-      {/* Slim cookie bar */}
+      {/* Banner */}
       {showBanner && !showPreferences && (
         <div
           ref={bannerRef}
@@ -105,37 +106,42 @@ export function CookieConsentBanner() {
           aria-modal="false"
           className="fixed bottom-0 left-0 right-0 z-[9999] animate-slide-up"
         >
-          <div className="border-t border-border/50 bg-card/95 backdrop-blur-md">
-            <div className="mx-auto max-w-7xl px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3">
-              <div className="flex items-center gap-2.5 text-center sm:text-left">
-                <Cookie className="h-4 w-4 text-accent shrink-0 hidden sm:block" />
-                <p className="text-muted-foreground text-xs leading-snug">
-                  {labels.description}
-                </p>
+          <div className="mx-auto max-w-4xl px-4 pb-4 sm:px-6">
+            <div className="rounded-2xl border border-border bg-card/95 backdrop-blur-md shadow-2xl p-5 sm:p-6">
+              <div className="flex items-start gap-3 mb-4">
+                <div className="p-2 rounded-lg bg-accent/10 shrink-0">
+                  <Cookie className="h-5 w-5 text-accent" />
+                </div>
+                <div>
+                  <h2 className="text-foreground font-serif text-lg font-semibold mb-1">
+                    {labels.title}
+                  </h2>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {labels.description}
+                  </p>
+                </div>
               </div>
 
-              <div className="flex items-center gap-2 shrink-0">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                 <Button
                   onClick={acceptAll}
-                  size="sm"
-                  className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium text-xs h-8 px-4"
+                  className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold flex-1 sm:flex-none"
                 >
-                  {labels.accept}
+                  {labels.acceptAll}
                 </Button>
                 <Button
                   onClick={rejectAll}
-                  size="sm"
                   variant="outline"
-                  className="text-xs h-8 px-3"
+                  className="flex-1 sm:flex-none"
                 >
-                  {labels.reject}
+                  {labels.rejectAll}
                 </Button>
                 <Button
                   onClick={openPreferences}
-                  size="sm"
                   variant="ghost"
-                  className="text-xs h-8 px-3 text-muted-foreground hover:text-foreground"
+                  className="flex-1 sm:flex-none text-muted-foreground hover:text-foreground"
                 >
+                  <Shield className="h-4 w-4 mr-1" />
                   {labels.customize}
                 </Button>
               </div>
@@ -213,7 +219,7 @@ export function CookieConsentBanner() {
                 variant="outline"
                 className="flex-1"
               >
-                {labels.reject}
+                {labels.rejectAll}
               </Button>
               <Button
                 onClick={() => savePreferences(tempPrefs)}
