@@ -124,10 +124,20 @@ export function Footer() {
               © {new Date().getFullYear()} Rodrigo Vitalino Advogados.{" "}
               {language === "en" ? "All rights reserved." : "Todos os direitos reservados."}
             </p>
-            <div className="flex gap-6">
-              <Link to="/contato" className="hover:text-primary transition-colors">
+            <div className="flex gap-4 text-xs text-muted-foreground/70">
+              <Link to="/contato" className="hover:text-muted-foreground transition-colors">
                 {language === "en" ? "Privacy Policy" : "Política de Privacidade"}
               </Link>
+              <span className="text-border">|</span>
+              <button
+                onClick={() => {
+                  localStorage.removeItem("rv-cookie-consent");
+                  window.location.reload();
+                }}
+                className="hover:text-muted-foreground transition-colors"
+              >
+                {language === "en" ? "Cookie Settings" : "Configurar Cookies"}
+              </button>
             </div>
           </div>
         </div>
