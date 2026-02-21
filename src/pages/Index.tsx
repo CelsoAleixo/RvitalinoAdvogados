@@ -27,36 +27,36 @@ export default function Index() {
   const recentPublications = getPublicationsSortedByDate().slice(0, 6);
 
   const areas = [
-    {
-      icon: Building2,
-      titleKey: "area.corporateLaw",
-      descKey: "area.corporateLaw.desc",
-      href: "/atuacao/direito-empresarial",
-      image: direitoEmpresarialImg,
-    },
-    {
-      icon: Scale,
-      titleKey: "area.legalNegotiation",
-      descKey: "area.legalNegotiation.desc",
-      href: "/atuacao/negociacao-juridica",
-      image: negociacaoJuridicaImg,
-    },
-    {
-      icon: Briefcase,
-      titleKey: "area.judicialRecovery",
-      descKey: "area.judicialRecovery.desc",
-      href: "/atuacao/recuperacao-judicial",
-      highlight: true,
-      image: recuperacaoJudicialImg,
-    },
-    {
-      icon: Scale,
-      titleKey: "area.taxLaw",
-      descKey: "area.taxLaw.desc",
-      href: "/atuacao/direito-tributario",
-      image: direitoTributarioImg,
-    },
-  ];
+  {
+    icon: Building2,
+    titleKey: "area.corporateLaw",
+    descKey: "area.corporateLaw.desc",
+    href: "/atuacao/direito-empresarial",
+    image: direitoEmpresarialImg
+  },
+  {
+    icon: Scale,
+    titleKey: "area.legalNegotiation",
+    descKey: "area.legalNegotiation.desc",
+    href: "/atuacao/negociacao-juridica",
+    image: negociacaoJuridicaImg
+  },
+  {
+    icon: Briefcase,
+    titleKey: "area.judicialRecovery",
+    descKey: "area.judicialRecovery.desc",
+    href: "/atuacao/recuperacao-judicial",
+    highlight: true,
+    image: recuperacaoJudicialImg
+  },
+  {
+    icon: Scale,
+    titleKey: "area.taxLaw",
+    descKey: "area.taxLaw.desc",
+    href: "/atuacao/direito-tributario",
+    image: direitoTributarioImg
+  }];
+
 
   return (
     <Layout>
@@ -67,10 +67,10 @@ export default function Index() {
           posterImage="/lovable-uploads/3c2a2065-697e-4647-b72f-b5b713512bde.png"
           overlayClassName="bg-[#1a2e1a]/60 sm:bg-[#1a2e1a]/70"
           playbackRate={1.0}
-          priority
-        />
+          priority />
 
-        <div className="container-site relative z-20 py-12 sm:py-16 md:py-24">
+
+        <div className="container-site relative z-20 py-12 sm:py-16 md:py-24 rounded-none border-0">
           <div className="max-w-2xl">
             <h1 className="text-balance animate-fade-in text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-overlay-strong">
               <span className="block text-accent drop-shadow-lg">
@@ -82,13 +82,13 @@ export default function Index() {
             </p>
             <div
               className="mt-6 sm:mt-8 md:mt-10 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 animate-slide-up"
-              style={{ animationDelay: "0.1s" }}
-            >
+              style={{ animationDelay: "0.1s" }}>
+
               <Button
                 asChild
                 size="lg"
-                className="group bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full sm:w-auto shadow-lg"
-              >
+                className="group bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full sm:w-auto shadow-lg">
+
                 <Link to="/contato" className="flex items-center justify-center gap-2">
                   <Phone className="h-5 w-5" />
                   {t("home.hero.contact")}
@@ -99,8 +99,8 @@ export default function Index() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="bg-foreground/15 border-foreground/40 text-foreground hover:bg-foreground/25 font-medium w-full sm:w-auto shadow-lg"
-              >
+                className="bg-foreground/15 border-foreground/40 text-foreground hover:bg-foreground/25 font-medium w-full sm:w-auto shadow-lg">
+
                 <Link to="/atuacao#areas-grid">{t("home.hero.areas")}</Link>
               </Button>
             </div>
@@ -137,30 +137,30 @@ export default function Index() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            {areas.map((area, index) => (
-              <Link
-                key={index}
-                to={area.href}
-                className="group relative rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl bg-card min-h-[280px]"
-              >
+            {areas.map((area, index) =>
+            <Link
+              key={index}
+              to={area.href}
+              className="group relative rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl bg-card min-h-[280px]">
+
                 <div className="absolute inset-0">
                   <img
-                    src={area.image}
-                    alt={t(area.titleKey)}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-105 contrast-105"
-                    loading="lazy"
-                    decoding="async"
-                    width={498}
-                    height={280}
-                  />
+                  src={area.image}
+                  alt={t(area.titleKey)}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-105 contrast-105"
+                  loading="lazy"
+                  decoding="async"
+                  width={498}
+                  height={280} />
+
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                 </div>
 
-                {area.highlight && (
-                  <div className="absolute top-4 right-4 z-10 bg-accent text-accent-foreground text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
+                {area.highlight &&
+              <div className="absolute top-4 right-4 z-10 bg-accent text-accent-foreground text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
                     {t("home.highlight")}
                   </div>
-                )}
+              }
 
                 <div className="relative z-10 p-6 min-h-[280px] flex flex-col justify-end">
                   <div className="absolute top-4 left-4">
@@ -183,7 +183,7 @@ export default function Index() {
                   </div>
                 </div>
               </Link>
-            ))}
+            )}
           </div>
 
           <div className="text-center">
@@ -209,9 +209,9 @@ export default function Index() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mb-8">
-            {recentPublications.map((pub) => (
-              <PublicationCard key={pub.id} publication={pub} variant="compact" />
-            ))}
+            {recentPublications.map((pub) =>
+            <PublicationCard key={pub.id} publication={pub} variant="compact" />
+            )}
           </div>
 
           <div className="text-center">
@@ -228,6 +228,6 @@ export default function Index() {
 
       {/* CTA */}
       <CTASection />
-    </Layout>
-  );
+    </Layout>);
+
 }
