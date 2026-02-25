@@ -28,6 +28,7 @@ const FamiliaSucessoes = lazy(() => import("./pages/areas/FamiliaSucessoes"));
 const DireitoCivil = lazy(() => import("./pages/areas/DireitoCivil"));
 const CreditoCarbono = lazy(() => import("./pages/areas/CreditoCarbono"));
 const RecuperacaoJudicial = lazy(() => import("./pages/areas/RecuperacaoJudicial"));
+const RecuperacaoJudicialAgro = lazy(() => import("./pages/areas/RecuperacaoJudicialAgro"));
 
 const queryClient = new QueryClient();
 
@@ -68,6 +69,7 @@ const App = () => (
               <Route path="/atuacao/direito-civil" element={<DireitoCivil />} />
               <Route path="/atuacao/credito-de-carbono" element={<CreditoCarbono />} />
               <Route path="/atuacao/recuperacao-judicial" element={<RecuperacaoJudicial />} />
+              <Route path="/atuacao/recuperacao-judicial/agronegocio" element={<RecuperacaoJudicialAgro />} />
               <Route path="/publicacoes" element={<Publicacoes />} />
               {/* New SEO-friendly slug-based publication URLs */}
               <Route path="/publicacoes/:slug" element={<PublicacaoDetalhe />} />
