@@ -121,7 +121,7 @@ export function ResponsiveHeroVideo({
       }
     };
 
-    // Handle canplaythrough for smoother playback
+    // Use canplay (readyState >= 3 not needed) for faster start
     const handleCanPlay = () => {
       setIsVideoLoaded(true);
       setLoadProgress(100);
@@ -131,21 +131,21 @@ export function ResponsiveHeroVideo({
     };
 
     video.addEventListener("progress", handleProgress);
-    video.addEventListener("canplaythrough", handleCanPlay);
+    video.addEventListener("canplay", handleCanPlay);
     
     // If already ready (cached), trigger immediately
-    if (video.readyState >= 3) {
+    if (video.readyState >= 2) {
       handleCanPlay();
     }
 
     return () => {
       video.removeEventListener("progress", handleProgress);
-      video.removeEventListener("canplaythrough", handleCanPlay);
+      video.removeEventListener("canplay", handleCanPlay);
     };
   }, [isReady, playbackRate]);
 
-  // Show static poster for reduced motion preference or very slow connections
-  if (prefersReducedMotion || (isSlowConnection && !isVideoLoaded)) {
+  // Show static poster only for reduced motion (slow connections still try video)
+  if (prefersReducedMotion) {
     return (
       <div ref={containerRef} className={`absolute inset-0 z-0 ${className}`}>
         {/* Skeleton while poster loads */}
@@ -164,23 +164,6 @@ export function ResponsiveHeroVideo({
             loading="eager"
             fetchPriority="high"
           />
-        )}
-        
-        {/* Loading indicator for slow connections (only if video will eventually load) */}
-        {isSlowConnection && !prefersReducedMotion && !isVideoLoaded && isPosterLoaded && (
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-            <div className="flex items-center gap-3 bg-black/40 backdrop-blur-sm rounded-full px-4 py-2">
-              <div className="w-24 h-1 bg-white/20 rounded-full overflow-hidden">
-                <div 
-                  className="h-full bg-accent rounded-full transition-all duration-300"
-                  style={{ width: `${loadProgress}%` }}
-                />
-              </div>
-              <span className="text-white/70 text-xs font-medium">
-                {loadProgress < 100 ? 'Carregando...' : 'Pronto'}
-              </span>
-            </div>
-          </div>
         )}
         
         {overlayClassName && <div className={`absolute inset-0 ${overlayClassName}`} />}
