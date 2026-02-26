@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { PageSEO, breadcrumbSchema } from "@/components/shared/PageSEO";
 import { Button } from "@/components/ui/button";
 import {
   Leaf,
@@ -25,6 +26,11 @@ const scrollToSection = (id: string) => {
 export default function RecuperacaoJudicialAgro() {
   return (
     <Layout>
+      <PageSEO
+        title="Recuperação Judicial no Agronegócio"
+        description="Recuperação judicial especializada para produtores rurais e empresas do agronegócio. Lei 14.112, proteção patrimonial e reestruturação de dívidas. Rodrigo Vitalino Advogados."
+        jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Áreas de Atuação", url: "/atuacao" }, { name: "Recuperação Judicial", url: "/atuacao/recuperacao-judicial" }, { name: "Agronegócio", url: "/atuacao/recuperacao-judicial/agronegocio" }])}
+      />
       {/* ── Hero ── */}
       <section className="relative min-h-[75vh] flex items-center overflow-hidden">
         <div

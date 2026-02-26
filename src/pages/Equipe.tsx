@@ -3,6 +3,7 @@ import { CTASection } from "@/components/shared/CTASection";
 import { OptimizedImage } from "@/components/shared/OptimizedImage";
 import { Users, Shield, FileText, Scale, Building2, Landmark } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { PageSEO, breadcrumbSchema } from "@/components/shared/PageSEO";
 
 const advogados = [{
   nome: "Rodrigo Vitalino",
@@ -51,6 +52,11 @@ export default function Equipe() {
 
   return (
     <Layout>
+      <PageSEO
+        title="Equipe"
+        description="Conheça os advogados e especialistas do escritório Rodrigo Vitalino Advogados. Profissionais experientes em direito empresarial, recuperação judicial e mais."
+        jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Equipe", url: "/equipe" }])}
+      />
       {/* Team Section - Direct Start */}
       <section className="section-padding bg-secondary">
         <div className="max-w-[1600px] mx-auto px-3 md:px-4 lg:px-6">

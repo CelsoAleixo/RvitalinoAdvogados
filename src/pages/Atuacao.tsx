@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Building2, Handshake, TrendingUp, Calculator, Briefcase, Heart, Scale, Leaf, ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { PageSEO, breadcrumbSchema } from "@/components/shared/PageSEO";
 
 // Import area images
 import direitoEmpresarialImg from "@/assets/areas/direito-empresarial-hero.jpg";
@@ -105,6 +106,11 @@ export default function Atuacao() {
 
   return (
     <Layout>
+      <PageSEO
+        title="Áreas de Atuação"
+        description="Áreas de atuação do escritório Rodrigo Vitalino Advogados: direito empresarial, recuperação judicial, tributário, trabalhista, família e sucessões, crédito de carbono e mais."
+        jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Áreas de Atuação", url: "/atuacao" }])}
+      />
       {/* Quick Contact Banner */}
       <section className="bg-accent/10 border-b border-accent/20 py-4">
         <div className="container-site">

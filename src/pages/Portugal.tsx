@@ -6,6 +6,7 @@ import { SectionHeading } from "@/components/shared/SectionHeading";
 import { CheckCircle, Euro, FileText, Building2, Phone, ArrowRight, Shield, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { PageSEO, breadcrumbSchema } from "@/components/shared/PageSEO";
 import portugalHero from "@/assets/portugal-hero.jpg";
 
 const WHATSAPP_PORTUGAL = "https://wa.me/351910385021?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20sobre%20servi%C3%A7os%20jur%C3%ADdicos%20em%20Portugal.";
@@ -90,6 +91,11 @@ export default function Portugal() {
 
   return (
     <Layout>
+      <PageSEO
+        title="Portugal – Assessoria Jurídica Internacional"
+        description="Assessoria jurídica para brasileiros em Portugal. Abertura de empresas, Golden Visa, planejamento tributário e representação legal na União Europeia."
+        jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Portugal", url: "/portugal" }])}
+      />
       <PageHero title={text.title} description={text.description} breadcrumb={[{ label: text.title }]} backgroundImage={portugalHero} />
 
       {/* Quick Contact Banner */}

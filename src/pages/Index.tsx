@@ -10,6 +10,7 @@ import { ResponsiveHeroVideo } from "@/components/shared/ResponsiveHeroVideo";
 import { PublicationCard } from "@/components/shared/PublicationCard";
 import { StorytellingIntro } from "@/components/shared/StorytellingIntro";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { PageSEO, legalServiceSchema } from "@/components/shared/PageSEO";
 import { ArrowRight, Scale, Building2, Phone, BookOpen, Briefcase } from "lucide-react";
 import institutionalVideo from "@/assets/institutional-video.mp4";
 import { getPublicationsSortedByDate } from "@/data/publications";
@@ -60,6 +61,16 @@ export default function Index() {
 
   return (
     <Layout>
+      <PageSEO
+        title="Rodrigo Vitalino Advogados | Assessoria Jurídica e Consultoria Empresarial"
+        description="Assessoria jurídica e consultoria empresarial com atuação prática, eficiente e transparente. Direito empresarial, recuperação judicial, tributário e mais. Atuação no Brasil e Portugal."
+        jsonLd={[legalServiceSchema, {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Rodrigo Vitalino Advogados",
+          url: "https://rvitalinoadvogados.com.br",
+        }]}
+      />
       {/* Hero Section with Video Background */}
       <section className="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-[90vh] flex items-center overflow-hidden">
         <ResponsiveHeroVideo

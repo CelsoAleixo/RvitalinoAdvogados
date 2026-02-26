@@ -1,11 +1,17 @@
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/shared/CTASection";
+import { PageSEO, breadcrumbSchema } from "@/components/shared/PageSEO";
 import heroImage from "@/assets/areas/direito-trabalhista-hero.jpg";
 import { Users, Gavel, FileText } from "lucide-react";
 
 export default function DireitoTrabalhista() {
   return (
     <Layout>
+      <PageSEO
+        title="Direito Trabalhista"
+        description="Assessoria trabalhista para empresas e empregadores. Defesa em reclamações, compliance trabalhista e consultoria preventiva. Rodrigo Vitalino Advogados."
+        jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Áreas de Atuação", url: "/atuacao" }, { name: "Direito Trabalhista", url: "/atuacao/direito-trabalhista" }])}
+      />
       {/* Hero Section com imagem de fundo */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
         {/* Background Image */}

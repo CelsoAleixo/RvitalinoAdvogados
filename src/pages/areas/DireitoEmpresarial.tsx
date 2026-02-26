@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/shared/CTASection";
+import { PageSEO, breadcrumbSchema } from "@/components/shared/PageSEO";
 import heroImage from "@/assets/areas/direito-empresarial-hero.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
@@ -64,6 +65,11 @@ export default function DireitoEmpresarial() {
 
   return (
     <Layout>
+      <PageSEO
+        title="Direito Empresarial"
+        description="Assessoria jurídica empresarial completa: contratos, societário, compliance, M&A e governança corporativa. Escritório Rodrigo Vitalino Advogados."
+        jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Áreas de Atuação", url: "/atuacao" }, { name: "Direito Empresarial", url: "/atuacao/direito-empresarial" }])}
+      />
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
         <div 

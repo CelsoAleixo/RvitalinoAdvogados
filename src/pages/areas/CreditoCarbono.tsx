@@ -1,9 +1,15 @@
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/shared/CTASection";
+import { PageSEO, breadcrumbSchema } from "@/components/shared/PageSEO";
 import heroImage from "@/assets/areas/credito-carbono-hero.jpg";
 import carbonIcon from "@/assets/areas/credito-carbono-icon.png";
 export default function CreditoCarbono() {
   return <Layout>
+      <PageSEO
+        title="Crédito de Carbono"
+        description="Assessoria jurídica em crédito de carbono e mercado de carbono. Regulamentação, projetos ambientais e compliance ESG. Rodrigo Vitalino Advogados."
+        jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Áreas de Atuação", url: "/atuacao" }, { name: "Crédito de Carbono", url: "/atuacao/credito-de-carbono" }])}
+      />
       {/* Hero Section com imagem de fundo */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
         {/* Background Image */}

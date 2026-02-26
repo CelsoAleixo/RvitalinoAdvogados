@@ -13,6 +13,7 @@ import {
   Publication 
 } from "@/data/publications";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { PageSEO, breadcrumbSchema } from "@/components/shared/PageSEO";
 
 export default function PublicacaoDetalhe() {
   const { slug } = useParams<{ slug: string }>();
@@ -181,6 +182,22 @@ export default function PublicacaoDetalhe() {
 
   return (
     <Layout>
+      <PageSEO
+        title={title}
+        description={excerpt.slice(0, 155)}
+        jsonLd={[
+          breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Publicações", url: "/publicacoes" }, { name: title, url: `/publicacoes/${post.slug}` }]),
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: title,
+            description: excerpt,
+            datePublished: post.date,
+            author: { "@type": "Organization", name: "Rodrigo Vitalino Advogados" },
+            publisher: { "@type": "Organization", name: "Rodrigo Vitalino Advogados", logo: { "@type": "ImageObject", url: "https://rvitalinoadvogados.com.br/og-image.png" } },
+          },
+        ]}
+      />
       {isInternational ? (
         <InternationalHero
           title={title}

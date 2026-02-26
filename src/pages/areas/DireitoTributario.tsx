@@ -1,11 +1,17 @@
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/shared/CTASection";
+import { PageSEO, breadcrumbSchema } from "@/components/shared/PageSEO";
 import heroImage from "@/assets/areas/direito-tributario-hero.jpg";
 import { Calculator, FileText, Shield } from "lucide-react";
 
 export default function DireitoTributario() {
   return (
     <Layout>
+      <PageSEO
+        title="Direito Tributário"
+        description="Planejamento tributário, defesa fiscal e consultoria em impostos para empresas. Reduza riscos e otimize sua carga tributária. Rodrigo Vitalino Advogados."
+        jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Áreas de Atuação", url: "/atuacao" }, { name: "Direito Tributário", url: "/atuacao/direito-tributario" }])}
+      />
       {/* Hero Section com imagem de fundo */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
         {/* Background Image */}

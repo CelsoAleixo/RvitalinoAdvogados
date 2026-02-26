@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/shared/CTASection";
+import { PageSEO, breadcrumbSchema } from "@/components/shared/PageSEO";
 import { Building2, Scale, Truck, Leaf, Shield, FileText } from "lucide-react";
 import heroImage from "@/assets/areas/recuperacao-judicial-hero.jpg";
 const scrollToSection = (id: string) => {
@@ -13,6 +14,11 @@ const scrollToSection = (id: string) => {
 };
 export default function RecuperacaoJudicial() {
   return <Layout>
+      <PageSEO
+        title="Recuperação Judicial"
+        description="Especialistas em recuperação judicial e extrajudicial de empresas. Reestruturação de dívidas, negociação com credores e planos de recuperação. Rodrigo Vitalino Advogados."
+        jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Áreas de Atuação", url: "/atuacao" }, { name: "Recuperação Judicial", url: "/atuacao/recuperacao-judicial" }])}
+      />
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center image-enhance-strong" style={{
