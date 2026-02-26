@@ -6,7 +6,7 @@
   <!-- Página Inicial -->
   <url>
     <loc>https://rvitalinoadvogados.com.br/</loc>
-    <lastmod>2026-01-30</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -14,88 +14,94 @@
   <!-- Páginas Principais -->
   <url>
     <loc>https://rvitalinoadvogados.com.br/escritorio</loc>
-    <lastmod>2026-01-30</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rvitalinoadvogados.com.br/equipe</loc>
-    <lastmod>2026-01-30</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rvitalinoadvogados.com.br/atuacao</loc>
-    <lastmod>2026-01-30</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rvitalinoadvogados.com.br/publicacoes</loc>
-    <lastmod>2026-01-30</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rvitalinoadvogados.com.br/portugal</loc>
-    <lastmod>2026-01-30</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rvitalinoadvogados.com.br/contato</loc>
-    <lastmod>2026-01-30</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <!-- Áreas de Atuação -->
   <url>
     <loc>https://rvitalinoadvogados.com.br/atuacao/direito-empresarial</loc>
-    <lastmod>2026-01-30</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rvitalinoadvogados.com.br/atuacao/negociacao-juridica</loc>
-    <lastmod>2026-01-30</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rvitalinoadvogados.com.br/atuacao/recuperacao-judicial</loc>
-    <lastmod>2026-01-30</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://rvitalinoadvogados.com.br/atuacao/recuperacao-judicial/agronegocio</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://rvitalinoadvogados.com.br/atuacao/direito-tributario</loc>
-    <lastmod>2026-01-30</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rvitalinoadvogados.com.br/atuacao/direito-trabalhista</loc>
-    <lastmod>2026-01-30</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rvitalinoadvogados.com.br/atuacao/familia-e-sucessoes</loc>
-    <lastmod>2026-01-30</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rvitalinoadvogados.com.br/atuacao/direito-civil</loc>
-    <lastmod>2026-01-30</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rvitalinoadvogados.com.br/atuacao/credito-de-carbono</loc>
-    <lastmod>2026-01-30</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
@@ -103,43 +109,43 @@
   <url>
     <loc>https://rvitalinoadvogados.com.br/publicacoes/recuperacao-judicial-produtor-rural-lei-14112</loc>
     <lastmod>2026-01-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rvitalinoadvogados.com.br/publicacoes/semana-internacional-direito-portugal-2026</loc>
     <lastmod>2026-01-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rvitalinoadvogados.com.br/publicacoes/obrigacoes-empresariais-2026-guia-gestores</loc>
     <lastmod>2026-01-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rvitalinoadvogados.com.br/publicacoes/portaria-mte-2025-obrigacoes-trabalhistas</loc>
     <lastmod>2026-01-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rvitalinoadvogados.com.br/publicacoes/reforma-tributaria-lc-227-2026-ibs-itcmd-itbi</loc>
     <lastmod>2026-01-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rvitalinoadvogados.com.br/publicacoes/cib-cpf-imoveis-tributacao-iptu-itbi-itcmd</loc>
     <lastmod>2026-01-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rvitalinoadvogados.com.br/publicacoes/ibs-cbs-2026-prazo-estendido-obrigacoes</loc>
     <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

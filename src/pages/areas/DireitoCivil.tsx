@@ -1,9 +1,15 @@
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/shared/CTASection";
+import { PageSEO, breadcrumbSchema } from "@/components/shared/PageSEO";
 import heroImage from "@/assets/areas/direito-civil-hero.jpg";
 import { Scale, FileText, Shield, Building2, HandshakeIcon, TrendingUp, CheckCircle2, ArrowRight } from "lucide-react";
 export default function DireitoCivil() {
   return <Layout>
+      <PageSEO
+        title="Assessoria Jurídica Empresarial"
+        description="Assessoria jurídica empresarial completa: contratos, responsabilidade civil, consultoria preventiva e contencioso cível. Rodrigo Vitalino Advogados."
+        jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Áreas de Atuação", url: "/atuacao" }, { name: "Assessoria Jurídica Empresarial", url: "/atuacao/direito-civil" }])}
+      />
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat image-enhance-strong" style={{

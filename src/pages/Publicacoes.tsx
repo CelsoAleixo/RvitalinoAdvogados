@@ -13,6 +13,7 @@ import {
   getPublicationsSortedByDate 
 } from "@/data/publications";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { PageSEO, breadcrumbSchema } from "@/components/shared/PageSEO";
 
 export default function Publicacoes() {
   const { t, language } = useLanguage();
@@ -43,6 +44,11 @@ export default function Publicacoes() {
 
   return (
     <Layout>
+      <PageSEO
+        title="Publicações"
+        description="Artigos, análises jurídicas e informações sobre direito empresarial, recuperação judicial, tributário e mais. Conteúdo produzido pelos especialistas do escritório Rodrigo Vitalino Advogados."
+        jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Publicações", url: "/publicacoes" }])}
+      />
       <div className="relative">
         <PageHero
           title={t("publications.heroTitle")}

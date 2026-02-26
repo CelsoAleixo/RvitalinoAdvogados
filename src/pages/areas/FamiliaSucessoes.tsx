@@ -1,11 +1,17 @@
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/shared/CTASection";
+import { PageSEO, breadcrumbSchema } from "@/components/shared/PageSEO";
 import heroImage from "@/assets/areas/familia-sucessoes-hero.jpg";
 import { Building2, Shield, Scale } from "lucide-react";
 
 export default function FamiliaSucessoes() {
   return (
     <Layout>
+      <PageSEO
+        title="Família e Sucessões"
+        description="Direito de família e sucessões: inventário, partilha de bens, planejamento sucessório e proteção patrimonial. Rodrigo Vitalino Advogados."
+        jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Áreas de Atuação", url: "/atuacao" }, { name: "Família e Sucessões", url: "/atuacao/familia-e-sucessoes" }])}
+      />
       {/* Hero Section com imagem de fundo */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
         {/* Background Image */}

@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, CheckCircle, Clock, Shield, MessageCircle, ArrowRight } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { PageSEO, legalServiceSchema, breadcrumbSchema } from "@/components/shared/PageSEO";
 
 const WHATSAPP_LINK = "https://wa.me/5511940449696?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20advogado.";
 
@@ -105,6 +106,7 @@ export default function Contato() {
   if (isSubmitted) {
     return (
       <Layout>
+        <PageSEO title="Contato" description="Entre em contato com o escritório Rodrigo Vitalino Advogados." />
         <PageHero title={text.title} description={text.description} breadcrumb={[{ label: text.title }]} />
         <section className="section-padding">
           <div className="container-site">
@@ -124,6 +126,14 @@ export default function Contato() {
 
   return (
     <Layout>
+      <PageSEO
+        title="Contato"
+        description="Entre em contato com o escritório Rodrigo Vitalino Advogados. Atendimento em São Paulo e Portugal. Agende uma consulta jurídica."
+        jsonLd={[
+          breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Contato", url: "/contato" }]),
+          legalServiceSchema,
+        ]}
+      />
       <PageHero title={text.title} description={text.description} breadcrumb={[{ label: text.title }]} />
 
       {/* Quick Contact Banner */}

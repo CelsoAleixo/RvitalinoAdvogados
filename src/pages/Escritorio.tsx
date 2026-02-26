@@ -6,6 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { CheckCircle, Scale, Users, Building2, Globe, Award, History, Heart } from "lucide-react";
 import escritorioHero from "@/assets/escritorio-hero.png";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { PageSEO, breadcrumbSchema } from "@/components/shared/PageSEO";
 
 const clientesInternacionais = [
   "Proview Electronics Co Ltd – Taipei / Taiwan",
@@ -51,6 +52,11 @@ export default function Escritorio() {
 
   return (
     <Layout>
+      <PageSEO
+        title="O Escritório"
+        description="Conheça o escritório Rodrigo Vitalino Advogados: história, valores, missão e atuação internacional em direito empresarial e recuperação judicial."
+        jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "O Escritório", url: "/escritorio" }])}
+      />
       {/* Premium Hero Section */}
       <section className="relative min-h-[60vh] flex items-center overflow-hidden">
         {/* Background Image */}

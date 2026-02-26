@@ -1,11 +1,17 @@
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/shared/CTASection";
+import { PageSEO, breadcrumbSchema } from "@/components/shared/PageSEO";
 import heroImage from "@/assets/areas/negociacao-juridica-hero.jpg";
 import { Scale, Handshake, Settings } from "lucide-react";
 
 export default function NegociacaoJuridica() {
   return (
     <Layout>
+      <PageSEO
+        title="Negociação Jurídica"
+        description="Negociação jurídica estratégica para resolução de conflitos empresariais. Mediação, arbitragem e acordos extrajudiciais. Rodrigo Vitalino Advogados."
+        jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Áreas de Atuação", url: "/atuacao" }, { name: "Negociação Jurídica", url: "/atuacao/negociacao-juridica" }])}
+      />
       {/* Hero Section com imagem de fundo */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
         {/* Background Image */}
