@@ -21,7 +21,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "area.familySuccession": "Família e Sucessões",
     "area.civilLaw": "Assessoria Jurídica Empresarial",
     "area.carbonCredit": "Crédito de Carbono",
-    "area.judicialRecoveryAgro": "Recuperação Judicial – Agronegócio",
+    "area.judicialRecoveryAgro": "Proteção Rural",
 
     // Home Page
     "home.hero.title": "Soluções legais confiáveis e eficazes",
@@ -207,7 +207,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "area.familySuccession": "Family & Succession",
     "area.civilLaw": "Corporate Legal Advisory",
     "area.carbonCredit": "Carbon Credit",
-    "area.judicialRecoveryAgro": "Judicial Recovery – Agribusiness",
+    "area.judicialRecoveryAgro": "Rural Protection",
 
     // Home Page
     "home.hero.title": "Reliable and effective legal solutions",
