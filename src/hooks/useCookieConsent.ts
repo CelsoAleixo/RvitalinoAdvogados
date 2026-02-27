@@ -17,8 +17,9 @@
 import { useState, useEffect, useCallback } from "react";
 
 const CONSENT_KEY = "rv-cookie-consent";
-const CONSENT_VERSION = "1.0";
-const GA4_MEASUREMENT_ID = "G-QR59DBQ4F0"; // ← Substituir pelo Measurement ID real
+const CONSENT_VERSION = "1.1"; // Bumped: now includes Google Ads
+const GA4_MEASUREMENT_ID = "G-QR59DBQ4F0";
+const GOOGLE_ADS_ID = "AW-17848981781";
 
 export interface CookiePreferences {
   necessary: boolean; // Always true
@@ -37,7 +38,6 @@ function getStoredConsent(): ConsentRecord | null {
     const stored = localStorage.getItem(CONSENT_KEY);
     if (!stored) return null;
     const parsed = JSON.parse(stored) as ConsentRecord;
-    // Invalidate old versions
     if (parsed.version !== CONSENT_VERSION) return null;
     return parsed;
   } catch {
@@ -58,9 +58,9 @@ function storeConsent(preferences: CookiePreferences): ConsentRecord {
 /**
  * Initializes gtag with consent denied by default,
  * then updates consent based on user choice.
+ * Manages both GA4 (G-QR59DBQ4F0) and Google Ads (AW-17848981781).
  */
 function initGtagWithConsent(preferences: CookiePreferences) {
-  // Ensure gtag is available
   if (typeof window === "undefined") return;
 
   const w = window as any;
@@ -78,11 +78,11 @@ function initGtagWithConsent(preferences: CookiePreferences) {
     ad_storage: "denied",
     ad_user_data: "denied",
     ad_personalization: "denied",
-    functionality_storage: "granted", // necessary cookies
+    functionality_storage: "granted",
     security_storage: "granted",
   });
 
-  // Load gtag.js script if not already loaded
+  // Load gtag.js script (once) using GA4 ID
   if (!document.getElementById("gtag-script")) {
     const script = document.createElement("script");
     script.id = "gtag-script";
@@ -97,19 +97,22 @@ function initGtagWithConsent(preferences: CookiePreferences) {
     send_page_view: preferences.analytics,
   });
 
+  // Initialize Google Ads
+  gtag("config", GOOGLE_ADS_ID, {
+    send_page_view: false,
+  });
+
   // Update consent based on user preferences
-  if (preferences.analytics || preferences.advertising) {
-    gtag("consent", "update", {
-      analytics_storage: preferences.analytics ? "granted" : "denied",
-      ad_storage: preferences.advertising ? "granted" : "denied",
-      ad_user_data: preferences.advertising ? "granted" : "denied",
-      ad_personalization: preferences.advertising ? "granted" : "denied",
-    });
-  }
+  gtag("consent", "update", {
+    analytics_storage: preferences.analytics ? "granted" : "denied",
+    ad_storage: preferences.advertising ? "granted" : "denied",
+    ad_user_data: preferences.advertising ? "granted" : "denied",
+    ad_personalization: preferences.advertising ? "granted" : "denied",
+  });
 }
 
 /**
- * Revokes consent by updating gtag to denied and clearing cookies.
+ * Revokes consent by updating gtag to denied.
  */
 function revokeGtagConsent() {
   const w = window as any;
