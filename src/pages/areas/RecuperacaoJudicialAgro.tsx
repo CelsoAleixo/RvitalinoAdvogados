@@ -27,9 +27,9 @@ export default function RecuperacaoJudicialAgro() {
   return (
     <Layout>
       <PageSEO
-        title="Recuperação Judicial no Agronegócio"
-        description="Recuperação judicial especializada para produtores rurais e empresas do agronegócio. Lei 14.112, proteção patrimonial e reestruturação de dívidas. Rodrigo Vitalino Advogados."
-        jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Áreas de Atuação", url: "/atuacao" }, { name: "Recuperação Judicial", url: "/atuacao/recuperacao-judicial" }, { name: "Agronegócio", url: "/atuacao/recuperacao-judicial/agronegocio" }])}
+        title="Proteção Rural | Recuperação Judicial no Agronegócio"
+        description="Proteção rural e recuperação judicial especializada para produtores rurais e empresas do agronegócio. Lei 14.112, proteção patrimonial e reestruturação de dívidas. Rodrigo Vitalino Advogados."
+        jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Áreas de Atuação", url: "/atuacao" }, { name: "Proteção Rural", url: "/protecao-rural" }])}
       />
       {/* ── Hero ── */}
       <section className="relative min-h-[75vh] flex items-center overflow-hidden">

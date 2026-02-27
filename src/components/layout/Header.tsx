@@ -17,7 +17,7 @@ const areasDeAtuacaoKeys = [
 { key: "area.familySuccession", href: "/atuacao/familia-e-sucessoes" },
 { key: "area.civilLaw", href: "/atuacao/direito-civil" },
 { key: "area.carbonCredit", href: "/atuacao/credito-de-carbono" },
-{ key: "area.judicialRecoveryAgro", href: "/atuacao/recuperacao-judicial/agronegocio" }];
+{ key: "area.judicialRecoveryAgro", href: "/protecao-rural" }];
 
 
 const navigationKeys = [

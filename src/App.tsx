@@ -69,7 +69,7 @@ const App = () => (
               <Route path="/atuacao/direito-civil" element={<DireitoCivil />} />
               <Route path="/atuacao/credito-de-carbono" element={<CreditoCarbono />} />
               <Route path="/atuacao/recuperacao-judicial" element={<RecuperacaoJudicial />} />
-              <Route path="/atuacao/recuperacao-judicial/agronegocio" element={<RecuperacaoJudicialAgro />} />
+              <Route path="/protecao-rural" element={<RecuperacaoJudicialAgro />} />
               <Route path="/publicacoes" element={<Publicacoes />} />
               {/* New SEO-friendly slug-based publication URLs */}
               <Route path="/publicacoes/:slug" element={<PublicacaoDetalhe />} />
