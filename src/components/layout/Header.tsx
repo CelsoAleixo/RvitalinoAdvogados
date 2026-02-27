@@ -54,7 +54,7 @@ export function Header() {
                 width="72"
                 height="72"
                 fetchPriority="high"
-                decoding="async" src="/lovable-uploads/f62fc480-5521-4fb9-b78a-a84a72a19ff7.png" />
+                decoding="async" src="/lovable-uploads/62d80b52-60b3-4242-9590-ccb5bc833cf3.png" />
 
 
             </div>
