@@ -17,7 +17,7 @@ import {
 import heroImage from "@/assets/areas/agronegocio-landing-hero.jpg";
 
 const WHATSAPP_LINK =
-  "https://wa.me/5511974083838?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20sobre%20recupera%C3%A7%C3%A3o%20judicial%20no%20agroneg%C3%B3cio.";
+  "https://wa.me/5511972196010?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20sobre%20recupera%C3%A7%C3%A3o%20judicial%20no%20agroneg%C3%B3cio.";
 
 const scrollToSection = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
