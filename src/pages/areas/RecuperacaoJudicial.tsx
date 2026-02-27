@@ -56,7 +56,7 @@ export default function RecuperacaoJudicial() {
                   <Truck className="h-4 w-4 text-accent group-hover:scale-110 transition-transform" />
                   <span>Transporte Público</span>
                 </button>
-                <a href="/atuacao/recuperacao-judicial/agronegocio" className="group flex items-center gap-2 px-4 py-2.5 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 hover:border-accent/50 rounded-full text-white text-sm font-medium transition-all duration-300 hover:scale-105">
+                <a href="/protecao-rural" className="group flex items-center gap-2 px-4 py-2.5 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 hover:border-accent/50 rounded-full text-white text-sm font-medium transition-all duration-300 hover:scale-105">
                   <Leaf className="h-4 w-4 text-accent group-hover:scale-110 transition-transform" />
                   <span>Agronegócio</span>
                 </a>
@@ -196,7 +196,7 @@ export default function RecuperacaoJudicial() {
                 <p className="text-muted-foreground leading-relaxed text-mobile-justified mb-4">
                   O sucesso de um processo de recuperação judicial no agronegócio depende fundamentalmente de uma assessoria jurídica experiente, capaz de elaborar um plano de recuperação viável, conduzir as negociações com credores e acompanhar todas as exigências legais. O escritório Rodrigo Vitalino Advogados oferece o suporte técnico necessário para que o produtor rural atravesse esse momento com segurança jurídica e perspectiva de superação.
                 </p>
-                <a href="/atuacao/recuperacao-judicial/agronegocio" className="inline-flex items-center gap-2 text-accent hover:text-accent/80 font-medium transition-colors text-sm">
+                <a href="/protecao-rural" className="inline-flex items-center gap-2 text-accent hover:text-accent/80 font-medium transition-colors text-sm">
                   Saiba mais sobre Recuperação Judicial no Agronegócio →
                 </a>
               </div>
