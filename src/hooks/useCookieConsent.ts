@@ -60,50 +60,13 @@ function storeConsent(preferences: CookiePreferences): ConsentRecord {
  * then updates consent based on user choice.
  * Manages both GA4 (G-QR59DBQ4F0) and Google Ads (AW-17848981781).
  */
-function initGtagWithConsent(preferences: CookiePreferences) {
+function updateGtagConsent(preferences: CookiePreferences) {
   if (typeof window === "undefined") return;
-
   const w = window as any;
-
-  // Initialize dataLayer
-  w.dataLayer = w.dataLayer || [];
-  function gtag(...args: any[]) {
-    w.dataLayer.push(args);
-  }
-  w.gtag = gtag;
-
-  // Default: everything denied (LGPD/GDPR compliant)
-  gtag("consent", "default", {
-    analytics_storage: "denied",
-    ad_storage: "denied",
-    ad_user_data: "denied",
-    ad_personalization: "denied",
-    functionality_storage: "granted",
-    security_storage: "granted",
-  });
-
-  // Load gtag.js script (once) using GA4 ID
-  if (!document.getElementById("gtag-script")) {
-    const script = document.createElement("script");
-    script.id = "gtag-script";
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`;
-    document.head.appendChild(script);
-  }
-
-  // Initialize GA4
-  gtag("js", new Date());
-  gtag("config", GA4_MEASUREMENT_ID, {
-    send_page_view: preferences.analytics,
-  });
-
-  // Initialize Google Ads
-  gtag("config", GOOGLE_ADS_ID, {
-    send_page_view: false,
-  });
+  if (!w.gtag) return;
 
   // Update consent based on user preferences
-  gtag("consent", "update", {
+  w.gtag("consent", "update", {
     analytics_storage: preferences.analytics ? "granted" : "denied",
     ad_storage: preferences.advertising ? "granted" : "denied",
     ad_user_data: preferences.advertising ? "granted" : "denied",
@@ -137,10 +100,8 @@ export function useCookieConsent() {
     const stored = getStoredConsent();
     if (stored) {
       setConsent(stored);
-      initGtagWithConsent(stored.preferences);
+      updateGtagConsent(stored.preferences);
     } else {
-      // Initialize with everything denied
-      initGtagWithConsent({ necessary: true, analytics: false, advertising: false });
       setShowBanner(true);
     }
     setIsLoaded(true);
@@ -152,7 +113,7 @@ export function useCookieConsent() {
     setConsent(record);
     setShowBanner(false);
     setShowPreferences(false);
-    initGtagWithConsent(prefs);
+    updateGtagConsent(prefs);
   }, []);
 
   const rejectAll = useCallback(() => {
@@ -169,7 +130,7 @@ export function useCookieConsent() {
     setConsent(record);
     setShowBanner(false);
     setShowPreferences(false);
-    initGtagWithConsent(prefs);
+    updateGtagConsent(prefs);
   }, []);
 
   const openPreferences = useCallback(() => {
