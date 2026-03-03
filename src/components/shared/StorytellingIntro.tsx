@@ -45,7 +45,7 @@ export function StorytellingIntro() {
 
         {/* Block 1: Image + Text */}
         <div className="grid md:grid-cols-2 gap-6 mb-6">
-          <AnimatedSection animation="fade-left" delay={200}>
+          <AnimatedSection animation="fade-left" delay={200} className="h-full">
             <div className="relative rounded-2xl overflow-hidden min-h-[220px] md:min-h-[280px]">
               <img src={hopeImg} alt={isEn ? "Business partnership and hope" : "Parceria empresarial e esperança"} className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" width={800} height={544} />
               <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
@@ -57,7 +57,7 @@ export function StorytellingIntro() {
             </div>
           </AnimatedSection>
 
-          <AnimatedSection animation="fade-right" delay={300}>
+          <AnimatedSection animation="fade-right" delay={300} className="h-full">
             <div className="rounded-2xl bg-secondary/30 border border-border/30 p-6 md:p-8 flex flex-col justify-center space-y-4 h-full">
               {block1.map((text, i) => (
                 <p key={i} className="text-base md:text-lg text-muted-foreground leading-relaxed text-mobile-justified">
@@ -70,7 +70,7 @@ export function StorytellingIntro() {
 
         {/* Block 2: Statement + Image */}
         <div className="grid md:grid-cols-2 gap-6 mb-6">
-          <AnimatedSection animation="fade-left" delay={200} className="order-2 md:order-1">
+          <AnimatedSection animation="fade-left" delay={200} className="order-2 md:order-1 h-full">
             <div className="rounded-2xl bg-secondary/30 border border-border/30 p-6 md:p-8 flex flex-col justify-center space-y-4 h-full">
               <p className="text-base md:text-lg text-foreground/90 font-medium leading-relaxed">
                 {block2Text}
@@ -81,7 +81,7 @@ export function StorytellingIntro() {
             </div>
           </AnimatedSection>
 
-          <AnimatedSection animation="fade-right" delay={300} className="order-1 md:order-2">
+          <AnimatedSection animation="fade-right" delay={300} className="order-1 md:order-2 h-full">
             <div className="relative rounded-2xl overflow-hidden min-h-[220px] md:min-h-[280px]">
               <img src={renewalImg} alt={isEn ? "Corporate renewal and growth" : "Renovação e crescimento empresarial"} className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" width={800} height={544} />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
