@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { PageHero } from "@/components/shared/PageHero";
+import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -110,14 +111,16 @@ export default function Contato() {
         <PageHero title={text.title} description={text.description} breadcrumb={[{ label: text.title }]} />
         <section className="section-padding">
           <div className="container-site">
-            <div className="max-w-xl mx-auto text-center">
-              <div className="bg-secondary rounded-lg p-12">
-                <CheckCircle className="h-16 w-16 text-accent mx-auto mb-6" />
-                <h2 className="font-serif text-2xl mb-4">{text.messageSent}</h2>
-                <p className="text-muted-foreground mb-8">{text.thankYou}</p>
-                <Button onClick={() => setIsSubmitted(false)}>{text.sendNew}</Button>
+            <AnimatedSection animation="scale">
+              <div className="max-w-xl mx-auto text-center">
+                <div className="bg-secondary rounded-lg p-12">
+                  <CheckCircle className="h-16 w-16 text-accent mx-auto mb-6" />
+                  <h2 className="font-serif text-2xl mb-4">{text.messageSent}</h2>
+                  <p className="text-muted-foreground mb-8">{text.thankYou}</p>
+                  <Button onClick={() => setIsSubmitted(false)}>{text.sendNew}</Button>
+                </div>
               </div>
-            </div>
+            </AnimatedSection>
           </div>
         </section>
       </Layout>
@@ -137,166 +140,172 @@ export default function Contato() {
       <PageHero title={text.title} description={text.description} breadcrumb={[{ label: text.title }]} />
 
       {/* Quick Contact Banner */}
-      <section className="bg-accent/10 border-b border-accent/20 py-4">
-        <div className="container-site">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-4">
-              <div className="relative flex items-center justify-center">
-                <span className="absolute w-2.5 h-2.5 bg-accent rounded-full animate-ping opacity-75" />
-                <span className="relative w-2.5 h-2.5 bg-accent rounded-full" />
+      <AnimatedSection animation="fade">
+        <section className="bg-accent/10 border-b border-accent/20 py-4">
+          <div className="container-site">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-4">
+                <div className="relative flex items-center justify-center">
+                  <span className="absolute w-2.5 h-2.5 bg-accent rounded-full animate-ping opacity-75" />
+                  <span className="relative w-2.5 h-2.5 bg-accent rounded-full" />
+                </div>
+                <span className="text-sm font-medium">{text.availableNow}</span>
+                <div className="hidden md:flex items-center gap-2 text-xs text-muted-foreground">
+                  <Clock className="w-3 h-3" />
+                  <span>{text.responseInMinutes}</span>
+                </div>
               </div>
-              <span className="text-sm font-medium">{text.availableNow}</span>
-              <div className="hidden md:flex items-center gap-2 text-xs text-muted-foreground">
-                <Clock className="w-3 h-3" />
-                <span>{text.responseInMinutes}</span>
-              </div>
+              <Button asChild size="sm" className="group">
+                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  <MessageCircle className="w-4 h-4" />
+                  {text.immediateResponse}
+                  <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </Button>
             </div>
-            <Button asChild size="sm" className="group">
-              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                <MessageCircle className="w-4 h-4" />
-                {text.immediateResponse}
-                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </Button>
           </div>
-        </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
       <section className="section-padding">
         <div className="container-site">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Contact Form */}
-            <div>
-              <h2 className="font-serif text-2xl mb-6">{text.sendMessage}</h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-4">
+            <AnimatedSection animation="fade-left">
+              <div>
+                <h2 className="font-serif text-2xl mb-6">{text.sendMessage}</h2>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="name">{text.name} *</Label>
+                      <Input id="name" name="name" required placeholder={text.namePlaceholder} />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="phone">{text.phone}</Label>
+                      <Input id="phone" name="phone" type="tel" placeholder="(11) 99999-9999" />
+                    </div>
+                  </div>
+
                   <div className="space-y-2">
-                    <Label htmlFor="name">{text.name} *</Label>
-                    <Input id="name" name="name" required placeholder={text.namePlaceholder} />
+                    <Label htmlFor="email">{text.email} *</Label>
+                    <Input id="email" name="email" type="email" required placeholder="seu@email.com" />
                   </div>
+
                   <div className="space-y-2">
-                    <Label htmlFor="phone">{text.phone}</Label>
-                    <Input id="phone" name="phone" type="tel" placeholder="(11) 99999-9999" />
+                    <Label htmlFor="message">{text.message} *</Label>
+                    <Textarea id="message" name="message" required placeholder={text.messagePlaceholder} rows={6} />
                   </div>
-                </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="email">{text.email} *</Label>
-                  <Input id="email" name="email" type="email" required placeholder="seu@email.com" />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="message">{text.message} *</Label>
-                  <Textarea id="message" name="message" required placeholder={text.messagePlaceholder} rows={6} />
-                </div>
-
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Button type="submit" size="lg" disabled={isLoading} className="flex-1">
-                    {isLoading ? text.submitting : text.submit}
-                  </Button>
-                </div>
-
-                <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-border">
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Shield className="w-4 h-4 text-accent" />
-                    <span>{text.confidentiality}</span>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Button type="submit" size="lg" disabled={isLoading} className="flex-1">
+                      {isLoading ? text.submitting : text.submit}
+                    </Button>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Clock className="w-4 h-4 text-accent" />
-                    <span>{text.responseTime}</span>
+
+                  <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-border">
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <Shield className="w-4 h-4 text-accent" />
+                      <span>{text.confidentiality}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <Clock className="w-4 h-4 text-accent" />
+                      <span>{text.responseTime}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <CheckCircle className="w-4 h-4 text-accent" />
+                      <span>{text.oabRegular}</span>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <CheckCircle className="w-4 h-4 text-accent" />
-                    <span>{text.oabRegular}</span>
-                  </div>
-                </div>
-              </form>
-            </div>
+                </form>
+              </div>
+            </AnimatedSection>
 
             {/* Contact Info */}
-            <div className="lg:pl-8">
-              <h2 className="font-serif text-2xl mb-6">{text.contactInfo}</h2>
+            <AnimatedSection animation="fade-right" delay={150}>
+              <div className="lg:pl-8">
+                <h2 className="font-serif text-2xl mb-6">{text.contactInfo}</h2>
 
-              <div className="space-y-8">
-                <div className="flex items-start gap-4">
-                  <Mail className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-medium mb-1">{text.emailLabel}</h4>
-                    <a href="mailto:contato@rvitalinoadvogados.com.br" className="text-muted-foreground hover:text-foreground transition-colors">
-                      contato@rvitalinoadvogados.com.br
-                    </a>
+                <div className="space-y-8">
+                  <div className="flex items-start gap-4">
+                    <Mail className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-medium mb-1">{text.emailLabel}</h4>
+                      <a href="mailto:contato@rvitalinoadvogados.com.br" className="text-muted-foreground hover:text-foreground transition-colors">
+                        contato@rvitalinoadvogados.com.br
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <Phone className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-medium mb-1">{text.phoneLabel}</h4>
+                      <a href="tel:+551156100812" className="text-muted-foreground hover:text-foreground transition-colors">
+                        +55 (11) 5610-0812
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <MapPin className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-medium mb-1">{text.addressBrazil}</h4>
+                      <p className="text-muted-foreground">
+                        Rua Manoel de Oliveira, 269, Sala 412, Torre 1,<br />
+                        Patteo Mogilar-Sky Mall,<br />
+                        Mogi das Cruzes-SP, CEP: 08773-130
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <MapPin className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-medium mb-1">{text.addressPortugal}</h4>
+                      <p className="text-muted-foreground font-medium text-left">
+                        Avenida da Liberdade, nº 706 – 1º andar, lado esquerdo<br />
+                        Código Postal 4710-249, Braga – Distrito de Braga<br />
+                        Portugal
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <Phone className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-medium mb-1">{text.phonePortugal}</h4>
+                      <a
+                        href="https://wa.me/351910385021"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-foreground transition-colors"
+                      >
+                        +351 910 385 021
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <Mail className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-medium mb-1">{text.emailPortugal}</h4>
+                      <a href="mailto:arthur@rvitalinoadvogados.com.br" className="text-muted-foreground hover:text-foreground transition-colors">
+                        arthur@rvitalinoadvogados.com.br
+                      </a>
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <Phone className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-medium mb-1">{text.phoneLabel}</h4>
-                    <a href="tel:+551156100812" className="text-muted-foreground hover:text-foreground transition-colors">
-                      +55 (11) 5610-0812
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <MapPin className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-medium mb-1">{text.addressBrazil}</h4>
-                    <p className="text-muted-foreground">
-                      Rua Manoel de Oliveira, 269, Sala 412, Torre 1,<br />
-                      Patteo Mogilar-Sky Mall,<br />
-                      Mogi das Cruzes-SP, CEP: 08773-130
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <MapPin className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-medium mb-1">{text.addressPortugal}</h4>
-                    <p className="text-muted-foreground font-medium text-left">
-                      Avenida da Liberdade, nº 706 – 1º andar, lado esquerdo<br />
-                      Código Postal 4710-249, Braga – Distrito de Braga<br />
-                      Portugal
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <Phone className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-medium mb-1">{text.phonePortugal}</h4>
-                    <a
-                      href="https://wa.me/351910385021"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      +351 910 385 021
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <Mail className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-medium mb-1">{text.emailPortugal}</h4>
-                    <a href="mailto:arthur@rvitalinoadvogados.com.br" className="text-muted-foreground hover:text-foreground transition-colors">
-                      arthur@rvitalinoadvogados.com.br
-                    </a>
-                  </div>
+                <div className="mt-10 pt-8 border-t border-border">
+                  <h4 className="font-medium mb-3">{text.officeHours}</h4>
+                  <p className="text-muted-foreground">
+                    {text.hours}
+                    <br />
+                    {text.saturday}
+                  </p>
                 </div>
               </div>
-
-              <div className="mt-10 pt-8 border-t border-border">
-                <h4 className="font-medium mb-3">{text.officeHours}</h4>
-                <p className="text-muted-foreground">
-                  {text.hours}
-                  <br />
-                  {text.saturday}
-                </p>
-              </div>
-            </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>

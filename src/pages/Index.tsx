@@ -9,6 +9,7 @@ import { ScrollDownButton } from "@/components/shared/ScrollDownButton";
 import { ResponsiveHeroVideo } from "@/components/shared/ResponsiveHeroVideo";
 import { PublicationCard } from "@/components/shared/PublicationCard";
 import { StorytellingIntro } from "@/components/shared/StorytellingIntro";
+import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { PageSEO, legalServiceSchema } from "@/components/shared/PageSEO";
 import { ArrowRight, Scale, Building2, Phone, BookOpen, Briefcase } from "lucide-react";
@@ -80,7 +81,6 @@ export default function Index() {
           playbackRate={1.0}
           priority />
 
-
         <div className="container-site relative z-20 py-12 sm:py-16 md:py-24 rounded-none border-0">
           <div className="max-w-2xl">
             <h1 className="text-balance animate-fade-in text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-overlay-strong">
@@ -130,7 +130,9 @@ export default function Index() {
       </section>
 
       {/* Trust Indicators Bar */}
-      <TrustIndicators variant="light" />
+      <AnimatedSection animation="fade-up">
+        <TrustIndicators variant="light" />
+      </AnimatedSection>
 
       {/* Storytelling Intro */}
       <section id="storytelling-section">
@@ -140,19 +142,21 @@ export default function Index() {
       {/* Areas of Practice Section */}
       <section className="section-padding">
         <div className="container-site">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="p-2 rounded-lg bg-accent/10">
-              <Briefcase className="h-6 w-6 text-accent" />
+          <AnimatedSection animation="fade-up">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="p-2 rounded-lg bg-accent/10">
+                <Briefcase className="h-6 w-6 text-accent" />
+              </div>
+              <SectionHeading title={t("nav.areas")} />
             </div>
-            <SectionHeading title={t("nav.areas")} />
-          </div>
+          </AnimatedSection>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             {areas.map((area, index) =>
-            <Link
-              key={index}
-              to={area.href}
-              className="group relative rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl bg-card min-h-[280px]">
+            <AnimatedSection key={index} animation="scale" delay={index * 100}>
+              <Link
+                to={area.href}
+                className="group relative rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl bg-card min-h-[280px] block">
 
                 <div className="absolute inset-0">
                   <img
@@ -194,51 +198,62 @@ export default function Index() {
                   </div>
                 </div>
               </Link>
+            </AnimatedSection>
             )}
           </div>
 
-          <div className="text-center">
-            <Button asChild variant="outline" className="group">
-              <Link to="/atuacao" className="flex items-center gap-2">
-                <Briefcase className="h-4 w-4" />
-                {t("home.viewAllAreas")}
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
-          </div>
+          <AnimatedSection animation="fade-up" delay={200}>
+            <div className="text-center">
+              <Button asChild variant="outline" className="group">
+                <Link to="/atuacao" className="flex items-center gap-2">
+                  <Briefcase className="h-4 w-4" />
+                  {t("home.viewAllAreas")}
+                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </Button>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Publications Section */}
       <section id="publicacoes-section" className="section-padding bg-secondary/30">
         <div className="container-site">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="p-2 rounded-lg bg-accent/10">
-              <BookOpen className="h-6 w-6 text-accent" />
+          <AnimatedSection animation="fade-up">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="p-2 rounded-lg bg-accent/10">
+                <BookOpen className="h-6 w-6 text-accent" />
+              </div>
+              <SectionHeading title={t("home.publications")} />
             </div>
-            <SectionHeading title={t("home.publications")} />
-          </div>
+          </AnimatedSection>
 
           <div className="grid md:grid-cols-3 gap-6 mb-8">
-            {recentPublications.map((pub) =>
-            <PublicationCard key={pub.id} publication={pub} variant="compact" />
+            {recentPublications.map((pub, index) =>
+            <AnimatedSection key={pub.id} animation="fade-up" delay={index * 100}>
+              <PublicationCard publication={pub} variant="compact" />
+            </AnimatedSection>
             )}
           </div>
 
-          <div className="text-center">
-            <Button asChild variant="outline" className="group">
-              <Link to="/publicacoes" className="flex items-center gap-2">
-                <BookOpen className="h-4 w-4" />
-                {t("home.viewAllPublications")}
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
-          </div>
+          <AnimatedSection animation="fade-up" delay={300}>
+            <div className="text-center">
+              <Button asChild variant="outline" className="group">
+                <Link to="/publicacoes" className="flex items-center gap-2">
+                  <BookOpen className="h-4 w-4" />
+                  {t("home.viewAllPublications")}
+                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </Button>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* CTA */}
-      <CTASection />
+      <AnimatedSection animation="fade-up">
+        <CTASection />
+      </AnimatedSection>
     </Layout>);
 
 }
