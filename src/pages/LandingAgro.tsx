@@ -58,7 +58,7 @@ export default function LandingAgro() {
            HERO — Side-by-side text + image
          ═══════════════════════════════════════════════ */}
       <section className="relative min-h-[90vh] md:min-h-screen flex items-center overflow-hidden">
-        {/* Full-screen background video with slow rotation */}
+        {/* Full-screen background video with subtle slow zoom */}
         <div className="absolute inset-0 z-0">
           <video
             autoPlay
@@ -67,7 +67,7 @@ export default function LandingAgro() {
             playsInline
             preload="auto"
             poster={agroHeroAviao}
-            className="w-full h-full object-cover scale-125 animate-[heroSpin_120s_linear_infinite]"
+            className="w-full h-full object-cover animate-[heroZoom_30s_ease-in-out_infinite_alternate]"
             aria-hidden="true"
           >
             <source src={heroVideoV3} type="video/mp4" />
