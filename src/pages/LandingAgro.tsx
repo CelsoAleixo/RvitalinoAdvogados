@@ -1,6 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageSEO, breadcrumbSchema } from "@/components/shared/PageSEO";
-
+import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import {
   Leaf,
@@ -53,8 +53,8 @@ export default function LandingAgro() {
       
 
       {/* ═══════════════════════════════════════════════
-           HERO — Full-bleed video + overlay card
-        ═══════════════════════════════════════════════ */}
+           HERO — Side-by-side text + image
+         ═══════════════════════════════════════════════ */}
       <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-center overflow-hidden bg-[#0d1f0d]">
         <div className="container-site relative z-10 py-16 md:py-28">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -67,30 +67,31 @@ export default function LandingAgro() {
               </h1>
 
               <p
-                className="text-lg md:text-xl text-white/80 mb-8 animate-slide-up max-w-xl leading-relaxed"
+                className="text-lg md:text-xl text-white/80 mb-8 max-w-xl leading-relaxed opacity-0 animate-[fade-in_0.6s_ease-out_0.2s_forwards]"
                 style={{ textShadow: "1px 1px 4px rgba(0,0,0,0.4)" }}>
                 Atuamos com estratégia, sigilo e proximidade para proteger o patrimônio, reestruturar dívidas e garantir a continuidade do seu negócio rural.
               </p>
 
-              <Button
-                asChild
-                size="lg"
-                className="group bg-accent hover:bg-accent/90 text-accent-foreground font-semibold shadow-xl w-full sm:w-auto text-base animate-slide-up"
-                style={{ animationDelay: "0.15s" }}>
-                <a
-                  href={WHATSAPP_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2">
-                  <MessageCircle className="h-5 w-5" />
-                  Converse com Nossa Equipe
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </a>
-              </Button>
+              <div className="opacity-0 animate-[fade-in_0.6s_ease-out_0.4s_forwards]">
+                <Button
+                  asChild
+                  size="lg"
+                  className="group bg-accent hover:bg-accent/90 text-accent-foreground font-semibold shadow-xl w-full sm:w-auto text-base">
+                  <a
+                    href={WHATSAPP_LINK}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2">
+                    <MessageCircle className="h-5 w-5" />
+                    Converse com Nossa Equipe
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </a>
+                </Button>
+              </div>
             </div>
 
-            {/* Hero image - Air Tractor AT-802 */}
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 aspect-[16/10] max-h-[600px] mx-auto lg:mx-0 w-full max-w-[640px]">
+            {/* Hero image - Air Tractor AT-802 with entrance animation */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 aspect-[16/10] max-h-[600px] mx-auto lg:mx-0 w-full max-w-[640px] opacity-0 animate-[fade-in_0.8s_ease-out_0.3s_forwards] hover:scale-[1.02] transition-transform duration-500">
               <img
                 src={agroHeroAviao}
                 alt="Air Tractor AT-802 pulverizando lavoura"
@@ -108,11 +109,11 @@ export default function LandingAgro() {
 
       {/* ═══════════════════════════════════════════════
            PAIN POINTS — "Como podemos lhe ajudar?"
-        ═══════════════════════════════════════════════ */}
+         ═══════════════════════════════════════════════ */}
       <section className="section-padding">
         <div className="container-site">
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
-            <div>
+            <AnimatedSection animation="fade-left">
               <h2 className="font-serif text-3xl md:text-4xl mb-6">
                 Como podemos lhe ajudar hoje?
               </h2>
@@ -130,15 +131,17 @@ export default function LandingAgro() {
                 No agronegócio, os desafios são constantes — mas você{" "}
                 <strong className="text-accent">não precisa enfrentá-los sozinho</strong>.
               </p>
-            </div>
-            <div className="rounded-2xl overflow-hidden shadow-xl">
-              <img
-                src={agroServiceRural}
-                alt="Vista aérea de lavoura com colheitadeiras trabalhando ao pôr do sol"
-                className="w-full h-[320px] object-cover"
-                loading="lazy"
-              />
-            </div>
+            </AnimatedSection>
+            <AnimatedSection animation="fade-right" delay={150}>
+              <div className="rounded-2xl overflow-hidden shadow-xl">
+                <img
+                  src={agroServiceRural}
+                  alt="Vista aérea de lavoura com colheitadeiras trabalhando ao pôr do sol"
+                  className="w-full h-[320px] object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </AnimatedSection>
           </div>
 
           {/* Pain cards */}
@@ -173,19 +176,21 @@ export default function LandingAgro() {
               text: "Teve bens penhorados ou está sofrendo execução por custeio de safra, financiamento de maquinário ou dívidas agrícolas."
             }].
             map(({ icon: Icon, text }, i) =>
-            <div
+            <AnimatedSection
               key={i}
-              className="flex items-start gap-4 p-6 rounded-2xl bg-card border border-border/60 hover:border-accent/40 transition-colors duration-300">
+              animation="fade-up"
+              delay={i * 80}
+              className="flex items-start gap-4 p-6 rounded-2xl bg-card border border-border/60 hover:border-accent/40 hover:-translate-y-1 transition-all duration-300">
               
                 <div className="p-2.5 rounded-xl bg-accent/10 flex-shrink-0">
                   <Icon className="h-6 w-6 text-accent" />
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed no-justify">{text}</p>
-              </div>
+              </AnimatedSection>
             )}
           </div>
 
-          <div className="text-center mt-10">
+          <AnimatedSection animation="fade-up" delay={200} className="text-center mt-10">
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto mb-8">
               Nossa assessoria jurídica especializada busca minimizar esses riscos,{" "}
               <strong className="text-foreground">otimizando seu negócio e protegendo seu patrimônio rural</strong>. Trabalhamos para criar um ambiente jurídico favorável para que sua produção prospere.
@@ -206,18 +211,20 @@ export default function LandingAgro() {
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════
            SERVICES GRID — with images
-        ═══════════════════════════════════════════════ */}
+         ═══════════════════════════════════════════════ */}
       <section className="section-padding bg-secondary/30">
         <div className="container-site">
-          <h2 className="font-serif text-3xl md:text-4xl text-center mb-12">
-            Nossos Serviços
-          </h2>
+          <AnimatedSection animation="fade-up">
+            <h2 className="font-serif text-3xl md:text-4xl text-center mb-12">
+              Nossos Serviços
+            </h2>
+          </AnimatedSection>
 
           {/* Featured services with images */}
           <div className="grid md:grid-cols-2 gap-8 mb-8">
@@ -254,9 +261,11 @@ export default function LandingAgro() {
                 service: "posse e propriedade rural",
                 alt: "Vista aérea de propriedade rural com colheitadeiras"
               },
-            ].map(({ image, icon: Icon, title, desc, service, alt }) => (
-              <div
+            ].map(({ image, icon: Icon, title, desc, service, alt }, i) => (
+              <AnimatedSection
                 key={title}
+                animation="scale"
+                delay={i * 100}
                 className="group rounded-2xl overflow-hidden bg-card border border-border/60 hover:border-accent/40 transition-all duration-300">
                 <div className="h-48 overflow-hidden">
                   <img
@@ -285,7 +294,7 @@ export default function LandingAgro() {
                     <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                   </a>
                 </div>
-              </div>
+              </AnimatedSection>
             ))}
           </div>
 
@@ -316,9 +325,11 @@ export default function LandingAgro() {
               desc: "Renegociação estratégica de passivos com instituições financeiras e fornecedores do setor.",
               service: "negociação de dívidas agrícolas"
             }].
-            map(({ icon: Icon, title, desc, service }) =>
-            <div
+            map(({ icon: Icon, title, desc, service }, i) =>
+            <AnimatedSection
               key={title}
+              animation="fade-up"
+              delay={i * 80}
               className="group flex flex-col p-6 rounded-2xl bg-card border border-border/60 hover:border-accent/40 hover:-translate-y-1 transition-all duration-300">
               
                 <div className="p-3 rounded-xl bg-accent/10 w-fit mb-4">
@@ -337,7 +348,7 @@ export default function LandingAgro() {
                   Saiba Mais
                   <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                 </a>
-              </div>
+              </AnimatedSection>
             )}
           </div>
         </div>
@@ -345,15 +356,17 @@ export default function LandingAgro() {
 
       {/* ═══════════════════════════════════════════════
            PROCESS — 3 Steps
-        ═══════════════════════════════════════════════ */}
+         ═══════════════════════════════════════════════ */}
       <section className="section-padding">
         <div className="container-site">
-          <h2 className="font-serif text-3xl md:text-4xl text-center mb-4">
-            Como Funciona Nosso Trabalho
-          </h2>
-          <p className="text-muted-foreground text-lg text-center max-w-2xl mx-auto mb-12 no-justify">
-            Um processo claro, direto e pensado para quem não tem tempo a perder.
-          </p>
+          <AnimatedSection animation="fade-up">
+            <h2 className="font-serif text-3xl md:text-4xl text-center mb-4">
+              Como Funciona Nosso Trabalho
+            </h2>
+            <p className="text-muted-foreground text-lg text-center max-w-2xl mx-auto mb-12 no-justify">
+              Um processo claro, direto e pensado para quem não tem tempo a perder.
+            </p>
+          </AnimatedSection>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
@@ -375,10 +388,12 @@ export default function LandingAgro() {
               title: "Execução e Defesa",
               desc: "Com todas as informações mapeadas, aplicamos nossa experiência para proteger seus interesses e defender seus direitos com máxima eficiência."
             }].
-            map(({ step, icon: Icon, title, desc }) =>
-            <div
+            map(({ step, icon: Icon, title, desc }, i) =>
+            <AnimatedSection
               key={step}
-              className="relative flex flex-col items-center text-center p-8 rounded-2xl bg-card border border-border/60">
+              animation="fade-up"
+              delay={i * 150}
+              className="relative flex flex-col items-center text-center p-8 rounded-2xl bg-card border border-border/60 hover:border-accent/30 hover:shadow-lg transition-all duration-300">
               
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground text-xs font-bold px-4 py-1.5 rounded-full">
                   Passo {step}
@@ -388,11 +403,11 @@ export default function LandingAgro() {
                 </div>
                 <h3 className="font-serif text-xl text-foreground mb-3">{title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed no-justify">{desc}</p>
-              </div>
+              </AnimatedSection>
             )}
           </div>
 
-          <div className="text-center mt-10">
+          <AnimatedSection animation="fade-up" delay={300} className="text-center mt-10">
             <Button
               asChild
               size="lg"
@@ -409,32 +424,34 @@ export default function LandingAgro() {
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════
            AUTHORITY / EXPERTISE
-        ═══════════════════════════════════════════════ */}
+         ═══════════════════════════════════════════════ */}
       <section className="section-padding bg-secondary/30">
         <div className="container-site">
           <div className="max-w-4xl mx-auto">
-            <h2 className="font-serif text-3xl md:text-4xl text-center mb-6">
-              Experiência que faz a diferença
-            </h2>
+            <AnimatedSection animation="fade-up">
+              <h2 className="font-serif text-3xl md:text-4xl text-center mb-6">
+                Experiência que faz a diferença
+              </h2>
 
-            <p className="text-muted-foreground text-lg leading-relaxed text-center mb-4">
-              Do campo aos tribunais, nossa expertise jurídica abrange todo o ciclo do agronegócio.{" "}
-              <strong className="text-foreground">
-                Há anos atuamos em questões jurídicas complexas que desafiam empresários e produtores rurais
-              </strong>{" "}
-              — de execuções e cobranças a planejamentos sucessórios e tributários.
-            </p>
+              <p className="text-muted-foreground text-lg leading-relaxed text-center mb-4">
+                Do campo aos tribunais, nossa expertise jurídica abrange todo o ciclo do agronegócio.{" "}
+                <strong className="text-foreground">
+                  Há anos atuamos em questões jurídicas complexas que desafiam empresários e produtores rurais
+                </strong>{" "}
+                — de execuções e cobranças a planejamentos sucessórios e tributários.
+              </p>
 
-            <p className="text-muted-foreground text-lg leading-relaxed text-center mb-10">
-              Navegamos pelo direito bancário para proteger e renegociar dívidas agrícolas. No campo das sucessões, conduzimos inventários e estruturamos holdings rurais. Em cada aspecto do seu empreendimento,{" "}
-              <strong className="text-accent">estamos prontos para proteger seus interesses e impulsionar seu sucesso</strong>.
-            </p>
+              <p className="text-muted-foreground text-lg leading-relaxed text-center mb-10">
+                Navegamos pelo direito bancário para proteger e renegociar dívidas agrícolas. No campo das sucessões, conduzimos inventários e estruturamos holdings rurais. Em cada aspecto do seu empreendimento,{" "}
+                <strong className="text-accent">estamos prontos para proteger seus interesses e impulsionar seu sucesso</strong>.
+              </p>
+            </AnimatedSection>
 
             {/* Trust indicators */}
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -443,14 +460,16 @@ export default function LandingAgro() {
               { icon: Shield, label: "Sigilo Absoluto" },
               { icon: TreePine, label: "Foco no Agro" },
               { icon: Zap, label: "Agilidade Estratégica" }].
-              map(({ icon: Icon, label }) =>
-              <div
+              map(({ icon: Icon, label }, i) =>
+              <AnimatedSection
                 key={label}
-                className="flex items-center gap-3 p-4 rounded-xl bg-card border border-border/60">
+                animation="scale"
+                delay={i * 100}
+                className="flex items-center gap-3 p-4 rounded-xl bg-card border border-border/60 hover:border-accent/30 transition-colors duration-300">
                 
                   <Icon className="h-6 w-6 text-accent flex-shrink-0" />
                   <span className="text-sm font-medium text-foreground">{label}</span>
-                </div>
+                </AnimatedSection>
               )}
             </div>
           </div>
@@ -459,15 +478,17 @@ export default function LandingAgro() {
 
       {/* ═══════════════════════════════════════════════
            BENEFITS — "Transforme desafios em oportunidades"
-        ═══════════════════════════════════════════════ */}
+         ═══════════════════════════════════════════════ */}
       <section className="section-padding">
         <div className="container-site">
-          <h2 className="font-serif text-3xl md:text-4xl text-center mb-4">
-            Transforme desafios em oportunidades
-          </h2>
-          <p className="text-muted-foreground text-lg text-center max-w-2xl mx-auto mb-12 no-justify">
-            Com a Rodrigo Vitalino Advogados ao seu lado, você transforma preocupações em terreno fértil para o crescimento.
-          </p>
+          <AnimatedSection animation="fade-up">
+            <h2 className="font-serif text-3xl md:text-4xl text-center mb-4">
+              Transforme desafios em oportunidades
+            </h2>
+            <p className="text-muted-foreground text-lg text-center max-w-2xl mx-auto mb-12 no-justify">
+              Com a Rodrigo Vitalino Advogados ao seu lado, você transforma preocupações em terreno fértil para o crescimento.
+            </p>
+          </AnimatedSection>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {[
@@ -491,87 +512,93 @@ export default function LandingAgro() {
               title: "Resultados Concretos",
               desc: "Maximize seus resultados enquanto minimiza riscos com estratégia jurídica personalizada."
             }].
-            map(({ icon: Icon, title, desc }) =>
-            <div
+            map(({ icon: Icon, title, desc }, i) =>
+            <AnimatedSection
               key={title}
-              className="text-center p-6 rounded-2xl bg-card border border-border/60">
+              animation="fade-up"
+              delay={i * 100}
+              className="text-center p-6 rounded-2xl bg-card border border-border/60 hover:border-accent/30 hover:-translate-y-1 transition-all duration-300">
               
                 <div className="inline-flex p-3 rounded-xl bg-accent/10 mb-4">
                   <Icon className="h-7 w-7 text-accent" />
                 </div>
                 <h3 className="font-serif text-lg text-foreground mb-2">{title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed no-justify">{desc}</p>
-              </div>
+              </AnimatedSection>
             )}
           </div>
 
-          <div className="max-w-2xl mx-auto mt-12 p-8 rounded-2xl bg-accent/10 border border-accent/20 text-center">
+          <AnimatedSection animation="scale" delay={200} className="max-w-2xl mx-auto mt-12 p-8 rounded-2xl bg-accent/10 border border-accent/20 text-center">
             <p className="text-foreground/90 text-lg italic font-serif mb-2">
               "Não deixe que desafios legais limitem o potencial do seu negócio."
             </p>
             <p className="text-muted-foreground text-sm">
               Trabalhe com tranquilidade sabendo que seus interesses estão nas mãos de quem realmente entende do assunto.
             </p>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════
            FINAL CTA
-        ═══════════════════════════════════════════════ */}
+         ═══════════════════════════════════════════════ */}
       <section className="py-16 md:py-24 bg-[#d6e7ff]/[0.36]">
         <div className="container-site text-center">
-          <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl text-foreground mb-3">
-            Pronto para proteger seu patrimônio rural?
-          </h2>
-          <p className="text-foreground/70 text-lg max-w-2xl mx-auto mb-8 no-justify">
-            Converse com um dos nossos especialistas e descubra como podemos ajudar seu negócio a prosperar com segurança jurídica.
-          </p>
+          <AnimatedSection animation="fade-up">
+            <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl text-foreground mb-3">
+              Pronto para proteger seu patrimônio rural?
+            </h2>
+            <p className="text-foreground/70 text-lg max-w-2xl mx-auto mb-8 no-justify">
+              Converse com um dos nossos especialistas e descubra como podemos ajudar seu negócio a prosperar com segurança jurídica.
+            </p>
+          </AnimatedSection>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
-            <Button
-              asChild
-              size="lg"
-              className="group bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-3 h-auto text-base shadow-xl w-full sm:w-auto">
-              
-              <a
-                href={WHATSAPP_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2">
+          <AnimatedSection animation="fade-up" delay={150}>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+              <Button
+                asChild
+                size="lg"
+                className="group bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-3 h-auto text-base shadow-xl w-full sm:w-auto">
                 
-                <MessageCircle className="h-5 w-5" />
-                Falar com Especialista pelo WhatsApp
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-foreground/20 text-foreground hover:bg-foreground/10 px-8 py-3 h-auto text-base w-full sm:w-auto">
-              
-              <a href="tel:+5511940449696" className="flex items-center justify-center gap-2">
-                <Phone className="h-5 w-5" />
-                (11) 94044-9696
-              </a>
-            </Button>
-          </div>
+                <a
+                  href={WHATSAPP_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2">
+                  
+                  <MessageCircle className="h-5 w-5" />
+                  Falar com Especialista pelo WhatsApp
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </a>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-foreground/20 text-foreground hover:bg-foreground/10 px-8 py-3 h-auto text-base w-full sm:w-auto">
+                
+                <a href="tel:+5511940449696" className="flex items-center justify-center gap-2">
+                  <Phone className="h-5 w-5" />
+                  (11) 94044-9696
+                </a>
+              </Button>
+            </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm text-foreground/50">
-            <div className="flex items-center gap-2">
-              <Shield className="h-4 w-4" />
-              <span>100% Sigiloso</span>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm text-foreground/50">
+              <div className="flex items-center gap-2">
+                <Shield className="h-4 w-4" />
+                <span>100% Sigiloso</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="h-4 w-4" />
+                <span>Resposta em até 24h</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="h-4 w-4 text-accent" />
+                <span>Atendimento em todo o Brasil</span>
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <Clock className="h-4 w-4" />
-              <span>Resposta em até 24h</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-accent" />
-              <span>Atendimento em todo o Brasil</span>
-            </div>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
     </Layout>);
