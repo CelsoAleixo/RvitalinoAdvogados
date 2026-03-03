@@ -55,8 +55,8 @@ export default function LandingAgro() {
       
 
       {/* ═══════════════════════════════════════════════
-           HERO — Side-by-side text + image
-         ═══════════════════════════════════════════════ */}
+            HERO — Side-by-side text + image
+          ═══════════════════════════════════════════════ */}
       <section className="relative min-h-[90vh] md:min-h-screen flex items-center overflow-hidden">
         {/* Full-screen background video with subtle slow zoom */}
         <div className="absolute inset-0 z-0">
@@ -68,8 +68,8 @@ export default function LandingAgro() {
             preload="auto"
             poster={agroHeroAviao}
             className="w-full h-full object-cover animate-[heroPan_25s_ease-in-out_infinite]"
-            aria-hidden="true"
-          >
+            aria-hidden="true">
+            
             <source src={heroVideoV3} type="video/mp4" />
           </video>
           {/* Dark overlay for readability */}
@@ -79,11 +79,11 @@ export default function LandingAgro() {
         {/* Content over video */}
         <div className="container-site relative z-10 py-20 md:py-32 flex flex-col items-center text-center">
           {/* Logo */}
-          <img
-            src={logoHero}
-            alt="Rodrigo Vitalino Advogados"
-            className="h-20 md:h-28 mb-6 opacity-0 animate-[fade-in_0.8s_ease-out_forwards] drop-shadow-lg"
-          />
+          
+
+
+
+          
 
           {/* Main heading */}
           <h1
@@ -101,7 +101,7 @@ export default function LandingAgro() {
           {/* Semi-transparent block with subtitle */}
           <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl px-8 py-6 md:px-12 md:py-8 max-w-3xl mb-10 opacity-0 animate-[fade-in_0.6s_ease-out_0.35s_forwards]">
             <p className="font-serif text-xl md:text-2xl lg:text-3xl text-accent/90 leading-snug mb-3"
-               style={{ textShadow: "1px 2px 8px rgba(0,0,0,0.4)" }}>
+            style={{ textShadow: "1px 2px 8px rgba(0,0,0,0.4)" }}>
               Assessoria jurídica de quem entende a realidade do campo.
             </p>
             <p className="text-white/70 text-sm md:text-base">
@@ -131,8 +131,8 @@ export default function LandingAgro() {
       </section>
 
       {/* ═══════════════════════════════════════════════
-           PAIN POINTS — "Como podemos lhe ajudar?"
-         ═══════════════════════════════════════════════ */}
+            PAIN POINTS — "Como podemos lhe ajudar?"
+          ═══════════════════════════════════════════════ */}
       <section className="section-padding">
         <div className="container-site">
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
@@ -161,8 +161,8 @@ export default function LandingAgro() {
                   src={agroServiceRural}
                   alt="Vista aérea de lavoura com colheitadeiras trabalhando ao pôr do sol"
                   className="w-full h-[320px] object-cover"
-                  loading="lazy"
-                />
+                  loading="lazy" />
+                
               </div>
             </AnimatedSection>
           </div>
@@ -239,8 +239,8 @@ export default function LandingAgro() {
       </section>
 
       {/* ═══════════════════════════════════════════════
-           SERVICES GRID — with images
-         ═══════════════════════════════════════════════ */}
+            SERVICES GRID — with images
+          ═══════════════════════════════════════════════ */}
       <section className="section-padding bg-secondary/30">
         <div className="container-site">
           <AnimatedSection animation="fade-up">
@@ -252,51 +252,51 @@ export default function LandingAgro() {
           {/* Featured services with images */}
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             {[
-              {
-                image: agroServiceLegal,
-                icon: Gavel,
-                title: "Defesa em Execuções",
-                desc: "Proteção contra execuções rurais movidas por bancos, cooperativas, revendas e tradings. Atuação estratégica para preservar seu patrimônio.",
-                service: "defesa em execuções rurais",
-                alt: "Balança da justiça e martelo sobre documentos legais"
-              },
-              {
-                image: agroServiceFamily,
-                icon: Users,
-                title: "Planejamento Sucessório",
-                desc: "Estruturação de holdings, assessoria em sucessões e otimização tributária para transição entre gerações com segurança.",
-                service: "planejamento sucessório",
-                alt: "Família rural reunida em propriedade ao pôr do sol"
-              },
-              {
-                image: agroServiceContracts,
-                icon: FileText,
-                title: "Contratos Rurais",
-                desc: "Análise e elaboração de contratos de compra e venda, arrendamento rural e parceria agrícola com proteção real.",
-                service: "contratos rurais",
-                alt: "Reunião profissional para assinatura de contratos"
-              },
-              {
-                image: agroServiceRural,
-                icon: Home,
-                title: "Posse e Propriedade",
-                desc: "Ações de reintegração, manutenção de posse, usucapião e regularização de imóveis rurais em todo o Brasil.",
-                service: "posse e propriedade rural",
-                alt: "Vista aérea de propriedade rural com colheitadeiras"
-              },
-            ].map(({ image, icon: Icon, title, desc, service, alt }, i) => (
-              <AnimatedSection
-                key={title}
-                animation="scale"
-                delay={i * 100}
-                className="group rounded-2xl overflow-hidden bg-card border border-border/60 hover:border-accent/40 transition-all duration-300">
+            {
+              image: agroServiceLegal,
+              icon: Gavel,
+              title: "Defesa em Execuções",
+              desc: "Proteção contra execuções rurais movidas por bancos, cooperativas, revendas e tradings. Atuação estratégica para preservar seu patrimônio.",
+              service: "defesa em execuções rurais",
+              alt: "Balança da justiça e martelo sobre documentos legais"
+            },
+            {
+              image: agroServiceFamily,
+              icon: Users,
+              title: "Planejamento Sucessório",
+              desc: "Estruturação de holdings, assessoria em sucessões e otimização tributária para transição entre gerações com segurança.",
+              service: "planejamento sucessório",
+              alt: "Família rural reunida em propriedade ao pôr do sol"
+            },
+            {
+              image: agroServiceContracts,
+              icon: FileText,
+              title: "Contratos Rurais",
+              desc: "Análise e elaboração de contratos de compra e venda, arrendamento rural e parceria agrícola com proteção real.",
+              service: "contratos rurais",
+              alt: "Reunião profissional para assinatura de contratos"
+            },
+            {
+              image: agroServiceRural,
+              icon: Home,
+              title: "Posse e Propriedade",
+              desc: "Ações de reintegração, manutenção de posse, usucapião e regularização de imóveis rurais em todo o Brasil.",
+              service: "posse e propriedade rural",
+              alt: "Vista aérea de propriedade rural com colheitadeiras"
+            }].
+            map(({ image, icon: Icon, title, desc, service, alt }, i) =>
+            <AnimatedSection
+              key={title}
+              animation="scale"
+              delay={i * 100}
+              className="group rounded-2xl overflow-hidden bg-card border border-border/60 hover:border-accent/40 transition-all duration-300">
                 <div className="h-48 overflow-hidden">
                   <img
-                    src={image}
-                    alt={alt}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
+                  src={image}
+                  alt={alt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy" />
+                
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-3">
@@ -309,16 +309,16 @@ export default function LandingAgro() {
                     {desc}
                   </p>
                   <a
-                    href={whatsappService(service)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-accent text-sm font-medium hover:underline">
+                  href={whatsappService(service)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-accent text-sm font-medium hover:underline">
                     Saiba Mais
                     <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                   </a>
                 </div>
               </AnimatedSection>
-            ))}
+            )}
           </div>
 
           {/* Remaining services as compact cards */}
@@ -378,8 +378,8 @@ export default function LandingAgro() {
       </section>
 
       {/* ═══════════════════════════════════════════════
-           PROCESS — 3 Steps
-         ═══════════════════════════════════════════════ */}
+            PROCESS — 3 Steps
+          ═══════════════════════════════════════════════ */}
       <section className="section-padding">
         <div className="container-site">
           <AnimatedSection animation="fade-up">
@@ -452,8 +452,8 @@ export default function LandingAgro() {
       </section>
 
       {/* ═══════════════════════════════════════════════
-           AUTHORITY / EXPERTISE — with photo
-         ═══════════════════════════════════════════════ */}
+            AUTHORITY / EXPERTISE — with photo
+          ═══════════════════════════════════════════════ */}
       <section className="section-padding bg-secondary/30 overflow-hidden">
         <div className="container-site">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
@@ -466,8 +466,8 @@ export default function LandingAgro() {
                     src={agroAdvogadoProdutor}
                     alt="Advogado e produtor rural juntos em lavoura de soja"
                     className="w-full h-[480px] object-cover object-top group-hover:scale-[1.03] transition-transform duration-700"
-                    loading="lazy"
-                  />
+                    loading="lazy" />
+                  
                   <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
                   <div className="absolute bottom-6 left-6 right-6">
                     <p className="text-white text-sm font-medium drop-shadow-lg">
@@ -524,8 +524,8 @@ export default function LandingAgro() {
       </section>
 
       {/* ═══════════════════════════════════════════════
-           BENEFITS — "Transforme desafios em oportunidades"
-         ═══════════════════════════════════════════════ */}
+            BENEFITS — "Transforme desafios em oportunidades"
+          ═══════════════════════════════════════════════ */}
       <section className="section-padding">
         <div className="container-site">
           <AnimatedSection animation="fade-up">
@@ -587,8 +587,8 @@ export default function LandingAgro() {
       </section>
 
       {/* ═══════════════════════════════════════════════
-           FINAL CTA
-         ═══════════════════════════════════════════════ */}
+            FINAL CTA
+          ═══════════════════════════════════════════════ */}
       <section className="py-16 md:py-24 bg-[#d6e7ff]/[0.36]">
         <div className="container-site text-center">
           <AnimatedSection animation="fade-up">
