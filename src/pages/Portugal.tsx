@@ -3,6 +3,7 @@ import { PageHero } from "@/components/shared/PageHero";
 import { QuoteBand } from "@/components/shared/QuoteBand";
 import { CTASection } from "@/components/shared/CTASection";
 import { SectionHeading } from "@/components/shared/SectionHeading";
+import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { CheckCircle, Euro, FileText, Building2, Phone, ArrowRight, Shield, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -99,38 +100,44 @@ export default function Portugal() {
       <PageHero title={text.title} description={text.description} breadcrumb={[{ label: text.title }]} backgroundImage={portugalHero} />
 
       {/* Quick Contact Banner */}
-      <section className="bg-accent/10 border-b border-accent/20 py-4">
-        <div className="container-site">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-4">
-              <Globe className="w-5 h-5 text-accent" />
-              <span className="text-sm font-medium">{text.bannerText}</span>
-              <div className="hidden md:flex items-center gap-2 text-xs text-muted-foreground">
-                <Shield className="w-3 h-3" />
-                <span>{text.bannerBadge}</span>
+      <AnimatedSection animation="fade">
+        <section className="bg-accent/10 border-b border-accent/20 py-4">
+          <div className="container-site">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-4">
+                <Globe className="w-5 h-5 text-accent" />
+                <span className="text-sm font-medium">{text.bannerText}</span>
+                <div className="hidden md:flex items-center gap-2 text-xs text-muted-foreground">
+                  <Shield className="w-3 h-3" />
+                  <span>{text.bannerBadge}</span>
+                </div>
               </div>
+              <Button asChild size="sm" className="group">
+                <a href={WHATSAPP_PORTUGAL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  <Phone className="w-4 h-4" />
+                  {text.talkToRep}
+                  <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </Button>
             </div>
-            <Button asChild size="sm" className="group">
-              <a href={WHATSAPP_PORTUGAL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                <Phone className="w-4 h-4" />
-                {text.talkToRep}
-                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </Button>
           </div>
-        </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
       {/* Intro with Image */}
       <section className="section-padding">
         <div className="container-site">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="max-w-xl">
-              <p className="text-lg text-muted-foreground leading-relaxed">{text.intro}</p>
-            </div>
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <img alt="Modern business district in Lisbon, Portugal" className="w-full h-64 object-cover image-enhance" src="/lovable-uploads/d1806986-e5a9-4a5c-8bc6-8e36418af95e.png" />
-            </div>
+            <AnimatedSection animation="fade-left">
+              <div className="max-w-xl">
+                <p className="text-lg text-muted-foreground leading-relaxed">{text.intro}</p>
+              </div>
+            </AnimatedSection>
+            <AnimatedSection animation="fade-right" delay={150}>
+              <div className="rounded-lg overflow-hidden shadow-lg">
+                <img alt="Modern business district in Lisbon, Portugal" className="w-full h-64 object-cover image-enhance" src="/lovable-uploads/d1806986-e5a9-4a5c-8bc6-8e36418af95e.png" />
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -138,40 +145,46 @@ export default function Portugal() {
       {/* Company Types */}
       <section className="section-padding bg-secondary">
         <div className="container-site">
-          <SectionHeading title={text.companyTypes} subtitle={text.companyTypesSubtitle} />
+          <AnimatedSection animation="fade-up">
+            <SectionHeading title={text.companyTypes} subtitle={text.companyTypesSubtitle} />
+          </AnimatedSection>
 
           <div className="grid lg:grid-cols-2 gap-8 max-w-5xl">
-            <div className="bg-background rounded-lg p-8 border border-border">
-              <div className="flex items-center gap-3 mb-6">
-                <Building2 className="h-8 w-8 text-accent" />
-                <h3 className="font-serif text-xl">{text.singular}</h3>
+            <AnimatedSection animation="fade-left" delay={100}>
+              <div className="bg-background rounded-lg p-8 border border-border h-full">
+                <div className="flex items-center gap-3 mb-6">
+                  <Building2 className="h-8 w-8 text-accent" />
+                  <h3 className="font-serif text-xl">{text.singular}</h3>
+                </div>
+                <ul className="space-y-3 mb-6">
+                  {text.singularItems.map((item, index) => (
+                    <li key={index} className="flex items-start gap-3 text-muted-foreground">
+                      <CheckCircle className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-sm text-muted-foreground leading-relaxed">{text.singularDesc}</p>
               </div>
-              <ul className="space-y-3 mb-6">
-                {text.singularItems.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3 text-muted-foreground">
-                    <CheckCircle className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="text-sm text-muted-foreground leading-relaxed">{text.singularDesc}</p>
-            </div>
+            </AnimatedSection>
 
-            <div className="bg-background rounded-lg p-8 border border-border">
-              <div className="flex items-center gap-3 mb-6">
-                <Building2 className="h-8 w-8 text-accent" />
-                <h3 className="font-serif text-xl">{text.collective}</h3>
+            <AnimatedSection animation="fade-right" delay={200}>
+              <div className="bg-background rounded-lg p-8 border border-border h-full">
+                <div className="flex items-center gap-3 mb-6">
+                  <Building2 className="h-8 w-8 text-accent" />
+                  <h3 className="font-serif text-xl">{text.collective}</h3>
+                </div>
+                <ul className="space-y-3 mb-6">
+                  {text.collectiveItems.map((item, index) => (
+                    <li key={index} className="flex items-start gap-3 text-muted-foreground">
+                      <CheckCircle className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-sm text-muted-foreground leading-relaxed">{text.collectiveDesc}</p>
               </div>
-              <ul className="space-y-3 mb-6">
-                {text.collectiveItems.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3 text-muted-foreground">
-                    <CheckCircle className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="text-sm text-muted-foreground leading-relaxed">{text.collectiveDesc}</p>
-            </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -179,85 +192,93 @@ export default function Portugal() {
       {/* Empresa na Hora */}
       <section className="section-padding">
         <div className="container-site">
-          <div className="max-w-3xl">
-            <SectionHeading title={text.empresaNaHora} />
-            <p className="text-muted-foreground leading-relaxed mb-6">{text.empresaNaHoraDesc}</p>
+          <AnimatedSection animation="fade-up">
+            <div className="max-w-3xl">
+              <SectionHeading title={text.empresaNaHora} />
+              <p className="text-muted-foreground leading-relaxed mb-6">{text.empresaNaHoraDesc}</p>
 
-            <div className="bg-card rounded-lg p-6 border border-border mb-8">
-              <h4 className="font-serif text-lg mb-4 flex items-center gap-2">
-                <FileText className="h-5 w-5 text-accent" />
-                {text.requiredDocs}
-              </h4>
-              <ul className="space-y-2 text-muted-foreground">
-                {text.docs.map((doc, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle className="h-4 w-4 text-accent flex-shrink-0 mt-1" />
-                    <span>{doc}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="bg-card rounded-lg p-6 border border-border mb-8">
+                <h4 className="font-serif text-lg mb-4 flex items-center gap-2">
+                  <FileText className="h-5 w-5 text-accent" />
+                  {text.requiredDocs}
+                </h4>
+                <ul className="space-y-2 text-muted-foreground">
+                  {text.docs.map((doc, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <CheckCircle className="h-4 w-4 text-accent flex-shrink-0 mt-1" />
+                      <span>{doc}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Costs */}
       <section className="section-padding bg-secondary">
         <div className="container-site">
-          <div className="max-w-3xl">
-            <SectionHeading title={text.costs} />
+          <AnimatedSection animation="fade-up">
+            <div className="max-w-3xl">
+              <SectionHeading title={text.costs} />
 
-            <div className="bg-background rounded-lg p-6 border border-border mb-8">
-              <h4 className="font-serif text-lg mb-4 flex items-center gap-2">
-                <Euro className="h-5 w-5 text-accent" />
-                {text.taxesAndFees}
-              </h4>
-              <ul className="space-y-4 text-muted-foreground">
-                <li>
-                  <strong className="text-foreground">IRC:</strong> {text.ircDesc}
-                </li>
-                <li>
-                  <strong className="text-foreground">Derrama:</strong> {text.derramaDesc}
-                </li>
-                <li>
-                  <strong className="text-foreground">{text.ivaDesc}:</strong>
-                  <ul className="mt-2 ml-4 space-y-1">
-                    <li>• {text.ivaNormal}</li>
-                    <li>• {text.ivaIntermediate}</li>
-                    <li>• {text.ivaReduced}</li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-background rounded-lg p-6 border border-border">
-              <h4 className="font-serif text-lg mb-4">{text.receivedDocs}</h4>
-              <ul className="space-y-2 text-muted-foreground">
-                {text.receivedDocsList.map((doc, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle className="h-4 w-4 text-accent flex-shrink-0 mt-1" />
-                    <span>{doc}</span>
+              <div className="bg-background rounded-lg p-6 border border-border mb-8">
+                <h4 className="font-serif text-lg mb-4 flex items-center gap-2">
+                  <Euro className="h-5 w-5 text-accent" />
+                  {text.taxesAndFees}
+                </h4>
+                <ul className="space-y-4 text-muted-foreground">
+                  <li>
+                    <strong className="text-foreground">IRC:</strong> {text.ircDesc}
                   </li>
-                ))}
-              </ul>
-
-              <div className="mt-6 pt-6 border-t border-border">
-                <h5 className="font-medium mb-2">{text.nextSteps}</h5>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  {text.nextStepsList.map((step, index) => (
-                    <li key={index}>• {step}</li>
-                  ))}
+                  <li>
+                    <strong className="text-foreground">Derrama:</strong> {text.derramaDesc}
+                  </li>
+                  <li>
+                    <strong className="text-foreground">{text.ivaDesc}:</strong>
+                    <ul className="mt-2 ml-4 space-y-1">
+                      <li>• {text.ivaNormal}</li>
+                      <li>• {text.ivaIntermediate}</li>
+                      <li>• {text.ivaReduced}</li>
+                    </ul>
+                  </li>
                 </ul>
               </div>
+
+              <div className="bg-background rounded-lg p-6 border border-border">
+                <h4 className="font-serif text-lg mb-4">{text.receivedDocs}</h4>
+                <ul className="space-y-2 text-muted-foreground">
+                  {text.receivedDocsList.map((doc, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <CheckCircle className="h-4 w-4 text-accent flex-shrink-0 mt-1" />
+                      <span>{doc}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-6 pt-6 border-t border-border">
+                  <h5 className="font-medium mb-2">{text.nextSteps}</h5>
+                  <ul className="text-sm text-muted-foreground space-y-1">
+                    {text.nextStepsList.map((step, index) => (
+                      <li key={index}>• {step}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Quote */}
-      <QuoteBand quote={text.quote} author="Eduardo Couture" />
+      <AnimatedSection animation="blur-in">
+        <QuoteBand quote={text.quote} author="Eduardo Couture" />
+      </AnimatedSection>
 
-      <CTASection title={text.ctaTitle} description={text.ctaDesc} />
+      <AnimatedSection animation="fade-up">
+        <CTASection title={text.ctaTitle} description={text.ctaDesc} />
+      </AnimatedSection>
     </Layout>
   );
 }

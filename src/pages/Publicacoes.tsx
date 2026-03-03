@@ -3,6 +3,7 @@ import { Layout } from "@/components/layout/Layout";
 import { PageHero } from "@/components/shared/PageHero";
 import { CTASection } from "@/components/shared/CTASection";
 import { PublicationCard } from "@/components/shared/PublicationCard";
+import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { Input } from "@/components/ui/input";
 import { ScrollDownButton } from "@/components/shared/ScrollDownButton";
 import { Search, BookOpen } from "lucide-react";
@@ -64,36 +65,36 @@ export default function Publicacoes() {
       <section id="publicacoes-content" className="section-padding">
         <div className="container-site">
           {/* Search and Filter Bar */}
-          <div className="mb-12 space-y-6">
-            {/* Search */}
-            <div className="relative max-w-md">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-              <Input
-                type="search"
-                placeholder={t("publications.search")}
-                className="pl-11 h-12 bg-card border-border rounded-lg"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-            </div>
+          <AnimatedSection animation="fade-up">
+            <div className="mb-12 space-y-6">
+              <div className="relative max-w-md">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Input
+                  type="search"
+                  placeholder={t("publications.search")}
+                  className="pl-11 h-12 bg-card border-border rounded-lg"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+              </div>
 
-            {/* Categories */}
-            <div className="flex flex-wrap gap-2">
-              {displayCategories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setActiveCategory(category)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                    activeCategory === category
-                      ? "bg-accent text-accent-foreground"
-                      : "bg-secondary text-muted-foreground hover:text-foreground hover:bg-muted"
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
+              <div className="flex flex-wrap gap-2">
+                {displayCategories.map((category) => (
+                  <button
+                    key={category}
+                    onClick={() => setActiveCategory(category)}
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                      activeCategory === category
+                        ? "bg-accent text-accent-foreground"
+                        : "bg-secondary text-muted-foreground hover:text-foreground hover:bg-muted"
+                    }`}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
+          </AnimatedSection>
 
           {/* Results Count */}
           <div className="flex items-center gap-2 mb-8 text-muted-foreground">
@@ -105,55 +106,60 @@ export default function Publicacoes() {
 
           {filteredPosts.length > 0 ? (
             <>
-              {/* Featured Post */}
               {featuredPost && (
-                <div id="primeira-publicacao" className="mb-12">
-                  <PublicationCard 
-                    publication={featuredPost} 
-                    variant="featured"
-                    onCategoryClick={handleCategoryClick}
-                  />
-                </div>
-              )}
-
-              {/* Remaining Posts Grid */}
-              {remainingPosts.length > 0 && (
-                <div className="grid md:grid-cols-2 gap-6">
-                  {remainingPosts.map((post) => (
-                    <PublicationCard
-                      key={post.id}
-                      publication={post}
-                      variant="default"
+                <AnimatedSection animation="fade-up">
+                  <div id="primeira-publicacao" className="mb-12">
+                    <PublicationCard 
+                      publication={featuredPost} 
+                      variant="featured"
                       onCategoryClick={handleCategoryClick}
                     />
+                  </div>
+                </AnimatedSection>
+              )}
+
+              {remainingPosts.length > 0 && (
+                <div className="grid md:grid-cols-2 gap-6">
+                  {remainingPosts.map((post, index) => (
+                    <AnimatedSection key={post.id} animation="fade-up" delay={index * 80}>
+                      <PublicationCard
+                        publication={post}
+                        variant="default"
+                        onCategoryClick={handleCategoryClick}
+                      />
+                    </AnimatedSection>
                   ))}
                 </div>
               )}
             </>
           ) : (
-            <div className="text-center py-16 bg-secondary/30 rounded-lg border border-border">
-              <BookOpen className="h-12 w-12 text-muted-foreground/50 mx-auto mb-4" />
-              <p className="text-muted-foreground text-lg mb-2">
-                {t("publications.noResults")}
-              </p>
-              <p className="text-muted-foreground/70 text-sm">
-                {t("publications.noResultsDesc")}
-              </p>
-              <button
-                onClick={() => {
-                  setSearchTerm("");
-                  setActiveCategory(language === 'pt' ? "Todas" : "All");
-                }}
-                className="mt-4 text-accent hover:underline text-sm font-medium"
-              >
-                {t("publications.clearFilters")}
-              </button>
-            </div>
+            <AnimatedSection animation="scale">
+              <div className="text-center py-16 bg-secondary/30 rounded-lg border border-border">
+                <BookOpen className="h-12 w-12 text-muted-foreground/50 mx-auto mb-4" />
+                <p className="text-muted-foreground text-lg mb-2">
+                  {t("publications.noResults")}
+                </p>
+                <p className="text-muted-foreground/70 text-sm">
+                  {t("publications.noResultsDesc")}
+                </p>
+                <button
+                  onClick={() => {
+                    setSearchTerm("");
+                    setActiveCategory(language === 'pt' ? "Todas" : "All");
+                  }}
+                  className="mt-4 text-accent hover:underline text-sm font-medium"
+                >
+                  {t("publications.clearFilters")}
+                </button>
+              </div>
+            </AnimatedSection>
           )}
         </div>
       </section>
 
-      <CTASection />
+      <AnimatedSection animation="fade-up">
+        <CTASection />
+      </AnimatedSection>
     </Layout>
   );
 }
