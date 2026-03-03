@@ -1,4 +1,4 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, ComponentType } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -8,27 +8,43 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import { legacyIdToSlug } from "@/data/publications";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n/translations";
+
+// Retry wrapper for lazy imports — handles stale chunk errors after deploys
+function lazyRetry(factory: () => Promise<{ default: ComponentType<any> }>) {
+  return lazy(() =>
+    factory().catch(() => {
+      // Force reload once to get fresh assets
+      const key = "chunk-retry";
+      if (!sessionStorage.getItem(key)) {
+        sessionStorage.setItem(key, "1");
+        window.location.reload();
+      }
+      return factory();
+    })
+  );
+}
+
 // Lazy load all pages for code splitting
-const Index = lazy(() => import("./pages/Index"));
-const Escritorio = lazy(() => import("./pages/Escritorio"));
-const Equipe = lazy(() => import("./pages/Equipe"));
-const Atuacao = lazy(() => import("./pages/Atuacao"));
-const Publicacoes = lazy(() => import("./pages/Publicacoes"));
-const PublicacaoDetalhe = lazy(() => import("./pages/PublicacaoDetalhe"));
-const Portugal = lazy(() => import("./pages/Portugal"));
-const Contato = lazy(() => import("./pages/Contato"));
-const NotFound = lazy(() => import("./pages/NotFound"));
+const Index = lazyRetry(() => import("./pages/Index"));
+const Escritorio = lazyRetry(() => import("./pages/Escritorio"));
+const Equipe = lazyRetry(() => import("./pages/Equipe"));
+const Atuacao = lazyRetry(() => import("./pages/Atuacao"));
+const Publicacoes = lazyRetry(() => import("./pages/Publicacoes"));
+const PublicacaoDetalhe = lazyRetry(() => import("./pages/PublicacaoDetalhe"));
+const Portugal = lazyRetry(() => import("./pages/Portugal"));
+const Contato = lazyRetry(() => import("./pages/Contato"));
+const NotFound = lazyRetry(() => import("./pages/NotFound"));
 
 // Áreas de Atuação subpages
-const DireitoEmpresarial = lazy(() => import("./pages/areas/DireitoEmpresarial"));
-const NegociacaoJuridica = lazy(() => import("./pages/areas/NegociacaoJuridica"));
-const DireitoTributario = lazy(() => import("./pages/areas/DireitoTributario"));
-const DireitoTrabalhista = lazy(() => import("./pages/areas/DireitoTrabalhista"));
-const FamiliaSucessoes = lazy(() => import("./pages/areas/FamiliaSucessoes"));
-const DireitoCivil = lazy(() => import("./pages/areas/DireitoCivil"));
-const CreditoCarbono = lazy(() => import("./pages/areas/CreditoCarbono"));
-const RecuperacaoJudicial = lazy(() => import("./pages/areas/RecuperacaoJudicial"));
-const RecuperacaoJudicialAgro = lazy(() => import("./pages/areas/RecuperacaoJudicialAgro"));
+const DireitoEmpresarial = lazyRetry(() => import("./pages/areas/DireitoEmpresarial"));
+const NegociacaoJuridica = lazyRetry(() => import("./pages/areas/NegociacaoJuridica"));
+const DireitoTributario = lazyRetry(() => import("./pages/areas/DireitoTributario"));
+const DireitoTrabalhista = lazyRetry(() => import("./pages/areas/DireitoTrabalhista"));
+const FamiliaSucessoes = lazyRetry(() => import("./pages/areas/FamiliaSucessoes"));
+const DireitoCivil = lazyRetry(() => import("./pages/areas/DireitoCivil"));
+const CreditoCarbono = lazyRetry(() => import("./pages/areas/CreditoCarbono"));
+const RecuperacaoJudicial = lazyRetry(() => import("./pages/areas/RecuperacaoJudicial"));
+const RecuperacaoJudicialAgro = lazyRetry(() => import("./pages/areas/RecuperacaoJudicialAgro"));
 
 const queryClient = new QueryClient();
 
