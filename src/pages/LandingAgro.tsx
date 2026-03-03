@@ -66,7 +66,7 @@ export default function LandingAgro() {
             muted
             playsInline
             preload="auto"
-            poster={agroHeroAviao}
+            
             className="w-full h-full object-cover animate-[heroPan_25s_ease-in-out_infinite]"
             aria-hidden="true">
             
