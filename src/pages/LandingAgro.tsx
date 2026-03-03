@@ -67,7 +67,7 @@ export default function LandingAgro() {
             playsInline
             preload="auto"
             poster={agroHeroAviao}
-            className="w-full h-full object-cover animate-[heroZoom_30s_ease-in-out_infinite_alternate]"
+            className="w-full h-full object-cover animate-[heroPan_25s_ease-in-out_infinite]"
             aria-hidden="true"
           >
             <source src={heroVideoV3} type="video/mp4" />
