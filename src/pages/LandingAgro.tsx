@@ -57,61 +57,77 @@ export default function LandingAgro() {
       {/* ═══════════════════════════════════════════════
            HERO — Side-by-side text + image
          ═══════════════════════════════════════════════ */}
-      <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-center overflow-hidden bg-[#0d1f0d]">
-        <div className="container-site relative z-10 py-16 md:py-28">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Text side */}
-            <div>
-              <h1
-                className="font-serif text-3xl sm:text-4xl md:text-5xl text-accent leading-tight mb-6 animate-fade-in text-balance"
-                style={{ textShadow: "2px 3px 12px rgba(0,0,0,0.5)" }}>
-                Assessoria jurídica de quem entende a realidade do campo.
-              </h1>
+      <section className="relative min-h-[90vh] md:min-h-screen flex items-center overflow-hidden">
+        {/* Full-screen background video with slow rotation */}
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            poster={agroHeroAviao}
+            className="w-full h-full object-cover scale-125 animate-[heroSpin_120s_linear_infinite]"
+            aria-hidden="true"
+          >
+            <source src={heroVideoV3} type="video/mp4" />
+          </video>
+          {/* Dark overlay for readability */}
+          <div className="absolute inset-0 bg-[#0d1f0d]/65" />
+        </div>
 
-              <p
-                className="text-lg md:text-xl text-white/80 mb-8 max-w-xl leading-relaxed opacity-0 animate-[fade-in_0.6s_ease-out_0.2s_forwards]"
-                style={{ textShadow: "1px 1px 4px rgba(0,0,0,0.4)" }}>
-                Atuamos com estratégia, sigilo e proximidade para proteger o patrimônio, reestruturar dívidas e garantir a continuidade do seu negócio rural.
-              </p>
+        {/* Content over video */}
+        <div className="container-site relative z-10 py-20 md:py-32 flex flex-col items-center text-center">
+          {/* Logo */}
+          <img
+            src={logoHero}
+            alt="Rodrigo Vitalino Advogados"
+            className="h-20 md:h-28 mb-6 opacity-0 animate-[fade-in_0.8s_ease-out_forwards] drop-shadow-lg"
+          />
 
-              <div className="opacity-0 animate-[fade-in_0.6s_ease-out_0.4s_forwards]">
-                <Button
-                  asChild
-                  size="lg"
-                  className="group bg-accent hover:bg-accent/90 text-accent-foreground font-semibold shadow-xl w-full sm:w-auto text-base">
-                  <a
-                    href={WHATSAPP_LINK}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2">
-                    <MessageCircle className="h-5 w-5" />
-                    Converse com Nossa Equipe
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </a>
-                </Button>
-              </div>
-            </div>
+          {/* Main heading */}
+          <h1
+            className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-accent leading-tight mb-6 animate-fade-in text-balance max-w-4xl"
+            style={{ textShadow: "2px 3px 16px rgba(0,0,0,0.7)" }}>
+            Soluções jurídicas para quem produz, transforma e alimenta o Brasil.
+          </h1>
 
-            {/* Hero video - Air Tractor AT-802 pulverizando */}
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 aspect-[16/10] max-h-[600px] mx-auto lg:mx-0 w-full max-w-[640px] opacity-0 animate-[fade-in_0.8s_ease-out_0.3s_forwards]">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="auto"
-                poster={agroHeroAviao}
-                className="w-full h-full object-cover"
-                aria-hidden="true"
-              >
-                <source src={heroVideoV3} type="video/mp4" />
-              </video>
-              <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10 pointer-events-none" />
-            </div>
+          <p
+            className="text-lg md:text-xl text-white/85 mb-10 max-w-2xl leading-relaxed opacity-0 animate-[fade-in_0.6s_ease-out_0.2s_forwards]"
+            style={{ textShadow: "1px 1px 6px rgba(0,0,0,0.5)" }}>
+            Somos especialistas em Direito aplicado ao Agronegócio e estamos aqui para proteger o patrimônio e impulsionar os negócios do produtor rural e sua família.
+          </p>
+
+          {/* Semi-transparent block with subtitle */}
+          <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl px-8 py-6 md:px-12 md:py-8 max-w-3xl mb-10 opacity-0 animate-[fade-in_0.6s_ease-out_0.35s_forwards]">
+            <p className="font-serif text-xl md:text-2xl lg:text-3xl text-accent/90 leading-snug mb-3"
+               style={{ textShadow: "1px 2px 8px rgba(0,0,0,0.4)" }}>
+              Assessoria jurídica de quem entende a realidade do campo.
+            </p>
+            <p className="text-white/70 text-sm md:text-base">
+              Atuamos com estratégia, sigilo e proximidade para proteger o patrimônio, reestruturar dívidas e garantir a continuidade do seu negócio rural.
+            </p>
+          </div>
+
+          <div className="opacity-0 animate-[fade-in_0.6s_ease-out_0.5s_forwards]">
+            <Button
+              asChild
+              size="lg"
+              className="group bg-accent hover:bg-accent/90 text-accent-foreground font-semibold shadow-xl text-base px-8">
+              <a
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2">
+                <MessageCircle className="h-5 w-5" />
+                Converse com Nossa Equipe
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
+            </Button>
           </div>
         </div>
 
-        <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-background to-transparent z-[1]" />
+        <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-background to-transparent z-[1]" />
       </section>
 
       {/* ═══════════════════════════════════════════════
