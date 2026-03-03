@@ -27,7 +27,7 @@ import {
   Zap,
   TreePine } from
 "lucide-react";
-import heroVideo from "@/assets/agro-hero-video.mp4";
+import heroVideo from "@/assets/agro-hero-video-v2.mp4";
 import heroPoster from "@/assets/areas/agronegocio-landing-hero.jpg";
 import logoHero from "@/assets/logo-rv-transparent.png";
 import agroServiceContracts from "@/assets/agro-service-contracts.jpg";
@@ -56,48 +56,56 @@ export default function LandingAgro() {
       {/* ═══════════════════════════════════════════════
            HERO — Full-bleed video + overlay card
         ═══════════════════════════════════════════════ */}
-      <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-center overflow-hidden">
-        <ResponsiveHeroVideo
-          mp4Src={heroVideo}
-          posterImage={heroPoster}
-          priority
-          playbackRate={0.8}
-          overlayClassName="bg-gradient-to-r from-[#0d1f0d]/90 via-[#1a2e1a]/80 to-[#1a2e1a]/40"
-        />
-
+      <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-center overflow-hidden bg-[#0d1f0d]">
         <div className="container-site relative z-10 py-16 md:py-28">
-          <div className="max-w-2xl bg-background/30 backdrop-blur-md rounded-2xl p-8 md:p-12 border border-border/30">
-            <h1
-              className="font-serif text-3xl sm:text-4xl md:text-5xl text-accent leading-tight mb-6 animate-fade-in text-balance"
-              style={{ textShadow: "2px 3px 12px rgba(0,0,0,0.5)" }}>
-              
-              Assessoria jurídica de quem entende a realidade do campo.
-            </h1>
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Text side */}
+            <div>
+              <h1
+                className="font-serif text-3xl sm:text-4xl md:text-5xl text-accent leading-tight mb-6 animate-fade-in text-balance"
+                style={{ textShadow: "2px 3px 12px rgba(0,0,0,0.5)" }}>
+                Assessoria jurídica de quem entende a realidade do campo.
+              </h1>
 
-            <p
-              className="text-lg md:text-xl text-foreground/90 mb-8 animate-slide-up max-w-xl leading-relaxed"
-              style={{ textShadow: "1px 1px 4px rgba(0,0,0,0.4)" }}>
-              
-              Atuamos com estratégia, sigilo e proximidade para proteger o patrimônio, reestruturar dívidas e garantir a continuidade do seu negócio rural.
-            </p>
+              <p
+                className="text-lg md:text-xl text-white/80 mb-8 animate-slide-up max-w-xl leading-relaxed"
+                style={{ textShadow: "1px 1px 4px rgba(0,0,0,0.4)" }}>
+                Atuamos com estratégia, sigilo e proximidade para proteger o patrimônio, reestruturar dívidas e garantir a continuidade do seu negócio rural.
+              </p>
 
-            <Button
-              asChild
-              size="lg"
-              className="group bg-accent hover:bg-accent/90 text-accent-foreground font-semibold shadow-xl w-full sm:w-auto text-base animate-slide-up"
-              style={{ animationDelay: "0.15s" }}>
-              
-              <a
-                href={WHATSAPP_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2">
-                
-                <MessageCircle className="h-5 w-5" />
-                Converse com Nossa Equipe
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
-            </Button>
+              <Button
+                asChild
+                size="lg"
+                className="group bg-accent hover:bg-accent/90 text-accent-foreground font-semibold shadow-xl w-full sm:w-auto text-base animate-slide-up"
+                style={{ animationDelay: "0.15s" }}>
+                <a
+                  href={WHATSAPP_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2">
+                  <MessageCircle className="h-5 w-5" />
+                  Converse com Nossa Equipe
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </a>
+              </Button>
+            </div>
+
+            {/* Video side */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 aspect-[9/14] max-h-[520px] mx-auto lg:mx-0 w-full max-w-[380px]">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                poster={heroPoster}
+                className="w-full h-full object-cover"
+                aria-hidden="true"
+              >
+                <source src={heroVideo} type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10 pointer-events-none" />
+            </div>
           </div>
         </div>
 
