@@ -1,6 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageSEO, breadcrumbSchema } from "@/components/shared/PageSEO";
-import { ResponsiveHeroVideo } from "@/components/shared/ResponsiveHeroVideo";
+
 import { Button } from "@/components/ui/button";
 import {
   Leaf,
@@ -27,8 +27,7 @@ import {
   Zap,
   TreePine } from
 "lucide-react";
-import heroVideo from "@/assets/agro-hero-video-v2.mp4";
-import heroPoster from "@/assets/areas/agronegocio-landing-hero.jpg";
+import agroHeroAviao from "@/assets/agro-hero-aviao.png";
 import logoHero from "@/assets/logo-rv-transparent.png";
 import agroServiceContracts from "@/assets/agro-service-contracts.jpg";
 import agroServiceRural from "@/assets/agro-service-rural.jpg";
@@ -90,20 +89,15 @@ export default function LandingAgro() {
               </Button>
             </div>
 
-            {/* Video side */}
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 aspect-[9/14] max-h-[520px] mx-auto lg:mx-0 w-full max-w-[380px]">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="auto"
-                poster={heroPoster}
+            {/* Hero image - Air Tractor AT-802 */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 aspect-[16/10] max-h-[600px] mx-auto lg:mx-0 w-full max-w-[640px]">
+              <img
+                src={agroHeroAviao}
+                alt="Air Tractor AT-802 pulverizando lavoura"
                 className="w-full h-full object-cover"
-                aria-hidden="true"
-              >
-                <source src={heroVideo} type="video/mp4" />
-              </video>
+                loading="eager"
+                fetchPriority="high"
+              />
               <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10 pointer-events-none" />
             </div>
           </div>
