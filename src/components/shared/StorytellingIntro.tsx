@@ -46,7 +46,7 @@ export function StorytellingIntro() {
         {/* Block 1: Image + Text */}
         <div className="grid md:grid-cols-2 gap-6 mb-6">
           <AnimatedSection animation="fade-left" delay={200} className="h-full">
-            <div className="relative rounded-2xl overflow-hidden min-h-[220px] md:min-h-[280px]">
+            <div className="relative rounded-2xl overflow-hidden min-h-[220px] md:min-h-[280px] h-full">
               <img src={hopeImg} alt={isEn ? "Business partnership and hope" : "Parceria empresarial e esperança"} className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" width={800} height={544} />
               <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -82,7 +82,7 @@ export function StorytellingIntro() {
           </AnimatedSection>
 
           <AnimatedSection animation="fade-right" delay={300} className="order-1 md:order-2 h-full">
-            <div className="relative rounded-2xl overflow-hidden min-h-[220px] md:min-h-[280px]">
+            <div className="relative rounded-2xl overflow-hidden min-h-[220px] md:min-h-[280px] h-full">
               <img src={renewalImg} alt={isEn ? "Corporate renewal and growth" : "Renovação e crescimento empresarial"} className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" width={800} height={544} />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
             </div>
