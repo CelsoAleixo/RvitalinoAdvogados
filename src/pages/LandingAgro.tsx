@@ -28,6 +28,7 @@ import {
   TreePine } from
 "lucide-react";
 import agroHeroAviao from "@/assets/agro-hero-aviao.png";
+import heroVideoV3 from "@/assets/agro-hero-video-v3.mp4";
 import logoHero from "@/assets/logo-rv-transparent.png";
 import agroServiceContracts from "@/assets/agro-service-contracts.jpg";
 import agroServiceRural from "@/assets/agro-service-rural.jpg";
@@ -90,15 +91,20 @@ export default function LandingAgro() {
               </div>
             </div>
 
-            {/* Hero image - Air Tractor AT-802 with entrance animation */}
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 aspect-[16/10] max-h-[600px] mx-auto lg:mx-0 w-full max-w-[640px] opacity-0 animate-[fade-in_0.8s_ease-out_0.3s_forwards] hover:scale-[1.02] transition-transform duration-500">
-              <img
-                src={agroHeroAviao}
-                alt="Air Tractor AT-802 pulverizando lavoura"
+            {/* Hero video - Air Tractor AT-802 pulverizando */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 aspect-[16/10] max-h-[600px] mx-auto lg:mx-0 w-full max-w-[640px] opacity-0 animate-[fade-in_0.8s_ease-out_0.3s_forwards]">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                poster={agroHeroAviao}
                 className="w-full h-full object-cover"
-                loading="eager"
-                fetchPriority="high"
-              />
+                aria-hidden="true"
+              >
+                <source src={heroVideoV3} type="video/mp4" />
+              </video>
               <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10 pointer-events-none" />
             </div>
           </div>
