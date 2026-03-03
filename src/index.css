@@ -493,3 +493,9 @@
     contain-intrinsic-size: 300px 200px;
   }
 }
+
+/* Hero video 360° slow rotation */
+@keyframes heroSpin {
+  from { transform: scale(1.25) rotate(0deg); }
+  to { transform: scale(1.25) rotate(360deg); }
+}
