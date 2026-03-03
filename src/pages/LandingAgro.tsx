@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageSEO, breadcrumbSchema } from "@/components/shared/PageSEO";
+import { ResponsiveHeroVideo } from "@/components/shared/ResponsiveHeroVideo";
 import { Button } from "@/components/ui/button";
 import {
   Leaf,
@@ -26,8 +27,13 @@ import {
   Zap,
   TreePine } from
 "lucide-react";
-import heroImage from "@/assets/areas/agronegocio-landing-hero.jpg";
+import heroVideo from "@/assets/agro-hero-video.mp4";
+import heroPoster from "@/assets/areas/agronegocio-landing-hero.jpg";
 import logoHero from "@/assets/logo-rv-transparent.png";
+import agroServiceContracts from "@/assets/agro-service-contracts.jpg";
+import agroServiceRural from "@/assets/agro-service-rural.jpg";
+import agroServiceLegal from "@/assets/agro-service-legal.jpg";
+import agroServiceFamily from "@/assets/agro-service-family.jpg";
 
 const WHATSAPP_LINK =
 "https://wa.me/5511940449696?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20especialista%20sobre%20direito%20do%20agroneg%C3%B3cio.";
@@ -48,25 +54,19 @@ export default function LandingAgro() {
       
 
       {/* ═══════════════════════════════════════════════
-           HERO — Full-bleed image + overlay card
+           HERO — Full-bleed video + overlay card
         ═══════════════════════════════════════════════ */}
       <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center image-enhance-strong"
-          style={{ backgroundImage: `url(${heroImage})` }} />
-        
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0d1f0d]/90 via-[#1a2e1a]/80 to-[#1a2e1a]/40" />
+        <ResponsiveHeroVideo
+          mp4Src={heroVideo}
+          posterImage={heroPoster}
+          priority
+          playbackRate={0.8}
+          overlayClassName="bg-gradient-to-r from-[#0d1f0d]/90 via-[#1a2e1a]/80 to-[#1a2e1a]/40"
+        />
 
         <div className="container-site relative z-10 py-16 md:py-28">
           <div className="max-w-2xl bg-background/30 backdrop-blur-md rounded-2xl p-8 md:p-12 border border-border/30">
-            
-
-
-
-
-
-            
-
             <h1
               className="font-serif text-3xl sm:text-4xl md:text-5xl text-accent leading-tight mb-6 animate-fade-in text-balance"
               style={{ textShadow: "2px 3px 12px rgba(0,0,0,0.5)" }}>
@@ -101,7 +101,7 @@ export default function LandingAgro() {
           </div>
         </div>
 
-        <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-background to-transparent" />
+        <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-background to-transparent z-[1]" />
       </section>
 
       {/* ═══════════════════════════════════════════════
@@ -109,25 +109,34 @@ export default function LandingAgro() {
         ═══════════════════════════════════════════════ */}
       <section className="section-padding">
         <div className="container-site">
-          <h2 className="font-serif text-3xl md:text-4xl text-center mb-6">
-            Como podemos lhe ajudar hoje?
-          </h2>
-
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              <strong className="text-foreground">Conhecemos de perto</strong> as dificuldades que o{" "}
-              <strong className="text-foreground">produtor rural</strong> enfrenta no{" "}
-              <strong className="text-foreground">dia a dia</strong>. Desde a pressão para honrar{" "}
-              <strong className="text-foreground">compromissos financeiros</strong> com bancos e cooperativas, a necessidade de formalizar{" "}
-              <strong className="text-foreground">contratos</strong> que tragam{" "}
-              <strong className="text-foreground">segurança</strong> real, até a preocupação com a proteção do{" "}
-              <strong className="text-foreground">patrimônio familiar</strong> e o futuro do{" "}
-              <strong className="text-foreground">seu legado</strong>.
-            </p>
-            <p className="text-muted-foreground text-lg leading-relaxed mt-4">
-              No agronegócio, os desafios são constantes — mas você{" "}
-              <strong className="text-accent">não precisa enfrentá-los sozinho</strong>.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+            <div>
+              <h2 className="font-serif text-3xl md:text-4xl mb-6">
+                Como podemos lhe ajudar hoje?
+              </h2>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                <strong className="text-foreground">Conhecemos de perto</strong> as dificuldades que o{" "}
+                <strong className="text-foreground">produtor rural</strong> enfrenta no{" "}
+                <strong className="text-foreground">dia a dia</strong>. Desde a pressão para honrar{" "}
+                <strong className="text-foreground">compromissos financeiros</strong> com bancos e cooperativas, a necessidade de formalizar{" "}
+                <strong className="text-foreground">contratos</strong> que tragam{" "}
+                <strong className="text-foreground">segurança</strong> real, até a preocupação com a proteção do{" "}
+                <strong className="text-foreground">patrimônio familiar</strong> e o futuro do{" "}
+                <strong className="text-foreground">seu legado</strong>.
+              </p>
+              <p className="text-muted-foreground text-lg leading-relaxed mt-4">
+                No agronegócio, os desafios são constantes — mas você{" "}
+                <strong className="text-accent">não precisa enfrentá-los sozinho</strong>.
+              </p>
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              <img
+                src={agroServiceRural}
+                alt="Vista aérea de lavoura com colheitadeiras trabalhando ao pôr do sol"
+                className="w-full h-[320px] object-cover"
+                loading="lazy"
+              />
+            </div>
           </div>
 
           {/* Pain cards */}
@@ -200,7 +209,7 @@ export default function LandingAgro() {
       </section>
 
       {/* ═══════════════════════════════════════════════
-           SERVICES GRID
+           SERVICES GRID — with images
         ═══════════════════════════════════════════════ */}
       <section className="section-padding bg-secondary/30">
         <div className="container-site">
@@ -208,32 +217,79 @@ export default function LandingAgro() {
             Nossos Serviços
           </h2>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {/* Featured services with images */}
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
             {[
-            {
-              icon: Gavel,
-              title: "Defesa em Execuções",
-              desc: "Proteção contra execuções rurais movidas por bancos, cooperativas, revendas e tradings.",
-              service: "defesa em execuções rurais"
-            },
-            {
-              icon: Users,
-              title: "Planejamento Sucessório",
-              desc: "Estruturação de holdings, assessoria em sucessões e otimização tributária para transição entre gerações.",
-              service: "planejamento sucessório"
-            },
-            {
-              icon: FileText,
-              title: "Contratos Rurais",
-              desc: "Análise e elaboração de contratos de compra e venda, arrendamento rural e parceria agrícola.",
-              service: "contratos rurais"
-            },
-            {
-              icon: Home,
-              title: "Posse e Propriedade",
-              desc: "Ações de reintegração, manutenção de posse, usucapião e regularização de imóveis rurais.",
-              service: "posse e propriedade rural"
-            },
+              {
+                image: agroServiceLegal,
+                icon: Gavel,
+                title: "Defesa em Execuções",
+                desc: "Proteção contra execuções rurais movidas por bancos, cooperativas, revendas e tradings. Atuação estratégica para preservar seu patrimônio.",
+                service: "defesa em execuções rurais",
+                alt: "Balança da justiça e martelo sobre documentos legais"
+              },
+              {
+                image: agroServiceFamily,
+                icon: Users,
+                title: "Planejamento Sucessório",
+                desc: "Estruturação de holdings, assessoria em sucessões e otimização tributária para transição entre gerações com segurança.",
+                service: "planejamento sucessório",
+                alt: "Família rural reunida em propriedade ao pôr do sol"
+              },
+              {
+                image: agroServiceContracts,
+                icon: FileText,
+                title: "Contratos Rurais",
+                desc: "Análise e elaboração de contratos de compra e venda, arrendamento rural e parceria agrícola com proteção real.",
+                service: "contratos rurais",
+                alt: "Reunião profissional para assinatura de contratos"
+              },
+              {
+                image: agroServiceRural,
+                icon: Home,
+                title: "Posse e Propriedade",
+                desc: "Ações de reintegração, manutenção de posse, usucapião e regularização de imóveis rurais em todo o Brasil.",
+                service: "posse e propriedade rural",
+                alt: "Vista aérea de propriedade rural com colheitadeiras"
+              },
+            ].map(({ image, icon: Icon, title, desc, service, alt }) => (
+              <div
+                key={title}
+                className="group rounded-2xl overflow-hidden bg-card border border-border/60 hover:border-accent/40 transition-all duration-300">
+                <div className="h-48 overflow-hidden">
+                  <img
+                    src={image}
+                    alt={alt}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="p-2 rounded-xl bg-accent/10">
+                      <Icon className="h-5 w-5 text-accent" />
+                    </div>
+                    <h3 className="font-serif text-lg text-foreground">{title}</h3>
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-4 no-justify">
+                    {desc}
+                  </p>
+                  <a
+                    href={whatsappService(service)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-accent text-sm font-medium hover:underline">
+                    Saiba Mais
+                    <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Remaining services as compact cards */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
             {
               icon: Receipt,
               title: "Direito Tributário",
