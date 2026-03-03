@@ -34,6 +34,7 @@ import agroServiceContracts from "@/assets/agro-service-contracts.jpg";
 import agroServiceRural from "@/assets/agro-service-rural.jpg";
 import agroServiceLegal from "@/assets/agro-service-legal.jpg";
 import agroServiceFamily from "@/assets/agro-service-family.jpg";
+import agroAdvogadoProdutor from "@/assets/agro-advogado-produtor.png";
 
 const WHATSAPP_LINK =
 "https://wa.me/5511940449696?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20especialista%20sobre%20direito%20do%20agroneg%C3%B3cio.";
@@ -435,48 +436,72 @@ export default function LandingAgro() {
       </section>
 
       {/* ═══════════════════════════════════════════════
-           AUTHORITY / EXPERTISE
+           AUTHORITY / EXPERTISE — with photo
          ═══════════════════════════════════════════════ */}
-      <section className="section-padding bg-secondary/30">
+      <section className="section-padding bg-secondary/30 overflow-hidden">
         <div className="container-site">
-          <div className="max-w-4xl mx-auto">
-            <AnimatedSection animation="fade-up">
-              <h2 className="font-serif text-3xl md:text-4xl text-center mb-6">
-                Experiência que faz a diferença
-              </h2>
-
-              <p className="text-muted-foreground text-lg leading-relaxed text-center mb-4">
-                Do campo aos tribunais, nossa expertise jurídica abrange todo o ciclo do agronegócio.{" "}
-                <strong className="text-foreground">
-                  Há anos atuamos em questões jurídicas complexas que desafiam empresários e produtores rurais
-                </strong>{" "}
-                — de execuções e cobranças a planejamentos sucessórios e tributários.
-              </p>
-
-              <p className="text-muted-foreground text-lg leading-relaxed text-center mb-10">
-                Navegamos pelo direito bancário para proteger e renegociar dívidas agrícolas. No campo das sucessões, conduzimos inventários e estruturamos holdings rurais. Em cada aspecto do seu empreendimento,{" "}
-                <strong className="text-accent">estamos prontos para proteger seus interesses e impulsionar seu sucesso</strong>.
-              </p>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+            {/* Photo side */}
+            <AnimatedSection animation="fade-left" duration={900}>
+              <div className="relative group">
+                <div className="absolute -inset-4 bg-accent/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-accent/20">
+                  <img
+                    src={agroAdvogadoProdutor}
+                    alt="Advogado e produtor rural juntos em lavoura de soja"
+                    className="w-full h-[480px] object-cover object-top group-hover:scale-[1.03] transition-transform duration-700"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <p className="text-white text-sm font-medium drop-shadow-lg">
+                      Do campo aos tribunais — lado a lado com o produtor.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </AnimatedSection>
 
-            {/* Trust indicators */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {[
-              { icon: Award, label: "Referência Nacional" },
-              { icon: Shield, label: "Sigilo Absoluto" },
-              { icon: TreePine, label: "Foco no Agro" },
-              { icon: Zap, label: "Agilidade Estratégica" }].
-              map(({ icon: Icon, label }, i) =>
-              <AnimatedSection
-                key={label}
-                animation="scale"
-                delay={i * 100}
-                className="flex items-center gap-3 p-4 rounded-xl bg-card border border-border/60 hover:border-accent/30 transition-colors duration-300">
-                
-                  <Icon className="h-6 w-6 text-accent flex-shrink-0" />
-                  <span className="text-sm font-medium text-foreground">{label}</span>
-                </AnimatedSection>
-              )}
+            {/* Text side */}
+            <div>
+              <AnimatedSection animation="fade-right" delay={100}>
+                <h2 className="font-serif text-3xl md:text-4xl mb-6">
+                  Experiência que faz a diferença
+                </h2>
+
+                <p className="text-muted-foreground text-lg leading-relaxed mb-4">
+                  Do campo aos tribunais, nossa expertise jurídica abrange todo o ciclo do agronegócio.{" "}
+                  <strong className="text-foreground">
+                    Há anos atuamos em questões jurídicas complexas que desafiam empresários e produtores rurais
+                  </strong>{" "}
+                  — de execuções e cobranças a planejamentos sucessórios e tributários.
+                </p>
+
+                <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+                  Navegamos pelo direito bancário para proteger e renegociar dívidas agrícolas. No campo das sucessões, conduzimos inventários e estruturamos holdings rurais. Em cada aspecto do seu empreendimento,{" "}
+                  <strong className="text-accent">estamos prontos para proteger seus interesses e impulsionar seu sucesso</strong>.
+                </p>
+              </AnimatedSection>
+
+              {/* Trust indicators */}
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                { icon: Award, label: "Referência Nacional" },
+                { icon: Shield, label: "Sigilo Absoluto" },
+                { icon: TreePine, label: "Foco no Agro" },
+                { icon: Zap, label: "Agilidade Estratégica" }].
+                map(({ icon: Icon, label }, i) =>
+                <AnimatedSection
+                  key={label}
+                  animation="scale"
+                  delay={200 + i * 80}
+                  className="flex items-center gap-3 p-4 rounded-xl bg-card border border-border/60 hover:border-accent/30 hover:shadow-md transition-all duration-300">
+                  
+                    <Icon className="h-5 w-5 text-accent flex-shrink-0" />
+                    <span className="text-sm font-medium text-foreground">{label}</span>
+                  </AnimatedSection>
+                )}
+              </div>
             </div>
           </div>
         </div>
