@@ -24,6 +24,7 @@ const navigationKeys = [
 { key: "nav.home", href: "/" },
 { key: "nav.office", href: "/escritorio" },
 { key: "nav.team", href: "/equipe" },
+{ key: "nav.agro", href: "/agronegocio" },
 { key: "nav.publications", href: "/publicacoes" },
 { key: "nav.portugal", href: "/portugal" },
 { key: "nav.contact", href: "/contato" }];
