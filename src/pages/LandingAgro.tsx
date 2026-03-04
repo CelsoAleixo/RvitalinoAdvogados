@@ -87,9 +87,24 @@ export default function LandingAgro() {
 
           {/* Main heading */}
           <h1
-            className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-accent leading-tight mb-6 animate-fade-in text-balance max-w-4xl"
-            style={{ textShadow: "2px 3px 16px rgba(0,0,0,0.7)" }}>
-            Soluções jurídicas para quem produz, transforma e alimenta o Brasil.
+            className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-accent leading-[1.1] mb-8 text-balance max-w-5xl opacity-0 animate-[fade-in_1s_ease-out_0.1s_forwards]"
+            style={{ textShadow: "2px 4px 20px rgba(0,0,0,0.8)" }}>
+            Soluções jurídicas para quem{" "}
+            <span className="relative inline-block">
+              <span className="relative z-10">produz</span>
+              <span className="absolute bottom-1 left-0 w-full h-[6px] bg-accent/40 rounded-full" />
+            </span>
+            ,{" "}
+            <span className="relative inline-block">
+              <span className="relative z-10">transforma</span>
+              <span className="absolute bottom-1 left-0 w-full h-[6px] bg-accent/40 rounded-full" />
+            </span>
+            {" "}e{" "}
+            <span className="relative inline-block">
+              <span className="relative z-10">alimenta</span>
+              <span className="absolute bottom-1 left-0 w-full h-[6px] bg-accent/40 rounded-full" />
+            </span>
+            {" "}o Brasil.
           </h1>
 
           <p
