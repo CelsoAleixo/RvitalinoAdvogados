@@ -28,7 +28,7 @@ import {
   TreePine } from
 "lucide-react";
 import agroHeroAviao from "@/assets/agro-hero-aviao.png";
-import heroVideoV3 from "@/assets/agro-hero-video-v4.mp4";
+import heroVideoV3 from "@/assets/agro-hero-video-v5.mp4";
 import logoHero from "@/assets/logo-rv-transparent.png";
 import agroServiceContracts from "@/assets/agro-service-contracts.jpg";
 import agroServiceRural from "@/assets/agro-service-rural.jpg";
@@ -76,19 +76,12 @@ export default function LandingAgro() {
           <div className="absolute inset-0 bg-[#0d1f0d]/65" />
         </div>
 
-        {/* Content over video */}
-        <div className="container-site relative z-10 py-20 md:py-32 flex flex-col items-center text-center">
-          {/* Logo */}
-          
-
-
-
-          
-
+        {/* Content over video — left-aligned editorial style like Air Tractor site */}
+        <div className="container-site relative z-10 py-20 md:py-32 flex flex-col items-start text-left">
           {/* Main heading */}
           <h1
-            className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-accent leading-[1.1] mb-8 text-balance max-w-5xl opacity-0 animate-[fade-in_1s_ease-out_0.1s_forwards]"
-            style={{ textShadow: "2px 4px 20px rgba(0,0,0,0.8)" }}>
+            className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[1.05] mb-6 max-w-3xl opacity-0 animate-[fade-in_1s_ease-out_0.1s_forwards]"
+            style={{ textShadow: "2px 4px 20px rgba(0,0,0,0.6)" }}>
             Soluções jurídicas para quem{" "}
             <span className="relative inline-block">
               <span className="relative z-10">produz</span>
@@ -108,23 +101,12 @@ export default function LandingAgro() {
           </h1>
 
           <p
-            className="text-lg md:text-xl text-white/85 mb-10 max-w-2xl leading-relaxed opacity-0 animate-[fade-in_0.6s_ease-out_0.2s_forwards]"
+            className="text-base md:text-lg text-white/80 mb-8 max-w-xl leading-relaxed opacity-0 animate-[fade-in_0.6s_ease-out_0.2s_forwards]"
             style={{ textShadow: "1px 1px 6px rgba(0,0,0,0.5)" }}>
             Somos especialistas em Direito aplicado ao Agronegócio e estamos aqui para proteger o patrimônio e impulsionar os negócios do produtor rural e sua família.
           </p>
 
-          {/* Semi-transparent block with subtitle */}
-          <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl px-8 py-6 md:px-12 md:py-8 max-w-3xl mb-10 opacity-0 animate-[fade-in_0.6s_ease-out_0.35s_forwards]">
-            <p className="font-serif text-xl md:text-2xl lg:text-3xl text-accent/90 leading-snug mb-3"
-            style={{ textShadow: "1px 2px 8px rgba(0,0,0,0.4)" }}>
-              Assessoria jurídica de quem entende a realidade do campo.
-            </p>
-            <p className="text-white/70 text-sm md:text-base">
-              Atuamos com estratégia, sigilo e proximidade para proteger o patrimônio, reestruturar dívidas e garantir a continuidade do seu negócio rural.
-            </p>
-          </div>
-
-          <div className="opacity-0 animate-[fade-in_0.6s_ease-out_0.5s_forwards]">
+          <div className="opacity-0 animate-[fade-in_0.6s_ease-out_0.4s_forwards]">
             <Button
               asChild
               size="lg"
