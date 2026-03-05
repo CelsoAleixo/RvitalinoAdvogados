@@ -497,7 +497,7 @@ export default function LandingAgro() {
             <div>
               <AnimatedSection animation="fade-right" delay={100}>
                 <h2 className="font-serif text-3xl md:text-4xl mb-6">
-                  Experiência que faz a diferença
+                  Quem defende o campo, conhece o campo
                 </h2>
 
                 <p className="text-muted-foreground text-lg leading-relaxed mb-4">
