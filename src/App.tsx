@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { RouteTracker } from "@/components/shared/RouteTracker";
 import { legacyIdToSlug } from "@/data/publications";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { translations } from "@/i18n/translations";
@@ -72,6 +73,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
+          <RouteTracker />
           <Suspense fallback={<div className="min-h-screen bg-background" />}>
             <Routes>
               <Route path="/" element={<Index />} />
