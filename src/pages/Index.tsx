@@ -70,6 +70,23 @@ export default function Index() {
           "@type": "WebSite",
           name: "Rodrigo Vitalino Advogados",
           url: "https://rvitalinoadvogados.com.br",
+          potentialAction: {
+            "@type": "SearchAction",
+            target: "https://rvitalinoadvogados.com.br/publicacoes?q={search_term_string}",
+            "query-input": "required name=search_term_string",
+          },
+        }, {
+          "@context": "https://schema.org",
+          "@type": "SiteNavigationElement",
+          name: ["Início", "Áreas de Atuação", "Publicações", "Equipe", "Agronegócio", "Contato"],
+          url: [
+            "https://rvitalinoadvogados.com.br/",
+            "https://rvitalinoadvogados.com.br/atuacao",
+            "https://rvitalinoadvogados.com.br/publicacoes",
+            "https://rvitalinoadvogados.com.br/equipe",
+            "https://rvitalinoadvogados.com.br/agronegocio",
+            "https://rvitalinoadvogados.com.br/contato",
+          ],
         }]}
       />
       {/* Hero Section with Video Background */}

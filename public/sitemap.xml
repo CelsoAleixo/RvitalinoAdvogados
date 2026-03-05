@@ -6,45 +6,51 @@
   <!-- Página Inicial -->
   <url>
     <loc>https://rvitalinoadvogados.com.br/</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
-  <!-- Páginas Principais -->
-  <url>
-    <loc>https://rvitalinoadvogados.com.br/escritorio</loc>
-    <lastmod>2026-02-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rvitalinoadvogados.com.br/equipe</loc>
-    <lastmod>2026-02-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- Páginas Principais (ordem de prioridade) -->
   <url>
     <loc>https://rvitalinoadvogados.com.br/atuacao</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://rvitalinoadvogados.com.br/publicacoes</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-05</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rvitalinoadvogados.com.br/equipe</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rvitalinoadvogados.com.br/agronegocio</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rvitalinoadvogados.com.br/contato</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rvitalinoadvogados.com.br/escritorio</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rvitalinoadvogados.com.br/portugal</loc>
-    <lastmod>2026-02-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rvitalinoadvogados.com.br/contato</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -52,55 +58,55 @@
   <!-- Áreas de Atuação -->
   <url>
     <loc>https://rvitalinoadvogados.com.br/atuacao/direito-empresarial</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rvitalinoadvogados.com.br/atuacao/negociacao-juridica</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rvitalinoadvogados.com.br/atuacao/recuperacao-judicial</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rvitalinoadvogados.com.br/protecao-rural</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rvitalinoadvogados.com.br/atuacao/direito-tributario</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rvitalinoadvogados.com.br/atuacao/direito-trabalhista</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rvitalinoadvogados.com.br/atuacao/familia-e-sucessoes</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rvitalinoadvogados.com.br/atuacao/direito-civil</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rvitalinoadvogados.com.br/atuacao/credito-de-carbono</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
