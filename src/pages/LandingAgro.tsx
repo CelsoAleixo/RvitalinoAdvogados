@@ -483,8 +483,8 @@ export default function LandingAgro() {
                     className="w-full h-[480px] object-cover object-top group-hover:scale-[1.03] transition-transform duration-700"
                     loading="lazy" />
                   
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6 text-center">
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute top-6 left-6 right-6 text-center">
                     <p className="text-white font-serif text-lg md:text-xl tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
                       Do campo aos tribunais —{" "}
                       <span className="text-accent font-semibold italic">lado a lado com o produtor.</span>
