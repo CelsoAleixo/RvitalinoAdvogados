@@ -28,7 +28,7 @@ import {
   TreePine } from
 "lucide-react";
 import agroHeroAviao from "@/assets/agro-hero-aviao.png";
-import heroVideoV3 from "@/assets/agro-hero-video-v5.mp4";
+import heroVideoV3 from "@/assets/agro-hero-video-v6.mp4";
 import logoHero from "@/assets/logo-rv-transparent.png";
 import agroServiceContracts from "@/assets/agro-service-contracts.jpg";
 import agroServiceRural from "@/assets/agro-service-rural.jpg";
@@ -57,8 +57,8 @@ export default function LandingAgro() {
       {/* ═══════════════════════════════════════════════
             HERO — Side-by-side text + image
           ═══════════════════════════════════════════════ */}
-      <section className="relative min-h-[90vh] md:min-h-screen flex items-center overflow-hidden">
-        {/* Full-screen background video with subtle slow zoom */}
+      <section className="relative min-h-[90vh] md:min-h-screen flex items-end overflow-hidden">
+        {/* Full-screen background video */}
         <div className="absolute inset-0 z-0">
           <video
             autoPlay
@@ -66,65 +66,70 @@ export default function LandingAgro() {
             muted
             playsInline
             preload="auto"
-            
-            className="w-full h-full object-cover animate-[heroPan_25s_ease-in-out_infinite]"
+            className="w-full h-full object-cover"
             aria-hidden="true">
-            
             <source src={heroVideoV3} type="video/mp4" />
           </video>
-          {/* Dark overlay for readability */}
-          <div className="absolute inset-0 bg-[#0d1f0d]/65" />
+          {/* Subtle gradient — darker at bottom-left for text, transparent at top-right to show plane */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-black/70 via-black/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
         </div>
 
-        {/* Content over video — left-aligned editorial style like Air Tractor site */}
-        <div className="container-site relative z-10 py-20 md:py-32 flex flex-col items-start text-left">
-          {/* Main heading */}
-          <h1
-            className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[1.05] mb-6 max-w-3xl opacity-0 animate-[fade-in_1s_ease-out_0.1s_forwards]"
-            style={{ textShadow: "2px 4px 20px rgba(0,0,0,0.6)" }}>
-            Soluções jurídicas para quem{" "}
-            <span className="relative inline-block">
-              <span className="relative z-10">produz</span>
-              <span className="absolute bottom-1 left-0 w-full h-[6px] bg-accent/40 rounded-full" />
-            </span>
-            ,{" "}
-            <span className="relative inline-block">
-              <span className="relative z-10">transforma</span>
-              <span className="absolute bottom-1 left-0 w-full h-[6px] bg-accent/40 rounded-full" />
-            </span>
-            {" "}e{" "}
-            <span className="relative inline-block">
-              <span className="relative z-10">alimenta</span>
-              <span className="absolute bottom-1 left-0 w-full h-[6px] bg-accent/40 rounded-full" />
-            </span>
-            {" "}o Brasil.
-          </h1>
+        {/* Content — bottom-left editorial, smaller text */}
+        <div className="container-site relative z-10 pb-16 md:pb-24 pt-32">
+          <div className="max-w-2xl">
+            {/* Subtle label */}
+            <div
+              className="inline-flex items-center gap-2 mb-5 opacity-0"
+              style={{ animation: "fade-in 0.8s ease-out 0.3s forwards" }}>
+              <Leaf className="h-4 w-4 text-accent" />
+              <span className="text-accent/90 text-xs uppercase tracking-[0.2em] font-medium">Direito do Agronegócio</span>
+            </div>
 
-          <p
-            className="text-base md:text-lg text-white/80 mb-8 max-w-xl leading-relaxed opacity-0 animate-[fade-in_0.6s_ease-out_0.2s_forwards]"
-            style={{ textShadow: "1px 1px 6px rgba(0,0,0,0.5)" }}>
-            Somos especialistas em Direito aplicado ao Agronegócio e estamos aqui para proteger o patrimônio e impulsionar os negócios do produtor rural e sua família.
-          </p>
+            {/* Main heading — smaller, emotional */}
+            <h1
+              className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white leading-[1.1] mb-5 opacity-0"
+              style={{ 
+                textShadow: "1px 2px 12px rgba(0,0,0,0.5)",
+                animation: "fade-in 1.2s ease-out 0.6s forwards"
+              }}>
+              Soluções jurídicas para quem{" "}
+              <span className="text-accent">produz</span>,{" "}
+              <span className="text-accent">transforma</span> e{" "}
+              <span className="text-accent">alimenta</span> o Brasil.
+            </h1>
 
-          <div className="opacity-0 animate-[fade-in_0.6s_ease-out_0.4s_forwards]">
-            <Button
-              asChild
-              size="lg"
-              className="group bg-accent hover:bg-accent/90 text-accent-foreground font-semibold shadow-xl text-base px-8">
-              <a
-                href={WHATSAPP_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2">
-                <MessageCircle className="h-5 w-5" />
-                Converse com Nossa Equipe
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
-            </Button>
+            <p
+              className="text-sm md:text-base text-white/75 mb-7 max-w-lg leading-relaxed opacity-0"
+              style={{ 
+                textShadow: "1px 1px 4px rgba(0,0,0,0.4)",
+                animation: "fade-in 1s ease-out 1.1s forwards"
+              }}>
+              Protegemos o patrimônio e impulsionamos os negócios do produtor rural e sua família.
+            </p>
+
+            <div
+              className="opacity-0"
+              style={{ animation: "fade-in 0.8s ease-out 1.5s forwards" }}>
+              <Button
+                asChild
+                size="lg"
+                className="group bg-accent hover:bg-accent/90 text-accent-foreground font-semibold shadow-xl text-sm px-6">
+                <a
+                  href={WHATSAPP_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2">
+                  <MessageCircle className="h-4 w-4" />
+                  Converse com Nossa Equipe
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
 
-        <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-background to-transparent z-[1]" />
+        <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-background to-transparent z-[1]" />
       </section>
 
       {/* ═══════════════════════════════════════════════
