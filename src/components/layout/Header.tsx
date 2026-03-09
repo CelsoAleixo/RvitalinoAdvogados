@@ -59,11 +59,11 @@ export function Header() {
 
 
             </div>
-            <div className="flex flex-col lg:flex-row lg:items-baseline lg:gap-2 justify-center">
+            <div className="flex flex-col justify-center">
               <span className="font-serif font-semibold tracking-tight text-accent transition-colors duration-300 group-hover:text-accent/90 text-lg md:text-xl lg:text-[1.35rem] leading-tight">
                 Rodrigo Vitalino
               </span>
-              <span className="text-[10px] md:text-[11px] font-medium text-accent/70 tracking-[0.25em] md:tracking-[0.3em] uppercase mt-0.5 lg:mt-0">
+              <span className="text-[10px] md:text-[11px] font-medium text-accent/70 tracking-[0.25em] md:tracking-[0.3em] uppercase mt-0.5">
                 Advogados
               </span>
             </div>
