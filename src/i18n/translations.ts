@@ -4,7 +4,7 @@ export const translations: Record<Language, Record<string, string>> = {
   pt: {
     // Header Navigation
     "nav.home": "Início",
-    "nav.office": "O Escritório",
+    "nav.office": "Escritório",
     "nav.team": "Equipe",
     "nav.agro": "Agronegócio",
     "nav.publications": "Publicações",
