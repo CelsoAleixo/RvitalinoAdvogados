@@ -57,7 +57,7 @@ export default function LandingAgro() {
       {/* ═══════════════════════════════════════════════
             HERO — Side-by-side text + image
           ═══════════════════════════════════════════════ */}
-      <section className="relative min-h-[90vh] md:min-h-screen flex items-end overflow-hidden">
+      <section className="relative min-h-[90vh] md:min-h-screen flex items-start overflow-hidden">
         {/* Full-screen background video */}
         <div className="absolute inset-0 z-0">
           <video
@@ -76,7 +76,7 @@ export default function LandingAgro() {
         </div>
 
         {/* Content — bottom-left editorial, smaller text */}
-        <div className="container-site relative z-10 pb-16 md:pb-24 pt-32">
+        <div className="container-site relative z-10 pt-32 md:pt-40 pb-16 md:pb-24">
           <div className="max-w-2xl">
             {/* Subtle label */}
             <div
