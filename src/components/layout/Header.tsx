@@ -51,11 +51,11 @@ export function Header() {
             <div className="relative flex-shrink-0">
               <img
                 alt="Rodrigo Vitalino Advogados"
-                className="h-14 md:h-16 lg:h-[4.5rem] w-auto object-contain transition-all duration-300 group-hover:scale-[1.03] border-muted border-0"
+                className="h-14 md:h-16 lg:h-[4.5rem] w-auto object-contain transition-all duration-300 group-hover:scale-[1.03] border-0 border-primary"
                 width="72"
                 height="72"
                 fetchPriority="high"
-                decoding="async" src="/lovable-uploads/62d80b52-60b3-4242-9590-ccb5bc833cf3.png" />
+                decoding="async" src="/lovable-uploads/dc472574-eab5-4830-b6d7-55c5b5234743.png" />
 
 
             </div>
