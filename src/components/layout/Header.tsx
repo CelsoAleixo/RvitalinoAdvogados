@@ -9,7 +9,7 @@ const WHATSAPP_LINK = "https://wa.me/5511940449696?text=Ol%C3%A1%2C%20gostaria%2
 
 // Areas will use translations
 const areasDeAtuacaoKeys = [
-{ key: "area.corporateLaw", href: "/atuacao/direito-empresarial" },
+{ key: "area.corporateLaw", href: "/atuacao/assessoria-juridica-empresarial" },
 { key: "area.legalNegotiation", href: "/atuacao/negociacao-juridica" },
 { key: "area.judicialRecovery", href: "/atuacao/recuperacao-judicial" },
 { key: "area.taxLaw", href: "/atuacao/direito-tributario" },
