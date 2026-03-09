@@ -64,11 +64,12 @@ export function Header() {
                 Rodrigo Vitalino
               </span>
               <div className="flex items-center gap-2 mt-1">
-                <span className="flex-1 h-px bg-accent/40"></span>
+                <span className="flex-1 h-px bg-accent/50"></span>
+                <span className="text-[9px] md:text-[10px] font-medium text-accent/80 tracking-[0.3em] md:tracking-[0.35em] uppercase">
+                  Advogados
+                </span>
+                <span className="flex-1 h-px bg-accent/50"></span>
               </div>
-              <span className="text-[9px] md:text-[10px] font-light text-foreground/60 tracking-[0.35em] md:tracking-[0.4em] uppercase mt-1">
-                Advogados
-              </span>
             </div>
           </Link>
 
