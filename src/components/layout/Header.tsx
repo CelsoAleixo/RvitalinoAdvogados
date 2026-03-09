@@ -63,12 +63,12 @@ export function Header() {
               <span className="font-serif font-semibold tracking-tight text-accent transition-colors duration-300 group-hover:text-accent/90 text-xl md:text-2xl lg:text-[1.6rem] leading-tight">
                 Rodrigo Vitalino
               </span>
-              <div className="flex items-center mt-0.5 md:mt-1 gap-1 md:gap-[6px]">
-                <span className="flex-1 h-px bg-foreground/50"></span>
-                <span className="text-[8px] md:text-[10px] font-medium text-accent/80 tracking-[0.25em] md:tracking-[0.35em] uppercase">
+              <div className="flex items-center mt-0.5 md:mt-1 gap-1.5 md:gap-2 max-w-[90%]">
+                <span className="w-4 md:w-6 h-px bg-foreground/50"></span>
+                <span className="text-[8px] md:text-[10px] font-medium text-accent/80 tracking-[0.2em] md:tracking-[0.3em] uppercase whitespace-nowrap">
                   Advogados
                 </span>
-                <span className="flex-1 h-px bg-foreground/50"></span>
+                <span className="w-4 md:w-6 h-px bg-foreground/50"></span>
               </div>
             </div>
           </Link>
