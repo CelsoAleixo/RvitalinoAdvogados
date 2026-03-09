@@ -76,7 +76,7 @@ export default function LandingAgro() {
         </div>
 
         {/* Content — bottom-left editorial, smaller text */}
-        <div className="container-site relative z-10 pb-16 md:pb-24 pt-32">
+        <div className="container-site relative z-10 pt-32 md:pt-40 pb-16 md:pb-24">
           <div className="max-w-2xl">
             {/* Subtle label */}
             <div
