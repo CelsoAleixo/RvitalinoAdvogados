@@ -63,7 +63,7 @@ export function Header() {
               <span className="font-serif font-semibold tracking-tight text-accent transition-colors duration-300 group-hover:text-accent/90 text-xl md:text-2xl lg:text-[1.6rem] leading-tight">
                 Rodrigo Vitalino
               </span>
-              <div className="flex items-center gap-2 mt-1">
+              <div className="flex items-center mt-1 gap-[6px]">
                 <span className="flex-1 h-px bg-accent/50"></span>
                 <span className="text-[9px] md:text-[10px] font-medium text-accent/80 tracking-[0.3em] md:tracking-[0.35em] uppercase">
                   Advogados
