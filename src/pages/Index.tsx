@@ -93,7 +93,6 @@ export default function Index() {
       <section className="relative min-h-[70vh] sm:min-h-[80vh] md:min-h-[90vh] flex items-center overflow-hidden">
         <ResponsiveHeroVideo
           mp4Src={institutionalVideo}
-          posterImage="/lovable-uploads/3c2a2065-697e-4647-b72f-b5b713512bde.png"
           overlayClassName="bg-[#1a2e1a]/60 sm:bg-[#1a2e1a]/70"
           playbackRate={1.0}
           priority />
