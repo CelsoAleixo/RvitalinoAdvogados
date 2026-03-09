@@ -29,7 +29,7 @@ export default function Atuacao() {
     icon: Building2,
     title: t("area.corporateLaw"),
     description: t("area.corporateLaw.desc"),
-    href: "/atuacao/direito-empresarial",
+    href: "/atuacao/assessoria-juridica-empresarial",
     highlight: false,
     image: direitoEmpresarialImg
   }, {
