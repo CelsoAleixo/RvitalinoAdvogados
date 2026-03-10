@@ -74,7 +74,9 @@ export default function DireitoEmpresarial() {
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat image-enhance-strong" 
-          style={{ backgroundImage: `url(${heroImage})` }} 
+          style={{ backgroundImage: `url(${heroImage})` }}
+          role="img"
+          aria-label="Assessoria Jurídica Empresarial - Consultoria completa para empresas"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/70 to-background/40" />
         
