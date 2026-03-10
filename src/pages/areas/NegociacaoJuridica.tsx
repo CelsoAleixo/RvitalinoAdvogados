@@ -17,7 +17,9 @@ export default function NegociacaoJuridica() {
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat image-enhance-strong" 
-          style={{ backgroundImage: `url(${heroImage})` }} 
+          style={{ backgroundImage: `url(${heroImage})` }}
+          role="img"
+          aria-label="Negociação Jurídica - Resolução estratégica de conflitos empresariais"
         />
         {/* Overlay - reduced opacity for more image visibility */}
         <div className="absolute inset-0 bg-gradient-to-r from-background/85 via-background/60 to-background/40" />

@@ -23,7 +23,7 @@ export default function RecuperacaoJudicial() {
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center image-enhance-strong" style={{
         backgroundImage: `url(${heroImage})`
-      }} />
+      }} role="img" aria-label="Recuperação Judicial - Reestruturação de empresas e negociação com credores" />
         <div className="absolute inset-0 bg-[#1a2e1a]/65" />
         
         <div className="container-site relative z-10 py-20">
