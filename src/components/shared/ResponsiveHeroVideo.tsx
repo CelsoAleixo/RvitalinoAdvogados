@@ -158,11 +158,10 @@ export function ResponsiveHeroVideo({
         {posterImage && (
           <img
             src={posterImage}
-            alt=""
+            alt={posterAlt}
             className={`w-full h-full object-cover transition-opacity duration-700 ${
               isPosterLoaded ? "opacity-100" : "opacity-0"
             }`}
-            aria-hidden="true"
             loading="eager"
             fetchPriority="high"
           />
