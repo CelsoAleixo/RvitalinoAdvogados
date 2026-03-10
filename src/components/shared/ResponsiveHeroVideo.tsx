@@ -26,6 +26,7 @@ export function ResponsiveHeroVideo({
   mp4Src,
   webmSrc,
   posterImage,
+  posterAlt = "Vídeo institucional Rodrigo Vitalino Advogados",
   className = "",
   overlayClassName = "",
   playbackRate = 1.0,
