@@ -4,6 +4,7 @@ interface ResponsiveHeroVideoProps {
   mp4Src: string;
   webmSrc?: string;
   posterImage?: string;
+  posterAlt?: string;
   className?: string;
   overlayClassName?: string;
   playbackRate?: number;
