@@ -46,8 +46,8 @@ export default function Publicacoes() {
   return (
     <Layout>
       <PageSEO
-        title="Publicações"
-        description="Artigos, análises jurídicas e informações sobre direito empresarial, recuperação judicial, tributário e mais. Conteúdo produzido pelos especialistas do escritório Rodrigo Vitalino Advogados."
+        title="Publicações e Artigos Jurídicos"
+        description="Artigos e análises jurídicas sobre direito empresarial, recuperação judicial, tributário e agronegócio. Conteúdo dos especialistas do escritório Rodrigo Vitalino Advogados."
         jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Publicações", url: "/publicacoes" }])}
       />
       <div className="relative">

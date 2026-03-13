@@ -8,7 +8,7 @@ export default function NegociacaoJuridica() {
   return (
     <Layout>
       <PageSEO
-        title="Negociação Jurídica"
+        title="Negociação Jurídica – Mediação e Arbitragem"
         description="Negociação jurídica estratégica para resolução de conflitos empresariais. Mediação, arbitragem e acordos extrajudiciais. Rodrigo Vitalino Advogados."
         jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Áreas de Atuação", url: "/atuacao" }, { name: "Negociação Jurídica", url: "/atuacao/negociacao-juridica" }])}
       />

@@ -8,7 +8,7 @@ export default function DireitoTributario() {
   return (
     <Layout>
       <PageSEO
-        title="Direito Tributário"
+        title="Direito Tributário – Planejamento e Defesa Fiscal"
         description="Planejamento tributário, defesa fiscal e consultoria em impostos para empresas. Reduza riscos e otimize sua carga tributária. Rodrigo Vitalino Advogados."
         jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Áreas de Atuação", url: "/atuacao" }, { name: "Direito Tributário", url: "/atuacao/direito-tributario" }])}
       />

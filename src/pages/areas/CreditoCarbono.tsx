@@ -6,8 +6,8 @@ import carbonIcon from "@/assets/areas/credito-carbono-icon.png";
 export default function CreditoCarbono() {
   return <Layout>
       <PageSEO
-        title="Crédito de Carbono"
-        description="Assessoria jurídica em crédito de carbono e mercado de carbono. Regulamentação, projetos ambientais e compliance ESG. Rodrigo Vitalino Advogados."
+        title="Crédito de Carbono – Mercado e Regulamentação"
+        description="Assessoria jurídica em crédito de carbono e mercado de carbono. Regulamentação ambiental, projetos ESG e compliance. Rodrigo Vitalino Advogados."
         jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Áreas de Atuação", url: "/atuacao" }, { name: "Crédito de Carbono", url: "/atuacao/credito-de-carbono" }])}
       />
       {/* Hero Section com imagem de fundo */}
