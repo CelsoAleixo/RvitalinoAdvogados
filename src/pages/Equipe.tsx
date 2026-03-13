@@ -54,8 +54,8 @@ export default function Equipe() {
   return (
     <Layout>
       <PageSEO
-        title="Equipe"
-        description="Conheça os advogados e especialistas do escritório Rodrigo Vitalino Advogados. Profissionais experientes em direito empresarial, recuperação judicial e mais."
+        title="Equipe de Advogados Especialistas"
+        description="Conheça os advogados do escritório Rodrigo Vitalino Advogados. Especialistas em direito empresarial, recuperação judicial, tributário e assessoria jurídica internacional."
         jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Equipe", url: "/equipe" }])}
       />
       {/* Team Section */}

@@ -66,7 +66,7 @@ export default function DireitoEmpresarial() {
   return (
     <Layout>
       <PageSEO
-        title="Assessoria Jurídica Empresarial"
+        title="Assessoria Jurídica Empresarial – Societário e Compliance"
         description="Assessoria jurídica empresarial completa: contratos, societário, compliance, M&A e governança corporativa. Escritório Rodrigo Vitalino Advogados."
         jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Áreas de Atuação", url: "/atuacao" }, { name: "Assessoria Jurídica Empresarial", url: "/atuacao/assessoria-juridica-empresarial" }])}
       />

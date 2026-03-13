@@ -107,7 +107,7 @@ export default function Contato() {
   if (isSubmitted) {
     return (
       <Layout>
-        <PageSEO title="Contato" description="Entre em contato com o escritório Rodrigo Vitalino Advogados." />
+        <PageSEO title="Contato – Fale com Nossos Advogados" description="Entre em contato com o escritório Rodrigo Vitalino Advogados. Atendimento em São Paulo, Lisboa e todo o Brasil. WhatsApp, telefone e formulário online." />
         <PageHero title={text.title} description={text.description} breadcrumb={[{ label: text.title }]} />
         <section className="section-padding">
           <div className="container-site">

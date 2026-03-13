@@ -15,8 +15,8 @@ const scrollToSection = (id: string) => {
 export default function RecuperacaoJudicial() {
   return <Layout>
       <PageSEO
-        title="Recuperação Judicial"
-        description="Especialistas em recuperação judicial e extrajudicial de empresas. Reestruturação de dívidas, negociação com credores e planos de recuperação. Rodrigo Vitalino Advogados."
+        title="Recuperação Judicial e Extrajudicial de Empresas"
+        description="Especialistas em recuperação judicial e extrajudicial. Reestruturação de dívidas, negociação com credores e planos de recuperação empresarial. Rodrigo Vitalino Advogados."
         jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Áreas de Atuação", url: "/atuacao" }, { name: "Recuperação Judicial", url: "/atuacao/recuperacao-judicial" }])}
       />
       {/* Hero Section */}
