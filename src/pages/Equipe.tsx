@@ -106,6 +106,17 @@ export default function Equipe() {
                       </p>
                     )}
                   </div>
+                  {advogado.linkedin && (
+                    <a
+                      href={advogado.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`LinkedIn de ${advogado.nome}`}
+                      className="mt-2 inline-flex items-center justify-center w-8 h-8 rounded-full border border-border text-foreground/70 hover:text-accent hover:border-accent/40 hover:scale-110 transition-all duration-300"
+                    >
+                      <Linkedin className="w-4 h-4" />
+                    </a>
+                  )}
                   <a 
                     href={`mailto:${advogado.email}`} 
                     className="text-muted-foreground hover:text-accent transition-colors text-[8px] truncate block w-full mt-auto pt-2 lg:text-xs"
