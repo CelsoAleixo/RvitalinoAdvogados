@@ -2,7 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/shared/CTASection";
 import { OptimizedImage } from "@/components/shared/OptimizedImage";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
-import { Users, Shield, FileText, Scale, Building2, Landmark } from "lucide-react";
+import { Users, Shield, FileText, Scale, Building2, Landmark, Linkedin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { PageSEO, breadcrumbSchema } from "@/components/shared/PageSEO";
 
@@ -13,7 +13,8 @@ const advogados = [{
   especialidade: "(Reestruturação de Empresas)",
   especialidadeEn: "(Corporate Restructuring)",
   email: "rodrigo@rvitalinoadvogados.com.br",
-  foto: "/lovable-uploads/d699caab-0157-4f29-ab67-c28d2b8cdcd7.png"
+  foto: "/lovable-uploads/d699caab-0157-4f29-ab67-c28d2b8cdcd7.png",
+  linkedin: ""
 }, {
   nome: "Deidre Scaranello",
   cargo: "Diretora Jurídica",
@@ -21,7 +22,8 @@ const advogados = [{
   especialidade: "(Operações Estratégicas em Insolvência)",
   especialidadeEn: "(Strategic Insolvency Operations)",
   email: "deidre@rvitalinoadvogados.com.br",
-  foto: "/lovable-uploads/deidre-scaranello-v4.png"
+  foto: "/lovable-uploads/deidre-scaranello-v4.png",
+  linkedin: "https://www.linkedin.com/in/deidre-scaranello-730053291/"
 }, {
   nome: "Ana Caroline Ianuck",
   cargo: "Advogada Empresarial",
@@ -29,7 +31,8 @@ const advogados = [{
   especialidade: "(Especialista em recuperação judicial)",
   especialidadeEn: "(Judicial Recovery Specialist)",
   email: "ana.caroline@rvitalinoadvogados.com.br",
-  foto: "/lovable-uploads/ana-caroline-v3.png"
+  foto: "/lovable-uploads/ana-caroline-v3.png",
+  linkedin: "https://www.linkedin.com/in/ana-carolineianuck/"
 }, {
   nome: "Arthur Vitalino",
   cargo: "Business Manager",
@@ -37,7 +40,8 @@ const advogados = [{
   especialidade: "(Formado em Toronto, Canadá)",
   especialidadeEn: "(Graduated in Toronto, Canada)",
   email: "arthur@rvitalinoadvogados.com.br",
-  foto: "/lovable-uploads/arthur-vitalino-v4.png"
+  foto: "/lovable-uploads/arthur-vitalino-v4.png",
+  linkedin: ""
 }, {
   nome: "Elisandra Sousa Barbosa",
   cargo: "Advogada Empresarial",
@@ -45,7 +49,8 @@ const advogados = [{
   especialidade: "(Especialista em recuperação judicial)",
   especialidadeEn: "(Judicial Recovery Specialist)",
   email: "elisandra.sousa@rvitalinoadvogados.com.br",
-  foto: "/lovable-uploads/elisandra-sousa-v4.png"
+  foto: "/lovable-uploads/elisandra-sousa-v4.png",
+  linkedin: "https://www.linkedin.com/in/elisandra-barbosa-15193819b/"
 }];
 
 export default function Equipe() {
@@ -101,6 +106,17 @@ export default function Equipe() {
                       </p>
                     )}
                   </div>
+                  {advogado.linkedin && (
+                    <a
+                      href={advogado.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`LinkedIn de ${advogado.nome}`}
+                      className="mt-2 inline-flex items-center justify-center w-8 h-8 rounded-full border border-border text-foreground/70 hover:text-accent hover:border-accent/40 hover:scale-110 transition-all duration-300"
+                    >
+                      <Linkedin className="w-4 h-4" />
+                    </a>
+                  )}
                   <a 
                     href={`mailto:${advogado.email}`} 
                     className="text-muted-foreground hover:text-accent transition-colors text-[8px] truncate block w-full mt-auto pt-2 lg:text-xs"
