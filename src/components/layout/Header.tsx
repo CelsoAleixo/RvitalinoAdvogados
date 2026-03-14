@@ -60,7 +60,7 @@ export function Header() {
 
             </div>
             <div className="flex flex-col justify-center">
-              <span className="font-serif font-semibold tracking-tight text-accent transition-colors duration-300 group-hover:text-accent/90 text-xl lg:text-[1.6rem] leading-tight md:text-xl">
+              <span className="font-serif font-semibold tracking-tight text-accent transition-colors duration-300 group-hover:text-accent/90 text-xl lg:text-[1.35rem] leading-tight md:text-xl">
                 Rodrigo Vitalino
               </span>
               <div className="flex items-center mt-0.5 md:mt-1 gap-1.5 md:gap-2 max-w-[90%]">
