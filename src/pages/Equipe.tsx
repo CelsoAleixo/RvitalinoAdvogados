@@ -2,7 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/shared/CTASection";
 import { OptimizedImage } from "@/components/shared/OptimizedImage";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
-import { Users, Shield, FileText, Scale, Building2, Landmark } from "lucide-react";
+import { Users, Shield, FileText, Scale, Building2, Landmark, Linkedin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { PageSEO, breadcrumbSchema } from "@/components/shared/PageSEO";
 
