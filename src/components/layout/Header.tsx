@@ -74,7 +74,7 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex lg:items-center lg:gap-6">
+          <div className="hidden lg:flex lg:items-center lg:gap-6 ml-auto">
             {navigationKeys.slice(0, 2).map((item) =>
             <Link
               key={item.key}
