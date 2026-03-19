@@ -95,13 +95,39 @@ export default function Contato() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    setIsLoading(false);
-    setIsSubmitted(true);
-    toast({
-      title: text.toastTitle,
-      description: text.toastDesc,
-    });
+
+    const formData = new FormData(e.currentTarget);
+    const payload = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      phone: formData.get("phone") as string,
+      message: formData.get("message") as string,
+    };
+
+    try {
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: payload,
+      });
+
+      if (error) throw error;
+
+      setIsSubmitted(true);
+      toast({
+        title: text.toastTitle,
+        description: text.toastDesc,
+      });
+    } catch (err) {
+      console.error("Error sending contact form:", err);
+      toast({
+        title: language === "en" ? "Error" : "Erro",
+        description: language === "en" 
+          ? "Could not send your message. Please try again or contact us via WhatsApp." 
+          : "Não foi possível enviar sua mensagem. Tente novamente ou entre em contato pelo WhatsApp.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (isSubmitted) {
