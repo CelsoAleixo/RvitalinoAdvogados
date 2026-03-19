@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
 import { Layout } from "@/components/layout/Layout";
 import { PageHero } from "@/components/shared/PageHero";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
