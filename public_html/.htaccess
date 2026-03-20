@@ -5,30 +5,26 @@ DirectoryIndex index.php index.html
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # Force HTTPS
-  RewriteCond %{HTTPS} off
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-  # Ensure /atuacao resolves to atuacao.php instead of the physical folder
-  RewriteRule ^atuacao/?$ /atuacao.php [L]
-
   # Remove trailing slash
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^(.*)/$ /$1 [L,R=301]
 
+  # Ensure /atuacao resolves to atuacao.php instead of the physical folder
+  RewriteRule ^atuacao/?$ atuacao.php [L]
+
   # Pretty URLs
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^escritorio$ /escritorio.php [L]
-  RewriteRule ^equipe$ /equipe.php [L]
-  RewriteRule ^publicacoes$ /publicacoes.php [L]
-  RewriteRule ^portugal$ /portugal.php [L]
-  RewriteRule ^contato$ /contato.php [L]
-  RewriteRule ^agronegocio$ /agronegocio.php [L]
-  RewriteRule ^protecao-rural$ /protecao-rural.php [L]
+  RewriteRule ^escritorio$ escritorio.php [L]
+  RewriteRule ^equipe$ equipe.php [L]
+  RewriteRule ^publicacoes$ publicacoes.php [L]
+  RewriteRule ^portugal$ portugal.php [L]
+  RewriteRule ^contato$ contato.php [L]
+  RewriteRule ^agronegocio$ agronegocio.php [L]
+  RewriteRule ^protecao-rural$ protecao-rural.php [L]
 
   # Area subpages
-  RewriteRule ^atuacao/(.+)$ /atuacao/$1.php [L]
+  RewriteRule ^atuacao/(.+)$ atuacao/$1.php [L]
 </IfModule>
 
 # Cache static assets
