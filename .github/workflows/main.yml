@@ -1,4 +1,4 @@
-name: Implantação via FTP (Locaweb) # v3
+name: Implantação via FTP (Locaweb) # v4
 
 on:
   push:
@@ -21,5 +21,5 @@ jobs:
           username: ${{ secrets.USER }}
           password: ${{ secrets.PASS }}
           local-dir: ./public_html/
-          server-dir: ./
+          server-dir: ./public_html/
           dangerous-clean-slate: true
