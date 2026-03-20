@@ -20,6 +20,6 @@ jobs:
           server: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           password: ${{ secrets.PASS }}
-          local-dir: ./html-version/
-          server-dir: public_html/
+          local-dir: html-version
+          server-dir: public_html
           protocol: ftp
