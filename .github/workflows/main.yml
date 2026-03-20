@@ -1,4 +1,4 @@
-name: Deploy via FTP (Locaweb) # v2
+name: Implantação via FTP (Locaweb) # v2
 
 on:
   push:
@@ -13,12 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: FTP Deploy Locaweb
+
+      - name: Implantação FTP Locaweb
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           password: ${{ secrets.PASS }}
           local-dir: ./public_html/
-          server-dir: ./
-          dangerous-clean-slate: true
+          server-dir: /public_html/
+          dangerous-clean-slate: false
