@@ -1,1 +1,28 @@
+name: Deploy via FTP (Locaweb)
 
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Enviar html-version para Locaweb
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Deploy FTP para Locaweb
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          password: ${{ secrets.PASS }}
+          protocol: ftp
+          port: 21
+          local-dir: ./html-version/
+          server-dir: ./public_html/
+          dangerous-clean-slate: false
