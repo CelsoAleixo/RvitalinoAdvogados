@@ -11,7 +11,7 @@ $phone = htmlspecialchars(trim($_POST['phone'] ?? ''));
 $message = htmlspecialchars(trim($_POST['message'] ?? ''));
 
 if (empty($name) || empty($email) || empty($message)) {
-    header('Location: /contato.php?error=1');
+    header('Location: ./contato.php?error=1');
     exit;
 }
 
