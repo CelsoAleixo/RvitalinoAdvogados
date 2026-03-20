@@ -1,11 +1,11 @@
-name: Deploy via FTP (Locaweb)
+name: Implantar via FTP (Locaweb)
 
 on:
   push:
     branches:
       - "main"
     paths:
-      - "html-version/**"
+      - "versao-html/**"
   workflow_dispatch:
 
 jobs:
@@ -14,11 +14,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: FTP Deploy Locaweb
+      - name: Implantação FTP Locaweb
         uses: locaweb/ftp-deploy@1.0.0
         with:
           host: ${{ secrets.HOST }}
           user: ${{ secrets.USER }}
           password: ${{ secrets.PASS }}
-          localDir: "html-version"
+          localDir: "versao-html/dist"
           remoteDir: "public_html"
