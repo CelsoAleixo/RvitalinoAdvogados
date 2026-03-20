@@ -24,8 +24,8 @@ $headers = "From: $email\r\nReply-To: $email\r\nContent-Type: text/plain; charse
 $sent = mail($to, $subject, $body, $headers);
 
 if ($sent) {
-    header('Location: /contato.php?success=1');
+    header('Location: ./contato.php?success=1');
 } else {
-    header('Location: /contato.php?error=2');
+    header('Location: ./contato.php?error=2');
 }
 exit;
