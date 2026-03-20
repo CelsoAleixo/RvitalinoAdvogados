@@ -3,8 +3,8 @@
   <div class="container">
     <div class="footer__grid">
       <div>
-        <a href="<?=$base?>/index.php" style="display:inline-flex;align-items:center;gap:.75rem;margin-bottom:1rem">
-          <img src="<?=$base?>/lovable-uploads/53e1dc34-fed0-4aac-823b-6c349e9988b5.png" alt="Rodrigo Vitalino Advogados" width="48" height="48" loading="lazy">
+        <a href="<?php echo $base; ?>/index.php" style="display:inline-flex;align-items:center;gap:.75rem;margin-bottom:1rem">
+          <img src="<?php echo $base; ?>/lovable-uploads/53e1dc34-fed0-4aac-823b-6c349e9988b5.png" alt="Rodrigo Vitalino Advogados" width="48" height="48" loading="lazy">
           <span style="font-family:var(--font-serif);font-size:1.25rem;font-weight:600;color:var(--accent)">Rodrigo Vitalino<span style="display:block;font-size:.75rem;font-family:var(--font-sans);font-weight:400;color:var(--muted-fg);letter-spacing:.15em;text-transform:uppercase">Advogados</span></span>
         </a>
         <p>Assessoria jurídica e consultoria empresarial com atuação prática, eficiente e transparente desde 2008.</p>
@@ -12,12 +12,12 @@
       <div>
         <h4>Links Rápidos</h4>
         <ul>
-          <li><a href="<?=$base?>/index.php">Início</a></li>
-          <li><a href="<?=$base?>/escritorio.php">Escritório</a></li>
-          <li><a href="<?=$base?>/atuacao.php">Áreas de Atuação</a></li>
-          <li><a href="<?=$base?>/publicacoes.php">Publicações</a></li>
-          <li><a href="<?=$base?>/portugal.php">Portugal</a></li>
-          <li><a href="<?=$base?>/contato.php">Contato</a></li>
+          <li><a href="<?php echo $base; ?>/index.php">Início</a></li>
+          <li><a href="<?php echo $base; ?>/escritorio.php">Escritório</a></li>
+          <li><a href="<?php echo $base; ?>/atuacao.php">Áreas de Atuação</a></li>
+          <li><a href="<?php echo $base; ?>/publicacoes.php">Publicações</a></li>
+          <li><a href="<?php echo $base; ?>/portugal.php">Portugal</a></li>
+          <li><a href="<?php echo $base; ?>/contato.php">Contato</a></li>
         </ul>
       </div>
       <div>
@@ -38,9 +38,9 @@
       </div>
     </div>
     <div class="footer__bottom">
-      <p>© <?=date('Y')?> Rodrigo Vitalino Advogados. Todos os direitos reservados.</p>
+      <p>© <?php echo date('Y'); ?> Rodrigo Vitalino Advogados. Todos os direitos reservados.</p>
       <div style="display:flex;gap:1rem;font-size:.75rem">
-        <a href="<?=$base?>/contato.php">Política de Privacidade</a>
+        <a href="<?php echo $base; ?>/contato.php">Política de Privacidade</a>
       </div>
     </div>
   </div>
