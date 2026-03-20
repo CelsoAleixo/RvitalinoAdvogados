@@ -1,4 +1,4 @@
-name: Deploy via FTP (Locaweb)
+name: Deploy via FTP (Locaweb) # v2
 
 on:
   push:
