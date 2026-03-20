@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { PageSEO, breadcrumbSchema } from "@/components/shared/PageSEO";
 import { Button } from "@/components/ui/button";
@@ -43,24 +44,24 @@ export default function RecuperacaoJudicialAgro() {
           <nav className="mb-6 animate-fade-in" aria-label="Breadcrumb">
             <ol className="flex items-center gap-2 text-xs sm:text-sm">
               <li>
-                <a href="/" className="text-foreground/70 hover:text-accent transition-colors drop-shadow-md">
+                <Link to="/" className="text-foreground/70 hover:text-accent transition-colors drop-shadow-md">
                   Início
-                </a>
+                </Link>
               </li>
               <li className="text-foreground/50">/</li>
               <li>
-                <a href="/atuacao" className="text-foreground/70 hover:text-accent transition-colors drop-shadow-md">
+                <Link to="/atuacao" className="text-foreground/70 hover:text-accent transition-colors drop-shadow-md">
                   Áreas de Atuação
-                </a>
+                </Link>
               </li>
               <li className="text-foreground/50">/</li>
               <li>
-                <a
-                  href="/atuacao/recuperacao-judicial"
+                <Link
+                  to="/atuacao/recuperacao-judicial"
                   className="text-foreground/70 hover:text-accent transition-colors drop-shadow-md"
                 >
                   Recuperação Judicial
-                </a>
+                </Link>
               </li>
               <li className="text-foreground/50">/</li>
               <li className="text-accent font-medium drop-shadow-md">Agronegócio</li>

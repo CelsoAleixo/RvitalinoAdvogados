@@ -1,4 +1,4 @@
-name: Build & Deploy to Locaweb # v9-htaccess-fix
+name: Build & Deploy to Locaweb # v10-breadcrumbs-fix
 
 on:
   push:

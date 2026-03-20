@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/shared/CTASection";
 import { PageSEO, breadcrumbSchema } from "@/components/shared/PageSEO";
@@ -31,9 +32,9 @@ export default function RecuperacaoJudicial() {
             <div className="flex-1 text-center lg:text-left">
               <nav className="mb-6 animate-fade-in" aria-label="Breadcrumb">
                 <ol className="flex items-center justify-center lg:justify-start gap-2 text-xs sm:text-sm whitespace-nowrap">
-                  <li><a href="/" className="text-white/80 hover:text-accent transition-colors drop-shadow-md">Início</a></li>
+                  <li><Link to="/" className="text-white/80 hover:text-accent transition-colors drop-shadow-md">Início</Link></li>
                   <li className="text-white/60">/</li>
-                  <li><a href="/atuacao" className="text-white/80 hover:text-accent transition-colors drop-shadow-md">Áreas de Atuação</a></li>
+                  <li><Link to="/atuacao" className="text-white/80 hover:text-accent transition-colors drop-shadow-md">Áreas de Atuação</Link></li>
                   <li className="text-white/60">/</li>
                   <li className="text-accent font-medium drop-shadow-md">Recuperação Judicial</li>
                 </ol>
