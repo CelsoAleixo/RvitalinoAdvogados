@@ -23,11 +23,11 @@ $team = [
     <div class="grid grid--5">
       <?php foreach($team as $m): ?>
       <div class="team-card">
-        <div class="team-card__photo"><img src="./<?=$m[4]?>" alt="<?=$m[0]?>" loading="lazy"></div>
-        <div class="team-card__name"><?=$m[0]?></div>
-        <div class="team-card__role"><?=$m[1]?></div>
-        <div class="team-card__spec"><?=$m[2]?></div>
-        <a href="mailto:<?=$m[3]?>" class="team-card__email"><?=$m[3]?></a>
+        <div class="team-card__photo"><img src="./<?php echo $m[4]; ?>" alt="<?php echo $m[0]; ?>" loading="lazy"></div>
+        <div class="team-card__name"><?php echo $m[0]; ?></div>
+        <div class="team-card__role"><?php echo $m[1]; ?></div>
+        <div class="team-card__spec"><?php echo $m[2]; ?></div>
+        <a href="mailto:<?php echo $m[3]; ?>" class="team-card__email"><?php echo $m[3]; ?></a>
       </div>
       <?php endforeach; ?>
     </div>

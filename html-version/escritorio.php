@@ -54,7 +54,7 @@ include 'includes/header.php';
           <h4 style="margin-bottom:1rem">Nossos Princípios</h4>
           <div class="grid grid--2">
             <?php foreach(['Ética e seriedade na aplicação do Direito','Soluções jurídicas personalizadas e eficientes','Confiabilidade e bom relacionamento com clientes','Conhecimento, competência e aperfeiçoamento técnico','Foco nas necessidades do cliente','Comprometimento com os princípios legais','Transparência sobre riscos','Empreendedorismo'] as $v): ?>
-            <div style="display:flex;align-items:flex-start;gap:.75rem;background:hsla(0,0%,100%,.05);border-radius:.5rem;padding:1rem;border:1px solid hsla(0,0%,100%,.1)"><span style="color:var(--accent)">✓</span><span class="text-sm" style="color:hsla(0,0%,100%,.9)"><?=$v?></span></div>
+            <div style="display:flex;align-items:flex-start;gap:.75rem;background:hsla(0,0%,100%,.05);border-radius:.5rem;padding:1rem;border:1px solid hsla(0,0%,100%,.1)"><span style="color:var(--accent)">✓</span><span class="text-sm" style="color:hsla(0,0%,100%,.9)"><?php echo $v; ?></span></div>
             <?php endforeach; ?>
           </div>
         </div>
