@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "main" ]  # ou outra branch de deploy
     paths:
-      - "html-version/**"
+      - "public_html/**"
   workflow_dispatch:       # permite rodar manualmente
 
 jobs:
@@ -18,5 +18,5 @@ jobs:
           host: ${{ secrets.HOST }}
           user: ${{ secrets.USER }}
           password: ${{ secrets.PASS }}
-          localDir: "html-version"
+          localDir: "public_html"
           remoteDir: "public_html"
