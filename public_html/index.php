@@ -60,13 +60,13 @@ include 'includes/header.php';
 </section>
 
 <!-- Manifesto -->
-<section id="manifesto" class="section-padding" style="background:hsla(165,30%,18%,0.28);scroll-margin-top:6rem;">
+<section id="manifesto" class="section-padding animate-on-scroll" style="background:hsla(165,30%,18%,0.28);scroll-margin-top:6rem;">
   <div class="container">
     <div style="max-width:52rem;margin:0 auto;">
-      <p class="quote-block animate-on-scroll">
+      <p class="quote-block animate-on-scroll" style="font-family:var(--font-serif);font-size:1.5rem;color:var(--accent);font-style:italic;border-left:4px solid var(--accent);padding-left:1.25rem;line-height:1.4;">
         “Não existe por acaso, nem coincidência.”
       </p>
-      <p class="animate-on-scroll" style="color:var(--muted-fg);line-height:1.8;margin-top:1.25rem;">
+      <p class="animate-on-scroll" style="color:var(--muted-fg);line-height:1.8;margin-top:1.25rem;font-size:1.0625rem;">
         Há propósito em cada decisão. É com essa convicção que o escritório Rodrigo Vitalino Advogados construiu sua trajetória: com vocação, responsabilidade e compromisso inabalável com quem confia em nosso trabalho.
       </p>
     </div>
