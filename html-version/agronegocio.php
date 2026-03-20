@@ -8,7 +8,7 @@ include 'includes/header.php';
 <!-- Hero -->
 <section class="hero" style="min-height:90vh;">
   <video class="hero-video" autoplay loop muted playsinline preload="auto" aria-hidden="true">
-    <source src="/assets/agro-hero-video-v8.mp4" type="video/mp4">
+    <source src="./assets/agro-hero-video-v8.mp4" type="video/mp4">
   </video>
   <div style="position:absolute;inset:0;background:linear-gradient(to top-right,rgba(0,0,0,0.7),rgba(0,0,0,0.3),transparent);"></div>
   <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.6),transparent);"></div>
@@ -55,7 +55,7 @@ include 'includes/header.php';
       </div>
       <div class="animate-on-scroll">
         <div style="border-radius:1rem;overflow:hidden;box-shadow:0 20px 40px -10px rgba(0,0,0,0.3);">
-          <img src="/assets/agro-service-rural.jpg" alt="Vista aérea de lavoura" style="width:100%;height:320px;object-fit:cover;" loading="lazy">
+          <img src="./assets/agro-service-rural.jpg" alt="Vista aérea de lavoura" style="width:100%;height:320px;object-fit:cover;" loading="lazy">
         </div>
       </div>
     </div>

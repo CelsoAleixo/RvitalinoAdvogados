@@ -8,7 +8,7 @@ include 'includes/header.php';
 <!-- Hero Section -->
 <section class="hero">
   <video class="hero-video" autoplay loop muted playsinline preload="auto" aria-hidden="true">
-    <source src="/assets/institutional-video.mp4" type="video/mp4">
+    <source src="./assets/institutional-video.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
   
@@ -17,12 +17,12 @@ include 'includes/header.php';
     <p class="hero-subtitle">Seu parceiro jurídico estratégico. Transformamos desafios legais em soluções práticas para o crescimento sustentável do seu negócio.</p>
     
     <div class="hero-buttons">
-      <a href="/contato.php" class="btn btn-primary btn-lg">
+      <a href="./contato.php" class="btn btn-primary btn-lg">
         <i data-lucide="phone" style="width:20px;height:20px;"></i>
         Fale com um Advogado
         <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
       </a>
-      <a href="/atuacao.php#areas-grid" class="btn btn-white-outline btn-lg">
+      <a href="./atuacao.php#areas-grid" class="btn btn-white-outline btn-lg">
         Conheça Nossas Áreas
       </a>
     </div>
@@ -71,7 +71,7 @@ include 'includes/header.php';
 
     <div class="storytelling-grid mb-6 animate-on-scroll">
       <div class="storytelling-img">
-        <img src="/assets/storytelling-hope.jpg" alt="Parceria empresarial e esperança" loading="lazy">
+        <img src="./assets/storytelling-hope.jpg" alt="Parceria empresarial e esperança" loading="lazy">
         <div class="storytelling-img-overlay"></div>
         <div class="storytelling-img-text">Histórias reais, impacto real</div>
       </div>
@@ -87,7 +87,7 @@ include 'includes/header.php';
         <p>Foi vivendo esses cenários, lado a lado com empresários, que entendemos que nosso papel vai muito além de interpretar leis. Ele está em antecipar riscos antes que se tornem crises, estruturar sociedades para evitar conflitos, construir contratos que protegem o presente e o futuro.</p>
       </div>
       <div class="storytelling-img">
-        <img src="/assets/storytelling-renewal.jpg" alt="Renovação e crescimento empresarial" loading="lazy">
+        <img src="./assets/storytelling-renewal.jpg" alt="Renovação e crescimento empresarial" loading="lazy">
         <div class="storytelling-img-overlay" style="background:linear-gradient(to top,hsla(165,35%,12%,0.6),transparent);"></div>
       </div>
     </div>
@@ -100,7 +100,7 @@ include 'includes/header.php';
     </div>
 
     <div class="text-center animate-on-scroll">
-      <a href="/contato.php" class="btn btn-primary btn-lg">
+      <a href="./contato.php" class="btn btn-primary btn-lg">
         <i data-lucide="phone" style="width:20px;height:20px;"></i>
         Agendar consulta jurídica
         <i data-lucide="chevron-right" style="width:16px;height:16px;"></i>
@@ -118,8 +118,8 @@ include 'includes/header.php';
     </div>
 
     <div class="areas-grid mb-8 animate-on-scroll">
-      <a href="/atuacao/direito-empresarial.php" class="area-card">
-        <img src="/assets/areas/direito-empresarial-hero.jpg" alt="Direito Empresarial" loading="lazy">
+      <a href="./atuacao/direito-empresarial.php" class="area-card">
+        <img src="./assets/areas/direito-empresarial-hero.jpg" alt="Direito Empresarial" loading="lazy">
         <div class="area-card-overlay"></div>
         <div class="area-card-icon"><i data-lucide="building-2"></i></div>
         <div class="area-card-content">
@@ -132,8 +132,8 @@ include 'includes/header.php';
         </div>
       </a>
 
-      <a href="/atuacao/negociacao-juridica.php" class="area-card">
-        <img src="/assets/areas/negociacao-juridica-hero.jpg" alt="Negociação Jurídica" loading="lazy">
+      <a href="./atuacao/negociacao-juridica.php" class="area-card">
+        <img src="./assets/areas/negociacao-juridica-hero.jpg" alt="Negociação Jurídica" loading="lazy">
         <div class="area-card-overlay"></div>
         <div class="area-card-icon"><i data-lucide="scale"></i></div>
         <div class="area-card-content">
@@ -146,8 +146,8 @@ include 'includes/header.php';
         </div>
       </a>
 
-      <a href="/atuacao/recuperacao-judicial.php" class="area-card">
-        <img src="/assets/areas/recuperacao-judicial-hero.jpg" alt="Recuperação Judicial" loading="lazy">
+      <a href="./atuacao/recuperacao-judicial.php" class="area-card">
+        <img src="./assets/areas/recuperacao-judicial-hero.jpg" alt="Recuperação Judicial" loading="lazy">
         <div class="area-card-overlay"></div>
         <div class="area-card-icon"><i data-lucide="briefcase"></i></div>
         <div class="area-card-badge">Destaque</div>
@@ -161,8 +161,8 @@ include 'includes/header.php';
         </div>
       </a>
 
-      <a href="/atuacao/direito-tributario.php" class="area-card">
-        <img src="/assets/areas/direito-tributario-hero.jpg" alt="Direito Tributário" loading="lazy">
+      <a href="./atuacao/direito-tributario.php" class="area-card">
+        <img src="./assets/areas/direito-tributario-hero.jpg" alt="Direito Tributário" loading="lazy">
         <div class="area-card-overlay"></div>
         <div class="area-card-icon"><i data-lucide="scale"></i></div>
         <div class="area-card-content">
@@ -177,7 +177,7 @@ include 'includes/header.php';
     </div>
 
     <div class="text-center animate-on-scroll">
-      <a href="/atuacao.php" class="btn btn-outline">
+      <a href="./atuacao.php" class="btn btn-outline">
         <i data-lucide="briefcase" style="width:16px;height:16px;"></i>
         Ver Todas as Áreas
         <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>

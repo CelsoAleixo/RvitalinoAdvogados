@@ -6,10 +6,10 @@ include 'includes/header.php';
 ?>
 
 <section class="page-hero with-bg">
-  <div class="page-hero-bg" style="background-image:url('/assets/abstract-justice.jpg');"></div>
+  <div class="page-hero-bg" style="background-image:url('./assets/abstract-justice.jpg');"></div>
   <div class="container page-hero-content">
     <nav class="breadcrumb">
-      <a href="/">Início</a>
+      <a href="./">Início</a>
       <span>/</span>
       <span class="current">Contato</span>
     </nav>
