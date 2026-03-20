@@ -45,7 +45,7 @@ include 'includes/header.php';
       <!-- Contact Form -->
       <div class="animate-on-scroll">
         <h2 style="font-size:1.5rem;margin-bottom:1.5rem;">Envie sua mensagem</h2>
-        <form id="contactForm" action="/enviar-contato.php" method="POST">
+        <form id="contactForm" action="./enviar-contato.php" method="POST">
           <div class="form-row">
             <div class="form-group">
               <label for="name">Nome *</label>
