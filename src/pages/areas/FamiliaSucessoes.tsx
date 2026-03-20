@@ -27,13 +27,9 @@ export default function FamiliaSucessoes() {
         <div className="container-site relative z-10 py-20">
           <nav className="mb-8 text-xs sm:text-sm text-muted-foreground" aria-label="Breadcrumb">
             <ol className="flex items-center gap-2 whitespace-nowrap">
-              <li>
-                <a href="/" className="hover:text-foreground transition-colors">Início</a>
-              </li>
+              <li><Link to="/" className="hover:text-foreground transition-colors">Início</Link></li>
               <li className="text-muted-foreground/60">/</li>
-              <li>
-                <a href="/atuacao" className="hover:text-foreground transition-colors">Áreas de Atuação</a>
-              </li>
+              <li><Link to="/atuacao" className="hover:text-foreground transition-colors">Áreas de Atuação</Link></li>
               <li className="text-muted-foreground/60">/</li>
               <li className="text-foreground">Família e Sucessões</li>
             </ol>
