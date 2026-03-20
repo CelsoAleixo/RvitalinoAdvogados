@@ -5,6 +5,7 @@ on:
     branches: [ "main" ]
     paths:
       - "public_html/**"
+      - ".github/workflows/main.yml"
   workflow_dispatch:
 
 jobs:
@@ -20,3 +21,4 @@ jobs:
           password: ${{ secrets.PASS }}
           local-dir: ./public_html/
           server-dir: ./public_html/
+          dangerous-clean-slate: true
