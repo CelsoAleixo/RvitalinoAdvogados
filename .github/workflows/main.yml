@@ -1,4 +1,4 @@
-name: Build & Deploy to Locaweb # v8
+name: Build & Deploy to Locaweb
 
 on:
   push:
@@ -15,6 +15,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -36,6 +37,6 @@ jobs:
           server: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           password: ${{ secrets.PASS }}
-          local-dir: ./dist/
-          server-dir: ./public_html/
+          local-dir: dist
+          server-dir: public_html
           dangerous-clean-slate: true
