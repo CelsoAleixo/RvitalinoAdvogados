@@ -60,10 +60,10 @@ include 'includes/header.php';
         ['Posse e Propriedade','Reintegração, manutenção de posse, usucapião e regularização de imóveis rurais.','agro-service-rural.jpg'],
       ] as $item): ?>
       <div class="card" style="padding:0;overflow:hidden">
-        <img src="./assets/<?=$item[2]?>" alt="<?=$item[0]?>" loading="lazy" style="width:100%;height:220px;object-fit:cover">
+        <img src="./assets/<?php echo $item[2]; ?>" alt="<?php echo $item[0]; ?>" loading="lazy" style="width:100%;height:220px;object-fit:cover">
         <div style="padding:1.5rem">
-          <h3 style="margin-bottom:.5rem;color:var(--fg)"><?=$item[0]?></h3>
-          <p class="text-muted text-sm"><?=$item[1]?></p>
+          <h3 style="margin-bottom:.5rem;color:var(--fg)"><?php echo $item[0]; ?></h3>
+          <p class="text-muted text-sm"><?php echo $item[1]; ?></p>
         </div>
       </div>
       <?php endforeach; ?>
@@ -81,8 +81,8 @@ include 'includes/header.php';
         ['Negociação de Dívidas','Renegociação estratégica de passivos com instituições financeiras e fornecedores.'],
       ] as $item): ?>
       <div class="card">
-        <h3 style="margin-bottom:.5rem;color:var(--fg)"><?=$item[0]?></h3>
-        <p class="text-muted text-sm"><?=$item[1]?></p>
+        <h3 style="margin-bottom:.5rem;color:var(--fg)"><?php echo $item[0]; ?></h3>
+        <p class="text-muted text-sm"><?php echo $item[1]; ?></p>
       </div>
       <?php endforeach; ?>
     </div>
@@ -98,9 +98,9 @@ include 'includes/header.php';
         ['03','Execução e Defesa','Atuamos com foco em proteção patrimonial, negociação eficiente e segurança jurídica.'],
       ] as $step): ?>
       <div class="card" style="text-align:center">
-        <div style="display:inline-flex;padding:.4rem .9rem;border-radius:999px;background:var(--accent);color:var(--accent-fg);font-size:.75rem;font-weight:700;margin-bottom:1rem">Passo <?=$step[0]?></div>
-        <h3 style="margin-bottom:.75rem;color:var(--fg)"><?=$step[1]?></h3>
-        <p class="text-muted text-sm"><?=$step[2]?></p>
+        <div style="display:inline-flex;padding:.4rem .9rem;border-radius:999px;background:var(--accent);color:var(--accent-fg);font-size:.75rem;font-weight:700;margin-bottom:1rem">Passo <?php echo $step[0]; ?></div>
+        <h3 style="margin-bottom:.75rem;color:var(--fg)"><?php echo $step[1]; ?></h3>
+        <p class="text-muted text-sm"><?php echo $step[2]; ?></p>
       </div>
       <?php endforeach; ?>
     </div>

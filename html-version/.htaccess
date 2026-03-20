@@ -4,12 +4,19 @@ DirectoryIndex index.php index.html
   RewriteEngine On
   RewriteBase /
 
+  # Home
   RewriteRule ^$ index.php [L]
 
-  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  # Priority: if URL matches a directory BUT a .php file also exists, serve the .php
   RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{DOCUMENT_ROOT}/$1.php -f
+  RewriteRule ^(.+?)/?$ $1.php [L,QSA]
+
+  # Skip existing files
+  RewriteCond %{REQUEST_FILENAME} -f
   RewriteRule ^ - [L]
 
+  # Extensionless URLs → .php
   RewriteCond %{REQUEST_FILENAME}.php -f
   RewriteRule ^(.+?)/?$ $1.php [L,QSA]
 </IfModule>
