@@ -9,10 +9,10 @@ include '../includes/header.php';
 ?>
 
 <section class="hero" style="min-height:70vh">
-  <div class="hero__bg"><img src="<?=$base?>/assets/areas/direito-tributario-hero.jpg" alt="Direito Tributário"></div>
+  <div class="hero__bg"><img src="<?php echo $base; ?>/assets/areas/direito-tributario-hero.jpg" alt="Direito Tributário"></div>
   <div class="hero__overlay" style="background:linear-gradient(to right,rgba(13,26,13,.88),rgba(13,26,13,.65),rgba(13,26,13,.35))"></div>
   <div class="hero__content"><div class="container" style="padding-top:5rem;padding-bottom:5rem">
-    <div class="breadcrumb" style="color:rgba(255,255,255,.74);margin-bottom:1rem"><a href="<?=$base?>/index.php">Início</a><span class="sep">/</span><a href="<?=$base?>/atuacao.php">Áreas de Atuação</a><span class="sep">/</span><span class="current">Direito Tributário</span></div>
+    <div class="breadcrumb" style="color:rgba(255,255,255,.74);margin-bottom:1rem"><a href="<?php echo $base; ?>/index.php">Início</a><span class="sep">/</span><a href="<?php echo $base; ?>/atuacao.php">Áreas de Atuação</a><span class="sep">/</span><span class="current">Direito Tributário</span></div>
     <div style="max-width:42rem"><h1>Direito Tributário</h1><p style="margin-top:1rem;font-size:clamp(1rem,2.4vw,1.25rem);color:rgba(255,255,255,.9)">Gestão fiscal estratégica, defesa em litígios tributários e planejamento para reduzir riscos e otimizar resultados.</p></div>
   </div></div>
 </section>
@@ -32,8 +32,8 @@ include '../includes/header.php';
         ['Assessoria Estratégica','Apoio em reuniões, comitês e temas de responsabilização tributária em mudanças societárias.'],
       ] as $item): ?>
       <div class="card">
-        <h3 style="margin-bottom:.75rem;color:var(--fg)"><?=$item[0]?></h3>
-        <p class="text-muted text-sm"><?=$item[1]?></p>
+        <h3 style="margin-bottom:.75rem;color:var(--fg)"><?php echo $item[0]; ?></h3>
+        <p class="text-muted text-sm"><?php echo $item[1]; ?></p>
       </div>
       <?php endforeach; ?>
     </div>
@@ -46,5 +46,5 @@ $cta_desc = 'Entre em contato para uma análise fiscal estratégica e personaliz
 include '../includes/cta.php';
 include '../includes/footer.php';
 ?>
-<script src="<?=$base?>/js/main.js"></script>
+<script src="<?php echo $base; ?>/js/main.js"></script>
 </body></html>
