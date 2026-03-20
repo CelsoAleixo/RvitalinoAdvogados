@@ -1,4 +1,4 @@
-name: Build & Deploy to Locaweb
+name: Build & Deploy to Locaweb # v9-htaccess-fix
 
 on:
   push:
