@@ -26,6 +26,10 @@ include 'includes/header.php';
         Conheça Nossas Áreas
       </a>
     </div>
+
+    <div style="margin-top:1rem;">
+      <a href="#manifesto" class="btn btn-white-outline btn-sm">&ldquo;Não existe por acaso, nem coincidência&rdquo;</a>
+    </div>
   </div>
   
   <div class="hero-gradient"></div>
@@ -51,6 +55,20 @@ include 'includes/header.php';
         <i data-lucide="clock"></i>
         <span>Resposta Rápida</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Manifesto -->
+<section id="manifesto" class="section-padding" style="background:hsla(165,30%,18%,0.28);scroll-margin-top:6rem;">
+  <div class="container">
+    <div style="max-width:52rem;margin:0 auto;">
+      <p class="quote-block animate-on-scroll">
+        “Não existe por acaso, nem coincidência.”
+      </p>
+      <p class="animate-on-scroll" style="color:var(--muted-fg);line-height:1.8;margin-top:1.25rem;">
+        Há propósito em cada decisão. É com essa convicção que o escritório Rodrigo Vitalino Advogados construiu sua trajetória: com vocação, responsabilidade e compromisso inabalável com quem confia em nosso trabalho.
+      </p>
     </div>
   </div>
 </section>
@@ -114,7 +132,7 @@ include 'includes/header.php';
   <div class="container">
     <div class="animate-on-scroll" style="display:flex;align-items:center;gap:0.75rem;margin-bottom:2rem;">
       <div class="icon-box"><i data-lucide="briefcase"></i></div>
-      <h2 class="section-heading" style="margin-bottom:0;">Áreas de Atuação</h2>
+      <h2 class="section-heading" style="margin-bottom:0;">Atuação</h2>
     </div>
 
     <div class="areas-grid mb-8 animate-on-scroll">
@@ -179,7 +197,7 @@ include 'includes/header.php';
     <div class="text-center animate-on-scroll">
       <a href="./atuacao.php" class="btn btn-outline">
         <i data-lucide="briefcase" style="width:16px;height:16px;"></i>
-        Ver Todas as Áreas
+        Ver Toda a Atuação
         <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
       </a>
     </div>

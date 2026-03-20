@@ -1,6 +1,6 @@
 <?php
 $currentPage = 'escritorio';
-$pageTitle = 'O Escritório';
+$pageTitle = 'Escritório';
 $pageDescription = 'Conheça o escritório Rodrigo Vitalino Advogados: história, valores, missão e atuação internacional em direito empresarial e recuperação judicial.';
 include 'includes/header.php';
 ?>
@@ -20,7 +20,7 @@ include 'includes/header.php';
       <nav class="breadcrumb" style="animation:fadeIn 0.8s ease-out;">
         <a href="./" style="color:hsla(0,0%,100%,0.8);">Início</a>
         <span style="color:hsla(0,0%,100%,0.6);">/</span>
-        <span class="current">O Escritório</span>
+        <span class="current">Escritório</span>
       </nav>
 
       <div class="badge badge-accent mb-6" style="animation:fadeIn 0.8s ease-out;">
@@ -28,7 +28,7 @@ include 'includes/header.php';
         Desde 2008
       </div>
 
-      <h1 style="font-size:3rem;font-weight:700;margin-bottom:1.5rem;text-shadow:2px 2px 8px rgba(0,0,0,0.5);animation:fadeIn 0.8s ease-out;">O Escritório</h1>
+      <h1 style="font-size:3rem;font-weight:700;margin-bottom:1.5rem;text-shadow:2px 2px 8px rgba(0,0,0,0.5);animation:fadeIn 0.8s ease-out;">Escritório</h1>
 
       <div style="display:flex;flex-wrap:wrap;gap:2rem 3rem;animation:slideUp 0.8s ease-out 0.2s both;">
         <div class="text-center">
