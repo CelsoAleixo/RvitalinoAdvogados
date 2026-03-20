@@ -1,7 +1,7 @@
 <?php
 // Simple contact form handler
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: /contato.php');
+    header('Location: ./contato.php');
     exit;
 }
 
@@ -11,7 +11,7 @@ $phone = htmlspecialchars(trim($_POST['phone'] ?? ''));
 $message = htmlspecialchars(trim($_POST['message'] ?? ''));
 
 if (empty($name) || empty($email) || empty($message)) {
-    header('Location: /contato.php?error=1');
+    header('Location: ./contato.php?error=1');
     exit;
 }
 
@@ -24,8 +24,8 @@ $headers = "From: $email\r\nReply-To: $email\r\nContent-Type: text/plain; charse
 $sent = mail($to, $subject, $body, $headers);
 
 if ($sent) {
-    header('Location: /contato.php?success=1');
+    header('Location: ./contato.php?success=1');
 } else {
-    header('Location: /contato.php?error=2');
+    header('Location: ./contato.php?error=2');
 }
 exit;
