@@ -8,7 +8,7 @@ include 'includes/header.php';
 <!-- Hero -->
 <section style="position:relative;min-height:60vh;display:flex;align-items:center;overflow:hidden;">
   <div style="position:absolute;inset:0;background:#0d1a0d;">
-    <img src="/assets/escritorio-hero.png" alt="Escritório Rodrigo Vitalino Advogados" style="width:100%;height:100%;object-fit:cover;">
+    <img src="./assets/escritorio-hero.png" alt="Escritório Rodrigo Vitalino Advogados" style="width:100%;height:100%;object-fit:cover;">
     <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(13,26,13,0.6),transparent);"></div>
     <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(13,26,13,0.3),transparent);"></div>
   </div>
@@ -18,7 +18,7 @@ include 'includes/header.php';
   <div class="container" style="position:relative;z-index:10;">
     <div style="max-width:36rem;">
       <nav class="breadcrumb" style="animation:fadeIn 0.8s ease-out;">
-        <a href="/" style="color:hsla(0,0%,100%,0.8);">Início</a>
+        <a href="./" style="color:hsla(0,0%,100%,0.8);">Início</a>
         <span style="color:hsla(0,0%,100%,0.6);">/</span>
         <span class="current">O Escritório</span>
       </nav>
@@ -66,7 +66,7 @@ include 'includes/header.php';
           <p class="mb-6">Nossa expertise abrange desde o direito empresarial e recuperação judicial até planejamento tributário e sucessório, sempre com foco em soluções personalizadas.</p>
         </div>
         <div style="border-radius:0.75rem;overflow:hidden;margin-bottom:1.5rem;">
-          <img src="/lovable-uploads/d8c139b1-7ccc-4be4-8400-a2fc92806d89.png" alt="Sala de reuniões" style="width:100%;height:16rem;object-fit:cover;" loading="lazy">
+          <img src="./lovable-uploads/d8c139b1-7ccc-4be4-8400-a2fc92806d89.png" alt="Sala de reuniões" style="width:100%;height:16rem;object-fit:cover;" loading="lazy">
         </div>
         <div style="display:flex;align-items:center;gap:1rem;padding:1rem;background:hsla(45,95%,52%,0.1);border-radius:0.75rem;border:1px solid hsla(45,95%,52%,0.2);">
           <div style="background:var(--accent);color:var(--accent-fg);padding:0.5rem 1rem;border-radius:0.5rem;text-align:center;">

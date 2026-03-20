@@ -6,9 +6,9 @@ include 'includes/header.php';
 ?>
 
 <section class="page-hero with-bg">
-  <div class="page-hero-bg" style="background-image:url('/assets/publications-hero.jpg');"></div>
+  <div class="page-hero-bg" style="background-image:url('./assets/publications-hero.jpg');"></div>
   <div class="container page-hero-content">
-    <nav class="breadcrumb"><a href="/">Início</a><span>/</span><span class="current">Publicações</span></nav>
+    <nav class="breadcrumb"><a href="./">Início</a><span>/</span><span class="current">Publicações</span></nav>
     <h1>Publicações e Artigos Jurídicos</h1>
     <p class="page-hero-desc">Conteúdo produzido pelos especialistas do escritório sobre temas relevantes do direito.</p>
   </div>
