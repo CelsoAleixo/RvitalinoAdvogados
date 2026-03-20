@@ -1,8 +1,8 @@
 RewriteEngine On
 
-# Force HTTPS (uncomment if needed)
-# RewriteCond %{HTTPS} off
-# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Remove trailing slash
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -24,7 +24,7 @@ RewriteRule ^protecao-rural$ /protecao-rural.php [L]
 RewriteRule ^atuacao/(.+)$ /atuacao/$1.php [L]
 
 # Default index
-DirectoryIndex index.php
+DirectoryIndex index.php index.html
 
 # Cache static assets
 <IfModule mod_expires.c>
