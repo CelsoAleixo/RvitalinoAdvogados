@@ -37,6 +37,6 @@ jobs:
           server: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           password: ${{ secrets.PASS }}
-          local-dir: dist
-          server-dir: public_html
+          local-dir: ./dist/
+          server-dir: ./public_html/
           dangerous-clean-slate: true
