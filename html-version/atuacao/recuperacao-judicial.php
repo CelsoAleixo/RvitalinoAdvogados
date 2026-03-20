@@ -9,16 +9,16 @@ include '../includes/header.php';
 ?>
 
 <section class="hero" style="min-height:65vh">
-  <div class="hero__bg"><img src="<?=$base?>/assets/areas/recuperacao-judicial-hero.jpg" alt="Recuperação Judicial"></div>
+  <div class="hero__bg"><img src="<?php echo $base; ?>/assets/areas/recuperacao-judicial-hero.jpg" alt="Recuperação Judicial"></div>
   <div class="hero__overlay" style="background:rgba(26,46,26,.7)"></div>
   <div class="hero__content"><div class="container" style="padding-top:5rem;padding-bottom:5rem">
-    <div class="breadcrumb" style="color:rgba(255,255,255,.78);margin-bottom:1rem"><a href="<?=$base?>/index.php">Início</a><span class="sep">/</span><a href="<?=$base?>/atuacao.php">Áreas de Atuação</a><span class="sep">/</span><span class="current">Recuperação Judicial</span></div>
+    <div class="breadcrumb" style="color:rgba(255,255,255,.78);margin-bottom:1rem"><a href="<?php echo $base; ?>/index.php">Início</a><span class="sep">/</span><a href="<?php echo $base; ?>/atuacao.php">Áreas de Atuação</a><span class="sep">/</span><span class="current">Recuperação Judicial</span></div>
     <div style="max-width:48rem">
       <h1 style="color:#fff;text-shadow:2px 2px 8px rgba(0,0,0,.45)">Recuperação Judicial</h1>
       <p style="margin-top:1rem;font-size:clamp(1rem,2.4vw,1.25rem);color:rgba(255,255,255,.92)">Experiência consolidada na condução de processos de recuperação judicial em diversos setores da economia, com foco na preservação da atividade empresarial.</p>
       <div style="display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem">
         <a href="#transporte-publico" class="btn btn--outline">Transporte Público</a>
-        <a href="<?=$base?>/protecao-rural.php" class="btn btn--outline">Agronegócio</a>
+        <a href="<?php echo $base; ?>/protecao-rural.php" class="btn btn--outline">Agronegócio</a>
       </div>
     </div>
   </div></div>
@@ -42,7 +42,7 @@ include '../includes/header.php';
           'Negociação com entes públicos e agências reguladoras',
           'Proteção dos trabalhadores e garantia de direitos',
         ] as $item): ?>
-        <div class="card"><p class="text-muted text-sm"><?=$item?></p></div>
+        <div class="card"><p class="text-muted text-sm"><?php echo $item; ?></p></div>
         <?php endforeach; ?>
       </div>
     </div>
@@ -58,12 +58,12 @@ include '../includes/header.php';
           ['Reestruturação de Dívidas','Negociação de prazos, carências e condições de pagamento adequadas aos ciclos do campo.'],
         ] as $item): ?>
         <div class="card">
-          <h3 style="margin-bottom:.5rem;color:var(--fg)"><?=$item[0]?></h3>
-          <p class="text-muted text-sm"><?=$item[1]?></p>
+          <h3 style="margin-bottom:.5rem;color:var(--fg)"><?php echo $item[0]; ?></h3>
+          <p class="text-muted text-sm"><?php echo $item[1]; ?></p>
         </div>
         <?php endforeach; ?>
       </div>
-      <a href="<?=$base?>/protecao-rural.php" class="btn btn--primary">Saiba mais sobre Proteção Rural</a>
+      <a href="<?php echo $base; ?>/protecao-rural.php" class="btn btn--primary">Saiba mais sobre Proteção Rural</a>
     </div>
   </div>
 </section>
@@ -74,5 +74,5 @@ $cta_desc = 'Converse com nossa equipe para uma análise estratégica e especial
 include '../includes/cta.php';
 include '../includes/footer.php';
 ?>
-<script src="<?=$base?>/js/main.js"></script>
+<script src="<?php echo $base; ?>/js/main.js"></script>
 </body></html>

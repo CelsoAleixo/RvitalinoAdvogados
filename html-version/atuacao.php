@@ -33,13 +33,13 @@ include 'includes/header.php';
         ['Crédito de Carbono','Projetos sustentáveis e compliance ESG.','atuacao/credito-de-carbono.php','areas/credito-carbono-hero.jpg',true],
       ];
       foreach ($areas as $a): ?>
-      <a href="./<?=$a[2]?>" class="card--area" style="text-decoration:none">
-        <img src="./assets/<?=$a[3]?>" alt="<?=$a[0]?>" loading="lazy">
+      <a href="./<?php echo $a[2]; ?>" class="card--area" style="text-decoration:none">
+        <img src="./assets/<?php echo $a[3]; ?>" alt="<?php echo $a[0]; ?>" loading="lazy">
         <div class="overlay"></div>
         <?php if($a[4]): ?><div class="highlight-badge">Destaque</div><?php endif; ?>
         <div class="content">
-          <h3 style="color:#fff;margin-bottom:.25rem"><?=$a[0]?></h3>
-          <p style="color:rgba(255,255,255,.9);font-size:.875rem;margin-bottom:.5rem"><?=$a[1]?></p>
+          <h3 style="color:#fff;margin-bottom:.25rem"><?php echo $a[0]; ?></h3>
+          <p style="color:rgba(255,255,255,.9);font-size:.875rem;margin-bottom:.5rem"><?php echo $a[1]; ?></p>
           <span style="color:var(--accent);font-size:.875rem;font-weight:500">Saiba mais →</span>
         </div>
       </a>
