@@ -19,11 +19,11 @@ include 'includes/header.php';
     <div class="team-grid animate-on-scroll">
       <?php
       $advogados = [
-        ['nome' => 'Rodrigo Vitalino', 'cargo' => 'Sócio Fundador', 'especialidade' => '(Reestruturação de Empresas)', 'email' => 'rodrigo@rvitalinoadvogados.com.br', 'foto' => '/lovable-uploads/d699caab-0157-4f29-ab67-c28d2b8cdcd7.png'],
-        ['nome' => 'Deidre Scaranello', 'cargo' => 'Diretora Jurídica', 'especialidade' => '(Operações Estratégicas em Insolvência)', 'email' => 'deidre@rvitalinoadvogados.com.br', 'foto' => '/lovable-uploads/deidre-scaranello-v4.png', 'objPos' => 'center 20%'],
-        ['nome' => 'Ana Caroline Ianuck', 'cargo' => 'Advogada Empresarial', 'especialidade' => '(Especialista em recuperação judicial)', 'email' => 'ana.caroline@rvitalinoadvogados.com.br', 'foto' => '/lovable-uploads/ana-caroline-v3.png'],
-        ['nome' => 'Arthur Vitalino', 'cargo' => 'Business Manager', 'especialidade' => '(Formado em Toronto, Canadá)', 'email' => 'arthur@rvitalinoadvogados.com.br', 'foto' => '/lovable-uploads/arthur-vitalino-v4.png'],
-        ['nome' => 'Elisandra Sousa Barbosa', 'cargo' => 'Advogada Empresarial', 'especialidade' => '(Especialista em recuperação judicial)', 'email' => 'elisandra.sousa@rvitalinoadvogados.com.br', 'foto' => '/lovable-uploads/elisandra-sousa-v4.png', 'objPos' => 'center 15%'],
+        ['nome' => 'Rodrigo Vitalino', 'cargo' => 'Sócio Fundador', 'especialidade' => '(Reestruturação de Empresas)', 'email' => 'rodrigo@rvitalinoadvogados.com.br', 'foto' => './lovable-uploads/d699caab-0157-4f29-ab67-c28d2b8cdcd7.png'],
+        ['nome' => 'Deidre Scaranello', 'cargo' => 'Diretora Jurídica', 'especialidade' => '(Operações Estratégicas em Insolvência)', 'email' => 'deidre@rvitalinoadvogados.com.br', 'foto' => './lovable-uploads/deidre-scaranello-v4.png', 'objPos' => 'center 20%'],
+        ['nome' => 'Ana Caroline Ianuck', 'cargo' => 'Advogada Empresarial', 'especialidade' => '(Especialista em recuperação judicial)', 'email' => 'ana.caroline@rvitalinoadvogados.com.br', 'foto' => './lovable-uploads/ana-caroline-v3.png'],
+        ['nome' => 'Arthur Vitalino', 'cargo' => 'Business Manager', 'especialidade' => '(Formado em Toronto, Canadá)', 'email' => 'arthur@rvitalinoadvogados.com.br', 'foto' => './lovable-uploads/arthur-vitalino-v4.png'],
+        ['nome' => 'Elisandra Sousa Barbosa', 'cargo' => 'Advogada Empresarial', 'especialidade' => '(Especialista em recuperação judicial)', 'email' => 'elisandra.sousa@rvitalinoadvogados.com.br', 'foto' => './lovable-uploads/elisandra-sousa-v4.png', 'objPos' => 'center 15%'],
       ];
       foreach ($advogados as $adv): ?>
       <div class="team-card">

@@ -99,10 +99,10 @@ include 'includes/header.php';
     <div class="grid-2 mb-8 animate-on-scroll">
       <?php
       $services = [
-        ['img' => '/assets/agro-service-legal.jpg', 'icon' => 'gavel', 'title' => 'Defesa em Execuções', 'desc' => 'Proteção contra execuções rurais movidas por bancos, cooperativas, revendas e tradings.'],
-        ['img' => '/assets/agro-service-family.jpg', 'icon' => 'users', 'title' => 'Planejamento Sucessório', 'desc' => 'Estruturação de holdings e assessoria em sucessões para transição entre gerações.'],
-        ['img' => '/assets/agro-service-contracts.jpg', 'icon' => 'file-text', 'title' => 'Contratos Rurais', 'desc' => 'Análise e elaboração de contratos de compra e venda, arrendamento rural e parceria agrícola.'],
-        ['img' => '/assets/agro-service-rural.jpg', 'icon' => 'home', 'title' => 'Posse e Propriedade', 'desc' => 'Ações de reintegração, manutenção de posse, usucapião e regularização de imóveis rurais.'],
+        ['img' => './assets/agro-service-legal.jpg', 'icon' => 'gavel', 'title' => 'Defesa em Execuções', 'desc' => 'Proteção contra execuções rurais movidas por bancos, cooperativas, revendas e tradings.'],
+        ['img' => './assets/agro-service-family.jpg', 'icon' => 'users', 'title' => 'Planejamento Sucessório', 'desc' => 'Estruturação de holdings e assessoria em sucessões para transição entre gerações.'],
+        ['img' => './assets/agro-service-contracts.jpg', 'icon' => 'file-text', 'title' => 'Contratos Rurais', 'desc' => 'Análise e elaboração de contratos de compra e venda, arrendamento rural e parceria agrícola.'],
+        ['img' => './assets/agro-service-rural.jpg', 'icon' => 'home', 'title' => 'Posse e Propriedade', 'desc' => 'Ações de reintegração, manutenção de posse, usucapião e regularização de imóveis rurais.'],
       ];
       foreach ($services as $svc): ?>
       <div style="border-radius:1rem;overflow:hidden;background:var(--card);border:1px solid hsla(165,20%,28%,0.6);transition:all 0.3s;">

@@ -34,14 +34,14 @@ include 'includes/header.php';
     <div class="areas-grid animate-on-scroll">
       <?php
       $areas = [
-        ['icon' => 'building-2', 'title' => 'Direito Empresarial', 'desc' => 'Assessoria completa para empresas, desde a constituição até a reestruturação societária.', 'href' => '/atuacao/direito-empresarial.php', 'img' => '/assets/areas/direito-empresarial-hero.jpg'],
-        ['icon' => 'handshake', 'title' => 'Negociação Jurídica', 'desc' => 'Mediação, conciliação e negociação estratégica de acordos para resolução de conflitos.', 'href' => '/atuacao/negociacao-juridica.php', 'img' => '/assets/areas/negociacao-juridica-hero.jpg'],
-        ['icon' => 'trending-up', 'title' => 'Recuperação Judicial', 'desc' => 'Reestruturação empresarial e proteção patrimonial para empresas em crise.', 'href' => '/atuacao/recuperacao-judicial.php', 'img' => '/assets/areas/recuperacao-judicial-hero.jpg', 'highlight' => true],
-        ['icon' => 'calculator', 'title' => 'Direito Tributário', 'desc' => 'Planejamento tributário, defesa fiscal e recuperação de créditos.', 'href' => '/atuacao/direito-tributario.php', 'img' => '/assets/areas/direito-tributario-hero.jpg'],
-        ['icon' => 'briefcase', 'title' => 'Direito Trabalhista', 'desc' => 'Assessoria em relações trabalhistas, compliance e contencioso.', 'href' => '/atuacao/direito-trabalhista.php', 'img' => '/assets/areas/direito-trabalhista-hero.jpg'],
-        ['icon' => 'heart', 'title' => 'Família e Sucessões', 'desc' => 'Planejamento patrimonial, inventários e proteção do legado familiar.', 'href' => '/atuacao/familia-e-sucessoes.php', 'img' => '/assets/areas/familia-sucessoes-hero.jpg'],
-        ['icon' => 'scale', 'title' => 'Direito Civil', 'desc' => 'Contratos, responsabilidade civil, direito imobiliário e mais.', 'href' => '/atuacao/direito-civil.php', 'img' => '/assets/areas/direito-civil-hero.jpg'],
-        ['icon' => 'leaf', 'title' => 'Crédito de Carbono', 'desc' => 'Assessoria em mercado de carbono, ESG e sustentabilidade corporativa.', 'href' => '/atuacao/credito-de-carbono.php', 'img' => '/assets/areas/credito-carbono-hero.jpg', 'highlight' => true],
+        ['icon' => 'building-2', 'title' => 'Direito Empresarial', 'desc' => 'Assessoria completa para empresas, desde a constituição até a reestruturação societária.', 'href' => './atuacao/direito-empresarial.php', 'img' => './assets/areas/direito-empresarial-hero.jpg'],
+        ['icon' => 'handshake', 'title' => 'Negociação Jurídica', 'desc' => 'Mediação, conciliação e negociação estratégica de acordos para resolução de conflitos.', 'href' => './atuacao/negociacao-juridica.php', 'img' => './assets/areas/negociacao-juridica-hero.jpg'],
+        ['icon' => 'trending-up', 'title' => 'Recuperação Judicial', 'desc' => 'Reestruturação empresarial e proteção patrimonial para empresas em crise.', 'href' => './atuacao/recuperacao-judicial.php', 'img' => './assets/areas/recuperacao-judicial-hero.jpg', 'highlight' => true],
+        ['icon' => 'calculator', 'title' => 'Direito Tributário', 'desc' => 'Planejamento tributário, defesa fiscal e recuperação de créditos.', 'href' => './atuacao/direito-tributario.php', 'img' => './assets/areas/direito-tributario-hero.jpg'],
+        ['icon' => 'briefcase', 'title' => 'Direito Trabalhista', 'desc' => 'Assessoria em relações trabalhistas, compliance e contencioso.', 'href' => './atuacao/direito-trabalhista.php', 'img' => './assets/areas/direito-trabalhista-hero.jpg'],
+        ['icon' => 'heart', 'title' => 'Família e Sucessões', 'desc' => 'Planejamento patrimonial, inventários e proteção do legado familiar.', 'href' => './atuacao/familia-e-sucessoes.php', 'img' => './assets/areas/familia-sucessoes-hero.jpg'],
+        ['icon' => 'scale', 'title' => 'Direito Civil', 'desc' => 'Contratos, responsabilidade civil, direito imobiliário e mais.', 'href' => './atuacao/direito-civil.php', 'img' => './assets/areas/direito-civil-hero.jpg'],
+        ['icon' => 'leaf', 'title' => 'Crédito de Carbono', 'desc' => 'Assessoria em mercado de carbono, ESG e sustentabilidade corporativa.', 'href' => './atuacao/credito-de-carbono.php', 'img' => './assets/areas/credito-carbono-hero.jpg', 'highlight' => true],
       ];
       foreach ($areas as $area): ?>
       <a href="<?php echo $area['href']; ?>" class="area-card">
