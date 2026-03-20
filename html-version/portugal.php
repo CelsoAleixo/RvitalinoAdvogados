@@ -6,9 +6,9 @@ include 'includes/header.php';
 ?>
 
 <section class="page-hero with-bg">
-  <div class="page-hero-bg" style="background-image:url('/assets/portugal-hero.jpg');"></div>
+  <div class="page-hero-bg" style="background-image:url('./assets/portugal-hero.jpg');"></div>
   <div class="container page-hero-content">
-    <nav class="breadcrumb"><a href="/">Início</a><span>/</span><span class="current">Portugal</span></nav>
+    <nav class="breadcrumb"><a href="./">Início</a><span>/</span><span class="current">Portugal</span></nav>
     <h1>Portugal</h1>
     <p class="page-hero-desc">Atuação internacional com inscrição na Ordem dos Advogados de Portugal.</p>
   </div>
@@ -44,7 +44,7 @@ include 'includes/header.php';
       </div>
       <div class="animate-on-scroll">
         <div style="border-radius:0.5rem;overflow:hidden;box-shadow:0 10px 30px -5px rgba(0,0,0,0.3);">
-          <img src="/lovable-uploads/d1806986-e5a9-4a5c-8bc6-8e36418af95e.png" alt="Business district in Lisbon" style="width:100%;height:16rem;object-fit:cover;" loading="lazy">
+          <img src="./lovable-uploads/d1806986-e5a9-4a5c-8bc6-8e36418af95e.png" alt="Business district in Lisbon" style="width:100%;height:16rem;object-fit:cover;" loading="lazy">
         </div>
       </div>
     </div>

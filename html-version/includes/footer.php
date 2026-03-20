@@ -10,8 +10,8 @@
       <div class="footer-grid">
         <!-- Brand -->
         <div class="footer-brand">
-          <a href="/" class="footer-logo" aria-label="Rodrigo Vitalino Advogados">
-            <img src="/lovable-uploads/53e1dc34-fed0-4aac-823b-6c349e9988b5.png" alt="Rodrigo Vitalino Advogados" width="48" height="48">
+          <a href="./" class="footer-logo" aria-label="Rodrigo Vitalino Advogados">
+            <img src="./lovable-uploads/53e1dc34-fed0-4aac-823b-6c349e9988b5.png" alt="Rodrigo Vitalino Advogados" width="48" height="48">
             <div>
               <span class="footer-logo-name">Rodrigo Vitalino</span>
               <span class="footer-logo-sub">Advogados</span>
@@ -24,12 +24,12 @@
         <div>
           <h4 class="footer-heading">Links Rápidos</h4>
           <ul class="footer-links">
-            <li><a href="/">Início</a></li>
-            <li><a href="/escritorio.php">O Escritório</a></li>
-            <li><a href="/atuacao.php">Áreas de Atuação</a></li>
-            <li><a href="/publicacoes.php">Publicações</a></li>
-            <li><a href="/portugal.php">Portugal</a></li>
-            <li><a href="/contato.php">Contato</a></li>
+            <li><a href="./">Início</a></li>
+            <li><a href="./escritorio.php">O Escritório</a></li>
+            <li><a href="./atuacao.php">Áreas de Atuação</a></li>
+            <li><a href="./publicacoes.php">Publicações</a></li>
+            <li><a href="./portugal.php">Portugal</a></li>
+            <li><a href="./contato.php">Contato</a></li>
           </ul>
         </div>
 
@@ -84,7 +84,7 @@
       <div class="footer-bottom">
         <p>&copy; <?php echo date('Y'); ?> Rodrigo Vitalino Advogados. Todos os direitos reservados.</p>
         <div class="footer-bottom-links">
-          <a href="/contato.php">Política de Privacidade</a>
+          <a href="./contato.php">Política de Privacidade</a>
           <span>|</span>
           <a href="#" onclick="localStorage.removeItem('rv-cookie-consent');location.reload();return false;">Configurar Cookies</a>
         </div>
@@ -92,7 +92,7 @@
     </div>
   </footer>
 
-  <script src="/js/main.js"></script>
+  <script src="./js/main.js"></script>
   <script>lucide.createIcons();</script>
   <?php if (isset($extraScripts)) echo $extraScripts; ?>
 </body>
