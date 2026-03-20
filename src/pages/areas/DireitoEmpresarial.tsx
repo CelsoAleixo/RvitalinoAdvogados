@@ -66,17 +66,15 @@ export default function DireitoEmpresarial() {
   return (
     <Layout>
       <PageSEO
-        title="Assessoria Jurídica Empresarial – Societário e Compliance"
+        title="Direito Empresarial"
         description="Assessoria jurídica empresarial completa: contratos, societário, compliance, M&A e governança corporativa. Escritório Rodrigo Vitalino Advogados."
-        jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Áreas de Atuação", url: "/atuacao" }, { name: "Assessoria Jurídica Empresarial", url: "/atuacao/assessoria-juridica-empresarial" }])}
+        jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Áreas de Atuação", url: "/atuacao" }, { name: "Direito Empresarial", url: "/atuacao/direito-empresarial" }])}
       />
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat image-enhance-strong" 
-          style={{ backgroundImage: `url(${heroImage})` }}
-          role="img"
-          aria-label="Assessoria Jurídica Empresarial - Consultoria completa para empresas"
+          style={{ backgroundImage: `url(${heroImage})` }} 
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/70 to-background/40" />
         
@@ -87,13 +85,13 @@ export default function DireitoEmpresarial() {
               <li className="text-muted-foreground/60">/</li>
               <li><a href="/atuacao" className="hover:text-foreground transition-colors">Áreas de Atuação</a></li>
               <li className="text-muted-foreground/60">/</li>
-              <li className="text-foreground">Assessoria Jurídica Empresarial</li>
+              <li className="text-foreground">Direito Empresarial</li>
             </ol>
           </nav>
           
           <div className="max-w-3xl animate-slide-up">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-accent mb-6 leading-tight">
-              Assessoria Jurídica Empresarial
+              Direito Empresarial
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
               {language === "en"

@@ -80,8 +80,7 @@ const App = () => (
               <Route path="/escritorio" element={<Escritorio />} />
               <Route path="/equipe" element={<Equipe />} />
               <Route path="/atuacao" element={<Atuacao />} />
-              <Route path="/atuacao/assessoria-juridica-empresarial" element={<DireitoEmpresarial />} />
-              <Route path="/atuacao/direito-empresarial" element={<Navigate to="/atuacao/assessoria-juridica-empresarial" replace />} />
+              <Route path="/atuacao/direito-empresarial" element={<DireitoEmpresarial />} />
               <Route path="/atuacao/negociacao-juridica" element={<NegociacaoJuridica />} />
               <Route path="/atuacao/direito-tributario" element={<DireitoTributario />} />
               <Route path="/atuacao/direito-trabalhista" element={<DireitoTrabalhista />} />

@@ -36,8 +36,6 @@ export default function RecuperacaoJudicialAgro() {
         <div
           className="absolute inset-0 bg-cover bg-center image-enhance-strong"
           style={{ backgroundImage: `url(${heroImage})` }}
-          role="img"
-          aria-label="Proteção Rural - Recuperação judicial para produtores rurais e agronegócio"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0d1f0d]/85 via-[#1a2e1a]/75 to-[#1a2e1a]/50" />
 

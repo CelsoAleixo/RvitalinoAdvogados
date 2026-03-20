@@ -29,7 +29,7 @@ export default function Atuacao() {
     icon: Building2,
     title: t("area.corporateLaw"),
     description: t("area.corporateLaw.desc"),
-    href: "/atuacao/assessoria-juridica-empresarial",
+    href: "/atuacao/direito-empresarial",
     highlight: false,
     image: direitoEmpresarialImg
   }, {
@@ -105,8 +105,8 @@ export default function Atuacao() {
   return (
     <Layout>
       <PageSEO
-        title="Áreas de Atuação – Especialidades Jurídicas"
-        description="Conheça as áreas de atuação do escritório Rodrigo Vitalino Advogados: direito empresarial, recuperação judicial, tributário, trabalhista, família e sucessões, agronegócio e mais."
+        title="Áreas de Atuação"
+        description="Áreas de atuação do escritório Rodrigo Vitalino Advogados: direito empresarial, recuperação judicial, tributário, trabalhista, família e sucessões, crédito de carbono e mais."
         jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Áreas de Atuação", url: "/atuacao" }])}
       />
       {/* Quick Contact Banner */}

@@ -4,7 +4,6 @@ interface ResponsiveHeroVideoProps {
   mp4Src: string;
   webmSrc?: string;
   posterImage?: string;
-  posterAlt?: string;
   className?: string;
   overlayClassName?: string;
   playbackRate?: number;
@@ -26,7 +25,6 @@ export function ResponsiveHeroVideo({
   mp4Src,
   webmSrc,
   posterImage,
-  posterAlt = "Vídeo institucional Rodrigo Vitalino Advogados",
   className = "",
   overlayClassName = "",
   playbackRate = 1.0,
@@ -158,10 +156,11 @@ export function ResponsiveHeroVideo({
         {posterImage && (
           <img
             src={posterImage}
-            alt={posterAlt}
+            alt=""
             className={`w-full h-full object-cover transition-opacity duration-700 ${
               isPosterLoaded ? "opacity-100" : "opacity-0"
             }`}
+            aria-hidden="true"
             loading="eager"
             fetchPriority="high"
           />
@@ -185,10 +184,11 @@ export function ResponsiveHeroVideo({
       {posterImage && (
         <img
           src={posterImage}
-          alt={posterAlt}
+          alt=""
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
             isPosterLoaded && !isVideoLoaded ? "opacity-100" : "opacity-0"
           }`}
+          aria-hidden="true"
           loading="eager"
           fetchPriority={priority ? "high" : "auto"}
         />

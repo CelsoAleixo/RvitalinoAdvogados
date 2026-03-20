@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
 import { Layout } from "@/components/layout/Layout";
 import { PageHero } from "@/components/shared/PageHero";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
@@ -96,45 +95,19 @@ export default function Contato() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
-
-    const formData = new FormData(e.currentTarget);
-    const payload = {
-      name: formData.get("name") as string,
-      email: formData.get("email") as string,
-      phone: formData.get("phone") as string,
-      message: formData.get("message") as string,
-    };
-
-    try {
-      const { data, error } = await supabase.functions.invoke("send-contact-email", {
-        body: payload,
-      });
-
-      if (error) throw error;
-
-      setIsSubmitted(true);
-      toast({
-        title: text.toastTitle,
-        description: text.toastDesc,
-      });
-    } catch (err) {
-      console.error("Error sending contact form:", err);
-      toast({
-        title: language === "en" ? "Error" : "Erro",
-        description: language === "en" 
-          ? "Could not send your message. Please try again or contact us via WhatsApp." 
-          : "Não foi possível enviar sua mensagem. Tente novamente ou entre em contato pelo WhatsApp.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsLoading(false);
-    }
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    setIsLoading(false);
+    setIsSubmitted(true);
+    toast({
+      title: text.toastTitle,
+      description: text.toastDesc,
+    });
   };
 
   if (isSubmitted) {
     return (
       <Layout>
-        <PageSEO title="Contato – Fale com Nossos Advogados" description="Entre em contato com o escritório Rodrigo Vitalino Advogados. Atendimento em São Paulo, Lisboa e todo o Brasil. WhatsApp, telefone e formulário online." />
+        <PageSEO title="Contato" description="Entre em contato com o escritório Rodrigo Vitalino Advogados." />
         <PageHero title={text.title} description={text.description} breadcrumb={[{ label: text.title }]} />
         <section className="section-padding">
           <div className="container-site">

@@ -8,8 +8,8 @@ export default function FamiliaSucessoes() {
   return (
     <Layout>
       <PageSEO
-        title="Família e Sucessões – Inventário e Planejamento"
-        description="Direito de família e sucessões: inventário, partilha de bens, planejamento sucessório e proteção patrimonial familiar. Rodrigo Vitalino Advogados."
+        title="Família e Sucessões"
+        description="Direito de família e sucessões: inventário, partilha de bens, planejamento sucessório e proteção patrimonial. Rodrigo Vitalino Advogados."
         jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Áreas de Atuação", url: "/atuacao" }, { name: "Família e Sucessões", url: "/atuacao/familia-e-sucessoes" }])}
       />
       {/* Hero Section com imagem de fundo */}
@@ -17,9 +17,7 @@ export default function FamiliaSucessoes() {
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat image-enhance-strong" 
-          style={{ backgroundImage: `url(${heroImage})` }}
-          role="img"
-          aria-label="Família e Sucessões - Planejamento sucessório e proteção patrimonial"
+          style={{ backgroundImage: `url(${heroImage})` }} 
         />
         {/* Overlay - reduced opacity for more image visibility */}
         <div className="absolute inset-0 bg-gradient-to-r from-background/85 via-background/60 to-background/40" />

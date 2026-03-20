@@ -54,8 +54,8 @@ export default function Escritorio() {
   return (
     <Layout>
       <PageSEO
-        title="O Escritório – Quem Somos e Nossa História"
-        description="Conheça o escritório Rodrigo Vitalino Advogados: mais de 20 anos de experiência em direito empresarial, recuperação judicial e assessoria jurídica internacional no Brasil e Portugal."
+        title="O Escritório"
+        description="Conheça o escritório Rodrigo Vitalino Advogados: história, valores, missão e atuação internacional em direito empresarial e recuperação judicial."
         jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "O Escritório", url: "/escritorio" }])}
       />
       {/* Premium Hero Section */}

@@ -9,7 +9,7 @@ const WHATSAPP_LINK = "https://wa.me/5511940449696?text=Ol%C3%A1%2C%20gostaria%2
 
 // Areas will use translations
 const areasDeAtuacaoKeys = [
-{ key: "area.corporateLaw", href: "/atuacao/assessoria-juridica-empresarial" },
+{ key: "area.corporateLaw", href: "/atuacao/direito-empresarial" },
 { key: "area.legalNegotiation", href: "/atuacao/negociacao-juridica" },
 { key: "area.judicialRecovery", href: "/atuacao/recuperacao-judicial" },
 { key: "area.taxLaw", href: "/atuacao/direito-tributario" },
@@ -60,12 +60,12 @@ export function Header() {
 
             </div>
             <div className="flex flex-col justify-center">
-              <span className="font-serif font-semibold tracking-tight text-accent transition-colors duration-300 group-hover:text-accent/90 text-xl lg:text-[1.35rem] leading-tight md:text-xl">
+              <span className="font-serif font-semibold tracking-tight text-accent transition-colors duration-300 group-hover:text-accent/90 text-xl md:text-2xl lg:text-[1.6rem] leading-tight">
                 Rodrigo Vitalino
               </span>
               <div className="flex items-center mt-0.5 md:mt-1 gap-1.5 md:gap-2 max-w-[90%]">
                 <span className="w-4 md:w-6 h-px bg-foreground/50"></span>
-                <span className="text-[8px] md:text-[10px] font-medium tracking-[0.2em] md:tracking-[0.3em] uppercase whitespace-nowrap text-stone-50">
+                <span className="text-[8px] md:text-[10px] font-medium text-accent/80 tracking-[0.2em] md:tracking-[0.3em] uppercase whitespace-nowrap">
                   Advogados
                 </span>
                 <span className="w-4 md:w-6 h-px bg-foreground/50"></span>
@@ -74,7 +74,7 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex lg:items-center lg:gap-6 ml-auto">
+          <div className="hidden lg:flex lg:items-center lg:gap-6">
             {navigationKeys.slice(0, 2).map((item) =>
             <Link
               key={item.key}

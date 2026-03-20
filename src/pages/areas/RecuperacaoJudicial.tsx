@@ -15,15 +15,15 @@ const scrollToSection = (id: string) => {
 export default function RecuperacaoJudicial() {
   return <Layout>
       <PageSEO
-        title="Recuperação Judicial e Extrajudicial de Empresas"
-        description="Especialistas em recuperação judicial e extrajudicial. Reestruturação de dívidas, negociação com credores e planos de recuperação empresarial. Rodrigo Vitalino Advogados."
+        title="Recuperação Judicial"
+        description="Especialistas em recuperação judicial e extrajudicial de empresas. Reestruturação de dívidas, negociação com credores e planos de recuperação. Rodrigo Vitalino Advogados."
         jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Áreas de Atuação", url: "/atuacao" }, { name: "Recuperação Judicial", url: "/atuacao/recuperacao-judicial" }])}
       />
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center image-enhance-strong" style={{
         backgroundImage: `url(${heroImage})`
-      }} role="img" aria-label="Recuperação Judicial - Reestruturação de empresas e negociação com credores" />
+      }} />
         <div className="absolute inset-0 bg-[#1a2e1a]/65" />
         
         <div className="container-site relative z-10 py-20">

@@ -8,8 +8,8 @@ export default function DireitoTrabalhista() {
   return (
     <Layout>
       <PageSEO
-        title="Direito Trabalhista – Assessoria para Empresas"
-        description="Assessoria trabalhista exclusiva para empregadores. Defesa em reclamações, compliance trabalhista e consultoria preventiva. Rodrigo Vitalino Advogados."
+        title="Direito Trabalhista"
+        description="Assessoria trabalhista para empresas e empregadores. Defesa em reclamações, compliance trabalhista e consultoria preventiva. Rodrigo Vitalino Advogados."
         jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Áreas de Atuação", url: "/atuacao" }, { name: "Direito Trabalhista", url: "/atuacao/direito-trabalhista" }])}
       />
       {/* Hero Section com imagem de fundo */}
@@ -17,9 +17,7 @@ export default function DireitoTrabalhista() {
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat image-enhance-strong" 
-          style={{ backgroundImage: `url(${heroImage})` }}
-          role="img"
-          aria-label="Direito Trabalhista - Assessoria jurídica especializada para empresas"
+          style={{ backgroundImage: `url(${heroImage})` }} 
         />
         {/* Overlay - reduced opacity for more image visibility */}
         <div className="absolute inset-0 bg-gradient-to-r from-background/85 via-background/60 to-background/40" />

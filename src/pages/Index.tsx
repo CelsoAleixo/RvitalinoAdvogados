@@ -33,7 +33,7 @@ export default function Index() {
     icon: Building2,
     titleKey: "area.corporateLaw",
     descKey: "area.corporateLaw.desc",
-    href: "/atuacao/assessoria-juridica-empresarial",
+    href: "/atuacao/direito-empresarial",
     image: direitoEmpresarialImg
   },
   {

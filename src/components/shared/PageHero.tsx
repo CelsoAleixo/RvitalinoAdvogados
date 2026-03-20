@@ -20,8 +20,6 @@ export function PageHero({ title, description, breadcrumb, backgroundImage, show
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat image-enhance-strong"
             style={{ backgroundImage: `url(${backgroundImage})` }}
-            role="img"
-            aria-label={title}
           />
           {/* Reduced opacity for better image visibility */}
           <div className="absolute inset-0 bg-[#1a2e1a]/60" />

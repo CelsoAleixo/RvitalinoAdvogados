@@ -66,7 +66,7 @@ export default function LandingAgro() {
             muted
             playsInline
             preload="auto"
-            className="w-full h-full object-cover brightness-110 contrast-[0.85] saturate-[1.1] scale-[1.03]"
+            className="w-full h-full object-cover"
             aria-hidden="true">
             <source src={heroVideoV3} type="video/mp4" />
           </video>

@@ -6,7 +6,7 @@ import { Scale, FileText, Shield, Building2, HandshakeIcon, TrendingUp, CheckCir
 export default function DireitoCivil() {
   return <Layout>
       <PageSEO
-        title="Assessoria Jurídica Empresarial – Contratos e Cível"
+        title="Assessoria Jurídica Empresarial"
         description="Assessoria jurídica empresarial completa: contratos, responsabilidade civil, consultoria preventiva e contencioso cível. Rodrigo Vitalino Advogados."
         jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Áreas de Atuação", url: "/atuacao" }, { name: "Assessoria Jurídica Empresarial", url: "/atuacao/direito-civil" }])}
       />
@@ -14,7 +14,7 @@ export default function DireitoCivil() {
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat image-enhance-strong" style={{
         backgroundImage: `url(${heroImage})`
-      }} role="img" aria-label="Direito Civil Empresarial - Assessoria jurídica completa" />
+      }} />
         <div className="absolute inset-0 bg-gradient-to-r from-background/85 via-background/60 to-background/40" />
         
         <div className="container-site relative z-10 py-20">
