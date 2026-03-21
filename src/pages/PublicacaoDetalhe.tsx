@@ -91,6 +91,29 @@ export default function PublicacaoDetalhe() {
   const renderContent = (contentText: string) => {
     const lines = contentText.split('\n');
     return lines.map((line, index) => {
+      // PDF download marker
+      if (line.trim() === '::pdfdownload::') {
+        if (post?.pdfUrl) {
+          return (
+            <div key={index} className="my-8 p-6 bg-accent/5 rounded-lg border border-accent/20 text-center">
+              <p className="text-foreground font-medium mb-4">
+                {language === 'en' ? 'Download the complete study in PDF' : 'Baixe o estudo completo em PDF'}
+              </p>
+              <a
+                href={post.pdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                download
+                className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground rounded-lg font-medium hover:bg-accent/90 transition-colors"
+              >
+                <Download className="h-5 w-5" />
+                {language === 'en' ? 'Download PDF' : 'Baixar PDF'}
+              </a>
+            </div>
+          );
+        }
+        return null;
+      }
       // Author section marker
       if (line.trim() === '::author::') {
         if (post?.authorSection) {
