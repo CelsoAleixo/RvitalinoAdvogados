@@ -18,7 +18,7 @@ $current = isset($current) ? $current : '';
         <a href="<?php echo $base; ?>/escritorio.php" <?php echo $current === 'escritorio' ? 'class="active"' : ''; ?>>Escritório</a>
         <div class="dropdown">
           <button class="dropdown__trigger <?php echo $current === 'atuacao' ? 'active' : ''; ?>">
-            Áreas de Atuação
+            Atuação
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </button>
           <div class="dropdown__menu">
@@ -29,7 +29,7 @@ $current = isset($current) ? $current : '';
               <a href="<?php echo $base; ?>/atuacao/direito-tributario.php">Direito Tributário</a>
               <a href="<?php echo $base; ?>/atuacao/direito-trabalhista.php">Direito Trabalhista</a>
               <a href="<?php echo $base; ?>/atuacao/familia-e-sucessoes.php">Família e Sucessões</a>
-              <a href="<?php echo $base; ?>/atuacao/direito-civil.php">Assessoria Jurídica Empresarial</a>
+              <a href="<?php echo $base; ?>/atuacao/assessoria-juridica-empresarial.php">Assessoria Jurídica Empresarial</a>
               <a href="<?php echo $base; ?>/atuacao/credito-de-carbono.php">Crédito de Carbono</a>
               <a href="<?php echo $base; ?>/protecao-rural.php">Proteção Rural</a>
             </div>
@@ -54,7 +54,7 @@ $current = isset($current) ? $current : '';
     <div id="nav-mobile" class="nav-mobile">
       <a href="<?php echo $base; ?>/index.php">Início</a>
       <a href="<?php echo $base; ?>/escritorio.php">Escritório</a>
-      <button id="mobile-areas-toggle">Áreas de Atuação ▾</button>
+      <button id="mobile-areas-toggle">Atuação ▾</button>
       <div id="mobile-areas-sub" class="sub-menu" style="display:none">
         <a href="<?php echo $base; ?>/atuacao/direito-empresarial.php">Direito Empresarial</a>
         <a href="<?php echo $base; ?>/atuacao/negociacao-juridica.php">Negociação Jurídica</a>
@@ -62,7 +62,7 @@ $current = isset($current) ? $current : '';
         <a href="<?php echo $base; ?>/atuacao/direito-tributario.php">Direito Tributário</a>
         <a href="<?php echo $base; ?>/atuacao/direito-trabalhista.php">Direito Trabalhista</a>
         <a href="<?php echo $base; ?>/atuacao/familia-e-sucessoes.php">Família e Sucessões</a>
-        <a href="<?php echo $base; ?>/atuacao/direito-civil.php">Assessoria Jurídica Empresarial</a>
+        <a href="<?php echo $base; ?>/atuacao/assessoria-juridica-empresarial.php">Assessoria Jurídica Empresarial</a>
         <a href="<?php echo $base; ?>/atuacao/credito-de-carbono.php">Crédito de Carbono</a>
         <a href="<?php echo $base; ?>/protecao-rural.php">Proteção Rural</a>
       </div>

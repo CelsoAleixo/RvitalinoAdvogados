@@ -85,7 +85,8 @@ const App = () => (
               <Route path="/atuacao/direito-tributario" element={<DireitoTributario />} />
               <Route path="/atuacao/direito-trabalhista" element={<DireitoTrabalhista />} />
               <Route path="/atuacao/familia-e-sucessoes" element={<FamiliaSucessoes />} />
-              <Route path="/atuacao/direito-civil" element={<DireitoCivil />} />
+              <Route path="/atuacao/assessoria-juridica-empresarial" element={<DireitoCivil />} />
+              <Route path="/atuacao/direito-civil" element={<Navigate to="/atuacao/assessoria-juridica-empresarial" replace />} />
               <Route path="/atuacao/credito-de-carbono" element={<CreditoCarbono />} />
               <Route path="/atuacao/recuperacao-judicial" element={<RecuperacaoJudicial />} />
               <Route path="/protecao-rural" element={<RecuperacaoJudicialAgro />} />
