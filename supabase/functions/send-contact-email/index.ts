@@ -47,34 +47,20 @@ Deno.serve(async (req) => {
 
     if (smtpPassword) {
       try {
-        const client = new SMTPClient({
-          connection: {
-            hostname: "smtplw.com.br",
-            port: 587,
-            tls: true,
-            auth: {
-              username: "contato@rvitalinoadvogados.com.br",
-              password: smtpPassword,
-            },
-          },
+        const client = new SmtpClient();
+
+        await client.connectTLS({
+          hostname: "smtplw.com.br",
+          port: 587,
+          username: "contato@rvitalinoadvogados.com.br",
+          password: smtpPassword,
         });
 
         await client.send({
           from: "contato@rvitalinoadvogados.com.br",
           to: "contato@rvitalinoadvogados.com.br",
           subject: `Nova mensagem de contato: ${name}`,
-          content: "auto",
-          html: `
-            <h2>Nova mensagem do site</h2>
-            <p><strong>Nome:</strong> ${name}</p>
-            <p><strong>E-mail:</strong> ${email}</p>
-            <p><strong>Telefone:</strong> ${phone || "Não informado"}</p>
-            <hr />
-            <p><strong>Mensagem:</strong></p>
-            <p>${message.replace(/\n/g, "<br>")}</p>
-            <hr />
-            <p style="color:#888;font-size:12px">Enviado pelo formulário de contato do site rvitalinoadvogados.com.br</p>
-          `,
+          content: `Nova mensagem do site\n\nNome: ${name}\nE-mail: ${email}\nTelefone: ${phone || "Não informado"}\n\nMensagem:\n${message}\n\n---\nEnviado pelo formulário de contato do site rvitalinoadvogados.com.br`,
         });
 
         await client.close();
