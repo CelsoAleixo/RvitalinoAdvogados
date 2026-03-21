@@ -43,6 +43,7 @@ Deno.serve(async (req) => {
     // Send notification email via Resend API
     let emailSent = false;
     const resendApiKey = Deno.env.get("RESEND_API_KEY");
+    console.log("RESEND_API_KEY present:", !!resendApiKey, "length:", resendApiKey?.length);
 
     if (resendApiKey) {
       try {
@@ -53,7 +54,7 @@ Deno.serve(async (req) => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            from: "Formulário Site <onboarding@resend.dev>",
+            from: "Site RV Advogados <contato@rvitalinoadvogados.com.br>",
             to: ["contato@rvitalinoadvogados.com.br"],
             reply_to: email,
             subject: `Nova mensagem de contato: ${name}`,
@@ -73,7 +74,7 @@ Deno.serve(async (req) => {
 
         const emailData = await emailRes.json();
         emailSent = emailRes.ok;
-        console.log("Resend response:", emailData);
+        console.log("Resend status:", emailRes.status, "response:", JSON.stringify(emailData));
       } catch (e) {
         console.error("Resend error:", e);
       }
