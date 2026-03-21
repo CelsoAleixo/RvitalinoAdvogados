@@ -17,6 +17,7 @@ export interface Publication {
   categoryEn: string;
   categorySlug: string;
   heroImage?: string;
+  pdfUrl?: string;
   content?: string;
   contentEn?: string;
   authorSection?: {
