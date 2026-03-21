@@ -1,5 +1,6 @@
 import recuperacaoRuralHero from "@/assets/publications/recuperacao-rural-hero.jpg";
 import criseClimaticaMtHero from "@/assets/publications/crise-climatica-mt-hero.jpg";
+import recuperacaoLei11101Hero from "@/assets/publications/recuperacao-judicial-lei-11101-hero.jpg";
 import rodrigoVitalinoAutor from "@/assets/rodrigo-vitalino-autor.png";
 
 export interface Publication {
