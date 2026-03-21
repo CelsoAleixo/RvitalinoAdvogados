@@ -10,7 +10,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "nav.publications": "Publicações",
     "nav.portugal": "Portugal",
     "nav.contact": "Contato",
-    "nav.areas": "Áreas de Atuação",
+    "nav.areas": "Atuação",
     "nav.talkToUs": "Fale Conosco",
 
     // Practice Areas

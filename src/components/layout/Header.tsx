@@ -15,7 +15,7 @@ const areasDeAtuacaoKeys = [
 { key: "area.taxLaw", href: "/atuacao/direito-tributario" },
 { key: "area.laborLaw", href: "/atuacao/direito-trabalhista" },
 { key: "area.familySuccession", href: "/atuacao/familia-e-sucessoes" },
-{ key: "area.civilLaw", href: "/atuacao/direito-civil" },
+{ key: "area.civilLaw", href: "/atuacao/assessoria-juridica-empresarial" },
 { key: "area.carbonCredit", href: "/atuacao/credito-de-carbono" },
 { key: "area.judicialRecoveryAgro", href: "/protecao-rural" }];
 
