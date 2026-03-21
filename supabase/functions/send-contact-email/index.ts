@@ -1,4 +1,5 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { SMTPClient } from "https://deno.land/x/denomailer@1.6.0/mod.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -40,42 +41,49 @@ Deno.serve(async (req) => {
       );
     }
 
-    // Try to send email notification via Resend (if API key available)
-    const resendKey = Deno.env.get("RESEND_API_KEY");
+    // Send email via Locaweb SMTP
     let emailSent = false;
+    const smtpPassword = Deno.env.get("SMTP_PASSWORD");
 
-    if (resendKey) {
+    if (smtpPassword) {
       try {
-        const emailRes = await fetch("https://api.resend.com/emails", {
-          method: "POST",
-          headers: {
-            "Authorization": `Bearer ${resendKey}`,
-            "Content-Type": "application/json",
+        const client = new SMTPClient({
+          connection: {
+            hostname: "smtplw.com.br",
+            port: 587,
+            tls: true,
+            auth: {
+              username: "contato@rvitalinoadvogados.com.br",
+              password: smtpPassword,
+            },
           },
-          body: JSON.stringify({
-            from: "Site RV Advogados <noreply@rvitalinoadvogados.com.br>",
-            to: ["contato@rvitalinoadvogados.com.br"],
-            subject: `Nova mensagem de contato: ${name}`,
-            html: `
-              <h2>Nova mensagem do site</h2>
-              <p><strong>Nome:</strong> ${name}</p>
-              <p><strong>E-mail:</strong> ${email}</p>
-              <p><strong>Telefone:</strong> ${phone || "Não informado"}</p>
-              <hr />
-              <p><strong>Mensagem:</strong></p>
-              <p>${message.replace(/\n/g, "<br>")}</p>
-              <hr />
-              <p style="color:#888;font-size:12px">Enviado pelo formulário de contato do site rvitalinoadvogados.com.br</p>
-            `,
-          }),
         });
-        emailSent = emailRes.ok;
-        if (!emailRes.ok) {
-          console.error("Resend error:", await emailRes.text());
-        }
+
+        await client.send({
+          from: "contato@rvitalinoadvogados.com.br",
+          to: "contato@rvitalinoadvogados.com.br",
+          subject: `Nova mensagem de contato: ${name}`,
+          content: "auto",
+          html: `
+            <h2>Nova mensagem do site</h2>
+            <p><strong>Nome:</strong> ${name}</p>
+            <p><strong>E-mail:</strong> ${email}</p>
+            <p><strong>Telefone:</strong> ${phone || "Não informado"}</p>
+            <hr />
+            <p><strong>Mensagem:</strong></p>
+            <p>${message.replace(/\n/g, "<br>")}</p>
+            <hr />
+            <p style="color:#888;font-size:12px">Enviado pelo formulário de contato do site rvitalinoadvogados.com.br</p>
+          `,
+        });
+
+        await client.close();
+        emailSent = true;
       } catch (e) {
-        console.error("Email send error:", e);
+        console.error("SMTP send error:", e);
       }
+    } else {
+      console.error("SMTP_PASSWORD not configured");
     }
 
     return new Response(
