@@ -50,8 +50,8 @@ Deno.serve(async (req) => {
         const client = new SMTPClient({
           connection: {
             hostname: "smtplw.com.br",
-            port: 587,
-            tls: false,
+            port: 465,
+            tls: true,
             auth: {
               username: "contato@rvitalinoadvogados.com.br",
               password: smtpPassword,
