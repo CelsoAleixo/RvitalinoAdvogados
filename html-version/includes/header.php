@@ -54,7 +54,7 @@ $current = isset($current) ? $current : '';
     <div id="nav-mobile" class="nav-mobile">
       <a href="<?php echo $base; ?>/index.php">Início</a>
       <a href="<?php echo $base; ?>/escritorio.php">Escritório</a>
-      <button id="mobile-areas-toggle">Áreas de Atuação ▾</button>
+      <button id="mobile-areas-toggle">Atuação ▾</button>
       <div id="mobile-areas-sub" class="sub-menu" style="display:none">
         <a href="<?php echo $base; ?>/atuacao/direito-empresarial.php">Direito Empresarial</a>
         <a href="<?php echo $base; ?>/atuacao/negociacao-juridica.php">Negociação Jurídica</a>
