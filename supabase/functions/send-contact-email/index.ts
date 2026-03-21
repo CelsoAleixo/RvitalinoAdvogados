@@ -1,5 +1,4 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-import { SMTPClient } from "https://deno.land/x/denomailer@1.6.0/mod.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -41,50 +40,23 @@ Deno.serve(async (req) => {
       );
     }
 
-    // Send email via Locaweb SMTP
+    // Send email via PHP endpoint on Locaweb
     let emailSent = false;
-    const smtpPassword = Deno.env.get("SMTP_PASSWORD");
+    try {
+      const emailRes = await fetch("https://rvitalinoadvogados.com.br/api/send-email.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer rvitalino-email-2026",
+        },
+        body: JSON.stringify({ name, email, phone, message }),
+      });
 
-    if (smtpPassword) {
-      try {
-        const client = new SMTPClient({
-          connection: {
-            hostname: "smtplw.com.br",
-            port: 587,
-            tls: true,
-            auth: {
-              username: "contato@rvitalinoadvogados.com.br",
-              password: smtpPassword,
-            },
-          },
-        });
-
-        await client.send({
-          from: "contato@rvitalinoadvogados.com.br",
-          to: "contato@rvitalinoadvogados.com.br",
-          subject: `Nova mensagem de contato: ${name}`,
-          content: "auto",
-          html: `
-            <h2>Nova mensagem do site</h2>
-            <p><strong>Nome:</strong> ${name}</p>
-            <p><strong>E-mail:</strong> ${email}</p>
-            <p><strong>Telefone:</strong> ${phone || "Não informado"}</p>
-            <hr>
-            <p><strong>Mensagem:</strong></p>
-            <p>${message.replace(/\n/g, "<br>")}</p>
-            <hr>
-            <p><small>Enviado pelo formulário de contato do site rvitalinoadvogados.com.br</small></p>
-          `,
-        });
-
-        await client.close();
-        emailSent = true;
-        console.log("Email sent successfully");
-      } catch (e) {
-        console.error("SMTP send error:", e);
-      }
-    } else {
-      console.error("SMTP_PASSWORD not configured");
+      const emailData = await emailRes.json();
+      emailSent = emailData?.emailSent === true;
+      console.log("PHP email response:", emailData);
+    } catch (e) {
+      console.error("PHP email error:", e);
     }
 
     return new Response(
