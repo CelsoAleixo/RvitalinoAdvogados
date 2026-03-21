@@ -4,7 +4,7 @@ import { Layout } from "@/components/layout/Layout";
 import { PageHero } from "@/components/shared/PageHero";
 import { InternationalHero } from "@/components/shared/InternationalHero";
 import { CTASection } from "@/components/shared/CTASection";
-import { Calendar, Tag, ArrowLeft, Share2 } from "lucide-react";
+import { Calendar, Tag, ArrowLeft, Share2, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { 
   getPublicationBySlug, 
