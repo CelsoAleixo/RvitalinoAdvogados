@@ -18,6 +18,19 @@ include 'includes/header.php';
 <section class="section">
   <div class="container">
     <div class="grid grid--2">
+      <div class="pub-card" style="grid-column:1/-1">
+        <div class="pub-card__image"><img src="./assets/publications/recuperacao-judicial-lei-11101-hero.jpg" alt="Recuperação Judicial do Produtor Rural — Lei 11.101/2005" loading="lazy"></div>
+        <div class="pub-card__body">
+          <div class="pub-card__category">Direito Empresarial</div>
+          <h3 class="pub-card__title">Recuperação Judicial do Produtor Rural — Lei nº 11.101/2005 | Provimento CNJ nº 216, de 9 de março de 2026</h3>
+          <p class="pub-card__excerpt">Estudo elaborado pela Dra. Deidre Scaranello sobre a aplicação da Lei nº 11.101/2005 ao produtor rural, incluindo os impactos do Provimento CNJ nº 216/2026.</p>
+          <div class="pub-card__date">21 de Março de 2026</div>
+          <a href="./publications/recuperacao-judicial-produtor-rural-lei-11101-provimento-cnj-216.pdf" target="_blank" class="btn btn--primary" style="margin-top:1rem;display:inline-flex;align-items:center;gap:.5rem">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Baixar PDF
+          </a>
+        </div>
+      </div>
       <div class="pub-card">
         <div class="pub-card__image"><img src="./assets/publications/crise-climatica-mt-hero.jpg" alt="Crise Climática em Mato Grosso" loading="lazy"></div>
         <div class="pub-card__body">

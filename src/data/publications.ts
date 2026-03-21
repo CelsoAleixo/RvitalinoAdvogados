@@ -1,5 +1,6 @@
 import recuperacaoRuralHero from "@/assets/publications/recuperacao-rural-hero.jpg";
 import criseClimaticaMtHero from "@/assets/publications/crise-climatica-mt-hero.jpg";
+import recuperacaoLei11101Hero from "@/assets/publications/recuperacao-judicial-lei-11101-hero.jpg";
 import rodrigoVitalinoAutor from "@/assets/rodrigo-vitalino-autor.png";
 
 export interface Publication {
@@ -16,6 +17,7 @@ export interface Publication {
   categoryEn: string;
   categorySlug: string;
   heroImage?: string;
+  pdfUrl?: string;
   content?: string;
   contentEn?: string;
   authorSection?: {
@@ -88,6 +90,130 @@ export const categoriesEn = [
  * Publications data with SEO-friendly slugs
  */
 export const publications: Publication[] = [
+  {
+    id: 10,
+    slug: "recuperacao-judicial-produtor-rural-lei-11101-provimento-cnj-216",
+    title: "Recuperação Judicial do Produtor Rural — Lei nº 11.101/2005 | Provimento CNJ nº 216, de 9 de março de 2026",
+    titleEn: "Judicial Recovery for Rural Producers — Law No. 11,101/2005 | CNJ Provision No. 216, March 9, 2026",
+    subtitle: "Análise técnica do novo marco regulatório da recuperação judicial rural",
+    subtitleEn: "Technical analysis of the new regulatory framework for rural judicial recovery",
+    excerpt: "Estudo elaborado pela Dra. Deidre Scaranello sobre a aplicação da Lei nº 11.101/2005 ao produtor rural, incluindo os impactos do Provimento CNJ nº 216/2026, que uniformiza a atuação dos juízos e fixa parâmetros para a recuperação judicial no agronegócio.",
+    excerptEn: "Study prepared by Dra. Deidre Scaranello on the application of Law No. 11,101/2005 to rural producers, including the impacts of CNJ Provision No. 216/2026, which standardizes court proceedings and sets parameters for judicial recovery in agribusiness.",
+    date: "2026-03-21",
+    category: "Direito Empresarial",
+    categoryEn: "Corporate Law",
+    categorySlug: "direito-empresarial",
+    heroImage: recuperacaoLei11101Hero,
+    pdfUrl: "/publications/recuperacao-judicial-produtor-rural-lei-11101-provimento-cnj-216.pdf",
+    content: `## Recuperação Judicial do Produtor Rural — Lei nº 11.101/2005 e Provimento CNJ nº 216/2026
+
+O presente estudo, elaborado pela **Dra. Deidre Scaranello**, analisa de forma detalhada o instituto da recuperação judicial aplicado ao produtor rural, à luz das alterações promovidas pela Lei 14.112/2020 na Lei nº 11.101/2005 e, sobretudo, dos novos parâmetros fixados pelo **Provimento CNJ nº 216, de 9 de março de 2026**.
+
+### Contexto e Relevância
+
+O Provimento CNJ nº 216/2026, assinado pelo Ministro Corregedor Nacional Mauro Campbell Marques, representa um marco na uniformização da atuação dos juízos em processos de recuperação judicial de produtores rurais. Com 21 artigos contendo diretrizes nacionais obrigatórias, o provimento busca:
+
+- **Uniformizar a atuação dos juízos** em todo o território nacional
+- **Fixar parâmetros claros e objetivos** para o processamento dos pedidos
+- **Reduzir o uso indevido do instituto** por produtores que não preenchem os requisitos legais
+- **Trazer segurança jurídica ao agronegócio**, setor vital da economia brasileira
+
+### Requisitos para o Pedido de Recuperação
+
+Conforme o Art. 48 da Lei 11.101/2005 e o Art. 3º do Provimento 216/2026, o produtor rural deve comprovar:
+
+1. **Registro na Junta Comercial** — Registro regular na Junta Comercial do estado do principal estabelecimento
+2. **Comprovação de Atividade** — Exercício da atividade rural por mais de dois anos
+3. **Documentação Contábil** — Pessoa física: LCDPR, DIRPF e Balanço Patrimonial; Pessoa jurídica: ECF ou substituta
+
+### Constatação Prévia e Verificação Operacional
+
+O Art. 10 do Provimento 216/2026 introduz a obrigatoriedade de constatação prévia, com:
+
+- Nomeação de profissional de confiança do magistrado
+- Uso de geoprocessamento e imagens satelitais
+- Verificação da correspondência da comarca ao principal estabelecimento
+- Aferição da efetiva exploração rural
+
+### Tratamento dos Créditos Rurais
+
+O provimento estabelece regras específicas para o tratamento de créditos no âmbito da recuperação judicial rural, incluindo:
+
+- **Créditos com garantia fiduciária** — Tratamento diferenciado conforme a natureza do bem
+- **CPRs e contratos de barter** — Verificação da efetiva entrega e execução contratual
+- **Créditos trabalhistas e tributários** — Observância das regras de preferência legal
+
+### Considerações Finais
+
+O estudo completo está disponível para download em PDF e oferece uma análise abrangente de todos os aspectos do provimento, incluindo fluxogramas processuais, requisitos documentais e orientações práticas para advogados e produtores rurais.
+
+A orientação jurídica especializada é indispensável para a correta interpretação e aplicação das novas regras, garantindo a proteção do patrimônio rural e a continuidade da atividade produtiva.
+
+---
+
+::pdfdownload::
+
+---
+
+::author::`,
+    contentEn: `## Judicial Recovery for Rural Producers — Law No. 11,101/2005 and CNJ Provision No. 216/2026
+
+This study, prepared by **Dra. Deidre Scaranello**, provides a detailed analysis of the judicial recovery framework as applied to rural producers, in light of the amendments introduced by Law 14,112/2020 to Law No. 11,101/2005 and, above all, the new parameters established by **CNJ Provision No. 216, of March 9, 2026**.
+
+### Context and Relevance
+
+CNJ Provision No. 216/2026, signed by Minister Corregedor Nacional Mauro Campbell Marques, represents a milestone in standardizing court proceedings in judicial recovery cases involving rural producers. With 21 articles containing mandatory national guidelines, the provision seeks to:
+
+- **Standardize court proceedings** across the national territory
+- **Establish clear and objective parameters** for processing applications
+- **Reduce misuse of the institute** by producers who do not meet legal requirements
+- **Bring legal certainty to agribusiness**, a vital sector of the Brazilian economy
+
+### Requirements for the Recovery Application
+
+According to Art. 48 of Law 11,101/2005 and Art. 3 of Provision 216/2026, the rural producer must demonstrate:
+
+1. **Commercial Registry** — Regular registration with the Commercial Registry of the state of the main establishment
+2. **Proof of Activity** — Exercise of rural activity for more than two years
+3. **Accounting Documentation** — Individuals: LCDPR, DIRPF, and Balance Sheet; Legal entities: ECF or equivalent
+
+### Prior Verification and Operational Assessment
+
+Art. 10 of Provision 216/2026 introduces mandatory prior verification, including:
+
+- Appointment of a professional trusted by the judge
+- Use of geoprocessing and satellite imagery
+- Verification of the jurisdiction's correspondence to the main establishment
+- Assessment of actual rural exploitation
+
+### Treatment of Rural Credits
+
+The provision establishes specific rules for the treatment of credits in rural judicial recovery, including:
+
+- **Credits with fiduciary guarantees** — Differentiated treatment according to the nature of the asset
+- **CPRs and barter contracts** — Verification of actual delivery and contractual execution
+- **Labor and tax credits** — Compliance with legal preference rules
+
+### Final Considerations
+
+The complete study is available for PDF download and offers a comprehensive analysis of all aspects of the provision, including procedural flowcharts, documentary requirements, and practical guidance for lawyers and rural producers.
+
+Specialized legal guidance is essential for the correct interpretation and application of the new rules, ensuring the protection of rural assets and the continuity of productive activity.
+
+---
+
+::pdfdownload::
+
+---
+
+::author::`,
+    authorSection: {
+      name: "Dra. Deidre Scaranello",
+      description: "Advogada especialista em Direito Empresarial e Insolvência, com atuação destacada em processos de recuperação judicial e extrajudicial. A Dra. Deidre Scaranello possui vasta experiência na condução de reestruturações empresariais complexas, negociação com credores e elaboração de planos de recuperação, sempre orientada pela preservação da atividade econômica e proteção do patrimônio dos clientes.",
+      descriptionEn: "Attorney specializing in Corporate Law and Insolvency, with distinguished practice in judicial and extrajudicial recovery proceedings. Dra. Deidre Scaranello has extensive experience in managing complex corporate restructurings, creditor negotiations, and recovery plan preparation, always guided by the preservation of economic activity and protection of clients' assets.",
+      photo: "/lovable-uploads/deidre-scaranello-fixed.png"
+    }
+  },
   {
     id: 9,
     slug: "crise-climatica-mato-grosso-safra-2026-impacto-agronegocio",
