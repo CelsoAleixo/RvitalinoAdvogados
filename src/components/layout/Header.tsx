@@ -60,12 +60,12 @@ export function Header() {
 
             </div>
             <div className="flex flex-col justify-center">
-              <span className="font-serif font-semibold tracking-tight text-accent transition-colors duration-300 group-hover:text-accent/90 text-xl md:text-2xl lg:text-[1.6rem] leading-tight">
+              <span className="font-serif font-semibold tracking-tight text-accent transition-colors duration-300 group-hover:text-accent/90 text-base md:text-lg lg:text-xl leading-tight">
                 Rodrigo Vitalino
               </span>
               <div className="flex items-center mt-0.5 md:mt-1 gap-1.5 md:gap-2 max-w-[90%]">
                 <span className="w-4 md:w-6 h-px bg-foreground/50"></span>
-                <span className="text-[8px] md:text-[10px] font-medium text-accent/80 tracking-[0.2em] md:tracking-[0.3em] uppercase whitespace-nowrap">
+                <span className="text-[7px] md:text-[9px] font-medium text-foreground tracking-[0.2em] md:tracking-[0.3em] uppercase whitespace-nowrap">
                   Advogados
                 </span>
                 <span className="w-4 md:w-6 h-px bg-foreground/50"></span>
