@@ -51,7 +51,7 @@ Deno.serve(async (req) => {
           connection: {
             hostname: "smtplw.com.br",
             port: 587,
-            tls: true,
+            tls: false,
             auth: {
               username: "contato@rvitalinoadvogados.com.br",
               password: smtpPassword,
