@@ -29,7 +29,7 @@ $current = isset($current) ? $current : '';
               <a href="<?php echo $base; ?>/atuacao/direito-tributario.php">Direito Tributário</a>
               <a href="<?php echo $base; ?>/atuacao/direito-trabalhista.php">Direito Trabalhista</a>
               <a href="<?php echo $base; ?>/atuacao/familia-e-sucessoes.php">Família e Sucessões</a>
-              <a href="<?php echo $base; ?>/atuacao/direito-civil.php">Assessoria Jurídica Empresarial</a>
+              <a href="<?php echo $base; ?>/atuacao/assessoria-juridica-empresarial.php">Assessoria Jurídica Empresarial</a>
               <a href="<?php echo $base; ?>/atuacao/credito-de-carbono.php">Crédito de Carbono</a>
               <a href="<?php echo $base; ?>/protecao-rural.php">Proteção Rural</a>
             </div>
