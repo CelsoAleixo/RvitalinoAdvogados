@@ -18,7 +18,7 @@ $current = isset($current) ? $current : '';
         <a href="<?php echo $base; ?>/escritorio.php" <?php echo $current === 'escritorio' ? 'class="active"' : ''; ?>>Escritório</a>
         <div class="dropdown">
           <button class="dropdown__trigger <?php echo $current === 'atuacao' ? 'active' : ''; ?>">
-            Áreas de Atuação
+            Atuação
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </button>
           <div class="dropdown__menu">
