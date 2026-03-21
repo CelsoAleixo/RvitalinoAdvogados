@@ -1,5 +1,5 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-import { SmtpClient } from "https://deno.land/x/smtp@v0.7.0/mod.ts";
+import { SMTPClient } from "https://deno.land/x/denomailer@1.6.0/mod.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -47,24 +47,39 @@ Deno.serve(async (req) => {
 
     if (smtpPassword) {
       try {
-        const client = new SmtpClient();
-
-        await client.connectTLS({
-          hostname: "smtplw.com.br",
-          port: 587,
-          username: "contato@rvitalinoadvogados.com.br",
-          password: smtpPassword,
+        const client = new SMTPClient({
+          connection: {
+            hostname: "smtplw.com.br",
+            port: 587,
+            tls: true,
+            auth: {
+              username: "contato@rvitalinoadvogados.com.br",
+              password: smtpPassword,
+            },
+          },
         });
 
         await client.send({
           from: "contato@rvitalinoadvogados.com.br",
           to: "contato@rvitalinoadvogados.com.br",
           subject: `Nova mensagem de contato: ${name}`,
-          content: `Nova mensagem do site\n\nNome: ${name}\nE-mail: ${email}\nTelefone: ${phone || "Não informado"}\n\nMensagem:\n${message}\n\n---\nEnviado pelo formulário de contato do site rvitalinoadvogados.com.br`,
+          content: "auto",
+          html: `
+            <h2>Nova mensagem do site</h2>
+            <p><strong>Nome:</strong> ${name}</p>
+            <p><strong>E-mail:</strong> ${email}</p>
+            <p><strong>Telefone:</strong> ${phone || "Não informado"}</p>
+            <hr>
+            <p><strong>Mensagem:</strong></p>
+            <p>${message.replace(/\n/g, "<br>")}</p>
+            <hr>
+            <p><small>Enviado pelo formulário de contato do site rvitalinoadvogados.com.br</small></p>
+          `,
         });
 
         await client.close();
         emailSent = true;
+        console.log("Email sent successfully");
       } catch (e) {
         console.error("SMTP send error:", e);
       }
