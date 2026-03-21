@@ -106,16 +106,10 @@ export default function Contato() {
     const message = formData.get("message") as string;
 
     try {
-      // Send to edge function (saves to DB + tries email)
+      // Send to edge function (saves to DB + sends email via SMTP)
       await supabase.functions.invoke("send-contact-email", {
         body: { name, email, phone, message },
       });
-
-      // Open WhatsApp with pre-filled message to +55 11 5610-0812
-      const whatsappMsg = encodeURIComponent(
-        `Nova mensagem do site:\n\nNome: ${name}\nE-mail: ${email}\nTelefone: ${phone || "Não informado"}\n\nMensagem: ${message}`
-      );
-      window.open(`https://wa.me/551156100812?text=${whatsappMsg}`, "_blank");
 
       setIsSubmitted(true);
       toast({
