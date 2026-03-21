@@ -59,11 +59,31 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var btn = form.querySelector('button[type="submit"]');
+      var origText = btn.textContent;
       btn.textContent = 'Enviando...';
       btn.disabled = true;
-      setTimeout(function () {
+
+      var name = form.querySelector('#name').value;
+      var email = form.querySelector('#email').value;
+      var phone = form.querySelector('#phone').value;
+      var message = form.querySelector('#message').value;
+
+      // Save to backend
+      fetch('https://dzeqwfzqrtfjgvnxddwg.supabase.co/functions/v1/send-contact-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR6ZXF3ZnpxcnRmamd2bnhkZHdnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM5NTMxOTksImV4cCI6MjA4OTUyOTE5OX0.dVWw29CDKoK_wX3AqrCjGKkiBn9zJB9hMy40M4uryGo' },
+        body: JSON.stringify({ name: name, email: email, phone: phone, message: message })
+      }).then(function() {
+        // Open WhatsApp with message to +55 11 5610-0812
+        var whatsappMsg = encodeURIComponent('Nova mensagem do site:\n\nNome: ' + name + '\nE-mail: ' + email + '\nTelefone: ' + (phone || 'Não informado') + '\n\nMensagem: ' + message);
+        window.open('https://wa.me/551156100812?text=' + whatsappMsg, '_blank');
+
         form.innerHTML = '<div style="text-align:center;padding:3rem 0"><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="' + getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 1.5rem"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><h2 style="font-family:var(--font-serif);font-size:1.5rem;margin-bottom:1rem">Mensagem Enviada!</h2><p style="color:var(--muted-fg)">Obrigado pelo seu contato. Nossa equipe responderá em breve.</p></div>';
-      }, 1000);
+      }).catch(function() {
+        btn.textContent = origText;
+        btn.disabled = false;
+        alert('Erro ao enviar mensagem. Tente novamente.');
+      });
     });
   }
 

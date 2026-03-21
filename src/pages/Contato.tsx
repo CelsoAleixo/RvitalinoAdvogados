@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { supabase } from "@/integrations/supabase/client";
 import { Layout } from "@/components/layout/Layout";
 import { PageHero } from "@/components/shared/PageHero";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
@@ -92,16 +93,45 @@ export default function Contato() {
 
   const text = t[language];
 
+  const formRef = useRef<HTMLFormElement>(null);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    setIsLoading(false);
-    setIsSubmitted(true);
-    toast({
-      title: text.toastTitle,
-      description: text.toastDesc,
-    });
+
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const phone = formData.get("phone") as string;
+    const message = formData.get("message") as string;
+
+    try {
+      // Send to edge function (saves to DB + tries email)
+      await supabase.functions.invoke("send-contact-email", {
+        body: { name, email, phone, message },
+      });
+
+      // Open WhatsApp with pre-filled message to +55 11 5610-0812
+      const whatsappMsg = encodeURIComponent(
+        `Nova mensagem do site:\n\nNome: ${name}\nE-mail: ${email}\nTelefone: ${phone || "Não informado"}\n\nMensagem: ${message}`
+      );
+      window.open(`https://wa.me/551156100812?text=${whatsappMsg}`, "_blank");
+
+      setIsSubmitted(true);
+      toast({
+        title: text.toastTitle,
+        description: text.toastDesc,
+      });
+    } catch (err) {
+      console.error("Form submission error:", err);
+      toast({
+        title: "Erro",
+        description: "Erro ao enviar mensagem. Tente novamente.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (isSubmitted) {
