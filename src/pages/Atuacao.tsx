@@ -71,7 +71,7 @@ export default function Atuacao() {
     icon: Scale,
     title: t("area.civilLaw"),
     description: t("area.civilLaw.desc"),
-    href: "/atuacao/direito-civil",
+    href: "/atuacao/assessoria-juridica-empresarial",
     highlight: false,
     image: direitoCivilImg
   }, {

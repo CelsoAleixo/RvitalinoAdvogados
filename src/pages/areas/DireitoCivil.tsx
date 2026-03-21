@@ -11,7 +11,7 @@ export default function DireitoCivil() {
       <PageSEO
         title="Assessoria Jurídica Empresarial"
         description="Assessoria jurídica empresarial completa: contratos, responsabilidade civil, consultoria preventiva e contencioso cível. Rodrigo Vitalino Advogados."
-        jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Áreas de Atuação", url: "/atuacao" }, { name: "Assessoria Jurídica Empresarial", url: "/atuacao/direito-civil" }])}
+        jsonLd={breadcrumbSchema([{ name: "Início", url: "/" }, { name: "Atuação", url: "/atuacao" }, { name: "Assessoria Jurídica Empresarial", url: "/atuacao/assessoria-juridica-empresarial" }])}
       />
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">

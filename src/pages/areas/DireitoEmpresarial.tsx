@@ -51,7 +51,7 @@ export default function DireitoEmpresarial() {
       description: language === "en"
         ? "Civil contracts, liability, credit recovery and judicial defense for companies and individuals."
         : "Contratos civis, responsabilidade civil, recuperação de créditos e defesa judicial para empresas e pessoas.",
-      href: "/atuacao/direito-civil",
+      href: "/atuacao/assessoria-juridica-empresarial",
     },
     {
       icon: TrendingUp,
