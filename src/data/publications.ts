@@ -211,7 +211,7 @@ Specialized legal guidance is essential for the correct interpretation and appli
       name: "Dra. Deidre Scaranello",
       description: "Advogada especialista em Direito Empresarial e Insolvência, com atuação destacada em processos de recuperação judicial e extrajudicial. A Dra. Deidre Scaranello possui vasta experiência na condução de reestruturações empresariais complexas, negociação com credores e elaboração de planos de recuperação, sempre orientada pela preservação da atividade econômica e proteção do patrimônio dos clientes.",
       descriptionEn: "Attorney specializing in Corporate Law and Insolvency, with distinguished practice in judicial and extrajudicial recovery proceedings. Dra. Deidre Scaranello has extensive experience in managing complex corporate restructurings, creditor negotiations, and recovery plan preparation, always guided by the preservation of economic activity and protection of clients' assets.",
-      photo: "/lovable-uploads/deidre-scaranello-fixed.png"
+      photo: "/lovable-uploads/deidre-scaranello-v4.png"
     }
   },
   {
@@ -653,7 +653,7 @@ During the transition period (2026-2032), companies operate with two parallel ta
       name: "Dra. Deidre Scaranello",
       description: "Advogada especialista em Direito Empresarial",
       descriptionEn: "Corporate Law Specialist Attorney",
-      photo: "/lovable-uploads/deidre-scaranello-fixed.png"
+      photo: "/lovable-uploads/deidre-scaranello-v4.png"
     }
   },
   {
