@@ -653,7 +653,7 @@ During the transition period (2026-2032), companies operate with two parallel ta
       name: "Dra. Deidre Scaranello",
       description: "Advogada especialista em Direito Empresarial",
       descriptionEn: "Corporate Law Specialist Attorney",
-      photo: "/lovable-uploads/deidre-scaranello-fixed.png"
+      photo: "/lovable-uploads/deidre-scaranello-v4.png"
     }
   },
   {
