@@ -135,14 +135,6 @@ O Art. 10 do Provimento 216/2026 introduz a obrigatoriedade de constatação pr�
 - Verificação da correspondência da comarca ao principal estabelecimento
 - Aferição da efetiva exploração rural
 
-### Tratamento dos Créditos Rurais
-
-O provimento estabelece regras específicas para o tratamento de créditos no âmbito da recuperação judicial rural, incluindo:
-
-- **Créditos com garantia fiduciária** — Tratamento diferenciado conforme a natureza do bem
-- **CPRs e contratos de barter** — Verificação da efetiva entrega e execução contratual
-- **Créditos trabalhistas e tributários** — Observância das regras de preferência legal
-
 ### Considerações Finais
 
 O estudo completo está disponível para download em PDF e oferece uma análise abrangente de todos os aspectos do provimento, incluindo fluxogramas processuais, requisitos documentais e orientações práticas para advogados e produtores rurais.
@@ -185,14 +177,6 @@ Art. 10 of Provision 216/2026 introduces mandatory prior verification, including
 - Use of geoprocessing and satellite imagery
 - Verification of the jurisdiction's correspondence to the main establishment
 - Assessment of actual rural exploitation
-
-### Treatment of Rural Credits
-
-The provision establishes specific rules for the treatment of credits in rural judicial recovery, including:
-
-- **Credits with fiduciary guarantees** — Differentiated treatment according to the nature of the asset
-- **CPRs and barter contracts** — Verification of actual delivery and contractual execution
-- **Labor and tax credits** — Compliance with legal preference rules
 
 ### Final Considerations
 
