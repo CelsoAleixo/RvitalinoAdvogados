@@ -28,8 +28,8 @@ import {
   TreePine } from
 "lucide-react";
 import agroHeroAviao from "@/assets/agro-hero-aviao.png";
-import heroVideoV10Asset from "@/assets/agro-hero-video-v10.mp4.asset.json";
-const heroVideoV3 = heroVideoV10Asset.url;
+import heroVideoV11Asset from "@/assets/agro-hero-video-v11.mp4.asset.json";
+const heroVideoV3 = heroVideoV11Asset.url;
 import logoHero from "@/assets/logo-rv-transparent.png";
 import agroServiceContracts from "@/assets/agro-service-contracts.jpg";
 import agroServiceRural from "@/assets/agro-service-rural.jpg";
